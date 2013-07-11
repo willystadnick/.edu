@@ -1,0 +1,9 @@
+Os acadêmicos da 5° Fase de Ciências da Computação foram divididos em grupos para desenvolver o Projeto da Pagina de Sistemas Operacionais sendo os grupos dividos em:
+Grupo de Programação HTML e Designe;
+Grupo 1:  Responsável pelo Capitulo 1 e 2;
+Grupo 2:  Responsável pelo Capitulo 3 e 4;
+Grupo 3:  Responsável pelo Capitulo 5 e 6;
+Grupo 4:  Responsável pelo Capitulo 7 e 8;
+Grupo 5:  Responsável pelo Capitulo 9 e 10;
+Grupo 6:  Responsável pelo Capitulo 11;
+Grupo 7:  Responsável pelo Capitulo 12 e 13;

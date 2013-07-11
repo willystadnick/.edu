@@ -1,0 +1,170 @@
+Aula 1 : Sistema de Comunicação
+Tópicos
+* Definição de SC
+* Topologias
+* Características das topologias
+* Utilização do meio – modos de Tx. 
+* Comunicação serial e paralela
+* Transmissão serial síncrona e assíncrona
+* Exercícios
+Definição
+* Conjunto de técnicas, procedimentos e dispositivos que viabilizam a comunicação entre usuários.
+* Permite a troca informação.
+
+Figura  1
+
+Elementos Básicos
+* Mensagem (MSG)
+* Fonte
+                  Gera a INFO para ser Transmitida
+* Transmissor 
+Converte os dados em sinais transmissíveis
+* Canal de Comunicação
+Caminho pelo qual a INFO será transportada
+* Receptor
+Converte o sinais recebidos em dados
+* Destino
+Onde a INFO é processada
+
+Modelo: Sistema de Comunicação
+FIGURA 2
+Simplified Data Communications Model
+FIGURA 3
+
+Para construir um sistema de comunicação é necessário “preocupar-se” (escolher, projetar)  com todos os elementos básicos.
+
+* OBJETIVO
+Interligar os usuários (fonte - destino) através de canais de comunicação apropriados.
+
+Topologias de Ligação
+Topo=relevo, superfície.
+Logia=estudo.
+Topologia=estudo do arranjo físico/geométrico, das coisas. 
+Topologia de ligação= estudo das diversas maneiras possíveis de se interligar os usuários a partir de canais de comunicação.
+
+Utilização do Meio Físico
+
+Meio físico=canal de comunicação
+A possibilidade de utilizar uma ligação entre usuários (canal de comunicação) de três formas diferentes, de acordo com o fluxo de informação.
+
+Uma ou outra classificação utilizada é quanto à extensão física dos sistemas de comunicações, mais especificamente as Redes de Computadores:
+      LANs, MANs, WANs, WLANs.
+LAN: Local Area Network
+MAN: Metropolitan Area Network
+WAN: Wide Area Network
+WLAN: Wireless Local Area Network
+
+Transmissão Serial e Paralela
+
+     Etapas já vistas Sist. de Comunicação:
+1. Existência de Múltiplos usuários= Fontes de INFO.
+2. Interligar usuários via canais de comunicação = Topologias.
+3. Modos de utilização do canal: Simplex, Half Duplex e Full Duplex.
+
+Seguinte etapa: Escolha do formato da INFO digital.
+Os possíveis formatos para transferência de INFO digital: Serial e Paralelo. 
+
+FIGURA 4
+
+Características:
+* Modo Paralelo
+Curtas distâncias
+ Meio caro = várias linhas de fios.
+ Dificuldades físicas = sensibilidade ao ruído, 	efeito capacitivo.
+* Modo Serial
+Longas distâncias
+Baixo custo
+
+Em canais de comunicação típicos:
+Pulsos elétricos são usados (variação de tensão no meio de transmissão).
+
+
+
+Transmissão Serial X Tx. Paralela
+A Tx Paralela é extremamente rápida, embora mais cara. 
+A Tx Serial é relativamente lenta (a USB é rápida), embora seja mais simples: 1 linha de dados.
+A Tx Paralela sofre de interfências externas: ruídos (+ linhas = + metal = + antenas = + ruídos), bem como efeitos capacitivos entre linhas.
+Provoca então distorções no sinal que trafega (pulsos digitais).
+A Tx Serial é mais robusta.
+A Tx Paralela pela velocidade é sensível ao ruído. Usado em curtas distâncias.
+Longas distâncias: fatalmente a INFO passará por linhas telefônicas (seriais).
+
+Pontos a considerar!
+*  INFO digital : bits e bytes
+* Comunicação ( INFO+dados de CONTROLE
+* Como Transmitir INFO digital pelo canal de comunicação?
+                        Perturbações no meio.
+
+FIGURA 5 E FIGURA 6
+
+Em canais de comunicação típicos:
+Pulsos elétricos são usados (variação de tensão no meio de transmissão).
+
+FIGURA 7
+
+Fluxo de INFO digital=fluxo de bits/bytes=fluxo de pulsos.
+Segundo a regularidade: Síncrona ou Assíncrona.
+
+Comunicação Assíncrona
+
+ 	Fluxo de INFO é intermitente.
+   O Tx não possui sempre dados prontos ou esporadicamente.
+   Exemplos: keyboard/CPU, conversa telefônica, MODEM.
+
+   A comunicação no formato serial é tanto no modo síncrono como no assíncrono: 
+       INFO + dados de CONTROLE.
+A comunicação no formato paralelo é normalmente mantida no modo assíncrono (CPU/porta paralela).
+A comunicação no formato serial é praticada tanto no formato no modo sínc. como assíncr. 
+
+Comunicação Serial Assíncrona
+     Fluxo de INFO = Fluxo serial bits = fluxo serial pulsos
+     Tx de INFO + DADOS de CONTROLE
+     ENQUADRAMENTO:
+           Delimitação dos bits de dados (INFO) através de bits de marcação especiais 
+           (moldura).
+    O enquadramento orienta o Rx na captura dos bits de dados:
+	BIT de INÍCIO + BITS de DADOS + BITS de PARADA
+	(start bit)                                           
+
+Padrão Comunic. Serial Assíncrona
+
+FIGURA 8
+
+DESCRIÇÃO PASSO A PASSO:
+Enquanto não houver dados, Tx envia fluxo contínuo de bits “1”.
+Havendo dados, Tx envia start bit (0). Os próximos N bits serão de dados.
+Tx envia N bits de dados (N=7 valor típico). 
+      Rx está “consciente” sobre N, captura os N bits de dados e espera pelo STOP BIT  
+            (bit“1”), que será o bit de posição (N+1).
+Não havendo mais dados, Tx entra em estado de espera (“idle”) e passa a enviar um       
+       fluxo contínuo de bits “1” novamente.
+
+
+Comunicação Serial Síncrona
+
+Envio de dados a intervalos regulares: sincronismo entre Tx e Rx.
+
+INFO + DADOS de CONTROLE
+
+Envio de blocos contínuos de caracteres, DELIMITADOS por um “cabeçalho”, um “rodapé” e bits de marcação/sincronismo.
+
+CABEÇALHO + RODAPÉ = ENQUADRAMENTO
+
+Transmissão “orientada” a CARACTERES, ao contrário da Transm. Assinc., que é orientada a bit.  
+
+Para Transmitir grandes quantidades de dados a grandes velocidades.
+
+Sistemas síncronos são mais caros e mais complexos.
+
+Vantagem: são transmitidos vários caracteres sem a presença dos bits de start e stop (economia de dados de controle).
+
+
+FIGURA 9
+
+
+OS FLAGS ou MARCADORES:
+   SYNC=SYNCHRONISM (1 byte)
+   STX=START of TEXT (1 byte)
+   ETX=END of TEXT (1 byte)
+   BCC=Block Check Character(controle de erros (1 byte)
+

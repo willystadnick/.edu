@@ -1,0 +1,47 @@
+Formatadores para leitura:
+
+%c -> caracter (1 caracter)
+%d -> inteiros decimais
+%f -> reais
+	%3.2f : 3 casas decimais antes e 2 depois do ponto
+%e -> notação cientifica
+%l -> inteiro longo
+%o -> numeros octais
+%s -> serie de caracteres (string)
+%u -> decimal sem sinal
+%x -> hexadecimal
+%g -> escrita - permite %e e %f no formato curto.
+
+Ex.: para converter decimal pra hexa:
+	scanf("%d, & n");
+	printf("O valor em HEXA é %x", n);
+
+Formatadores para escrita:
+
+\n -> gera nova linha
+\t -> espaço de tabulação
+\b -> retrocesso de linha (tecla HOME)
+\" -> gera simbolo de aspas
+\\ -> gera barra
+\f -> gera um salto de página do formulário
+\o -> gera nulo
+
+Operadores Relacionais
+
+== igual a
+!= diferente
+>  maior que
+<  menor que
+>= maior e igual
+<= menor e igual
+
+Operadores Lógicos
+
+E / and	-> &&
+Ou / Or	-> ||
+Não / Not	-> !
+
+Operadores Booleanos
+
+Falso / False	-> 0
+Verdadeiro / True	-> 1

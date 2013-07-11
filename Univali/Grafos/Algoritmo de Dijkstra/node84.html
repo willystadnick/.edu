@@ -1,0 +1,335 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><!--Converted with LaTeX2HTML 99.2beta6 (1.42)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others --><title>Algoritmo de Dijkstra</title>
+
+
+
+
+
+
+
+<meta content="Algoritmo de Dijkstra" name="description">
+<meta content="EDpos" name="keywords">
+<meta content="document" name="resource-type">
+<meta content="global" name="distribution">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta content="MSHTML 6.00.2600.0" name="GENERATOR">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link href="node84_files/EDpos.htm" rel="STYLESHEET"><link href="http://www.lcad.icmc.usp.br/%7Enonato/ED/Dijkstra/node83.html" rel="previous">
+<link href="http://www.lcad.icmc.usp.br/%7Enonato/ED/Dijkstra/node82.html" rel="up"><link href="http://www.lcad.icmc.usp.br/%7Enonato/ED/Dijkstra/node85.html" rel="next"><script charset="utf-8" id="injection_graph_func" src="node84_files/injection_graph_func.js"></script></head><body>
+
+<!--Navigation Panel-->
+
+<a href="http://www.lcad.icmc.usp.br/%7Enonato/ED/Dijkstra/node84_1.html" name="tex2html998"><img alt="next" src="node84_files/next.htm" align="bottom" border="0"></a> 
+<a href="http://www.lcad.icmc.usp.br/%7Enonato/ED/node82.html" name="tex2html996"><img alt="up" src="node84_files/up.htm" align="bottom" border="0"></a> 
+<a href="http://www.lcad.icmc.usp.br/%7Enonato/ED/node83.html" name="tex2html992"><img alt="previous" src="node84_files/back.htm" align="bottom" border="0"></a> 
+<br>
+<b>Next:    </b> <a href="http://www.lcad.icmc.usp.br/%7Enonato/ED/Dijkstra/node84_1.html" name="tex2html999">Dijkstra: matriz de adjacências</a>
+<b>Up:      </b> <a href="http://www.lcad.icmc.usp.br/%7Enonato/ED/node82.html" name="tex2html997">Caminho de custo Mínimo</a> 
+<b>Previous:</b> <a href="http://www.lcad.icmc.usp.br/%7Enonato/ED/node83.html" name="tex2html993">Caminho mais Curto</a> 
+
+<!--End of Navigation Panel-->
+
+<br><br>
+
+
+<h2><a name="SECTION001142000000000000000">Algoritmo de Dijkstra</a> </h2>
+
+
+<p align="justify">
+<font size="+1">
+O algoritmo de Dijkstra é o mais famoso dos algoritmos para cálculo de
+caminho de custo mínimo entre vértices de um grafo e, na prática, o
+mais empregado.
+<br><br>Escolhido um vértice como raiz da busca, este algoritmo calcula o custo mínimo deste vértice para todos os demais vértices
+do grafo. O algoritmo pode ser usado sobre grafos orientados (dígrafos), ou não, e admite que todas as arestas possuem pesos
+não negativos (nulo é possível). Esta restrição é perfeitamente possível no contexto de redes de transportes, 
+onde as arestas representam normalmente distâncias ou tempos médios de percurso; poderão existir, no entanto,  
+aplicações onde as arestas apresentam pesos negativos, nestes casos o algoritmo não funcionará
+corretamente.
+</font>
+</p>
+
+
+<br>
+<h3>Funcionamento do algoritmo</h3>
+<p align="justify">
+<font size="+1">
+
+Assumiremos um conjunto, chama-lo-emos <i>PERM</i>, que contém inicialmente apenas o vértice fonte (raiz da busca) <i>s</i>. A qualquer momento <i>PERM</i> contém todos os vértices para os quais já foram determinados
+os menores caminhos usando apenas vértices em <i>PERM</i> a partir de <i>s</i>. Para cada vértice <i>z</i> fora de <i>PERM</i>
+matemos a menor distância <i>dist[z]</i> de <i>s</i> a <i>z</i> usando caminhos onde o único vértice que não está em <i>PERM</i> seja <i>z</i>.
+É necesssário também armazenar o vértice adjacente (precedente) a <i>z</i> neste caminho em <i>path[z]</i>. <br><br>
+
+Como fazer com que <i>PERM</i> cresça, ou seja, qual vértice deve ser incluído em <i>PERM</i> a seguir ? Tomamos o vértice, entre todos os que ainda não pertencem a
+<i>PERM</i>, com menor distância <i>dist</i>. Acrescentamos então este vértice, chamemo-lo de <i>current</i>, a <i>PERM</i>,
+e recalculamos as distâncias (<i>dist</i>) para todos os vértices adjacentes a ele que não estejam em <i>PERM</i>, pois pode haver um caminho menor a partir de 
+<i>s</i>, passando por <i>current</i>, do que aquele que havia antes de <i>current</i> ser agregado a <i>PERM</i>. Se houver um caminho mais
+curto precisamos também atualizar <i>path[z]</i> de forma a indicar que <i>current</i> é o vértice adjacente a <i>z</i> pelo novo
+caminho mínimo. <br><br><br>
+
+Vejamos o funcionamento do algoritmo sob uma outra representação:
+</font>
+</p>
+
+
+
+
+<p align="justify">
+1) Defini-se inicialmente o nó de origem (raiz), neste caso <i>s</i>, e inclui-se este nó em <i>PERM</i>. Atribui-se zero a sua distância (<i>dist[s]</i>) porque o custo de ir de <i>s</i> a <i>s</i> é obviamente 0. 
+Todos os outros nós <i>i</i> tem suas distâncias (<i>dist[i]</i>) inicializadas com um valor bastante grande ("infinito").</p>
+<p></p>
+
+<center>
+<table border="0" width="80%">
+<tbody><tr>
+ <td align="center">
+    <img src="node84_files/imgj233.gif"><br>
+ </td>
+ <td align="center">
+    <img src="node84_files/imgj233q.gif">
+ </td>
+</tr>
+</tbody></table>
+</center>
+<br><br><br>
+
+
+<p align="justify">
+2) A partir de <i>s</i> consulta-se os vértices adjacentes a ele, que no grafo <i>G</i> são <i>u</i> e <i>x</i>.
+Para todos os vértices adjacentes, que chamaremos <i>z</i>, calcula-se: <br>
+&nbsp;&nbsp;Se dist[z] &gt; dist[s] + peso(s, z)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dist[z] = dist[s] + peso(s, z)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;path[z] = s<br>
+&nbsp;&nbsp;Fim Se
+</p>
+
+<center>
+<table border="0" width="80%">
+<tbody><tr>
+
+<td align="center">
+    <img src="node84_files/imgj234.gif"><br>
+</td>
+<td align="center">
+<img src="node84_files/imgj234q.gif">
+</td>
+</tr>
+</tbody></table>
+</center>
+<br><br><br>
+
+
+
+<p align="justify">
+3) Dentre todos os vértices não pertencentes a <i>PERM</i> escolhe-se aquele com a menor distância. Neste caso é o vértice <i>x</i>, pois dist[x] = 5. 
+
+</p><center>
+<table border="0" width="80%">
+<tbody><tr>
+
+<td align="center">
+    <img src="node84_files/imgj235.gif"><br>
+</td>
+<td align="center">
+<img src="node84_files/imgj235q.gif">
+</td>
+</tr>
+</tbody></table>
+</center>
+<br><br><br>
+
+
+<p align="justify">
+4) Então, inclui-se <i>x</i> em <i>PERM</i> e a partir de <i>x</i> consulta-se os vértices adjacentes a ele que não estão em <i>PERM</i>, que no grafo <i>G</i> são <i>u</i>, <i>v</i> e <i>y</i>.
+Para todos os vértices adjacentes, que chamaremos <i>z</i>, calcula-se: <br><br>
+&nbsp;&nbsp;Se dist[z] &gt; dist[x] + peso(x, z)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dist[z] = dist[x] + peso(x, z)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;path[z] = x<br>
+&nbsp;&nbsp;Fim Se
+
+</p><center>
+<table border="0" width="80%">
+<tbody><tr>
+ <td align="center">
+    <img src="node84_files/imgj236.gif"><br>
+ </td>
+ <td align="center">
+    <img src="node84_files/imgj236q.gif">
+ </td>
+</tr>
+</tbody></table>
+</center>
+
+<p></p>
+
+<br><br><br>
+
+
+
+<p align="justify">
+5) Dentre todos os vértices não pertencentes a <i>PERM</i> escolhe-se aquele com a menor distância. Neste caso é o vértice <i>y</i>, pois dist[y] = 7. 
+
+</p><center>
+<table border="0" width="80%">
+<tbody><tr>
+
+<td align="center">
+    <img src="node84_files/imgj237.gif"><br>
+</td>
+<td align="center">
+<img src="node84_files/imgj237q.gif">
+</td>
+</tr>
+</tbody></table>
+</center>
+<br><br><br>
+
+
+
+<p align="justify">
+6) Inclui-se então <i>y</i> em <i>PERM</i> e a partir de <i>y</i> consulta-se os vértices adjacentes a ele que não estão em <i>PERM</i>, que no grafo <i>G</i> é apenas o vértice <i>v</i>.
+&nbsp;&nbsp;Se dist[v] &gt; dist[y] + peso(y, v)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dist[v] = dist[y] + peso(y, v)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;path[v] = y<br>
+&nbsp;&nbsp;Fim Se
+
+</p><center>
+<table border="0" width="80%">
+<tbody><tr>
+ <td align="center">
+    <img src="node84_files/imgj238.gif"><br>
+ </td>
+ <td align="center">
+    <img src="node84_files/imgj238q.gif">
+ </td>
+</tr>
+</tbody></table>
+</center>
+
+<p></p>
+
+<br><br><br>
+
+
+
+<p align="justify">
+7) Dentre todos os vértices não pertencentes a <i>PERM</i> escolhe-se aquele com a menor distância. Neste caso é o vértice <i>u</i>, pois dist[u] = 8. 
+
+</p><center>
+<table border="0" width="80%">
+<tbody><tr>
+
+<td align="center">
+    <img src="node84_files/imgj239.gif"><br>
+</td>
+<td align="center">
+<img src="node84_files/imgj239q.gif">
+</td>
+</tr>
+</tbody></table>
+</center>
+<br><br><br>
+
+
+<p align="justify">
+8) Inclui-se então <i>u</i> em <i>PERM</i> e a partir de <i>u</i> consulta-se os vértices adjacentes a ele que não estão em <i>PERM</i>, que no grafo <i>G</i> é apenas o vértice <i>v</i>.
+&nbsp;&nbsp;Se dist[v] &gt; dist[u] + peso(u, v)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dist[v] = dist[u] + peso(u, v)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;path[v] = u<br>
+&nbsp;&nbsp;Fim Se
+
+</p><center>
+<table border="0" width="80%">
+<tbody><tr>
+ <td align="center">
+    <img src="node84_files/imgj240.gif"><br>
+ </td>
+ <td align="center">
+    <img src="node84_files/imgj240q.gif">
+ </td>
+</tr>
+</tbody></table>
+</center>
+
+<p></p>
+
+<br><br><br>
+
+
+<p align="justify">
+9) Dentre todos os vértices não pertencentes a <i>PERM</i> escolhe-se aquele com a menor distância. Neste caso é o único vértice restante <i>v</i> e dist[v] = 9. 
+
+</p><center>
+<table border="0" width="80%">
+<tbody><tr>
+
+<td align="center">
+    <img src="node84_files/imgj241.gif"><br>
+</td>
+<td align="center">
+<img src="node84_files/imgj241q.gif">
+</td>
+</tr>
+</tbody></table>
+</center>
+<br><br><br>
+
+
+<p align="justify">
+10) Por fim faz-se <i>v</i> pertencer a <i>PERM</i>. Neste ponto, todos os vértices já estão em <i>PERM</i> e a busca é finalizada.
+
+</p><center>
+<table border="0" width="80%">
+<tbody><tr>
+ <td align="center">
+    <img src="node84_files/imgj242.gif"><br>
+ </td>
+ <td align="center">
+    <img src="node84_files/imgj242q.gif">
+ </td>
+</tr>
+</tbody></table>
+</center>
+
+<p></p>
+
+<br>
+<!--Table of Child-Links-->
+
+<hr>
+<a name="CHILD_LINKS"><strong><h3>Subsections</h3></strong></a>
+<p align="justify">
+<font size="+1">
+Analisaremos agora, nos links abaixo, implementações do algoritmo de Dijkstra em grafos representados por <i>matriz e lista de adjacências</i>.
+<br><br>
+</font>
+</p>
+<ul>
+  <li><a href="http://www.lcad.icmc.usp.br/%7Enonato/ED/Dijkstra/node84_1.html" name="tex2html980">Matriz de Adjacências</a> </li>
+  <li><a href="http://www.lcad.icmc.usp.br/%7Enonato/ED/Dijkstra/node84_2.html" name="tex2html981">Lista de Adjacências</a> </li>
+</ul>
+
+<hr>
+
+<!--End of Table of Child-Links-->
+
+
+
+<!--Navigation Panel-->
+
+<a href="http://www.lcad.icmc.usp.br/%7Enonato/ED/Dijkstra/node84_1.html" name="tex2html998"><img alt="next" src="node84_files/next.htm" align="bottom" border="0" height="24" width="37"></a> 
+<a href="http://www.lcad.icmc.usp.br/%7Enonato/ED/node82.html" name="tex2html996"><img alt="up" src="node84_files/up.htm" align="bottom" border="0" height="24" width="26"></a> 
+<a href="http://www.lcad.icmc.usp.br/%7Enonato/ED/node83.html" name="tex2html992"><img alt="previous" src="node84_files/prev.htm" align="bottom" border="0" height="24" width="63"></a> <br><b>Next:</b> 
+<a href="http://www.lcad.icmc.usp.br/%7Enonato/ED/Dijkstra/node84_1.html" name="tex2html999">Dijkstra: matriz de adjacências</a> <b>Up:</b> 
+<a href="http://www.lcad.icmc.usp.br/%7Enonato/ED/node82.html" name="tex2html997">Caminho de custo Mínimo</a> <b>Previous:</b> 
+<a href="http://www.lcad.icmc.usp.br/%7Enonato/ED/node83.html" name="tex2html993">Caminho mais Curto</a> 
+
+<!--End of Navigation Panel-->
+
+<address>Última atualização: 2003-07-04 </address>
+
+</body></html>

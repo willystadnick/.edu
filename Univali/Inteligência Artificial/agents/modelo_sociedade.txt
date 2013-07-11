@@ -1,0 +1,63 @@
+Modelo da Sociedade de Agentes para o Jogo de Domino
+ por Willy Stadnick Neto
+
+Agentes:
+- Juiz;
+- Jogador.
+
+Inteligencia:
+- Ambos serao nao-inteligentes, pois seu comportamento sera baseado em regras pre-definidas.
+
+Caracteristicas:
+- o juiz inicia um novo jogo e aguarda por jogadores (2 a 4);
+- os jogadores entram no jogo;
+- o juiz entrega 7 pedras para cada jogador, seguindo a ordem de entrada;
+- o primeiro jogador lanca uma pedra dupla, se nao tiver lanca qualque pedra;
+- os demais jogadores lancam suas pedras de acordo com as pontas;
+- se um jogador nao possuir uma pedra compativel com uma das pontas deve comprar pedras ate conseguir encaixar, ou acabarem as pedras de compra;
+- se acabarem as pedras de compra e o jogador nao possuir pedra de encaixe, este passa a vez;
+- o primeiro jogador a zerar a quantidade de pedras em seu poder e declarado vencedor;
+* o juiz e o agente responsavel por fiscalizara quantidade de pedras em poder de cada jogador.
+
+Funcoes e Comunicacao [destinatario, mensagem]:
+- Juiz:
+* Iniciar uma partida [Jogadores, NovaPartida];
+* Aceitar jogadores [JogadorX, BemVindo];
+* Embaralhar pedras [funcao interna];
+* Entregar pedra [JogadorX, PedraXY];
+* Definir vencedor(es) [JogadorX, Parabens].
+
+- Jogador:
+* Entrar num jogo [Juiz, PossoJogar];
+* Comprar pedra [Juiz, VendePedra];
+* Jogar pedra [Juiz, PedraXY];
+* Passar a vez [Juiz, PassaVez].
+
+Sequencia Tipica de Mensagens:
+Juiz         Jogador1   Jogador2   Jogador3   Jogador4
+NovaPartida  ->         ->         ->         ->
+<-           PossoJogar
+BemVindo     ->
+<-                      PossoJogar
+BemVindo                ->
+<-                                 PossoJogar
+BemVindo                           ->
+<-                                            PossoJogar
+BemVindo                                      ->
+PedraXY(7x)  ->
+PedraXY(7x)             ->
+PedraXY(7x)                        ->
+PedraXY(7x)                                   ->
+<-           PedraXX
+<-                      PedraXY
+<-                                 PedraXY
+<-                                            PedraXY
+<-           PedraXY
+...
+...
+...
+<-           CompraPedra
+PedraXY      ->
+<-                      PassaVez
+<-                                 PedraXY
+Parabens                           ->

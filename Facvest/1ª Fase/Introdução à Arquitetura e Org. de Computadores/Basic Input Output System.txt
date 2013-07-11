@@ -1,0 +1,133 @@
+Bios 
+
+Bios significa "Basic Input Output System", ou "sistema básico de entrada e saída". Um computador é composto de hardware e software. O hardware é toda a parte física do micro: placa mãe, processador, memórias, disco rígido, etc. Enquanto que o software é a parte lógica que coordena o seu funcionamento. O Bios é justamente a primeira camada de software do sistema, que fica gravada em um pequeno chip na placa mãe, e tem a função de "dar a partida", reconhecendo os dispositivos instalados no micro e realizando o boot. Mesmo depois do carregamento do sistema operacional, o Bios continua provendo muitas informações e executando tarefas indispensáveis para o funcionamento do sistema. 
+
+Setup 
+
+Muitas das funções executadas pelo Bios podem ser personalizadas ao gosto do usuário. O setup é justamente o programa que nos permite configurar estas opções. A velocidade de operação das memórias, o modo de funcionamento dos discos rígidos, e em muitos casos até mesmo a velocidade do processador, são configurados através do Setup. Uma configuração errada do setup pode tornar nosso sistema até 70 ou 80% mais lento do que com uma configuração otimizada. Claro que esta é uma projeção apocalíptica, que só seria alcançada por alguém que intencionalmente configurasse o Bios visando obter o pior desempenho possível, mas que ilustra bem como "simples" erros de configuração podem tornar nosso sistema lento. 
+
+Em quase todos os Setup's, encontramos uma opção de configuração usando valores defaut sugeridos pelo fabricante. Estes valores visam que o sistema funcione com o máximo de estabilidade, porém usando-os sacrificamos um pouco do desempenho. Geralmente com configurações otimizadas dos valores do Setup, conseguimos um ganho de performance de 15 ou 20% ou sobre os valores defaut. Muitas vezes também precisamos mudar os valores do setup para resolver algum conflito entre dispositivos, ou mesmo poder instalar algum periférico em especial. Um exemplo é a Viper v330, que é uma placa aceleradora 3D: ela só funciona corretamente caso habilitemos no Setup a opção "Assign IRQ to VGA card" que muitas vezes fica desabilitada usando os valores defaut. 
+CMOS significa "Complementary Metal Oxide Semicondutor". Nos primeiros PC s, tais como os antigos XT s e alguns 286 s, todos os dados referentes à configuração dos endereços de IRQ, quantidade e velocidade das memórias, HD s instalados, etc. eram configurados através de jumpers na placa mãe. Não é preciso dizer que a configuração de tais jumpers era um trabalho extremamente complicado. Para facilitar a vida dos usuários, foi criado o Setup, que permite configurar facilmente o sistema. A função do CMOS é armazenar os dados do setup para que estes não sejam perdidos quando desligamos a máquina. O CMOS é uma pequena quantidade de memória Ram, geralmente 128 ou 256 bytes, destinada a guardar as configurações do setup. Toda vez que o micro é iniciado, o Bios lê estes valores e opera de acordo com eles. Porém, justamente por ser um tipo de memória Ram, o CMOS é volátil, ou seja: seus valores são perdidos quando ele deixa de ser carregado eletricamente. Justamente por isso, é usada na placa mãe uma pequena bateria que se destina alimentar o CMOS. Claro que esta bateria não dura para sempre, de modo que periodicamente (a cada 2 ou 3 anos) temos que troca-la por uma nova 
+
+Post 
+
+Durante o boot, o Bios realiza uma série de testes, cuja função é determinar com exatidão os componentes de hardware instalados no sistema. Este teste é chamado de Post (pronuncia-se poust), ou "power-on self test". Os dados do post são mostrados durante a inicialização, na forma daquela tabela que aparece antes do carregamento do sistema operacional, indicando a quantidade de memória instalada, assim como os discos rígidos, drives de disquetes, portas serias e paralelas e Drives de CD-Rom padrão IDE instalados no micro. 
+
+Mensagens de Erro 
+
+A função do Post é verificar se tudo está funcionando corretamente. Caso seja detectado algum problema em um componente vital para o funcionamento do sistema, como as memórias, processador ou placa de vídeo, o Bios emitirá uma certa seqüência de bips sonoros, alertando sobre o problema. Problemas menores, como conflitos de endereços, problemas com o teclado, ou falhas do disco rígido serão mostrados na forma de mensagens na tela. 
+
+O código de bips varia de acordo com a marca da Bios (Award ou AMI por exemplo) ou mesmo difere de uma placa mãe para outra. Geralmente o manual da placa traz uma tabela com as seqüências de bips usadas. Apenas como referência no caso da ausência do manual da placa mãe, segue em anexo a tabela de bips padrão em Bios AMI: 
+
+Número de Bips 
+Mensagem de Erro 
+Descrição e causa provável 
+
+1
+Falha no Refresh (refresh Failure) 
+O circuito de refresh da placa mãe está com problemas, isto pode ser causado por danos na placa mãe ou falhas da memória Ram 
+
+2 
+Erro de paridade (parity error) 
+Durante o post, foi detectado um erro de paridade na memória Ram. Este problema pode ser tanto nos módulos de memória quanto nos próprios circuitos de paridade. Para determinar a causa do problema bastaria fazer um teste com outros pentes de memória. 
+
+3 
+Falha nos primeiros 64 kb da memória Ram (Base 64k memory failure) 
+Foi detectado um problema grave nos primeiros 64 kb da memória Ram. Este defeito pode ser causado por um defeito nas memórias ou na própria placa mãe. Outra possibilidade é o problema estar sendo causado por um simples mal contato. Experimente antes de mais nada retirar os pentes de memória, limpar seus contatos usando uma borracha de vinil (aquelas borrachas plásticas de escola) e recoloca-los com cuidado. 
+
+4 
+Timer não operacional (Timer not operational) 
+O Timer 1 não está operacional ou não está conseguindo encontrar a memória Ram. O problema pode estar na placa mãe (mais provável) ou nos módulos de memória. 
+
+5 
+Erro no processador (processor error) 
+O processador está danificado, ou mal encaixado. Verifique se o processador está bem encaixado, e se por descuido você não esqueceu de baixar a alavanca do soquete Zif (acontece nas melhores famílias :-) 
+
+6 
+Falha no Gate 20 (8042 - Gate A20 failure) 
+O gate 20 é um sinal gerado pelo chip 8042, responsável por colocar o processador em modo protegido. Neste caso, o problema poderia ser algum dano no processador ou mesmo problemas relacionados com o chip 8042 localizado na placa mãe 
+
+7 
+Processor exception (interrupt error) 
+O processador gerou uma interrupção de exceção. Significa que o processador está apresentando um comportamento errático. Isso acontece às vezes no caso de um overclock mal sucedido. Se o problema for persistente experimente baixar a freqüência de operação do processador 
+
+8 
+Erro na memória da placa de vídeo (display memory error) 
+Problemas com a placa de vídeo, que podem estar sendo causados também por mal contato. Experimente como no caso das memórias retirar a placa de vídeo, passar borracha nos seus contatos e recolocar cuidadosamente no slot. Caso não resolva, provavelmente a placa de vídeo está danificada. 
+
+9 
+Erro na memória Rom (rom checksum error) 
+Problemas com a memória Flash onde está gravado o Bios. Isto pode ser causado por um dano físico no chip da Bios ou por um up-grade de Bios mal sucedido. Em qualquer um dos casos é difícil uma solução, pois o Bios é personalizado para cada modelo de placa mãe, não funcionando em nenhum outro. 
+
+10 
+falha no CMOS shutdown register (CMOS shutdown register error) 
+O chamado de shutdown register enviado pelo CMOS apresentou erro. Este problema é causado por algum defeito no CMOS. 
+
+11 
+Problemas com a memória cache (cache memory bad) 
+Foi detectado um erro na memória cache. Geralmente quando isso acontece a Bios consegue inicializar normalmente o sistema desabilitando a memória cache. Claro que isso não é desejável, pois deteriora muito o desempenho do sistema. Uma coisa a ser tentada é entrar no setup e aumentar os tempos de espera da memória cache. Muitas vezes com esse "refresco" conseguimos que ela volte a funcionar normalmente. 
+
+1 Bip longo 
+Post executado com sucesso 
+Este é um bip feliz emitido pelo Bios quando o post é executado com sucesso. Caso o seu sistema esteja inicializando normalmente e você não esteja ouvindo este bip, verifique se o speaker está ligado corretamente 
+
+2 Bips curtos 
+O Post Falhou 
+Não foi possível iniciar o computador. Este problema é causado por uma falha grave em algum componente 
+
+1 Bip longo e 2 Bips curtos 
+Falha no Video 
+Problemas com o a Bios da placa de vídeo. Tente retirar a placa, passar borracha de vinil nos seus contatos e recoloca-la, talvez em outro slot. Na maioria das vezes este problema é causado por mau contato. 
+
+1 Bip longo e dois Bips curtos 
+Falha no Video 
+Novamente problemas com a placa de vídeo, desta vez provavelmente causados por defeito no Ram-Dac da placa, erro ou incapacidade de encontrar o monitor ou problemas com a memória de vídeo 
+
+Geralmente quando tudo está funcionando normalmente, independente da marca, o Bios emite um bip durante a inicialização do micro, este não deve ser confundido com o primeiro erro da tabela. Se nenhum som está sendo emitido quando você inicializa o sistema, verifique se o fio do auto falante está ligado corretamente. 
+
+Quando são detectados problemas menores durante o post, que não impedem o funcionamento do sistema, ao invés de bips são mostradas mensagens de erro na tela, indicando o problema. 
+
+Mensagem de Erro 
+Descrição e causa provável 
+
+Keyboard Error or Keyboard not present 
+O Bios não conseguiu encontrar o teclado. Pode ser apenas um mau contato no encaixe do teclado, bastando aperta-lo, ou mesmo um defeito na placa lógica do teclado. 
+
+KB/Interface Error 
+O Bios não está conseguindo se comunicar com o teclado devido a um defeito no conector para o teclado localizado na placa mãe 
+
+HDD Controller Failure 
+O Bios não está conseguindo comunicar-se com a controladora do disco rígido. Caso seja um computador antigo, que usa uma placa super-ide, o defeito está sendo causado por mau funcionamento ou mal contato da placa, bastando fazer o limpeza dos contatos usando uma borracha ou substituí-la. Caso o computador possua interfaces IDE on-board, então talvez seja necessário trocar toda a placa mãe, já que não é possível substituir os chips controladores das interfaces IDE, pois fazem parte do chipset. Neste caso porém, tente antes instalar o disco na IDE secundária, pois é possível que ela ainda esteja funcionando. 
+
+FDD Controller Failure 
+Agora o problema é com o a controladora de disquetes. Valem as mesmas dicas do item anterior. 
+
+FDD failure 
+O drive de disquetes está com problemas ou não foi configurado corretamente no Standard CMOS Setup 
+
+Conflict I/O Ports: xxx 
+Foi detectado um conflito numa das portas lógicas do micro. É exibida esta mensagem seguida do endereço que está sendo usado por dois ou mais periféricos. Geralmente este problema é causado por um modem configurado para operar no mesmo endereço de uma das portas serias. Bastando para resolver o problema jumpear o modem para usar um endereço diferente ou mesmo desativar a porta serial em conflito. 
+
+Cache Memory Bad, Do not Enable Cache! 
+Foi detectado durante o post que o cache L2 está com problemas. O Bios então informa que está desabilitando o cache L2 para que o sistema possa funcionar normalmente apesar da perda de performance. 
+
+CMOS Battery State Low 
+A carga da bateria que alimenta o CMOS está fraca, e deve ser trocada com urgência. 
+
+CMOS System Options Not Set 
+Os valores armazenados no CMOS foram corrompidos por algum motivo, ou então o bios não foi configurado. Neste caso basta entrar no setup e configurar corretamente as opções. 
+
+CMOS Time and Date Not Set 
+O Bios está avisando apenas que não foi configurado a hora e data no relógio do CMOS. apesar desta configuração ser desnecessária para inicializar o micro, é bom entrar no setup e acertar o relógio pois ele é usado por vários programas. 
+
+CMOS Memory Size Mismatch 
+
+Em alguns Bios mais antigos, ao ser alterada a quantidade de memória instalada, era exibida esta mensagem durante a primeira inicialização. Na verdade esta não é bem uma mensagem de erro, indicando apenas que a quantidade de memória Ram foi alterada. Basta pressionar F1 para rodar o Setup e em seguida usar o comando Save & Exit, mesmo sem fazer nenhuma alteração. 
+
+DMA Error 
+O circuito de DMA na placa mãe está com problemas, e talvez os canais de DMA estejam indisponíveis para o uso dos periféricos. 
+
+Memory Parity Error at xxxxx 
+Foi detectado um erro de paridade no endereço de memória informado na mensagem, o que indica problemas na memória Ram. Se você desejar tentar inicializar o sistema mesmo assim, basta entrar no setup e desativar a paridade. Vale lembrar porém problemas na memória Ram podem causar as imprevisíveis conseqüências. 
+
+As mensagens de erro referentes ao teclado, drive de disquetes e conflitos nas portas lógicas, podem ser desativados através de opção "Halt On" encontrada no Standart CMOS Setup. Configurando esta opção com o valor "No Errors" qualquer erro referente a estes três itens será ignorado.

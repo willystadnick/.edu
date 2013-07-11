@@ -1,0 +1,158 @@
+MODULAÇÃO
+
+A maioria dos sinais, da forma como são fornecidos pelo transmissor, não podem ser enviados diretamente através dos canais de transmissão. Consequentemente, uma onda portadora cujas propriedades são mais convenientes aos meios de transmissão, é modificada para representar a mensagem a ser enviada. A modulação é a alteração sistemática de uma onda portadora de acordo com a mensagem (sinal modulante), e pode incluir também uma codificação. 
+
+PORTADORA
+
+Para facilitar a transmissão do sinal através dos meios físicos, e adequar as frequências aos sistemas de comunicação, se utiliza a chamada onda portadora, sobre a qual viaja o sinal a ser transmitido. 
+A onda portadora é um sinal senoidal caraterizado por três variáveis: Amplitude, Frequência e Fase. Por definição este sinal existe ao longo de todo o tempo, ou seja com "t" variando de menos infinito a mais infinito. 
+
+A equação de uma onda portadora é dada por: 
+
+F = A sen ( W t + O ) 
+
+F, é a amplitude instantânea da onda para o instante t. 
+A, é a amplitude máxima da onda. 
+W, é a frequência angular da portadora W = 2*PI*f (onde f é a frequência da onda em Hertz). 
+O, é a fase da onda portadora. 
+
+As três caraterísticas observadas ao início, podem ser variadas em função do sinal modulante e do tipo de modulação que está sendo utilizado. 
+
+SINAL MODULANTE
+
+O sinal modulante é o próprio sinal que se deseja transmitir, mas, que devido a suas caraterísticas de baixa frequência, deve ser superposto a uma onda portadora de frequência mais alta de tal forma que possa se propagar através dos meios físicos de transmissão.  
+
+É interessante notar que muitas formas não elétricas de comunicação, também envolvem um processo de modulação, como a fala por exemplo. Quando uma pessoa fala, os movimentos da boca são realizados a taxas de frequências baixas, da ordem de 10 Hertz , não podendo a esta frequência produzir ondas acústicas propagáveis. A transmissão da voz através do ar é conseguida pela geração de tons portadores de alta frequência nas cordas vocais, modulando estes tons com as ações musculares da cavidade bucal. O que o ouvido interpreta como fala é, portanto, uma onda acústica modulada, similar, em muitos aspectos, a uma onda elétrica modulada.
+
+MODULAÇÃO O PORQUE
+
+Podemos resumir: A modulação é necessária para "casar" o sinal com o meio de transmissão. Este "casamento" envolve algumas considerações importantes, detalhadas nos items seguintes: 
+
+MODULAÇÃO PARA FACILIDADE DE IRRADIAÇÃO 
+
+MODULAÇÃO PARA REDUÇÃO DE RUÍDO E INTERFERÊNCIA 
+
+MODULAÇÃO PARA DESIGNAÇÃO DE FREQUÊNCIA 
+
+MODULAÇÃO PARA MULTIPLEXAÇÃO 
+
+MODULAÇÃO PARA SUPERAR LIMITAÇÕES DE EQUIPAMENTO 
+
+MODULAÇÃO PARA FACILIDADE DE IRRADIAÇÃO
+
+Para se ter irradiação eletromagnética eficiente, os elementos irradiantes (antenas) devem ser no mínimo 1/10 do comprimento de onda. Os sinais de áudio por exemplo, possuem componentes de baixas frequências, em torno de 100 Hertz ou menos, necessitando antenas de aproximadamente 300 Km de comprimento. Utilizando a propriedade de translação de frequência da modulação, estes sinais de frequências baixas podem ser sobrepostos em uma onda portadora de alta frequência, permitindo uma redução substancial do tamanho da antena
+
+COMPRIMENTO DE ONDA
+
+É uma das caraterísticas fundamentais de qualquer onda eletromagnética. Representa, em unidades de comprimento, o tamanho de um ciclo completo da onda. 
+É designada pela letra grega lambda, sendo igual a velocidade de propagação das ondas no espaço livre (3E8 m/s) dividido pela frequência da onda eletromagnética. 
+
+MODULAÇÃO PARA REDUÇÃO DE RUÍDO E INTERFERÊNCIA
+
+Certos tipos de modulação possuem a propriedade muito útil de reduzir tanto o ruído, como a interferência de um sistema de comunicação. 
+A supressão, entretanto, é obtida a custa de um preço. Geralmente se necessita de uma banda de transmissão muito maior do que a do sinal original, daí a designação de redução de ruído em banda larga. 
+
+RUÍDO
+
+Ruído é a denominação para sinais elétricos aleatórios e imprevisíveis provenientes de causas naturais tanto externas como internas ao sistema. Quando estes sinais são adicionados a um sinal que contém informação, esta pode ser parcialmente mascarada ou totalmente eliminada. O ruído é difícil de ser completamente elminado, constituindo um dos problemas básicos da comunicação elétrica. 
+
+LARGURA DE FAIXA - BANDA DE TRANSMISSÃO
+
+É uma medida da "velocidade do sinal", ou, a largura do espectro do sinal. 
+A transmissão de grande quantidade de informação em um intervalo pequeno de tempo, necessita sistemas de banda larga para acomodar os sinais. 
+Uma utilização eficiente de um sistema, exige a minimização do tempo de transmissão, para permitir enviar o máximo de informação no menor tempo possível. 
+A largura de faixa representa uma limitação em sistemas de comunicação. Se a banda for insuficiente, poderá ser necessário diminuir a velocidade de sinalização aumentando o tempo de transmissão. 
+
+MODULAÇÃO PARA DESIGNAÇÃO DE FREQUÊNCIA
+
+Permite a seleção, dentro de um sistema, de uma das diferentes estações existentes. 
+Isto é possível porque cada uma das estações tem uma diferente frequência atribuída para sua onda portadora. 
+Não fosse pela modulação, apenas uma estação poderia operar numa determinada área. Duas ou mais estações, transmitindo no mesmo meio sem modulação, produziriam uma superposição de sinais interferentes
+
+MODULAÇÃO PARA MULTIPLEXAÇÃO
+
+Muitas vezes se necessita enviar vários sinais simultaneamente entre os mesmos dois pontos. 
+As técnicas de multiplexação inerentes a modulação, permitem a transmissão de múltiplos sinais através de um mesmo canal, de modo que cada sinal possa ser recuperado com sucesso no outro extremo de recepção. 
+
+TIPOS DE MODULAÇÃO
+
+Em grande parte, o êxito de um sistema de comunicação depende da modulação, de modo que a escolha do tipo de modulação é uma decisão fundamental em projetos de sistemas para transmissão de sinais. 
+Muitas e diferentes técnicas de modulação são utilizadas para satisfazer as especificações e requisitos de um sistema de comunicação. Independente do tipo de modulação utilizado, o processo da modulação deve ser reversível de modo que a mensagem possa ser recuperada no receptor pela operação complementar da demodulação. 
+
+DEMODULAÇÃO
+
+É o processo que nos permite reverter o processo da modulação. Também chamado de detecção, envolve dispositivos eletrônicos, chamados modems, encarregados de detectar a onda portadora modulada e extrair dela o sinal modulante. 
+No processo da demodulação para sinais digitais, a forma de onda não é importante pois ela já é conhecida. O problema se resume a determinar se o pulso está presente ou ausente, portanto, o ruído do canal não tem influência nesse sentido. Entretanto o ruído do canal poderá causar certos erros nas decisões. A decisão na detecção pode ser facilitada com a passagem do sinal através de filtros que reforçam o sinal útil e suprimem o ruído ao mesmo tempo. Isso permite melhorar muito a relação sinal/ruído reduzindo a possibilidade de erro.
+
+MODEM
+
+Existe a necessidade do sinal digital, chegar ao receptor (demodulador) tão puro quanto foi gerado de tal forma que possa ser interpretado corretamente. Isto limita a distância de uma conexão direta entre dois terminais. 
+Para minimizar este problema e tornar possível a transmissão em longas distâncias, é que surgiu o dispositivo eletrônico denominado Modem (Modulador - Demodulador), que tem a função de tratar o sinal digital de forma a torná-lo capaz de ser transmitido corretamente e reconhecido na recepção. 
+Em transmissões de longo alcance, são necessárias estações repetidoras tanto para as comunicações analógicas como para as digitais. Entretanto, diferententemente das repetidoras para sinais analógicos, as repetidoras digitais podem ser regenerativas. Se a probabilidade de erro por estação repetidora for razoavelmente pequena, e a quantidade de informação for elevada, a vantagem da regeneração será extraordinária. 
+
+A princípio, é possível identificar dois tipos básicos de modulação, de acordo com o tratamento da portadora pelo sinal modulante: 
+
+MODULAÇÃO ANALÓGICA 
+
+MODULAÇÃO DIGITAL 
+ 
+MODULAÇÃO ANALÓGICA
+
+Também classificada como modulação de onda contínua (CW), na qual a portadora é uma onda cosenoidal, e o sinal modulante é um sinal analógico ou contínuo. 
+
+ONDA CONTINUA
+
+Do inglês, Continuos Wave (CW), refere-se a uma onda variando no tempo sem apresentar cortes ou interrupções ao longo do tempo. 
+Normalmente, a onda portadora possui uma frequência muito maior do que qualquer um dos componentes de frequência contidos no sinal modulante. O processo de modulação, é então caraterizado por uma translação em frequência onde o espectro de frequências da mensagem é deslocado para uma nova e maior banda de frequências. 
+
+As técnicas de modulação para sinais analógicos mais utilizadas são: 
+
+MODULAÇÃO EM AMPLITUDE AM 
+MODULAÇÃO EM frequência FM
+MODULAÇÃO EM FASE PM 
+
+MODULAÇÃO DIGITAL
+
+Também denominada modulação discreta ou codificada. Utilizada em casos em que se está interessado em transmitir uma forma de onda ou mensagem, que faz parte de um conjunto finito de valores discretos representando um código. No caso da comunicação binária, as mensagens são transmitidas por dois símbolos apenas. Um dos símbolos representado por um pulso S(t) correspondendo ao valor binário "1" e o outro pela ausência do pulso (nenhum sinal) representando o dígito binário "0". 
+A diferença fundamental entre os sistemas de comunicação de dados digitais e analógicos (dados contínuos) é bastante óbvia. No caso dos dados digitais, envolve a transmissão e detecção de uma dentre um número finito de formas de onda conhecidas (no presente caso a presença ou ausência de um pulso), enquanto que, nos sistemas contínuos há um número infinitamente grande de mensagens cujas formas de onda correspondentes não são todas conhecidas. 
+Nos sistemas digitais o problema da detecção ( demodulação) é um problema um pouco mais simples que nos sistemas contínuos. Durante a transmissão, as formas de onda da onda portadora modulada são alteradas pelo ruído do canal. Quando este sinal é recebido no receptor, devemos decidir qual das duas formas de onda possíveis conhecidas foi transmitida. Uma vez tomada a decisão a forma de onda original é recuperada sem nenhum ruído. 
+Do mesmo modo que há diversas técnicas de modulação para sinais analógicos, as informações digitais também podem ser colocadas sobre uma portadora de diferentes modos. 
+As técnicas de modulação para sinais digitais mais utilizadas atualmente são: 
+
+MODULAÇÃO EM AMPLITUDE POR CHAVEAMENTO - ASK 
+MODULAÇÃO EM FREQUÊNCIA POR CHAVEAMENTO - FSK 
+MODULAÇÃO EM FASE POR CHAVEAMENTO - PSK 
+
+MODULaÇÃO EM AMPLITUDE POR CHAVEAMENTO - ASK
+
+ASK (Amplitude Shift-Keying), é a técnica de modulação mais simples entre as utilizadas para modular sinais discretos (digitais). Consiste na alteração da amplitude da onda portadora em função do sinal digital a ser transmitido. A modulação em amplitude translada o espectro de frequência baixa do sinal binário, para uma frequência alta como é a da onda portadora. 
+A amplitude da portadora é comutada entre dois valores, usualmente ligado e desligado. A onda resultante consiste então em pulsos de rádio frequência ( RF ), que representam o sinal binário "1" e espaços representando o dígito binário "0" (supressão da portadora). 
+Esta técnica é equivalente a modulação AM para sinais contínuos com um sinal modulante na forma de um pulso retangular. O preço desta simplicidade é a excessiva largura de faixa da transmissão. A técnica de modulação ASK também representa perda de potência relativa a onda portadora. 
+A largura de faixa da transmissão pode ser reduzida se os pulsos empregados forem formatados (limitados em banda) antes da modulação. 
+
+fig1 -
+
+MODULAÇÃO EM FREQUÊNCIA POR CHAVEAMENTO - FSK
+
+O processo de modulação FSK (Frequency shift-keying), consiste em variar a frequência da onda portadora em função do sinal modulante, no presente caso, o sinal digital a ser transmitido. Este tipo de modulação pode ser considerado equivalente a modulação em FM para sinais analógicos. 
+A amplitude da onda portadora modulada é mantida constante durante todo o processo da modulação; quando ocorrer a presença de um nível lógico "1" no sinal digital, a frequência da portadora é modificada para poder ser depois compreendida no processo de demodulação. A frequência resultante transmitida será a frequência da onda portadora fp diminuida de uma frequência de desvio fd . Matematicamente a onda resultante modulada será: 
+
+fr = fp - fd . 
+
+Se registrada a ocorrência de um nível lógico "0" no sinal digital, a frequência resultante aplicada será a frequência da onda portadora acrescida da frequência de desvio: 
+
+fr = fp + fd . 
+
+fig2 -
+
+PSK MODULAÇÃO EM FASE POR CHAVEAMENTO
+
+A técnica de modulação conhecida por PSK ( Phase Shift- Keying), é o processo pelo qual se altera a fase da onda portadora em função do sinal digital a ser transmitido. Para este processo são usados pulsos bipolares de altura A/2 e - A/2 no sinal senoidal da onda portadora em lugar de dois pulsos de altura 0 e A. 
+Quando ocorrer uma transição de nível lógico do sinal digital a ser transmitido (sinal modulante ), haverá uma mudança de 180 graus na fase da onda portadora com relação ao ângulo anterior. A transição observada pode ser tanto de nível lógico "0" para "1" como de nível lógico "1" para "0". 
+Para este tipo de modulação deve se usar a detecção síncrona , já que esta tem como base o conhecimento preciso a respeito da fase da onda portadora recebida, bem como da sua frequência. Esta técnica de modulação devido ao fato mencionado, envolve circuitos de recepção (demodulação ) mais sofisticados; em compensação oferece melhor desempenho que as técnicas ASK e FSK.
+
+DETECÇÃO SÍNCRONA
+
+No processo da demodulação , a onda modulada recebida pode ser detectada fazendo o produto entre o sinal recebido e um sinal cosenoidal localmente gerado. O oscilador local, gerador da onda cosenoidal utilizada na demodulação, deve estar em sincronismo com a onda portadora tanto em fase como em frequência. 
+
+fig3 -

@@ -1,0 +1,62 @@
+Charles Petry Mesquita
+
+Aula 2-3
+
+
+Transm. Serial Sínc. X Assínc.
+  
+Existe enquadramento em ambos os modos:
+
+SÍNCRONO = CARACTERES de ENQUADRAMENTO
+determinado para blocos de caracteres.
+
+ASSÍNCRONO = BITS de ENQUADRAMENTO
+determinados para cada caracter.
+
+OVERHEAD muito maior no modo ASSÍNCRONO.
+OVERHEAD = excesso de dados de controle.
+
+Comunic. Assíncrona e Síncrona
+
+Definições
+  
+  Organização temporal da informação.
+  Formato Paralelo e Serial: Modos Assíncrono e Síncrono
+
+Assíncrono
+  Transmissão intermitente de dados (intervalos indeterminados).
+  Independente do CLOCK.
+Síncrono
+  Transmissão de dados a intervalos regulares (cadenciada ou contínua).
+  Dependente do CLOCK.
+
+Sinais
+
+Definição
+  
+  Função ou forma de onda dependente do tempo que carrega informação ou representa alguma grandeza física.
+
+
+Em telecomunicações classifica-se os sinais em:
+
+Sinais Analógicos e Sinais Digitais.
+ 
+Sinais Analógicos
+  
+  São sinais relacionados a fenômenos físicos.
+  São geralmente complexos, contínuos no tempo e apresenta uma grande riqueza de detalhes.
+  Podem assumir uma infinidade de valores diferentes
+no decorrer do tempo, a quantidade de valores é
+infinita.
+
+
+Sinais Digitais
+  
+  Etimologicamente: do latim digitale, pertencente ou
+referente aos dedos, a dígitos, quantidades inteiras
+ou discretas, valores definidos.
+  Sinal Digital: Sinal que apresenta uma evolução
+discreta, assumindo somente valores definidos.
+A quantidade de valores possíveis é FINITA.
+  Interpretados por computadores digitais.
+

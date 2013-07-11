@@ -1,0 +1,9 @@
+LAN
+
+Local Área Network ( Rede de alcance local) 
+
+LAN's são redes de dados com velocidade considerável, baixa taxa de erros de transmissão, conectando servidores, estações, periféricos, terminais e outros dipositivos em uma área geograficamente limitada.
+
+Utilizando normalmente cabeamento físico como meio de transmissão, uma LAN pode ter de duas até várias centenas de estações, separadas por metros ou quilômetros de distância.
+
+Os usuários de uma LAN podem executar suas tarefas a partir de suas próprias estações (ex.: edição de texto, planilhas eletrônicas, aplicações gráficas, etc), além de ter acesso a aplicações disponíveis nos servidores.

@@ -1,0 +1,39 @@
+/*
+academico: willy stadnick neto
+exemplo de codigo linguagem 2008-1
+*/
+
+main identificador []
+
+ //declaracao de constantes e variaveis
+ define this [
+  as constant
+   identificador is tipo equal valor.
+  as variable
+   identificador is tipo.
+ ]
+
+ do this [
+
+  //comando de atribuicao
+  assign this identificador equal expressao.
+
+  //entrada de dados
+  get this [ identificador ].
+
+  //saida de dados
+  show this [ identificador ].
+  put this [ constante ].
+
+  //comando de selecao
+  avaliate this expressao
+   true select this [ comandos ]
+   untrue select this [ comandos ].
+
+  //comando de repeticao
+  avaliate this expressao
+   do this [ comandos ].
+
+ ]
+
+description comentario

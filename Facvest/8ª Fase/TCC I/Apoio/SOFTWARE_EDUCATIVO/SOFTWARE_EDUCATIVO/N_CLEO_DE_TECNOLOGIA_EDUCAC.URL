@@ -1,0 +1,10 @@
+[DEFAULT]
+BASEURL=http://www.connect.com.br/~ntemg7/
+
+[DOC#4#6]
+BASEURL=http://www.connect.com.br/~ntemg7/artigos.htm
+ORIGURL=home.htm
+
+[InternetShortcut]
+URL=http://www.connect.com.br/~ntemg7/
+Modified=C02631818EE2C101CA

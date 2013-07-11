@@ -1,0 +1,19 @@
+INTRODUÇÃO 
+O que é um sistema operacional? 
+
+        Para usar os primeiros computadores era preciso conhecer profundamente o seu funcionamento, pois a programação era feita em painéis, através de fios. Com a evolução da informática tornou-se óbvio que o antigo sistema era muito pouco eficiente e causava muitos erros. Os primeiros sistemas operacionais surgiram justamente para tentar automatizar o uso dos computadores. A partir daí, os SOs (sistemas operacionais) evoluíram rapidamente até chegar ao que são hoje. 
+Um sistema operacional é um programa como todos os outros. O sistema operacional toma conta do computador e facilita a vida do usuário, deixando que ele se preocupe com coisas mais úteis e produtivas que endereços de memória, segmentos e interrupções. 
+
+Quantos sistemas operacionais existem? 
+
+        Provavelmente centenas. A grande maioria dos computadores tem pelo menos um SO escrito especialmente para ele. Para o PC (chips Intel): DOS e Windows (ambos da Microsoft), o BeOS (da Be), o Linux (este é totalmente grátis e está ligado à GNU), o FreeDOS (uma versão grátis do DOS, não é da Microsoft). Para o Machintosh: o System 7.x (também chamado de MacOS, da Apple) e o BeOS (da Be). 
+Os SO citados não são os únicos: tem milhares de pessoas em todo o mundo desenvolvendo todo tipo de sistema operacional para todo tipo de computador. 
+
+Como é feito um Sistema operacional: 
+
+        Criar um SO a partir do zero é extremamente complicado e trabalhoso. O planejamento do S.O. é muito importante. Linguagens visuais (como Visual Basic ou Delphi) ou pouco poderosas (ex: Basic ou Clipper) não servem para fazer sistemas operacionais porque elas não têm o controle do computador que um SO precisa. Assembler e C são linguagens muito usadas para esse tipo de coisa. 
+
+O que um sistema operacional tem que fazer? 
+
+        Um SO tem fazer com que o computador (e os periféricos) possa ser usado sem problemas por alguém que não conheça os detalhes do sistema. Ele tem que possibilitar que o usuário crie e acesse arquivos, use programas, acesse a Internet, jogue e todas as coisas que podem ser feitas com computadores. Além disso, o SO tem que executar os programas e ajudá-los a acessar os recursos do sistema de uma forma simples e organizada. 
+

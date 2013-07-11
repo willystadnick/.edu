@@ -1,0 +1,9 @@
+<?
+$peso["genero"]=5;
+$peso["idade"]=3;
+$peso["estadocivil"]=1;
+$peso["escolaridade"]=1;
+$peso["ocupacao"]=1;
+$peso["atuacao"]=2;
+$peso["interesses"]=2;
+?>

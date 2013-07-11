@@ -1,0 +1,339 @@
+CAPÍTULO 15
+Estudo de Caso 4: MACH.
+
+Neste capítulo trataremos sobre um segundo exemplo de sistema operacional moderno, o MACH, o qual é baseado no conceito de microkernel.
+
+15.1.1 Um pouco da história do MACH.
+
+Suas raízes vêm de um sistema denominado RIG (Rochester Intelligent Gateway) desenvolvido pela universidade de Rochester em 1975.
+Inicialmente foi escrito para um microcomputador de 16 bits chamado de Eclipse. O principal objetivo do MACH era demonstrar que sistemas operacionais poderiam ser estruturados de forma modular, como um conjunto de processos que se comunicam através de troca de mensagens, incluindo o uso de uma rede de implementação das comunicações entre processos.
+
+Quando em 1979 um dos integrantes da equipe de desenvolvimento, Richard Rashid, troca de universidade, saindo da Rochester e indo para a Carnegie-Mellon, leva consigo o desejo de continuar o projetos de sistemas operacionais baseados na troca de mensagens. Na Carnegie-Hall Richard continua seus projetos só que utilizando um hardware mais moderno que o eclipse, depois de testar várias máquinas escolhe a PERQ, uma estação de trabalho conectada à rede e com processador multiprogramado. O sistema desenvolvido foi chamado de ACCENT, tinha as mesmas características do RIG e mais um mecanismo de proteção e capacidade de operar de forma transparente sobre uma rede. A primeira versão a rodar foi no ano de 1981, Três anos mais tarde o ACCENT já rodava em mais ou menos 150 máquinas PERQ, mas estava perdendo terreno para o UNIX, assim Richard da início ao projeto da terceira geração de sua família de sistemas, ao qual chama de MACH, nesse projeto Richard faria um sistema compatível com o UNIX, assim ele poderia usar o grande número de software que já estavam disponíveis para a plataforma UNIX. Se comparado ao ACCENT, o MACH incorporou muitas melhorias, incluindo linhas de controle, melhoria na comunicação entre processos, suporte a multiprocessamento e um sistema de memória virtual imaginativo. Na mesma época em que Richard desenvolvia se projeto do MACH, a DARPA, agência de projetos avançados do Departamento de Defesa dos Estados Unidos, estava em busca de um sistema operacional com suporte a multiprocessamento. A universidade de Carnegie-Mellon foi selecionada para o projeto, e dessa forma o MACH passou a contar com recursos de DARPA. A primeira versão do MACH foi lançada em 1986, e rodou numa máquina multiprocessada chamada VAX 11/784 da Digital com quatro processadores. Em 1988 o kernel MACH 2.5 além de monolítico, tornou-se muito grande pois havia nele uma quantidade considerável de código UNIX, resolveu-se então retirar do kernel do MACH os códigos UNIX, o que ocorreu em 1989, ficando dessa forma o kernel MACH com um código muito pequeno e que continha apenas os seus próprios códigos, foi essa a versão 3.0 do MACH.
+
+15.1.2 Objetivos do MACH.
+
+Desde a primeira versão do MACH, ainda baseada no RIG, o mesmo evoluiu muito, bem como evoluíram também os seus objetivos que atualmente são:
+- Fornecer uma base para a construção de outros sistemas operacionais.
+- Suportar espaços de endereçamento esparsos.
+- Permitir acesso transparente a recurso de rede.
+- Explorar o paralelismo tanto no sistema operacional quanto nas aplicações.
+- Tornar o sistema operacional portátil, permitindo sua instalação nas mais variadas arquiteturas. A idéia é explorar ao máximo os multiprocessadores e os sistemas distribuídos, e ser capaz também de emular sistemas já existentes como o unix, ms-dos e o macintosh.
+Atualmente poucos sistemas multiprocessador além do MACH são, ao mesmo tempo, independentes da máquina onde estão rodando.
+
+15.1.3. O microkernel do MACH.
+
+O microkernel do MACH foi projetado e construído para ser a base sobre a qual outros sistemas possam ser emulados eficientemente. Essa emulação é realizada por uma camada de software que roda fora do kernel, numa área denominada de espaço do usuário.
+Existe a possibilidade de vários emuladores rodarem simultaneamente usando o MACH.
+
+O kernel gerencia cinco abstrações principais:
+1- Processos.
+2- Linhas de controle.
+3- Objetos de memória.
+4- Portas
+5- Mensagens.
+
+15.2. Gerencia de Processos no MACH.
+
+Um processo no MACH é composto basicamente de um espaço de endereçamento e o conjunto de linhas de controle que executam nesse espaço. Os processos são passivos, a execução é associada à linhas de controle. A porta processo é usada para a comunicação com o Kernel. A grande parte dos serviços do Kernel que podem ser executados por um processo são requisitados através do envio de uma mensagem à porta de processo em vez de uma chamada de sistema.
+A porta de bootstrap é usada para a inicialização do sistema.
+A porta de execução é usada pelo sistema para reportar os erros ao processo.
+As portas registradas são usadas para que o processo se comunique com servidores padrão.
+Algumas propriedades de um processo:
+- Um processo pode estar pronto ou bloqueado independente do estado de suas linhas de controle.
+- Cada processo contem alguns itens tais como a especificação de que processados processará sua linhas de comando, característica esta muito útil em sistemas multiprocessados. 
+
+- Cada processo tem também associado a si, um conjunto de dados estatísticos tais como , quantidade de memória consumida, tempo de processamento de cada uma de suas linhas de controle além de outras informações importantes, essas informações podem ser acessadas por outro processo, bastando para isso que o interessado envie uma mensagem para a porta de processo.
+
+
+
+>>> 19imagemcapitulo1415.jpg <<<
+
+
+
+15.2.2 Linhas de controle.
+
+As linhas de controle são as entidades ativas do MACH. Elas executam instruções e manipulam os registradores e os espaços de endereçamento. Cada linha de controle pertence exatamente a um processo.
+As linhas de controle do MACH são gerenciadas pelo Kernel, ou seja, a criação e a destruição das linhas de controle são realizadas pelo Kernel. 
+Em sistemas com um único processador, as linhas de controle usam o esquema de compartilhamento de tempo, primeiro uma roda, depois outra e assim por diante. Em sistemas multiprocessados, várias linhas de controle podem estar rodando ao mesmo tempo. Uma linha de controle, tal como um processo, pode estar pronta ou bloqueada.
+
+
+
+>>> 20imagemcapitulo1415.jpg <<<
+
+
+
+Na tabela acima temos as seis chamadas para manipulação direta das linhas de controle pertencentes ao pacote C. Existem várias implementações de controle C disponíveis no MACH, a original fazia tudo no espaço de usuário, dentro de um único processo, assim todas as linhas C compartilhavam o tempo do processador através de uma única linha de controle do Kernel.
+Uma Segunda implementação, muito melhor, usa uma linha de controle do MACH por linha C, essa linhas são escalonadas preemptivamente.
+Uma terceira implementação trabalha com uma linha de controle por processo, essa implementação só é usada quando se necessita utilizar a memória virtual.
+
+15.2.3. Escalonamento.
+
+O escalonamento no MACH, é fortemente explorado já que seu objetivo é ser um sistema operacional para máquinas multiprocessadas.
+O escalonamento de linhas de controle no MACH é baseado em prioridades, as prioridades são classificadas por números inteiros de 0 a 31, sendo 0 a prioridade mais alta, e 31 a mais baixa, esse esquema de contagem é herdado do UNIX.
+Existe uma matriz de filas de linhas prontas, associada com cada grupo de processadores. A matriz tem 32 filas que correspondem as linhas de prioridade que estão entre 0 e 31, quando uma linha ‘n’ fica pronta para ser executada, ela é colocada no final da fila ‘n’, uma linha que não esta pronta para ser executada não estará presente em nenhuma fila.
+Cada fila tem três variáveis associadas a si, a primeira variável é utilizada para a proteção da estrutura de dados, assegurando que somente um processador de cada vez poderá Ter acesso à esta estrutura.
+
+A Segunda variável contém o numero total de linhas em todas as filas, se esta variável estiver com valor 0, significa que não há nenhum trabalho a ser executado. A terceira variável é denominada de variável alerta, ela mostra qual a maior prioridade que o sistema atribui a este grupo de processadores, ficando garantido que não haverá nenhuma linha com prioridade mais alta que esta, porém a de maior prioridade pode estar em uma fila com prioridade mais baixa, Isto faz com que a busca da linha de controle com maior prioridade evite pesquisas em filas vazias
+Além das filas globais, cada processador tem sua própria fila local de linhas prontas, cada uma delas mantém enfileiradas as linhas de controle permanentemente alocadas aquele processador, como é o caso das linhas correspondentes aos drivers de dispositivos conectados fisicamente ao processador. Estas linhas só podem rodas neste processador, e sendo assim não é correto alocá-las em filas globais, pois pode ser atribuído a elas um processador “errado”.
+Para algumas aplicações é possível Ter um grande numero de linhas de controle trabalhando juntas em um mesmo problema, sendo portanto muito importante o controle detalhado do escalonamento. O Mach possui um mecanismo para dar às linhas um controle adicional sobre seu escalonamento, além dos conjuntos de processadores e das prioridades. Tal mecanismo fornece uma chamada de sistema que permite que uma linha de controle diminua a sua prioridade até o valor mínimo, por um determinado espaço de tempo, aumentando a chance de outras linha rodarem. Depois que se passou o tempo determinado, a prioridade da linha reassume o valor anterior.
+Esta chamada de sistema tem outra propriedade muito interessante, ela pode nomear seu sucessor, caso deseje, exemplo, após enviar uma mensagem para outra linha de controle, a linha transmissora pode abandonar o processador e fazer com que a linha receptora seja escolhida para rodar em seu lugar este mecanismo, é chamado de escalonamento handoff, e passa por cima das filas, o kernel o utiliza em algumas circunstancias para otimizar seu desempenho.
+
+15.3. Gerencia de memória no MACH.
+
+O MACH tem um sistema de gerenciamento de memória muito poderoso, elaborado e extremamente flexível, este gerenciamento esta baseado na paginação, e que inclui características que só são encontradas raramente em outros sistemas operacionais. Particularmente o MACH separa de maneira clara e original as partes do sistema de gerencia de memória que são dependentes da máquina daquelas que não o são.
+O aspecto que diferencia o gerenciador de memória do MACH dos demais, é a divisão de seu código em três partes.
+A primeira parte é o módulo pmap que roda no kernel, e controla a unidade de gerencia de memória (MMU).
+A Segunda parte é o código do kernel que independe da máquina onde ele esta rodando, e que trata do processamento das faltas de página, do mapeamento dos endereços e da substituição das páginas.
+A terceira parte do código roda um processo chamado de gerenciador de memória ou paginador externo, este trata da parte lógica do sistema de gerenciamento de memória.
+O kernel e o gerenciador de memória se comunicam através de um protocolo bem determinado, tornando possível que usuários venham a escrever seus próprios sistemas de gerencia de memória. Esta divisão de trabalho permite que usuários implementem sistemas de paginação especiais de forma a atender requisitos particulares. 
+
+15.3.1. Memória virtual.
+
+Os processos rodando no MACH enxergam a memória sob o ponto de vista conceitual como um espaço de endereçamento grande e linear.
+Na verdade o MACH possibilita o controle de como as paginas virtuais estão sendo usadas. Para começar o espaço de endereços pode ser usado de forma esparsa, um processo pode Ter dezenas de seções de espaço virtual em uso, cada uma delas distante vários megabytes de sua vizinha mais próxima, com grandes buracos de endereços não usados entre as seções.
+De maneira a determinar quais endereços virtuais estão em uso e quais estão livres, o MACH fornece uma forma de alocar e deslocar seções de espaço virtual, seções estão denominadas regiões. As chamadas para alocação devem especificar o endereço base e o tamanho da região, ou então apenas especificar um tamanho, deixando que o sistema encontre lugar para alocar a região. Um endereço virtual só é considerado válido se cair em uma região alocada.
+Um conceito relativo ao uso do espaço de endereço virtual é o conceito de objeto de memória, um objeto de memória pode ser uma página ou um conjunto de páginas, um arquivo ou uma outra estrutura de dados qualquer, podendo ser mapeado em qualquer parte do espaço de endereçamento virtual.
+O MACH suporte um conjunto de chamadas para tratamento do espaço de endereço virtual, as principais delas estão listadas na tabela abaixo, nenhuma delas é uma chamada de sistema no termo literal da palavra, em vez disso todas elas escrevem mensagens para a porta do processo que chamou.
+
+
+
+>>> 21imagemcapitulo1415.jpg <<<
+
+
+
+15.3.2. COMPARTILHAMENTO DE MEMÓRIA:
+
+É um dos aspectos mais importantes do Mach, não há necessidade de nenhum mecanismo especial para compartilhar objetos. Existe a possibilidade de dois ou mais processos compartilharem os mesmos objetos de memória. O compartilhamento é muito importante em sistemas com um único processador. Nos sistemas multiprocessadores, o compartilhamento de objetos entre dois ou mais processos é uma questão de importância fundamental. 
+
+Os processos cooperantes rodando em paralelo em diferentes processadores podem precisar acessar quaisquer outras estruturas de dados continuamente de forma a poderem realizar seu trabalho. É fundamental que o S.O. permita que tais recursos sejam compartilhados entre os processos. Um outro uso muito importante do conceito de compartilhamento acontece na criação do processo, cria processos através de outros já existente. Certas regiões como aquelas contendo os arquivos mapeados, podem não ser necessárias para o processo filho, isso é para alcançar todos esses objetivos, o Mach permite que processos atribuam um parâmetro de herança para cada região do seu espaço de endereços. São possíveis três situações:
+
+1) A região não é usada pelo processo filho;
+2) A região é compartilhada entre o processo protótipo e o processo filho;
+3) A região no processo filho é uma cópia da região do protótipo; 
+15.3.3. GERENTES EXTERNOS DE MEMÓRIA :
+
+Cada objeto de memória mapeado no espaço de endereços de um processo precisa ter um gerente externo para controlá-lo . As diferentes classes de objetos de memória são tratadas por gerentes de memória também diferentes. Cada um pode determinar onde colocar páginas que não estão na memória, e pode estabelecer suas próprias regras sobre o que deve acontecer aos objetos depois que eles já foram usados pelos processos. Para mapear um objeto no espaço de endereços de um processo, o mesmo deve mandar uma mensagem para um dos gerentes de memória pedindo que ele efetue o mapeamento. 
+
+Necessita de 3 portas para fazer este trabalho: 
+• Porta de Objeto: Será usada mais tarde pelo Kernel para informar ao gerente de memória sobre falta de páginas e outros eventos;
+• Porta de Controle: Criada pelo Kernel para permitir que o gerente de memória possa responder a estes eventos;
+• Porta de Identificação: Usada como uma espécie de nome para identificar o objeto, se dois ou mais endereços pertencem à mesma região, eles serão identificados pela mesma porta de identificação;
+
+A porta de objeto é escrita pelo Kernel e lida pelo gerente de memória e a porta de controle é lida pelo Kernel e escrita pelo gerente de memória.
+Se dois ou mais endereços pertencem à mesma região, eles serão identificados pela mesma porta de identificação.
+Quando o gerente de memória mapeia um objeto, ele fornece a capacidade para a porta de objeto como um dos parâmetros. O Kernel cria então as outras duas portas e envia uma mensagem para a porta de objeto, informando-a sobre as portas de controle e de identificação.
+O gerente de memória faz uma leitura na porta de objeto e nos seus blocos, o mesmo fica desocupado até que o Kernel requisite algo dele, escrevendo uma mensagem na porta de objeto, a linha de controle é liberada, recebendo a permissão para executar.
+Ao se informar sobre a falta de página, o gerente de memória verifica se a referência é legal. Se não for ele envia uma mensagem de erro. Se o objeto for um arquivo, o gerente de memória busca seu endereço correto e coloca a página em seu próprio espaço de endereço. Indicando um ponteiro da página para o Kernel.
+Existe uma linha de controle no Kernel para tratar da paginação, a qual é ativada de tempos em tempos para verificar o estado da memória.
+
+Existe também um gerente um gerente de memória default para as páginas de memória comuns.Quando um processo aloca uma região do espaço de endereços virtuais usando a chamada ALLOCATE, ele está de fato mapeando um objeto gerenciado pelo gerente default.
+Para tornar possível o funcionamento do gerente de memória externo, existe um protocolo muito rígido, que deve ser usado nas comunicações do gerente de memória do Kernel. Toda a comunicação é iniciada pelo kernel na forma de uma mensagem assíncrona para a porta de objeto pertencente a algum objeto de memória.
+
+2 Mensagens Enviadas pelo Kernel ao gerente de memória
+
+
+
+>>> 22imagemcapitulo1415.jpg <<<
+
+
+
+2.1 Mensagens Enviadas pelos Gerentes de memória ao Kernel
+
+
+
+>>> 23imagemcapitulo1415.jpg <<<
+
+
+
+15.3.4. COMPARTILHAMENTO DE MEMORIA DISTRIBUÍDA NO MACH:
+
+A idéia básica é a de ter um espaço de endereçamento virtual único e linear, que possa ser compartilhado entre processos rodando em computadores que não possuam qualquer tipo de esquema de compartilhamento de memória física. O sistema fica responsável pela localização da página e pelo envio dela à máquina onde está rodando a linha de controle que gerou a falta de página.
+
+Páginas compartilhadas são gerenciadas por um ou mais gerentes de memória especiais. A página compartilhada sempre poderá ou ser lida ou ser escrita. No caso de ela poder ser l ida, ela deve ser replicada em cada máquina. No caso de ela poder ser escrita, deve haver uma única cópia dela. O servidor DSM sempre sabe o estado da página compartilhada, e qual a máquina ou máquinas que estão ativas no momento.Caso a pagina possa ser lida o servidor tem a cópia válida da página.
+
+15.4. COMUNICAÇÃO NO MACH
+
+Tem por objetivo é suportar uma ampla variedade de mecanismos de comunicação entre processos de maneira confiável e flexível. Entre os mecanismos suportados pelo MACH está a troca de mensagem assíncronas. A comunicação entre processos é baseada na dos sistemas RIG e Accent, antecessores do MACH. A conseqüência dessa evolução fou a otimização do mecanismo para o chamado caso local, de sistemas compostos por um único nó.
+
+15.4.1. PORTAS
+
+A base de toda a comunicação no Mach é a porta. Quando uma linha de controle em um processo quer se comunicar com uma linha em outro processo, a linha transmissora escreve uma mensagem e a envia à porta, e a linha receptora obtém a mensagem também através da porta. Somente processos autorizados podem se comunicar nelas. As portas devem ser utilizadas diferentemente para enviar e outra para receber a resposta.
+As portas suportam cadeias de mensagens e não cadeias de bytes, o software de alto nível pode ignorar as fronteiras entre as mensagens. A destruição da porta pode se implícita quando todos os processos que estiverem usando uma determinada porta terminarem seu processamento.
+É possível ler um conjunto de portas, mas não escrever nele. A implementação atual coloca em uma única fila todas as mensagens para o conjunto de portas, de forma que existe muito pouca diferença entre receber uma mensagem de uma porta ou de um conjunto de portas.
+O mecanismo de porta também é usado na comunicação com os drivers de entrada e saída.
+
+
+
+>>> 24imagemcapitulo1415.jpg <<<
+
+
+
+3 15.4.1.1. Capacidades
+
+O kernel mantém para cada processo uma tabela de todas as portas às quais ele tem acesso. Os processos referenciam as portas através de suas posições nesta tabela. Essas entradas são na verdade capacidades clássicas, vamos chamar a tabela contendo as capacidades de lista de capacidades.
+Cada processo tem exatamente uma lista de capacidade. Quando uma linha de controle pede ao kernel a criação de uma porta, este, ao criar a porta, coloca uma entrada para ela na lista de capacidades do processo ao qual a linha pertence. O valor inteiro recebido pela linha para identificar a capacidade normalmente é um índice da lista de capacidade. O número em questão é sempre inteiro de 32 bits, nunca uma cadeia de caracteres.
+A capacidade possui um ponteiro para a porta e um campo de direitos. Existem três tipos de direitos:
+RECEIVE: Permite que seu possuidor se habilite a ler as mensagens da porta;
+SEND: Permite que seu possuidor envie mensagem para uma porta específica;
+SEND-ONCE: Permite que seu possuidor envie uma única mensagem à porta específica;
+
+Os nomes de capacidades só tem significado dentro de um único processo. É possível que dois processos tenham acesso a mesma porta. Uma lista de capacidades é vinculada a um processo específico. Quando o processo termina, sua lista de capacidades é removida.
+
+Se diferentes linhas de controle de um processo adquirirem a mesma capacidade várias vezes, só haverá necessidade de uma única entrada na lista de capacidades. Quando a capacidades for apagada, o controlador é decrementado. Somente quando ele chega a zero é que é possível remover a capacidade correspondente da lista de capacidades. Este mecanismo é importante em função da possibilidade de diferentes linhas de controle adquirirem e liberarem capacidades sem a necessidade de informar isto umas as outras.
+A entrada na lista de capacidades é composta de um dos seguintes quatro itens:
+1 – Uma capacidade para uma porta: já falada;
+2 – Uma capacidade para um conjunto de portas: Permite que uma linha leia de um conjunto de portas sem se preocupar com ofato de esta capacidade ser de mais de uma porta, em vez de uma única;
+3 – Uma entrada nula: Indica que a entrada correspondente a ela não está em uso atualmente;
+4 – Um código indicativo de que a porta que lá estava foi removida: marca as portas que não existem mais;
+
+15.4.1.2. Primitivas para gerência de portas
+
+O mach possui em torno de 20 chamadas de sistema para gerenciar as portas. A 1ª porta chamada de Allocate, cria uma nova porta e coloca sua capacidade na lista de capacidades;
+As duas seguintes desfazem o trabalho realizado pela primeira; 
+Destroy remove a capacidade; 
+Já a Deallocate decrementa o contador associado a capacidade;
+
+A Extract_Rith permite que uma linha de controle selecione uma capacidade da lista de capacidades de outro processo.
+A chamada Insert_Right permite que um processo pegue uma de suas próprias capacidades e a coloque na lista de capacidade de seu filho.
+A chamada Move_Member é usada para gerenciar o conjunto de portas.
+A Set_qlimit determina o numero de mensagens que a porta pode guardar;
+
+15.4.2. ENVIO E RECEPÇÃO DE MENSAGENS
+
+O Mach possui uma chamada de sistema que serve para o envio e para a recepção de mensagens. A qual faz parte de um procedimento de uma biblioteca de programas denominado Mach_msg, possui 7 parâmetros e um grande numero de opções.
+A chamada Mach_Msg é usada para enviar para uma porta a mensagem, fazendo com que a entidade chamadora possa modificar o buffer de mensagens sem afetar os dados enviados.
+Um exemplo de uso da chamada mach_msg:
+
+(Mach_msg($hdr,options,send_size,rcv_size,rcv_port,timeout,notify_port);
+
+Onde: HDR é um ponteiro para a mensagem a ser enviada
+Mach_call Options contém um bit que especifica se a mensagem deve ser enviada e outro para especificar se ela dever ser recebida.
+Rcv_size e Send_size informam o tamanho da mensagem que sai e quantos bytes estão disponíveis para armazenamento da mensagem que entra.
+Rcv_port é usado para a recepção de mansagens.
+
+3.1 15.4.2.1. Formato da Mensagem no Mach 
+
+
+
+>>> 25imagemcapitulo1415.jpg <<<
+
+
+
+Se assemelham vagamente aos gerenciadores externos de memória. Existe um servidor de mensagem de rede rodando em cada máquina de um sistema distribuído Mach.Esses servidores tentam simular de melhor maneira possível o ambiente de comunicação intramáquina, é um processo com diversas linhas d controle que possui uma ´serie de funções. Um modelo básico é ilustrado na figura próxima 15.20, observando a figura veremos que antes que um cliente que esteja na máquina A possa contactar a máquina B deve ser criada um porta A que vai funcionar como procuradora do servidor. O servidor Tem a capacidade RECEIVE para esta porta. Esta Porta é representada por um pequeno quadrado dentro do Kernel de A. na figura 15.20. 
+
+
+
+>>> 26imagemcapitulo1415.jpg <<<
+
+
+
+3.1.1.2 O Mach tem vários servidores que rodam acima dele. O mais importante desses programas é o que contem o código de sistemas de arquivos, este é o emulador do Unix que é constituída por duas partes: o servidor Unix e bibliotecas de chamadas para emulação. Quando o sistema é inicializado o kernel é instruído pelo Unix para segurar todas as interrupções de chamada de sistema e direciona-as para o processo Unix responsável pela chamada. O método de saltar kernel para o usuário é chamado de MECANISMO DE TRAMPULIM.
+3.1.1.3 
+3.1.1.4 Quando recebe o controle a biblioteca verifica qual chamada foi feita, através dos registradores. 
+Quando o processo init gera filhos, estes herdam a biblioteca de emulação e mecanismo e tampulim. 
+3.1.1.5 O servidor Unix é implementado como um conjunto, apesar de algumas dessas linhas serem temporizadores, etc. A biblioteca BSD executa interrupções de emuladores residentes no processo Unix. A biblioteca de emulação se comunica com essas linhas e o mecanismo de comunicação entre o processo Mach.
+3.1.1.6 Quando chega uma mensagem para o servidor Unix, esta é aceita por uma linha d controle pelo qual o processo veio, é extraído o numero de chamada e os parâmetros, executa a chamada e envia a resposta.
+
+
+
+>>> 27imagemcapitulo1415.jpg <<<
+
+
+
+3.1.1.10 Para satisfazer a chamada da biblioteca READ por ex: a biblioteca de emulação localiza os bytes a serem lidos no arquivo mapeado. Localiza o buffer do usuário e faz uma cópia do 1º para o ultimo.Se durante o loop as paginas do arquivo não estiverem n memória vão ocorrer falhas de pagina que obrigam o mach a enviar mensagem ao gerente externo e memória para recuperar o arquivo Unix mapeado. O gerenciador é chamado paginadores de nó-I. Embora o método Unix pareça incomodo ele é vantajoso. 
+3.1.1.11 
+3.1.1.12 15.6 COMPARAÇÃO DO AMOEBA COM O MACH
+3.1.1.13 Apesar de possuírem alguns pontos em comum, eles diferem em muitos detalhes técnicos.
+3.1.1.14 
+3.1.1.15 15.6.1 Filosofia
+
+3.1.1.16 Possuem filosofias diferentes, o amoeba ano foi baseado em nenhum sistema existente para ser usado em um conjunto de processadores local; o Mach descendente direto do Rig 
+3.1.1.17 O Amoeba baseia-se no modelo do pool de processadores, não há conceito de máquina Home. E mach faz com que o usuário se log em uma máquina específica e rode todos os seus programas por default. 
+3.1.1.18 Outra visão filosófica é microkernel. O amoeba diz a perfeição não é alcançada quando não houver nada mais a acrescentar mas quando nada houver a descartar.O mach deseja a maior parte possível de aplicações. O amoeba foi otimizado para rede e o Mach para local.
+3.1.1.19 
+3.1.1.20 16.6.2 Objetos
+3.1.1.21 São conceitos centrais do amoeba, a maioria são definidos pelo usuário
+
+
+
+>>> 28imagemcapitulo1415.jpg <<<
+
+
+
+3.1.1.29 Os únicos objetos suportados pelo mach são os processos, as linhas d controle, as portas e os objetos de memória, em ambos sistemas os projetos são identificados, certificados e protegidos por capacidades. O mach tem capacidades mas somente para portas. O amoeba não.
+3.1.1.30 15.6.3. Processos
+
+3.1.1.31 Ambos suportam processos com diversas linhas de controle e as linhas são gerenciadas e escalonadas pelo kernel, mas podem ser construídos pacotes pelo usuário. O amoeba não permite controle do usuário sobre o escalonamento das linhas, o mach permite que sejam definidas por software as propriedades e possui um suporte mais elaborado para sistemas multiprocessadores. N mach normalmente os processos são inicializados na máquina home do usuário.
+3.1.1.32 
+3.1.1.33 16.6.4 Modelo de Memória 
+3.1.1.34 O amoeba baseia-se em segmentos de tamanho de variável. 
+3.1.1.35 O mach baseia-se nos objetos de memória. 
+3.1.1.36 Tanto o mach quanto o amoeba suportam o compartilhamento de memória distribuída, mas fazem isso de maneira diferente.
+3.1.1.37 
+3.1.1.38 
+3.1.1.39 15.6.5. Comunicação 
+3.1.1.40 O amoeba suporta tato a chamadas remotas a procedimento a comunicação em grupos como primitivas fundamentais As chamadas remotas são endereçadas a portas(endereços de serviço);
+3.1.1.41 No mach a comunicação é de processo para porta em vez de processo para processo. As mensagens do mach podem ser simples ou complexas e usa o esquema copy-on-write, o amoeba não possui tal esquema.
+3.1.1.42 No caso das redes o mach usa os protocolos convencionais como TCP/IP.
+3.1.1.43 15.6.6. Servidores
+3.1.1.44 o amoba tem uma grande variedade de servidores para funções específicas incluindo a gerencia de arquivos e de diretórios, replicações de objetos, e balanceamento de carga de trabalho. Todos eles baseiam-se em objetos e capacidades. Suporta objetos replicados via diretórios contendo conjunto de capacidades. A emulação Unix é feita no código fonte e não esta completa.
+3.1.1.45 O mach tem um único servidor que roda o Unix BSD como programa de aplicação. Ele fornece uma emulação compatível, uma grande coisa para o software existente, e que esta rodando sem que o código fonte esteja disponível.Além deste Existem também outras servidores.
+
+15.6.7.RESUMO
+
+3.1.1.46 O mach é um sistema operacional estruturado em torno de um microkernel. Ele foi projetado com o objetivo de formar uma base para a construção de novos sistemas operacionais e para a emulação de sistemas existentes. Ele também é considerado uma opção para extensão do Unix a sistemas multiprocessadores e a sistemas distribuídos. 
+
+
+
+>>> 29imagemcapitulo1415.jpg <<<
+
+>>> 30imagemcapitulo1415.jpg <<<
+
+
+
+University of Washington - Computer Science & Engineering
+http://www.cs.washington.edu/affiliates/abstracts/systems/systems.abstracts.html
+
+BAL, Henry E. – Programming Distributed System
+http://www.cs.vu.nl/~bal/PDS.html
+05/Nov/2002.
+
+TANENBAUM, Andrew. - Globe Project
+http://www.cs.vu.nl/~steen/globe/
+
+Amoeba Project
+http://www.cs.vu.nl/vakgroepen/cs/amoeba_papers.html
+
+Federal University of Rio Grande do Sul – UFRGS - Institute of Informatics
+Group of Parallel and Distributed Processing – GPPD
+http://www-gppd.inf.ufrgs.br/
+
+KAASHOEK, M.F., and TANENBAUM, A.S.: "Efficient Reliable Group Communication for Distributed Systems" (submitted for publication, 1994) 
+
+KAASHOEK, M.F., van RENESSE, R., van STAVEREN, H., and TANENBAUM,A.S.: "FLIP: an Internetwork Protocol for Supporting Distributed Systems," ACM Transactions on Computer Systems, pp. 73-106, Feb. 1993. 
+
+KAASHOEK, M.F., TANENBAUM, A.S., and VERSTOEP, K.: "Using Group Communication to Implement a Fault-Tolerant Directory Service," Proc Thirteenth Int'l Conf. on Distributed Computing Systems, IEEE, pp. 130-139, 1993.
+
+KAASHOEK, M.F., TANENBAUM, A.S., and VERSTOEP, K.: "Group Communication in Amoeba and its Applications," Distributed Systems Engineering Journal, vol 1, pp. 48-58, July 1993. 
+
+KAASHOEK, M.F., TANENBAUM, A.S., and Verstoep, K.: "A Comparison of Two Paradigms for Distributed Computing," Proc. Fifth ACM SIGOPS Workshop, Le Mont St. Michel, France, 1992. 
+
+TANENBAUM, A.S., KAASHOEK, M.F., RENESSE, R. van, e BAL, H.: "The Amoeba Distributed Operating System-A Status Report," Computer Communications, vol. 14, pp. 324-335, July/August 1991. 
+
+DOUGLIS, F., KAASHOEK, M.F., TANENBAUM, A.S., and OUSTERHOUT, J.K.: "A Comparison of Two Distributed Systems: Amoeba and Sprite," Computing Systems, vol. 4, No. 3, pp. 353-384, Dec. 1991. 
+
+TANENBAUM, A.S., RENESSE, R. van, STAVEREN, H. van., SHARP, G.J., MULLENDER, S.J., JANSEN, A.J., and ROSSUM, G. van: "Experiences with the Amoeba Distributed Operating System," Commun. ACM, vol. 33, pp. 46-63, Dec. 1990. 
+
+RENESSE, R. van, STAVEREN, H. van, and TANENBAUM, A.S.: "Performance of the Amoeba Distributed Operating System," Software--Practice and Experience, vol. 19, pp. 223-234, March 1989. 
+
+BAALBERGEN, E.H.: "Design and Implementation of Parallel Make," Computing Systems, vol. 1, pp. 135-158, Spring 1988. 
+TANENBAUM, A.S., MULLENDER, S.J., and RENESSE, R. van: "Using Sparse Capabilities in a Distributed Operating System," Proc. Sixth Int'l Conf on Distributed Computing Systems, IEEE, pp. 558-563, 1986.
+
+http://www.cs.unc.edu/~sharma/professional/papers/amoeba/node13.html
+
+Universidade Federal Santa Catarina
+
+http://www.inf.ufsc.br/ine5347/manu.html
+http://www.inf.ufsc.br/ine5347/mari.html
+
+

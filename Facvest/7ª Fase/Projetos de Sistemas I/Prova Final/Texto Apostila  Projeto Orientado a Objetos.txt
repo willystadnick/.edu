@@ -1,0 +1,108 @@
+Projeto orientado a objetos
+Projetar sistemas usando objetos auto-contidos e classes de objetos.
+
+Objetivos
+Explicar como um projeto de software pode ser representado como um conjunto de objetos que interagem e gerenciam o seu próprio estado e operações.
+Descrever atividades no processo de projeto orientado a objetos.
+Apresentar diversos modelos que descrevem um projeto orientado a objetos.
+Mostrar como a UML pode ser usada para representar estes modelos.
+
+Características do POO
+Objetos são abstrações de entidades do mundo real ou do sistema e são auto-gerenciáveis.
+Objetos são independentes e encapsulam estado e a representação das informações.
+A funcionalidade do sistema é expressa em termos de serviços de objetos.
+Áreas de dados compartilhadas são eliminadas. Os objetos se comunicam por envio de mensagens.
+Os objetos podem ser distribuídos e podem executar sequëncialmente ou em paralelo.
+
+Vantagens do POO
+Manutenção mais fácil. Os objetos podem ser compreendidos como entidades stand-alone.
+Os objetos podem ser vistos como componentes reutilizáveis.
+Em alguns sistemas, existe um mapeamento óbvio das entidades do mundo real para objetos do sistema.
+
+Desenvolvimento OO
+Análise, projeto e programação orientados à objetos são atividades relacionadas, mas distintas.
+A Análise Orientada a Objetos dedica-se a desenvolver um modelo de objetos do domínio da aplicação.
+O Projeto Orientado a Objetos preocupa-se em desenvolver um sistema orientado a objetos para implementar requisitos.
+A Programação Orientada a Objetos preocupa-se em realizar um projeto de software usando uma linguagem de programação 00, como Java ou C++.
+
+Objetos e classes de objetos
+Objetos são entidades em um sistema de software que representam instâncias do mundo real e entidades do sistema.
+Classes de objetos são modelos para objetos. Elas podem ser usadas para criar objetos. Classes de objetos podem herdar atributos e serviços de outras classes de objetos.
+
+Um processo de projeto OO
+Definir o contexto e os modos de uso do sistema
+Projetar a arquitetura do sistema
+Identificar os principais objetos do sistema
+Desenvolver modelos de projeto
+Especificar interfaces de objetos
+
+Descrição de um sistema meteorológico
+Um sistema de mapeamento meteorológico é necessário para gerar mapas meteorológicos regularmente, utilizando dados coletados a partir de estações meteorológicas remotas, sem que funcionários estejam presentes, e de outras fontes de dados, como observadores de tempo, balões e satélites meteorológicos. As estações meteorológicas transmitem seus dados ao computador da área em resposta a uma requisição dessa máquina.
+O sistema de computador da área valida os dados coletados e faz a integração dos dados a partir de diferentes fontes. Os dados integrados são arquivados e, com os dados desse arquivo e um banco de dados de mapas digitalizados, é criado um conjunto de mapas meteorológicos locais. Os mapas podem ser impressos para distribuição em uma impressora especial ou ser exibidos em diferentes formatos.
+
+Descrição da estação meteorológica
+Uma estação meteorológica é um pacote de instrumentos controlados software que coleta dados, executa algum processamento de dados e transmite esses dados para processamento adicional. Os instrumentos incluem termômetros de terra e ar, um anemômetro, uma biruta, um barômetro e um pluviômetro. Os dados são coletados a cada cinco minutos.
+Quando um comando é enviado para transmitir os dados meteorológicos, a estação processa e resume os dados coletados. Os dados resumidos são transmitidos para o computador de mapeamento quando uma requisição é recebida.
+
+Contexto do sistema e modelos de uso
+Desenvolver uma compreensão dos relacionamentos entre o software que está sendo projetado e o seu ambiente externo.
+Contexto do sistema: Um modelo estático que descreve outros sistemas no ambiente. Usar um modelo de subsistema para mostrar outros sistemas.
+Modelo de uso do sistema: Um modelo dinâmico que descreve como o sistema interage com o seu ambiente. Usar casos de uso para mostrar interações.
+
+Descrição de uso
+Sistema: Estação Meteorológica.
+Caso de Uso: Relatar.
+Agentes: Sistema de coleta de dados sobre o clima, Estação Meteorológica.
+Dados: A estação meteorológica envia para o sistema de coleta de dados climáticos um resumo dos dados sobre o clima que foram coletados a partir de instrumentos, no período de coleta. Os dados enviados referem-se às temperaturas máximas, mínimas e médias do solo e do ar; à pressão máxima, mínima e média do vento; à precipitação total das chuvas, e à direção do vento, conforme a amostragem a cada intervalo de 5 minutos.
+Estímulo: O sistema de coleta de dados sobre o clima estabelece um link de modem com a estação meteorológica e requisita a transmissão dos dados.
+Resposta: Os dados resumidos são enviados para o sistema de coleta de dados sobre o clima.
+Comentários: Em geral, as estações meteorológicas recebem um pedido de relatório por hora, mas essa freqüência pode diferir de uma estação para outra e ser modificada no futuro.
+
+Identificação dos objetos
+Identificar objetos (ou classes de objetos) é a parte mais difícil do projeto orientado a objetos.
+Não há uma "fórmula mágica" para identificar objetos. Isso reside na habilidade, experiência e conhecimento de domínio dos engenheiros de sistema.
+Identificação de objetos é um processo iterativo. Dificilmente se consegue acertar da primeira vez.
+
+Abordagens para a identificação
+Usar uma abordagem gramatical, baseada em uma descrição do sistema em linguagem natural (usado no método Hood).
+Basear a identificação em coisas tangíveis do domínio da aplicação.
+Usar uma abordagem comportamental e identificar objetos com base em quais objetos participam de quais comportamentos.
+Usar uma análise baseada em cenários. São identificados os objetos, atributos e métodos em cada cenário.
+
+Classes de objetos da estação meteorológica
+Termômetro de solo, Anemômetro, Barômetro: Objetos do domínio da aplicação que são objetos de "hardware" relacionados aos instrumentos do sistema.
+Estação meteorológica: A interface básica da estação meteorológica para o seu ambiente. Ela, portanto, reflete as interações identificadas no modelo de casos de uso.
+Dados meteorológicos: Encapsula os dados resumidos dos instrumento.
+
+Modelos de projeto
+Modelos de projeto mostram os objetos e classes de objetos e os relacionamentos entre essas entidades.
+Modelos estáticos descrevem a estrutura estática do sistema em termos de classes de objetos e relacionamentos
+Modelos dinâmicos descrevem as interações dinâmicas entre objetos.
+
+Exemplos de modelos de projeto
+Modelos de subsistema, que mostram agrupamentos 1ógicos de objetos em subsistemas coerentes.
+Modelos de seqüência, que mostram a seqüência das interações entre objetos.
+Modelos de máquina de estados, que mostram como objetos individuais trocam seu estado em resposta a eventos.
+Outros modelos incluem modelos de caso de uso, modelos de agregação, modelos de generalização, etc.
+
+Modelos de subsistema
+Mostra como o projeto é organizado em grupos de objetos logicamente relacionados.
+Em UML, isso é mostrado com o uso de pacotes (packages) uma construção de encapsulamento. Isso é um modelo lógico. A organização real dos objetos no sistema pode ser diferente.
+
+Modelos de seqüência
+Modelos de seqüência mostram a seqüência das interações que acontecem entre os objetos.
+Os objetos são organizados horizontalmente no topo do diagrama.
+O tempo é representado verticalmente, de maneira que o diagrama seja lido de cima para baixo.
+As interações são representadas por setas rotuladas. Estilos diferentes de setas representam tipos diferentes de interação.
+Um retângulo fino na linha de vida de um objeto representa o tempo em que o objeto é o objeto controlador no sistema.
+
+Pontos principais
+Projeto OO é uma abordagem na qual cada componente de projeto têm o seu próprio estado e operações privados.
+Os objetos devem ter operações construtoras e de inspeção. Eles fornecem serviços para outros objetos.
+Os objetos podem ser implementados seqüencialmente ou concorrentemente.
+A UML fornece diversas notações para definir diferentes modelos de objetos.
+
+Pontos principais
+Uma série de modelos diferentes pode ser produzida durante um processo de projeto orientado a objetos. Isso inclui modelos do sistema estáticos e dinâmicos.
+As interfaces dos objetos devem ser definida com precisão usando, por ex., uma linguagem de programação como Java.
+O projeto OO simplifica a evolução do sistema.

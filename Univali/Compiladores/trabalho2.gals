@@ -1,0 +1,83 @@
+#Options
+GenerateScanner = true
+GenerateParser = false
+Language = Java
+ScannerName = Lexico
+ScannerCaseSensitive = true
+ScannerTable = Full
+Input = Stream
+#RegularDefinitions
+LETRA : [A-Za-z]
+DIGITO : [0-9]
+PONTO : "."
+VIRGULA : ","
+UNDER : "_"
+ASCII : [\000-\255]
+ESPECIAL : [\ \t\n\r]
+COMENTBLOCO : "/*" [^"*"]* "*/"
+COMENTLINHA : "/" "/" {ASCII}* {ESPECIAL}
+
+#Tokens
+ : {ESPECIAL}*
+ :! {COMENTBLOCO}
+ :! {COMENTLINHA}
+
+//palavras reservadas
+main : "main"
+do : "do"
+this : "this"
+description : "description"
+define : "define"
+as : "as"
+constant : "constant"
+variable : "variable"
+is : "is"
+equal : "equal"
+integer : "integer"
+float : "float"
+character : "character"
+logic : "logic"
+assign : "assign"
+get : "get"
+show : "show"
+put : "put"
+avaliate : "avaliate"
+true : "true"
+untrue : "untrue"
+
+//simbolos especiais
+abrechave : "["
+fechachave : "]"
+abreparenteses : "("
+fechaparenteses : ")"
+virgula : ","
+ponto : "."
+
+//operadores aritmeticos
+soma : "+"
+subtracao : "-"
+multiplicacao : "*"
+divisao : "/"
+exponenciacao : "**"
+divisaoint : "%"
+restodiv : "%%"
+
+//operadores relacionais
+igual : "=="
+diferente : "!="
+menor : "<<"
+maior : ">>"
+menorigual : "<<="
+maiorigual : ">>="
+
+//operadores logicos
+negacao : "!"
+elogico : "&"
+oulogico : "|"
+
+identificador : {LETRA} {DIGITO}? ({LETRA}|{UNDER})*
+inteiro : {DIGITO}+
+real : {DIGITO}+ ({PONTO}|{VIRGULA}) {DIGITO}+
+//ascii : {ASCII}+
+
+

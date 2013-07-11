@@ -1,0 +1,706 @@
+2.2.3 Projeto de Software
+Considerando o ciclo de vida clássico, o projeto de software é a atividade realizada após a fase de análise (análise de sistemas e/ou análise de requisitos) e, conseqüentemente, antes da fase de codificação.
+Independente do paradigma utilizado (clássico, espiral, prototipação, etc), esta fase é essencial.
+Pode ser considerada, portanto, como o primeiro passo para a fase de desenvolvimento de um software. 
+O objetivo desta etapa é construir modelos ou representações do software que será desenvolvido, para guiar a fase de codificação. 
+Isso é feito analisando e escolhendo a estrutura de dados ideal, a melhor modularização, a arquitetura geral e a interface com o usuário.
+Para isso, combina-se: intuição e julgamento baseado em experiências anteriores do projetista em construir entidades semelhantes.
+Existem diversas técnicas de projeto de software e também diversos tipos:
+Projeto simplificado / Projeto orientado ao fluxo de dados / Projeto orientado a objeto / Projeto orientado a dados / Projeto de interface com o usuário / Projeto de tempo real
+Nesta disciplina veremos apenas alguns conceitos fundamentais, comuns a todas as técnicas.
+Nesta fase produz-se quatro tipos de documentos, ou um documento que abrange quatro tópicos:
+Projeto de Dados / Projeto Arquitetural / Projeto Procedimental / Projeto de Interface
+Projeto de Dados – Engloba todos os dados que serão dados como entrada ou serão gerados como saída do sistema, indicando as estruturas de dados que serão utilizadas para cada um deles.
+Projeto Arquitetural – Define com detalhes o relacionamento entre os grandes componentes estruturais do software, se for o caso.
+Projeto Procedimental – Descrição procedimental do comportamento do software. Já similar à codificação.
+Projeto de Interface – Consiste simplesmente em definir o layout e os mecanismos de interação entre homem e máquina. 
+
+2.2.3.1 Projeto de Dados
+Nesta fase se analisa com mais detalhes todos os dados que serão manipulados pelo software, quer de entrada, quer de saída, quer internos.
+Define-se, então, a “estrutura” de todos esses dados.
+É importante definir durante a fase de projeto a estrutura de dados, pois dela vai depender a organização, os métodos de acesso e as alternativas de processamento de informações.
+A escolha da estrutura de dados ideal pode ser complicada, dependendo muito da experiência anterior do projetista.
+Diversos livros existem para auxiliar o projeto de dados de software.
+Princípios utilizados para se especificar e projetar dados:
+Analisar sistematicamente a especificação de requisitos e o comportamento dos dados
+Identificar não só possíveis estruturas de dados, mas identificar as operações a serem executadas em cada uma delas.
+Escolher uma linguagem de programação.
+Estabelecer um dicionário de dados, no qual será descrito cada um dos dados, juntamente com a estrutura que será utilizada e as operações executadas e, se for o caso, seu relacionamento com outros dados.
+Identificar quais dados serão utilizados por quais módulos.
+Possíveis estruturas de dados:
+Item escalar – representa um único elemento de informação endereçado por um identificador. Exemplos:
+var i: integer; | var x: bool; | var c: char;
+Vetor seqüencial – representam um conjunto de itens escalares organizados como um grupo ou uma lista. Exemplo:
+Text: array[1..100] of string; | A: array[1..10] of integer;
+Espaço n-dimensional – representa a amplicação de um vetor para dois, três ou mais dimensões. O mais comum são as matrizes bidimensionais. Exemplos:
+A: array[1..100, 1..100] of integer; | B: array[1..20,1..100] of char;
+Listas – é uma estrutura de dados que, na prática, funciona como um array. Com a diferença que, em cada posição, podem ser armazenados vários dados, por exemplo, três váriáveis. O conjunto de dados armazenado em cada posição é chamado de nó. A lista é formada, portanto, por um conjunto de dados. Pode-se adicionar itens tanto no início, no final quanto no meio da lista.
+Estruturas mais complexas (árvores, banco de dados), etc.
+
+2.2.3.2 Projeto Arquitetural
+O objetivo principal do projeto da arquitetura  é estabelecer uma estrutura modular e representar os relacionamentos de controle entre os módulos.
+Secundariamente, o projeto da arquitetura estabelece quais módulos deverão interagir com o usuário, tanto para entrada quanto saída de dados.
+Para isso, podem ser utilizados diagramas ou outros tipos de esquematização.
+Por exemplo, pode se iniciar o projeto da arquitetura com um DCA e conseqüentes DFAs e, em seguida, detalhá-los, indicando estruturas de dados envolvidas.
+
+2.2.3.3 Projeto Procedimental
+O projeto procedimental já é uma pré-codificação. O projetista descreve, em linguagem algorítmica (ou linguagem natural, mesmo), o comportamento do software.
+Deve-se utilizar técnicas de programação estruturada, utilizando portanto sequências, condições e repetições, além de funções e módulos.
+Blocos de código facilitam a compreensão humana e, conseqüentemente, o teste e a manutenção do software.
+Exemplo:
+Repeat
+mostrar a tela 1, contendo as opções ao usuário
+Esperar o usuário escolher uma das opções
+Se opção 1 então
+mostrar tela número 2
+…….
+Senão se opção 2 então
+mostrar tela número 3
+…
+Senão se opção 5 encerrar o programa    
+Fim do repeat
+
+2.2.3.4 Projeto de Interface
+O projeto de interface consiste em gerar três tipos de dados: todas as possíveis telas que serão apresentadas ao usuário.
+Todos os dados que deverão ser dados como entrada ao sistema pelo usuário e a interface de aquisição de dados (digitação em tempo de execução? Arquivo?).
+Todos os dados que serão devolvidos como saída ao usuário e a interface de saída (Arquivo? Mostrados na tela?)
+Deve-se lembrar que o projeto de interface deve ser tratado de forma diferenciada quando se utiliza prototipação.
+
+2.2.4 Codificação
+Esta etapa, também chamada de “implementação”, é a mais central do processo de engenharia de software, pois é quando o software é efetivamente construído.
+Para isso, utiliza-se o projeto desenvolvido na fase anterior.
+A fase de codificação pode abranger desde a escolha de uma linguagem de programação e só termina quando o compilador utilizado gera um código executável funcional. 
+Embora a seguir seja executada uma fase de testes, nesta fase também são feitos testes básicos, só para garantir que o software funciona de forma geral.
+
+2.2.4.1 Estilos de Programação
+Embora existam alguns procedimentos a serem seguidos durante a codificação, de uma forma geral ela é feita conforme o “gosto” do programador.
+Alguns preferem começar por partes conhecidas, que eles já sabem codificar, para só então partir para as estruturas mais complexas.
+Outros preferem ir direito para aquilo que não conhecem, para depois só ficarem faltando as partes mais simples.
+Outros ainda seguem uma ordem razoavelmente seqüencial. Pegam o projeto e vão codificando página a página.
+Independentemente do estilo, algumas coisas devem estar sempre em mente, como por exemplo a documentação.
+
+Documentação
+O que é? Uma explicação sobre como o software funciona.
+Pode abranger tanto notas explicativas colocadas ao longo do código (documentação interna), como um manual que o explique (externa), ou ambos.
+Por que documentar?
+Talvez seja necessário corrigir ou modificar este software. E, após algum tempo, nem o próprio programador se lembra exatamente do funcionamento do software, do porquê algumas escolhas foram feitas.
+Talvez o responsável pelas correções/modificações não seja quem codificou o software. Portanto, o código deve ser o mais fácil de entender possível e documentado, para que outros possam entender.
+Ainda que não se pense no futuro, nas grandes empresas, dificilmente um software será produzido por uma única pessoa. Você trabalhará em equipe com outras pessoas, e essa pessoas também precisarão entender seu código.
+Mesmo que você seja o único responsável por codificar, talvez você precise explicar o funcionamento para seus superiores, ou eles queiram entender o que você fez e por que você o fez como fez.
+Ou ainda você é o responsável por codificar, enquanto outras pessoas são responsáveis por testar.
+No caso de documentação interna, em que lugares colocar informaçoes?
+Colocar informações no início de cada procedimento, de cada função, de cada grupo de repetições (repeat-until, do-while,etc)
+Que tipo de informações devo colocar?
+Colocar qual o objetivo principal do conjunto de instruções
+Explicar como as variáveis são utilizadas nesse bloco de código
+Dados gerais, como nome do programador e data de modificação.
+Cuidados adicionais
+Colocar nomes auto-explicativos em variáveis e funções. 
+Suponha um programa que implemente uma calculadora. Variáveis com os nomes ‘dividendo’ e ‘divisor’ são bastante fáceis de entender, já variáveis com os nomes ‘x’ e ‘y’ não dizem muita coisa.
+Estudos já indicaram que, mesmo para programas pequenos, identificadores (nomes) significativos melhoram a compreensão.
+No entanto, deve-se usar o bom senso. Nomes longos demais prejudicam a visualização, levando a linhas demasiadamente extensas. Além disso, nomes longos são muito mais propensos a erros de digitação.
+Exemplo de documentação:
+//**********************************************************//
+//COMPONENTE PARA ENCONTRAR A INTERSECÇÃO ENTRE DUAS LINHAS
+//Nome do componente: encontra_int
+//Programador: Fulano da Silva
+//Versão: 1.2
+//Data da última modificação: 02/10/2002
+//Chamada do procedimento: encontra_int(i1,f1,i2,f2,p1,p2,flag);
+//Dados de entrada: i1 e f1 – coordenadas da primeira linha 
+//                              i2 e f2 – coordenadas da segunda linha
+//Dados de saída: flag – recebe 1 se linhas são paralelas
+//                                 - recebe 0 se linhas se interceptam
+//                          p1 e p2 – ponto de intersecção entre as linhas
+//**********************************************************//
+No caso de documentação externa, como proceder?
+Criar um documento (escrito, impresso) que explique como o programa funcione.
+Que tipo de informações devo colocar?
+Diagramas que expliquem o relacionamento entre os módulos.
+Explicar o modo como os diversos módulos do sistema se relacionam, indicando variáveis compartilhadas ou que são entrada/saída de um módulo.
+Explicar de forma geral a função de cada módulo.
+Descrição geral do algoritmo utilizado em cada bloco ou módulo.
+Descrição dos dados, incluindo seu nomes, função, localização (em qual módulo foi declarado) e local de utilização (quais módulos ou funções utilizam o dado).
+Declaração de dados
+O que é? Aquela parte do programa em que você define as variáveis que vai usar, indicando nome para elas.
+Como proceder?
+Desde que não prejudique a eficiência do seu código, declare todas as variáveis no começo de cada módulo, função ou procedimento.
+Agrupe variáveis externas / Agrupe variáveis de mesmo tipo
+Se uma estrutura de dados for complexa, inclua um comentário só para ela. 
+Exemplo de declaração:
+#include <errno.h>
+#include <vcl.h>
+#include <io.h>
+#include "Unit1-principal.h"   
+#include "Unit2-estatisticas_iniciais.h" 
+#include "Unit3-estatisticas_finais.h“
+extern int errno;
+int num_max_heu; //número máximo de heurísticas por sentença
+int prio_heu;    //heurísticas de qual prioridade serão aplicadas  
+int seleciona=0; //indica se o usuário já selecionou um texto UNL
+                 //valor 1 - um texto
+                 //valor 2 - varios textos
+                 //valor 3 - uma sentenca
+Construção de Instruções
+O que é? O modo como você codifica as instruções
+Como proceder? Levar em consideração eficiência x legibilidade
+Exemplo em C:
+y = x>9? 100: 200; | If (x>9) y = 100; | Else y = 200;
+Entrada/Saída
+O que é? Dados que o usuário fornece ao programa (abrindo um arquivo, ou digitando no teclado) e dados que o programa fornece ao usuário (por exemplo, mensagens na tela)
+Como proceder? De um modo geral, os dados de entrada/saída são especificados na fase de projeto
+Nesta fase, o programador precisa apenas tomar alguns cuidados:
+Verificar a compatibilidade de tipo de toda entrada de dados.
+Dar informações claras ao usuário sobre os dados que devem ser fornecidos ao software
+Dar informações claras quando os dados fornecidos não estiverem corretos
+Usar estruturas dinâmicas, de forma a não limitar o número de dados fornecidos pelo usuário
+Utilizar delimitadores de final de dados, contadores ou recursos da linguagem de programação, em vez de pedir ao usuário que indique o “número de itens” que ele vai digitar ou digitou.
+
+2.2.4.2 Eficiência de Software
+Depende dos requisitos levantados durante a fase de análise
+O código será mais/menos eficiente conforme as fases de análise e projeto tenham sido bem feitas, escolhendo estruturas de dados adequadas, linguagem de programação adequada, etc.
+Nem sempre é favorável sacrificar a clareza do código para obter um aumento mínimo de eficiência, especialmente em sistemas em que a eficiência máxima não é fundamental.
+Eficiência de código
+Deve-se simplificar expressões aritméticas e lógicas antes de começar a codificação
+Avaliar os laços de repetições para ver se algumas instruções ou expressões estão sendo repetidas desnecessariamente e, portanto, podem ser movidas para for a do laço
+Usar listas dinâmicas em vez de estáticas
+Em vez de repetir diversas vezes um trecho de código em um programa, criar uma função ou procedimento e fazer chamadas.
+Utilizar compiladores com funções de otimização
+Eficiência de Memória
+Levar em conta restrições de memória e características de “paginação” de um sistema operacional.
+Eficiência de Entrada/Saída
+A entrada fornecida por um usuário e a saída produzida para um usuário são eficientes quando a informação pode ser fornecida ou entendida como uma economia de esforço intelectual.
+A entrada/saída entre um programa e outros dispositivos (por exemplo, impressora) deve ser eficiente, evitar gargalos, etc.
+
+2.2.4.3 Escolha de uma Linguagem
+A escolha de uma linguagem é uma etapa que pode ser feita no final da fase de projeto ou no início da codificação.
+A escolha envolve vários critérios, como:
+A área de aplicação geral
+A complexidade computacional e algorítmica
+O ambiente em que o software será executado
+Considerações de desempenho
+A complexidade da estrutura de dados
+O conhecimento dos desenvolvedores
+A disponibilidade de compiladores
+Linguagens mais frequentemente utilizadas até o começo da década de 90
+Linguagem C – preferida para software básico
+Linguagens Ada, C, Modula-2 e assembly – aplicações de tempo real
+Linguagem Cobol – bastante utilizada para softwares comerciais
+Linguagem Pascal e Basic – usuários de computadores pessoais e também áreas comerciais
+Linguagem Prolog, Lisp – as mais utilizadas para software de inteligência artificial
+As linguagens mais utilizadas atualmente também variam conforme o uso.
+Umas são mais utilizadas comercialmente, outras para ensino/aprendizagem, outras para IA, etc.
+Pesquisa feita pela revista Computerworld  em 2003 chegou aos seguintes resultados divididos por setor de atividade no Brasil:
+Comércio: VB (34,1%), Delphi (29,6%), Clipper (20,5%)
+Finanças: VB (60,4%), Cobol (37,5%), Java (35,4%) 
+Indústria: VB (44,3%), Delphi (20,8%), Cobol (19,1%)
+Informática: VB (55,5%), Delphi (31,2%), Java (13,7%)
+Infra-estrutura: VB (47,2%), Delphi (27,8%), Java (22,2%)
+Serviços: VB (48,9%), Java (33%), Delphi (30,9%)
+Setor público: VB (43,5%), Java (34,8%), Java Script (26,1%)
+Portanto, o ranking das Linguagens de programação usadas pelas empresas nacionais fica da seguinte forma:
+Visual Basic (VB) for Windows 50,1% 
+Delphi (Borland) 27,3%
+Java (qualquer compilador) 17,7%
+Cobol (qualquer fornecedor) 15,9%
+Clipper (Computer Associates) 14,5%
+C/C++ (outros compiladores) 10,3%
+Java Script 7,6%
+ASP 3,2%
+Oracle 3,0% 
+
+2.2.5 Teste de Software
+A atividade de teste de software é crucial para garantir a qualidade de software.
+Tanto que, em alguns casos, empresas chegam a gastar 40% do esforço de projeto total somente com esta fase.
+No caso de softwares de sistemas, dos quais dependem vidas humanas (como controle de vôo, monitoração de reatores nucleares, etc), esta fase pode custar de 3 a 5 vezes mais que todas as outras fases juntas. 
+Mesmo que as fases de análise, projeto e codificação tenham sido feitas de forma planejada e cuidadosa, por pessoas capacitadas e, aparentemente, o software não tenha erros, ainda assim é necessário testar. 
+Seres humanos não são 100% perfeitos e as falhas fatalmente ocorrerão.
+As falhas podem ser resultado de diversos motivos:
+A especificação produzida na fase de análise de requisitos estava errada ou não continha requisitos importantes.
+A especificação não refletia corretamente o que o usuário queria.
+A especificação continha um requisito impossível de implementar com o software e hardware disponível.
+O projeto de sistema continha erros, por exemplo utilizando um banco de dados que não permita estabelecer diferentes tipos de usuário, quando o sistema deveria ter tipos diferentes (administrador, usuário, etc).
+O próprio código do programa contém erros. Pode ter sido implementado incorretamente ou incompletamente, tanto por distração, falta de organização ou outros motivos.
+Falhas de comunicação ou mal-entendidos entre membros da equipe de desenvolvimento.
+
+2.2.5.1 Objetivos do Teste
+O objetivo principal da atividade de teste é revelar erros ainda não descobertos.
+Portanto, o teste é bem sucedido quando consegue revelar erros ou falhas.
+Por outro lado, supondo um software 100% perfeito, como efeito colateral a atividade de teste servirá para demonstrar que o software está livre de falhas, melhorando a confiança na qualidade do produto.
+
+2.2.5.2 Tipos de Erros e Falhas
+Existem diferentes erros e falhas em um programa que podem nos levar a afirmar que um programa “não está funcionando direito. Vejamos alguns desses erros e falhas:
+Falhas no algoritmo
+É quando o algoritmo não produz a saída esperada para uma determinada entrada. Por exemplo: entrada 2+2. Saída: 5.
+Exemplos de erros típicos no algoritmo:
+Desvio antes do local apropriado; Desvio depois do local apropriado; Testar a condição errada; Esquecer de inicializar variáveis; Esquecer de testar condições particulares (por exemplo, testar a divisão por zero); Comparar variáveis de tipos incompatíveis
+Falhas na sintaxe
+São aquelas falhas em usar corretamente a linguagem de programação. Por exemplo:
+Não colocar ponto e vírgula no fim de qualquer comando no Pascal; Abrir um parênteses e esquecer de fechar
+No entanto, os compiladores atuais detectam a maioria dos erros de sintaxe e não geram o executável se o programa contiver esse tipo de erro.
+Curiosidade: segundo Myers (1976), a primeira missão espacial dos Estados Unidos a Vênus falhou porque faltava uma vírgula em um loop “do” em um programa Fortran.
+Falhas de computação e precisão
+Ocorre quando a implementação de uma fórmula está errada ou não computa o resultado com a precisão adequada. Por exemplo:
+Em vez de calcular 10 casas decimais, calcula apenas 2
+Combinar uma variável inteira e uma variável float em uma expressão pode produzir resultados inesperados.
+Por exemplo, fazer uma variável x do tipo inteiro receber uma variável y do tipo Real; Se y contiver um valor com casas decimais (por exemplo o valor 1,35) ele não poderá ser armazenado na variável x.
+Falhas de documentação
+A documentação de um trecho de programa pode não estar consistente com a implementação.
+Com isso, se um outro trecho for escrito baseando-se na documentação errônea daquela trecho, novos erros podem ser introduzidos, gerando um efeito cascata.
+Falha de overload (sobrecarga)
+Alguns elementos de um software são limitados, como por exemplo o tamanho de um vetor estático, o tamanho de uma pilha, tamanho de buffers, número máximo de usuários, etc.
+Quando é feita uma tentativa de armazenar dados além da capacidade, acontecem esses erros.
+Exemplo: suponha os seguintes comandos em Pascal.
+vetor: array[1..10] of integer
+vetor[11] :=0;
+Vetor: array[1..10] of integer;
+j:=11;
+i:=1;
+while i<=j do
+begin
+vetor[i] := i;
+i:=i+1;
+End;
+Na primeira passagem pelo while, i=1. Como 1<11, então vetor[1]:=1
+Na segunda passagem pelo while, i=2. Como 2<11, então vetor[2]:=2 e assim por diante
+Na 11a. passagem, i=11. Como 11==11, então a execução do programa passa pelo laço while e vetor[11]:=11. Certo?
+Não, errado!! Porque o vetor só contem 10 posições!!!
+Então, quando isso acontecer, vai dar erro no seu programa.
+int vetor[10]; //o vetor vai da posição 0 até 9
+j=10;
+i=0;
+do{
+vetor[i] = i;
+i++;
+}while (i<=j);
+Vai chegar o momento em que vamos ter:
+Vetor[9] = 9;
+i igual a 10
+na hora do while, o teste (i<=j) vai ser (10<=10).
+Como 10 = 10, o teste é verdadeiro, então repete-se o loop.
+Então, o primeiro comando do loop vai ser vetor[10]=10;
+Só que essa posição, que seria a 11a., não existe, porque o vetor vai da posição 0 até a posição 9
+Falhas de limite ou capacidade
+Esse tipo de falha ocorre quando o desempenho do sistema se torna inaceitável quando a atividade atinge seu limite.
+Por exemplo, suponha um sistema que se propõe a lidar com no máximo 32 dispositivos (sejam eles impressoras, disquete, etc). 
+O que acontece quando o sistema está lidando EXATAMENTE com 32 dispositivos? O desempenho cai? O sistema se torna lento? 
+O que acontece se forçarmos o sistema a lidar com 33 dispositivos?
+Encontrar essas falhas durante a fase de testes ajuda a equipe de manutenção a prever como será possível contorná-los. Por exemplo, talvez a equipe de manutenção já possa prever que, com um aumento no processador ou na memória RAM, seja possível lidar com 40 ou 50 dispositivos.
+Falhas de coordenação e timing
+É um tipo de falha que acontece em sistemas de tempo real.
+Ocorre quando a coordenação entre eventos é inadequada.
+Por exemplo, suponha uma conta de banco conjunta entre marido e mulher com saldo de R$200,00. Suponha então que simultaneamente a mulher e o homem, em caixas diferentes, tentem sacar R$100,00. Se a coordenação não for eficiente, pode ocorrer de ambos conseguirem efetuar o saque, mas o saldo final ser R$100,00 em vez de R$0,00.
+Falhas de throughput e desempenho
+É quando a velocidade do sistema não está de acordo com os requisitos.
+Ou seja, o sistema funciona corretamente e a velocidade não traz problemas (como acontece com as falhas de coordenação).
+O problema apenas é que a velocidade (ou o desempenho) não é aquela que o cliente esperava.
+Falhas de recuperação
+Geralmente, os sistemas são programados para conseguir lidar com algumas falhas externas.
+Por exemplo, se acabar a luz, alguns programas são feitos de forma a recuperar todos os arquivos em seu estado anterior à falta de energia.
+Para isso, alguns gravam arquivos de “log”.
+O MS Word, por exemplo, grava periodicamente um arquivo temporário. Se acabar a energia, ou o computador for desligado direto no gabinete, na próxima vez que o programa Word for aberto, ele vai abrir o documento que você estava trabalhando, mesmo que você não tenha salvo.
+Assim, uma falha de recuperação seria quando um sistema que deveria tolerar algumas falhas não consegue fazê-lo ou o faz inapropriadamente.
+Falhas de hardware e software de sistemas
+Pode ocorrer quando:
+Um hardware precisa de um software para funcionar e este não funciona adequadamente
+O hardware propriamente dito não funciona adequadamente
+Em relação ao primeiro tipo, suponha um modem que precisa de um driver para funcionar. 
+Tanto o modem quanto o seu driver devem se comunicar de acordo com regras pré-estabelecidas.
+Se houver uma falha de comunicação entre o fabricante do driver e o fabricante do modem, 
+o driver pode enviar sinais errados ou 
+o driver envia sinais correto, mas o modem não consegue interpretá-los.
+Falhas de padronização e procedimentos
+Significam que o código não foi escrito de forma padronizada. Por exemplo, não foi feito conforme as normas e padrões da empresa em que o programador trabalha.
+Embora o programa possa funcionar corretamente, pode dificultar o entendimento do código por outros funcionários da empresa e, conseqüentemente, dificulta o teste e a manutenção.
+Pode ocorrer também de um outro funcionário entender de forma incorreta o programa, fazendo modificações que introduzem erros no programa.
+Por que eu tenho que saber isso??
+Algumas empresas guardam um histórico dos erros cometidos por seus programadores.
+Assim, sabendo quais são os tipos de erros mais freqüentemente cometidos, podem concentrar seus esforços na etapa de testes em procurar esse mesmo tipo de erro, que mais provavelmente terá ocorrências no programa.
+Por exemplo, o Processo de Prevenção de Defeitos da IBM (Mays et al., 1990) procura e documenta a causa de cada problema que ocorre; essa informação é usada para que o pessoal do teste saiba mais ou menos que erros procurar. Esse método diminuiu o número de falhas nos softwares.
+
+2.2.5.3 Planejamento de Teste
+Quando se trata de grandes empresas, que lidam com softwares complexos, com muitas linhas de código, o ideal é planejar cuidadosamente a atividade de teste.
+Por sua importância, em algumas empresas a fase de teste não é vista como uma fase à parte no ciclo de desenvolvimento de software, mas sim uma etapa feita paralelamente com todas as outras fases.
+A atividade de teste pode envolver os seguintes passos:
+Estabelecer os objetivos do teste
+Projetar os casos de teste / Escrever os casos de teste / Testar os casos de teste / Executar os teste
+Avaliar os resultados dos testes
+Ao estabelecer os objetivos, sabemos quais casos de teste gerar. Ao projetar os casos de teste, tentamos garantir que vamos escolher casos representativos, cobrindo todos os aspectos a ser testados. Após escrevê-los, novamente os avaliamos, verificando se realmente são corretos, factíveis e possuem uma cobertura suficiente.
+Casos de Teste
+Casos de Teste são todos aqueles dados que utilizamos para testar um software.
+Por exemplo, se eu for testar uma software que implementa uma calculadora simples. Eu tenho que testar todas as operações, tanto com números inteiros quanto reais, positivos e negativos. Portanto, eu poderia ter os seguintes casos de teste:
+
+2.2.5.4 Tipos de Teste
+Existem diversos tipos de teste, mais ou menos adequados para detectar diferentes tipos de falhas. 
+Em geral, os testes se dividem em dois tipos:
+Teste Caixa Preta / Teste Caixa Branca
+Existem poucos tipos de Teste de Caixa Preta:
+Particionamento de Equivalência
+Análise de Valor Limite
+Testes de Comparação
+Em particular, existem diversos tipos de Teste de Caixa Branca:
+Teste de Estrutura de Controle / Teste de Caminho Básico / Teste de Condição / Teste de Fluxo de Dados / Teste de Laços / Testes Caixa Preta
+Este tipo de teste se caracteriza por ignorar o código do programa. Basicamente, o testador simplesmente joga dados de entrada e verifica se o resultado é o esperado.
+Por exemplo, para uma calculadora, eu forneço como dados de entrada (2+2) e verifico se o resultado é 4.
+Deve ser feita de forma complementar aos testes de caixa branca, e não de forma alternativa.
+Os objetivos são descobrir erros nas seguintes categorias:
+Funções incorretas ou não implementadas (por exemplo, esqueceram de implementar a multiplicação. Quando eu clico, nada acontece)
+Erros de interface
+Erros nas estruturas de dados ou acesso a bancos de dados externos
+Erros de desempenho  (por exemplo, o programa é mais lento do que deveria)
+Erros de inicialização e término (por exemplo, o programa não pergunta se eu quero salvar os arquivos antes de encerrar o programa)
+Particionamento de Equivalência
+É um tipo de teste de caixa preta que divide o domínio de entrada de um programa em classes de dados. Casos de teste são derivados para cada classe de dados.
+Por exemplo, suponha que em um programa, eu peço ao usuário para entrar com um valor numérico entre 1 e 10.
+Nesse caso, tenho três intervalos de valores, 2 inválidos e um válido, ou seja:
+? até 0  ? inválido
+1 até 10 ? válido
+11 a ?   ? inválido
+Portanto, em vez de projetar diversos casos de teste aleatórios, eu projeto apenas três, um para cada um dos intervalos. Ou seja, posso usar os valores ‘-2’, ‘5’ e ’15’.
+Assim, existem quatro diretrizes básicas para se definir classes de equivalência:
+Se uma condição de entrada especificar um intervalo (por exemplo, entre 2 e 5), define-se uma classe de equivalência válida e duas classes inválidas
+Se uma condição de entrada exigir um valor específico (por exemplo, o valor 10), define-se uma classe de equivalência válida e duas classes inválida (correto, < ou >)
+Se uma condição de entrada especificar um membro de um conjunto (por exemplo, o valor deve ser membro do conjunto {pato, ganso, sapo}, define-se uma classe de equivalência válida e uma classe inválida (? ou ?)
+Se uma condição de entrada for booleana (verdadeiro ou falso), define-se uma clásse válida e uma inválida.
+Análise de Valor Limite
+Geralmente, um número maior de erros ocorre nas fronteiras do domínio de entrada do que no “centro”. 
+Assim, este tipo de teste consiste em escolher casos de teste que testem os valores fronteiriços.
+Por exemplo, se eu peço ao usuário para digitar valores entre 1 e 10, meus valores fronteiriços são 0,1,2,9,10,11.
+Pode ser considerado um tipo de teste complementar ao particionamento de equivalência. A diferença é que, em vez de selecionar qualquer elemento de uma classe de equivalência, seleciona-se os elementos na extremidade da classe.
+Além disso, em vez de se concentrar somente em condições de entrada, devem ser utilizados valores para os casos de teste que levem aos limites dos valores de saída.
+As diretrizes são semelhantes àquelas para o particionamento de equivalência:
+Se uma condição de entrada especificar um intervalo delimitado pelos valores a e b, os casos de teste devem ser projetados com valores a e b, logo acima e logo abaixo de a e b, respectivamente.
+Se uma condição de entrada especificar uma série de valores, os casos de teste que ponham à prova números mínimos e máximos devem ser desenvolvidos. Valores logo acima e logo abaixo do mínimo e do máximo também são testados.
+Aplicar as diretrizes 1 e 2 às condições de saída. Por exemplo, suponha novamente o programa calculadora. Suponha que ele mostra no máximo 6 casas decimais. Devem ser usados para cálculo dados que gerem como saída números com 5, 6 e 7 casas decimais.
+Se as estruturas internas de dados do programa tiverem prescrito fronteiras (por exemplo, um array tem um limite definido de 100 entradas), certifique-se de projetar um caso de teste para exercitar a estrutura de dados em sua fronteira.
+Testes de Comparação
+Em caso do software ter importância vital (controle de tráfego aéreo, por exemplo), a confiabilidade é primordial.
+Nesses casos, uma estratégia para aumentar a confiabilidade é produzir software redundantes. 
+Ou seja, a partir de uma única especificação, 2 equipes distintas implementam separadamente o software.
+Testes com as duas versões utilizando os mesmos dados de entrada devem produzir saídas idênticas. 
+Caso haja divergência nas saídas, já sabe-se que uma das implementações contém erros.
+Pode acontecer também de a especificação não ter sido bem feita. Se a especificação estava ambígua ou incompleta, por exemplo, cada equipe fez do modo que entendeu e pode ter sido isso que levou aos dois software diferentes.
+Este teste também não deve ser o único realizado em um software. Se, por exemplo, a própria especificação utilizada por ambos os software contiver erros, este teste não conseguirá identificá-lo.
+Testes Caixa Branca
+Este tipo de teste se caracteriza por testar o programa levando em consideração sua estrutura interna. Geralmente, a idéia é garantir que cada uma das linhas do código seja testada.
+O responsável pelo teste deve criar casos de teste que:
+Garantam que todos os caminhos alternativos dentro de um módulo tenham sido testados executados
+Exercitem todas as decisões lógicas para valores falsos ou verdadeiros
+Executem todos os laços em suas fronteiras e dentro de seus limites operacionais
+Exercitem as estruturas de dados internas paara garantir a sua validade
+Importância dos testes caixa branca
+Se usássemos apenas o teste caixa preta, por não conhecermos a estrutura interna do programa, talvez usássemos casos de teste que não exercitem todos o código. 
+Por exemplo, em uma estrutura “if-then-else”, talvez em todos os nossos testes só o ‘if” tenha sido executado, nunca o “else”. 
+Assim, pode acontecer de ter um erro nesse trecho e ele não ser descoberto.
+Testes de Caminho Básico
+Utilizando este método, inicialmente define-se todos os possíveis caminhos que podem ser percorridos do início ao fim de um algoritmo.
+Exemplos de execuções distintas de um mesmo código:
+Linhas 1 a 3, if-then, repeat-until, case 1
+Linhas 1 a 3, else, repeat-until, case 1
+Linhas 1 a 3, if-then, repeat-until, case 2
+Linhas 1 a 3, else, repeat-until, case 2
+Assim, eu defino o conjunto de caminhos que eu devo percorrer para testar todas as linhas. Em seguida, defino casos de testes que me permitam percorrer o conjunto de caminhos definidos.
+Teste de Condição
+É um tipo de teste que verifica condições lógicas, ou seja, aquelas variáveis booleanas ou expressões com o formato (E1 op E2) onde op pode ser ‘<‘, ‘>’, ‘=’, etc.
+Exemplo: “if (a<b)”, onde a condição é “(a<b)”
+Portanto, existem componentes limitados para teste: parênteses, duas variáveis e um operador.
+Possíveis erros:
+Erro no operador (operador incorreto, faltando, etc.)
+Erro na variável (variável incorreta, não inicializada, etc)
+Erro no uso de parênteses
+Erro de expressão aritmética
+Assim, a idéia deste tipo de teste é testar todas as condições de um programa, tanto em if-then-else, quanto em do-while ou outras expressões.
+O ideal é testar todo o domínio. Por exemplo, para a condição (a<b), eu devo ter 3 casos:
+Quando a é menor que b / Quando b é menor que a / Quando a = b
+Considere também o exemplo da condição ((a<b)&&(c<d))
+Neste caso eu teria que testar todas as combinações em cada condição e todas as combinações.
+a<b e c<d / a<b e c>d / a<b e c=d / a>b e c<d / a>b e c>d / a>b e c=d / a=b e c<d / a=b e c>d / a=b e c=d / 
+Teste de Fluxo de Dados
+Este tipo de teste seleciona o caminho a percorrer no algoritmo de acordo com o local onde as variáveis são definidas e utilizadas.
+Por exemplo, pode-se selecionar uma única variável de um programa. Em seguida, seleciona-se valores de forma a executar todas as linhas em que essa variável é utilizada. Em seguida repete-se o procedimento para todas as variáveis do programa.
+No entanto, este teste também não pode ser o único, pois algumas instruções de um programa não lidam com nenhuma variável.
+Teste de Laços
+São testes destinados aos laços de um programa (do-while, repeat-until, etc)
+São considerados quatro classes diferentes de laços:
+Laços simples / Laços concatenados (em sequência) / Laços aninhados (um laço dentro do outro) / Laços Simples
+Em geral devem ser considerados casos de teste que levem às 5 situações seguintes:
+O laço é pulado inteiramente / O laço é executado apenas uma vez / O laço é executado duas vezes / O laço é executado n vezes (n é o número máximo de vezes) / O laço é executado n-1 e n+1 vezes
+Embora saibamos que não deve ser permitido a execução n+1 vezes (já que n é o máximo), devemos checar se o algoritmo garante que não se ultrapasse n e como ele lida com isso (o programa trava, aparece uma mensagem para o usuário, etc).
+Laços Aninhados
+São aqueles laços “um dentro do outro”
+Como o número de casos de teste ideal poderia ser muito grande, uma possível abordagem, definida por (Beizer,1990) é a seguinte:
+Começar pelo laço mais interno. Fixar todos os laços em valores mínimos.
+Realizar testes de laço simples para o laço mais interno, mantendo ao mesmo tempo os laços externos em seus valores mínimos. Adicione outros testes para valores não mínimos.
+De dentro para for a, vá realizando testes para o laço seguinte, mas mantendo todos os outros laços externos em valores mínimos e laços aninhados em valores “típicos”.
+Continue até testar todos os laços.
+Laços Concatenados
+Se os laços concatenados forem independentes, pode-se utilizar a abordagem dos laços simples para cada um deles, isoladamente.
+No entanto, se o contador do laço 1 for utilizado como valor inicial para o laço 2, então os laços não são independentes. Nesse caso, deve-se utilizar a abordagem dos laços aninhados.
+Considerações Finais
+A chave para um teste bem feito, que ajude a encontrar erros no software, é escolher adequadamente os casos de teste.
+Se você puder definir de forma correta e abrangente os valores a serem utilizados para testar seu software, conseguirá testá-lo de forma completa, encontrando (se existirem) todos os erros do programa.
+
+2.2.6 Manutenção de Software
+A manutenção de software envolve toda e qualquer modificação feita no software após ele estar “pronto”. 
+Assim, qualquer correção de erro ou nova funcionalidade adicionada é considerada uma atividade de manutenção.
+Portanto, esta fase não tem um fim definido. Enquanto o software estiver sendo utilizado por algum usuário, alguma atividade de manutenção de software poderá ser necessária.
+Como o gasto com manutenção é “eterno”, é normal uma empresa de software gastar mais com a manutenção de sistemas existentes do que com o desenvolvimento de novos sistemas.
+Por exemplo, uma pesquisa de Fjeldstad e Hamlen (1979) verificou que 25 empresas gastavam 31% do seu esforço em desenvolvimento e 61% em manutenção (incluindo suporte a usuário).
+Outra pesquisa (Parikh e Zvegintzov, 1983) verificou que a manutenção tem um cerca de 3 vezes maior que o desenvolvimento.
+Recentemente, as pesquisas estimam que 20% do esforço das empresas é gasto em desenvolvimento e 80% em manutenção.
+
+2.2.6.1 Tipos de Manutenção
+Como já foi abordado brevemente, existem quatro categorias de manutenção:
+Manutenção Corretiva
+Consiste em corrigir erros do programa.
+Geralmente são erros descobertos e reportados por usuários do software.
+Em alguns casos, o erro é pequeno e é corrigido por meio de simples reparos.
+Em outros casos, quando o problema exige um tempo maior, pode ser feito algum ‘reparo temporário’, sendo o erro corrigido completa e adequadamente apenas em uma nova versão do software.
+Este tipo de manutenção é necessária porque mesmo a fase de testes pode deixar passar algum erro. De um modo geral, quando mais bem feita for a fase de testes, menor será a quantidade de modificações corretivas.
+Manutenção adaptativa
+Este tipo de manutenção é necessária porque o ambiente onde um software é executado muda constantemente.
+Frequentemente surgem novas gerações de processadores, novos tipos de memória RAM, novas versões de sistemas operacionais, etc.
+Os softwares, portanto, precisam se adaptar, tanto para conseguirem ser executados no novo ambiente ou simplesmente para aproveitar novos recursos.
+Por exemplo, eu posso ter um programa que funciona para Windows Me mas não roda no Windows XP. Esse programa, portanto, requer uma manutenção adaptativa
+Manutenção Perfectiva
+Este tipo de manutenção trata de modificações feitas apenas no sentido de “melhorar” o sofware. Ele funciona de forma adequada, mas talvez os usuários requeiram novas funcionalidades ou um desempenho melhor.
+A manutenção perfectiva pode envolver também outras atividades, como; melhorar a documentação do software, modificar o código de forma a melhorar a legibilidade, etc.
+Manutenção Preventiva
+Este tipo de manutenção consiste em modificar o software para melhorar a confiabilidade ou a manutenibilidade futura.
+Por exemplo, o desenvolvedor do software pode descobrir algum aspecto que pode levar a uma falha no futuro e corrigi-lo antes que o problema ocorra. Por exemplo, eles pode supor que ocorrerão problemas quando o software trabalhar no seu limite de capacidade.
+
+2.2.6.2 Manutenção Estruturada
+Quando o processo de desenvolvimento do software foi feito de forma estruturada, seguindo os métodos e técnicas definidos pela engenharia de software, a manutenção é facilitada e consiste dos seguintes passos:
+Avaliação da documentação de projeto
+Análise da arquitetura do programa
+Avaliação do impacto das modificações
+Modificação do projeto original
+Implementação das mudanças
+Testes de regressão (refazer os mesmos testes feitos anteriormente, verificando se os mesmos resultados são obtidos)
+Porém, se no processo de desenvolvimento não foram utilizadas técnicas estruturadas e gerados documentos, a manutenção é bem mais complicada.
+É preciso inicialmente avaliar o código, procurando entender sua estrutura, interface e relacionamento entre módulos.
+Não se pode projetar modificações de forma segura, pois não foi feito um projeto.
+É defícil prever os impactos das mudanças e se novos erros serão introduzidos.
+Não há como fazer teste de regressão, pois não há registros de que testes foram feitos quando o software foi desenvolvido.
+2.2.6.3 Problemas de Manutenção
+Grande parte dos problemas de manutenção referem-se a falta de planejamento no desenvolvimento do software.
+Outra parte refere-se às dificuldades operacionais. Por exemplo, para fazer o upgrade de um sistema talvez seja necessário torná-lo indisponível por algum tempo. Por outro lado, algumas aplicações, como aplicações financeiras e sistemas de suporte à vida, não podem dispor do sistema por tempo suficiente para fazer o upgrade. Não é viável desligar uma rede bancária por horas para fazer um upgrade. Da mesma forma, não se pode desonectar um paciente de sistemas que o mantêm vivo.
+Pode-se agrupar os problemas de manutenção nas seguintes categorias:
+Problemas com pessoal / Problemas Técnicos / Compromisso com o cliente / Custos de manutenção
+Problemas com Pessoal
+Muitas das razões que tornam a manutenção difícil dizem respeito ao pessoal da empresa. Esta categoria também pode ser dividida em várias outras:
+Entendimento limitado
+É normalmente difícil entender o software produzido por outra pessoa. Com isso, é preciso gastar um enorme tempo tentando entendê-lo. 
+Esse tempo é maior quanto pior for a documentação existente sobre o software.
+Algumas pessoas que trabalham com manutenção não têm a “habilidade” suficiente para entender a arquitetura geral de um sistema.
+Lidar com prioridades 
+O pessoal de manutenção deve ter a capacidade de pesar os desejos dos clientes em relação às necessidades do sistema.
+Às vezes uma empresa gasta tanto com manutenção que não pode dispor de recursos para o desenvolvimento de novos produtos.
+Ao contrário, às vezes uma empresa está tão preocupada com o desenvolvimento de novos produtos que  não gasta tempo e recursos suficientes com cada uma das fases do desenvolvimento de software. Com isso, o produto não é documentado de forma eficiente, levando a dificuldades na manutenção.
+Conclusão: deve-se procurar fazer novos produtos, mas de forma estruturada, sem prejudicar as atividades de manutenção de produtos já existentes e permitindo que o novo produto também possa ser mantido futuramente.
+Satisfação Pessoal
+Freqüentemente, o pessoal da manutenção sente-se desmotivado, por achar que seu trabalho não tem o mesmo status dos desenvolvedores de software. Com isso, seu trabalho “não rende” tanto.
+Apesar desse mito, na verdade os mantenedores devem ter mais habilidades que os desenvolvedores, pois além de saberem programar, devem conseguir lidar com usuários, entender suas necessidades, entender código alheio, etc.
+Para tentar evitar este problema, algumas empresas fazem rotação entre seu pessoal. Uma única pessoa pode passar um período trabalhando no desenvolvimento e outro período trabalhando na manutenção.
+Deve-se ter cuidado, no entanto, ao manter pessoas trabalhando em diversos projetos simultaneamente. Isso leva a conflitos sobre qual projeto deverá ter maior prioridade.
+Problemas Técnicos
+Problemas técnicos também afetam a tarefa de manutenção. Podem ser divididos nas seguintes subcategorias:
+Paradigmas e Lógica
+Às vezes a lógica adotada por um programa não permite sua modificação imediata, requerendo mudanças em todo o código.
+Um exemplo recente foi o “bug do ano 2000”. A estratégia de armazenar o ano utilizando apenas dois dígitos não levou em conta a manutenção. Isso levou a um grande custo para corrigir o erro, pois não basta mudar o tipo da variável. Deve-se procurar em todo o código todos os lugares onde essa variável é usada.
+Dificuldades com testes
+Nem sempre é possível testar o sistema em seu ambiente real de uso. Por exemplo, suponha um sistema de reservas de uma companhia aérea. É quase impossível tirar o sistema do ar por algumas horas para testá-lo.
+Para contornar essa dificuldade, é necessário duplicar o sistema ou tentar simular sua execução no ambiente real, o que nem sempre é fácil.
+Nem sempre é possível fazer o teste de regressão, pois não foram guardados registros dos testes feitos anteriormente.
+Em outros casos, os registros existem, mas nem sempre podem ser repetidos. As modificações no software podem fazer necessário projetar novos testes e anular testes antigos.
+Compromisso com o cliente
+Um dos fatores que dificulta a manutenção é a impossibilidade de prever quando as falhas vão ocorrer. Não há como prever quando é que um cliente vai ligar reportando um erro.
+Com isso, é difícil conseguir recursos e pessoal de imediato para resolver o problema. Em geral é preciso deslocar pessoas envolvidas com outras atividades para resolvê-lo.
+Além disso, como o problema deve ser resolvido o mais rápido possível, o código é “remendado” sem muita avaliação e planejamento, o que às vezes faz com que o software, apesar de funcionar, se torne mais lento ou menos eficiente.
+Deve-se então verificar se o cliente realmente necessita de uma solução imediata embora não ideal, ou se pode esperar mais por uma solução melhor planejada.
+Custos de Manutenção
+O custo de manutenção é sempre muito alto, pois, enquanto as outras fases de processo de desenvolvimento têm começo e fim, a fase de manutenção dura enquanto durar o software.
+Existem ainda outros fatores que contribuem para aumentar o esforço e custo:
+Tipo de Aplicação – alguns sistemas são mais difíceis de modificar, como os de tempo real ou sincronizados.
+Inovações – Quando se lida com novas tecnologias, é mais difícil para os mantenedores entenderem o código e conseguirem implementar as mudanças.
+Rotatividade de pessoal – como a rotatividade de empregos é alta nesta área, a cada alteração de um software é preciso que novos funcionários repitam a tarefa de entender o sistema. Se o mesmo funcionário fosse responsável sempre pelo mesmo software, novas mudanças não seriam tão custosas.
+Ambiente mutante – A manutenção adaptativa pode ser bastante freqüente, especialmente em softwares que dependem diretamente do hardware.
+Qualidade do código – código não estruturado pode dificultar a localização de falhas
+Qualidade de documentação – Código sem documentação ou com documentação ineficiente eleva substancialmente a dificuldade de entendimento, praticamente impossibilitando essa tarefa.
+
+2.2.6.4 Registros de Manutenções
+Sempre que uma modificação for realizada em um software, ela deve ser documentada.
+Isso é necessário pois, caso contrário, quando uma outra pessoa for fazer uma nova alteração, vai perceber que há uma discrepância entre o projeto e a documentação existentes e o código atual.
+Quais dados devem ser guardados a cada manutenção?
+Alguns exemplos:
+Identificação do programa / Linguagem de programação utilizada / Data de instalação do programa / Número de linhas de código / Número de falhas de execução até a presente data / Identificação do tipo de mudança / Número de linhas de código adicionadas / Localização das modificações / Identificação das pessoas responsáveis pelas modificações / Data das modificações
+
+2.2.6.5 Efeitos Colaterais
+Chamamos de efeitos colaterais aos problemas que ocorrem quando uma mudança é feita em um programa.
+Às vezes, uma mudança em uma única linha de código pode provocar diversos erros e até fazer com que o programa deixe de funcionar.
+Não é raro você fazer uma modificação pequena em um trecho do programa, e acontecer erro em um outro trecho, que aparentemente nada tinha a ver com o primeiro.
+Portanto, não importa quão simples seja a modificação. Você TEM que testar o software inteiro novamente.
+
+2.2.6.6 Engenharia Reversa e Reengenharia
+A engenharia reversa é a atividade de tomar um software pronto e tentar recuperar o seu projeto. Ou seja, tentar esquematizar sua arquitetura, criando uma representação num nível abstração maior que o código-fonte.
+A reengenharia é uma extensão da engenharia reversa. Consiste também em extrair informações de um software pronto, mas com o objetivo de utilizá-las para gerar um novo software, mais correto, completo ou eficiente.
+Cuidado: proteção legal de sistemas registrados.
+
+2. Métricas e Medição de Software
+Métrica é uma indicação do que e como medir.
+Medir, por sua vez, é feito para avaliar.
+Por exemplo, pode-se medir o comprimento de uma mesa para:
+Verificar se ela tem as medidas que eu pedi ao marceneiro / Verificar se ela cabe no escritório / Avaliar o desperdício de maneira
+Existem também diversos tipos de medida. Utilizando o exemplo da mesa, podemos medir:
+Comprimento / Largura / Espessura
+Na Engenharia de Software, mede-se um software por várias razões:
+Indicar a qualidade do produto / Avaliar a produtividade das pessoas que produzem o produto / Avaliar os benefícios derivados de novos métodos e/ou ferramentas de software / Estabelecer uma baseline para futuras comparações e estimativas / Justificar o pedido de novas ferramentas ou treinamento adicional
+
+2.1 Tipos de Métricas
+Existem diversos tipos de medidas, que podem ser divididas em duas classes principais:
+Métricas de produtividade São aquelas que permitem avaliar a produtividade do processo. Ou seja, avaliar a eficiência do processo em relação a custos, prazos, recursos, etc.
+Métricas de qualidade São aquelas que permitem avaliar a qualidade do software. Isto é, verificar se o número de erros está muito grande para o tamanho do programa, etc.
+Em qualquer das classes, elas podem ser também classificadas em duas outras categorias:
+Medidas diretas – por exemplo, o comprimento de uma mesa ou o número de linhas de código
+Medidas indiretas – a “qualidade” do parafuso ou a qualidade de um software.
+Exemplos de medidas diretas:
+custo do software em R$, US$, etc. / tempo gasto para produção / número de linhas de código produzidas / Velocidade de execução (em segundos, por exemplo) de uma tarefa do software. / Tamanho de memória ocupado pelo software / Número de erros encontrados em um espaço de tempo
+Exemplos de medidas indiretas:
+qualidade do software / usabilidade do software / manutenibilidade / funcionalidade / eficiência / confiabilidade
+
+2.1.1. Métricas orientadas ao tamanho
+São métricas diretas
+São também o tipo de métricas mais simples
+Geralmente se baseiam principalmente no número de linhas de código de um software.
+O termo utilizado para descrever o tamanho do programa é LOC (Lines of Code), ou linhas de código
+Também é comum fazer a medida em termos de milhares de linhas de código, ou KLOC (Thousand Lines of Code).
+Se a organização fizer um registro de suas atividades, as medidas de tamanho são computadas quase automaticamente.
+Utilizando esses registros, podemos calcular várias medidas, tais como as seguintes:
+Produtividade = KLC/esforço | Qualidade = Erros/KLC | Custo = R$/KLC | Documentação = Págs/KLC
+VANTAGENS
+Fáceis de serem obtidas / Existem vários modelos e literatura que se baseiam nas linhas de código
+DESVANTAGENS
+O número de LOC depende da linguagem de programação / Programas bem projetados, pequenos, serão injustamente classificados como improdutivos. / Linguagens não procedimentais não podem ser avaliadas por estas medidas / Não se pode utilizar essas métricas para fazer estimativas na fase de planejamento.
+
+2.1.2. Métricas orientadas à função
+São métricas indiretas
+Em vez de contar o número de linhas de código, concentra-se na funcionalidade e utilidade do software.
+Geralmente utiliza-se o conceito de “pontos por função”, ou function point. 
+Os pontos por função são computados utilizando cinco tipos de informações baseadas no software.
+Número de entradas do usuário / Número de saídas do usuário / Número de consultas do usuário / Número de arquivos / Número de interfaces externas
+Entradas do usuário – cada ponto do software onde o usuário entra com qualquer tipo de dado.
+Saídas do usuário – pontos onde o software fornece informações ao usuário, tais como relatórios, telas, mensagens de erro etc.
+Consultas do usuário – pontos do software onde o usuário entra com um dado, por meio do qual o sistema gera uma saída (a resposta à sua consulta).
+Arquivos – Número de arquivos que compõem o software.
+Interfaces externas – meios de comunicação do software com entidades externas a ele, tais como disquetes, impressora, etc.
+Após a computação desses valores, preenche-se a seguinte tabela:
+Após preencher os dados da contagem, deve-se multiplicar por um valor de complexidade. 
+Cada empresa utiliza seus próprios critérios para definir se a complexidade é pequena, média ou alta.
+Após definir a contagem total, calcula-se um valor final FP (Function Point): FP = contagem total x [0,65 + (0,01xSOMA(Fi))]
+Os valores constantes da equação são determinados empiricamente.
+Os valores de Fi também se referem a ajustes de complexidade, com base na resposta das 14 perguntas a seguir:
+01. O sistema requer backup e recuperação confiáveis?
+02. São exigidas comunicação de dados?
+03. Há funções de processamento distribuídas?
+04. O desempenho é crítico?
+05. O sistema funcionará num ambiente operacional existente, intensivamente utilizado?
+06. O sistema requer entrada de dados on-line?
+07. A entrada de dados on-line exige que a transação de entrada seja elaborada em múltiplas telas ou operações?
+08. Os arquivos-mestres são atualizados on-line?
+09. A entrada, saída, arquivos ou consultas são complexos?
+10. O processo interno é complexo?
+11. O código foi projetado de forma a ser reusável?
+12. A conversão e a instalação estão incluídas no projeto?
+13. O sistema é projetado para múltiplas instalações em diferentes organizações?
+14. A aplicação é projetada de forma a facilitar mudanças e o uso pelo usuário?
+A resposta para cada uma dessas perguntas é padronizada, variando de 0 a 5:
+0 – Sem influência | 1 – Incidental | 2 – Moderado | 3 – Médio | 4 – Significativo | 5 – Essencial
+Após calcular o valor FP, pode-se calcular medidas de forma semelhante ao realizado com as LOC, ou seja:
+Produtividade = FP/pessoa-mês | Qualidades = defeitos/FP | Custo = R$/FP | Documentação = Páginas de documentação/FP
+Outro tipo de valor que pode ser calculado é o chamado “ponto de particularidade”, ou Feature Point. 
+É recomendado para aplicações em que a complexidade algorítmica é elevada.
+Aplicações de tempo real | Software embutido
+Tanto os “pontos por função” quanto os “pontos de particularidades” representam a funcionalidade ou utilidade de um software.
+O cálculo final utiliza a mesma fórmula FP apresentada anteriormente.
+A diferença reside em dois fatores:
+O ponto de particularidade inclui a categoria algoritmos.
+Algoritmo é definido como um “problema computacional delimitado”. Por exemplo, inverter uma matriz ou manejar uma interrupção.
+Os valores de ponderação são diferentes.
+VANTAGENS
+Independe da linguagem de programação | Pode ser utilizada no começo da evolução de um projeto
+DESVANTAGENS
+O método inclui contagens de dados subjetivos. | O valor FP não tem nenhum significado físico direto – é apenas um número.
+
+2.1.3. Métricas de Qualidade
+A qualidade pode e deve ser medida durante todo o desenvolvimento e duração de um software:
+antes do desenvolvimento | durante o desenvolvimento | após o desenvolvimento | após o software ser entregue aos clientes e usuários
+Quando se mede a qualidade antes, durante e após o desenvolvimento, temos por exemplo as seguintes métricas:
+complexidade do programa | modularidade efetiva | tamanho do programa
+E as seguintes métricas são aplicadas após a entrega do software:
+corretitude (número de defeitos) | manutenibilidade | integridade | usabilidade
+Corretitude
+É o grau em que o software executa a função que é dele exigida
+A medida mais comum de corretitude são os defeitos por KLOC
+Defeito é uma falta de acordo com os requisitos
+Manutenibilidade
+A manutenção exige mais esforço que qualquer outra atividade da ES
+A manutenibilidade mede a facilidade com que um programa pode ser:
+corrigido se um erro for encontrado | ampliado se o cliente desejar inclusões e alterações
+Não há como medi-la diretamente
+Exemplo de métrica indireta: Tempo Médio para a Mudança (MTTC):
+tempo que demora para:
+analisar o pedido de mudança | projetar uma modificação adequada | implementar a mudança | testar | distribuir a todos os usuários
+Em média, os programas com boa manutenibilidade terão um MTTC menor do que aqueles difíceis de serem mantidos.
+MÉTRICA SPOILAGE
+Métrica orientada ao custo
+Custo para se corrigir defeitos encontrados depois que o software for liberado para os clientes
+Quando se traça o gráfico de spoilage como uma função do tempo para vários projetos, pode-se verificar quais deles estão com maior ou menor manutenibilidade.
+Integridade
+Está relacionada com a segurança
+Mede a capacidade que um sistema tem de suportar ataques à sua integridade
+Os ataques incluem tanto ataques a programas, dados e documentos.
+Para medir integridade, utiliza-se dois atributos adicionais: ameaça e segurança.
+Ameaça: probabilidade de que um ataque ocorrerá dentro de um determinado tempo
+Segurança: probabilidade de que o ataque será contido.
+Integridade = ? [1 – ameaça x (1-segurança)]
+Usabilidade
+Mede se o software é amigável, ou user-friendly.
+A usabilidade tenta quantificar o quão amigável o software é, por meio de quatro características:
+a habilidade física e/ou intelectual exigida para se aprender o sistema; / o tempo exigido para se tornar moderadamente eficiente no uso do sistema / o aumento líquido de produtividade (quando o sistema substituiu outro) quando o sistema é usado por alguém moderadamente eficiente. / avaliação subjetiva das atitudes dos usuários em relação ao sistema.
+Por que medir qualidade?
+Avaliar a efetividade do processo de engenharia de software
+Tomar previdências para corrigir elementos do processo que produzem defeitos
+O gerente pode identificar quais qualidades são importantes em cada caso
+Pode-se avaliar quão bem o desenvolvimento está progredindo em relação às metas de qualidade estabelecidas
+Para que o pessoal da área de controle de qualidade identifique a necessidade de melhores padrões a serem adotados no futuro.
+
+2.1.4. Análise de métricas
+As métricas que levam em consideração o tamanho do código geram muitas controvérsias.
+Como, então, deve-se medir produtividade?
+Para responder essa pergunta, inicialmente deve-se analisar os fatores que influenciam a produtividade:
+Fatores humanos: o tamanho e a experiência da equipe de desenvolvimento
+Fatores do problema: A complexidade do problema a ser resolvido e o número de mudanças nos requisitos ou restrições do projeto
+Fatores do processo: Técnicas de análise e projeto que são utilizados, linguagens, ferramentas e técnicas de revisão.
+Fatores do produto: Confiabilidade e desempenho do sistema baseado em computador
+Fatores relacionados a recursos: disponibilidade de ferramentas CASE, recursos de hardware e software.
+Segundo um estudo de Walston e Felix, se um dos fatores estiver acima da média (altamente favorável) para determinado projeto, a produtividade será x% maior do que seria se o fator estivesse abaixo da média.
+Segundo os autores, a variação entre uma condição altamente favorável para desfavorável afeta os 5 fatores da seguinte forma:
+Fator			Variação Percentual
+Fatores humanos		90%
+Fatores do problema	40%
+Fatores do processo	50%
+Fatores do produto	140%
+Fatores de recurso	40%
+Por exemplo, suponha que duas equipes, A e B, tenham pessoas com iguais habilidades, usando os mesmos recursos e o mesmo processo.
+A equipe A está trabalhando num problema simples, com requisitos de confiabilidade e desempenho médios.
+A equipe B está trabalhando num problema complexo, com metas de confiabilidade e desempenho extremamente rígidas.
+Portanto, com base na tabela apresentada, a produtividade da equipe A será entre 40 e 140% melhor do que a da segunda equipe.
+A diferença entre os fatores do produto e do problema tornam sem sentido uma comparação direta de produtividade entre as duas equipes.
+Esse exemplo mostra que é difícil fazer comparações diretas entre equipes.
+O que pode ser feito, então, é estabelecer uma baseline para determinadas situações ou para determinadas equipes, e utilizá-la para comparação com medições futuras de produtividade.
+
+2.2. Estabelecendo uma Baseline
+A baseline consiste de dados que servirão para comparações futuras.
+Esses dados nada mais são do que as informações já apresentadas na seção 2.1.1., ou seja: esforço, linhas de código, páginas de documentação, etc.
+Para que esses dados possam ser utilizados de forma efetiva, devem ter os seguintes atributos:
+devem ser precisos / devem ser obtidos de o maior número de projetos possível / as medições devem ser consistentes / as aplicações devem ser praticamente idênticas ao trabalho que será estimado utilizando a baseline.

@@ -1,0 +1,61 @@
+Capitulo 6 (Marcio Nunes)
+
+DEADLOCKS
+
+Em sistemas multiprogramados pode acontecer de dois ou mais processos necessitarem de um mesmo recurso ao mesmo tempo, bloqueando o sistema. A isso chamamos de “deadlocks”. Estes podem ocorrer tanto em dispositivos de hardware, como em dispositivos de software.
+Recursos
+É algo exclusivo de um único processo por um determinado período. Pode ser de 2 tipos:
+• Preemptível: Que pode ser tirado do processo que estiver usando o recurso, sem causar nenhum dano ao processo. Ex.: a memória. 
+• Não-preemptível: Que não pode ser tirado do seu proprietário atual sem causar problemas ao processo em andamento. Ex.: a impressora.
+Na maioria das vezes o deadlock ocorre quando os recursos não-preemptíveis estão envolvidos.
+Definição de Deadlocks
+Dizemos que um conjunto de processos está em situação de deadlocks quando cada processo do conjunto estiver esperando um evento que apenas o outro processo pertencente poderá realizar. Dizemos que ocorrem um bloqueio dos processos.
+Condições para a ocorrência do Deadlock
+Em geral são 4 condições que devem estar presentes em conjunto:
+1. Condição de exclusão mútua: cada recurso ou está alocado a exatamente um processo ou está disponível.
+2. Condição de posse e de espera: processos que possuem recursos adquiridos anteriormente podem solicitar novos recursos.
+3. Condição de não-preempção: recursos já alocados a processos precisam de uma liberação explícita destes, não podendo ser tomados à força.
+4. Condição de espera circular: quando dois ou mais processos estão esperando pela disponibilidade de um recurso que está com o próximo membro da cadeia
+Modelo do Deadlock
+Modelado por meio de grafos dirigidos cujos mesmos possuem dois tipos de nós: processos (representados por círculos) e recursos (representados por quadrados). Foi criado por Holt em 1972 e constituem uma ferramenta que facilitam a visualização das sequ6encias de liberação/solicitação que podem ou não originar situações de deadlocks.
+Algoritmo do Avestruz
+Possui esse nome porque consiste em ignorar o problema por completo, pressupondo outras possibilidades.
+Detecção e recuperação de Deadlocks
+Quando o sistema não se preocupa com a prevenção dos deadlocks, permitindo que os deadlocks aconteçam e a partir daí tenta detectar as ocorrências e age no sentido de normalizar a situação, após seu acontecimento.
+Detecção do Deadlock com um recurso de cada tipo
+Baseia – se na idéia de que se possui apenas um recurso de cada tipo. Embasado nisto, se faz uma análise do sistema através de um grafo de recurso do tipo. Os processos que formarem um ciclo estão em deadlock. 
+Detecção do Deadlock com vários recursos da cada tipo
+Utiliza – se um algoritmo baseado numa matriz. A seguir faz – se o somatório das as instâncias dos recursos que estiverem alocados. O algoritmo, primeiramente, procura por um processo que possa rodar até terminar. Este processo é caracterizado por uma demanda de recursos que pode ser atendida pelos recursos disponíveis no momento. O processo em seleção é colocado para rodar até terminar, quando então ocorre a devolução dos recursos alocados tornando – os disponíveis. Este processo é marcado como terminado. Se todos os processos estiverem capacitados para rodar, nenhum deles se encotrará em deadlock. Se algum deles não puder rodar eles se encontram em deadlock.
+Recuperação de situações de Deadlock
+Existem várias maneiras do sistema se recuperar da situação de Deadlock:
+Recuperação por meio de preempção: é possível quando se há capacidade de tomar um recurso de um processo, deixar que outro processo o utilize e devolvê – lo ao processo original, sem que este tenha conhecimento do ocorrido.
+Recuperação através de volta ao passado: baseia – se na verificação periódica dos processos, anotando as características de cada processo. Quando for detectado um deadlock, basta apenas “voltar no tempo” revendo as anotações e informações obtidas anteriormente, detectando onde ocorreu o erro. Todo trabalho feito executado pelo processo, deste ponto em diante, é perdido, sendo o processo atrasado por um determinado tempo.
+Recuperação através da eliminação dos processos: É a maneira mais drástica, porém a mais simples de se eliminar uma situação de Deadlock. Consiste na eliminação de um ou mais processos envolvidos. Pode – se escolher por um processo fora do ciclo (uma vítima) ou um processo pertencente ao ciclo. Quando possível é aconselhável eliminar um processo que possa rodar de novo desde o início sem produzir nenhum efeito negativo ao sistema. Em contrapartida, não se pode eliminar um processo que atualiza uma base de dados e voltar a rodar uma segunda vez em condições seguras.
+TENTATIVAS DE EVITAR O DEADLOCK
+Os principais algoritmos para evitar deadlocks são baseados no conceito de estados seguros. A qualquer momento, há um estado corrente constituído por A, E, C e R. Um estado é dito seguro se não provocar deadlock e houver uma maneira de satisfazer todas as requisições pendentes partindo dos processos em execução.
+É importante notar que um estado inseguro não leva necessariamente a um deadlock. O sistema pode rodar por algum tempo. Assim, a diferença entre estado seguro e inseguro é que, de um estado seguro, o sistema pode garantir que todos os processos vão terminar, enquanto que a partir de um inseguro esta garantia não pode ser dada.
+Algoritmo do Banqueiro para um único Tipo de Recurso
+Dijkstra (1965) idealizou um algoritmo de escalonamento que pode evitar a ocorrência de deadlock, conhecido como algoritmo do banqueiro. Ele baseia-se nas mesmas premissas adotadas por um banqueiro de um pequeno banco para garantir ou não crédito a seus correntistas.
+O banqueiro sabe que nem todos os correntistas vão precisar usar imediatamente toda alinha de crédito que foi colocada a sua disposição, de modo que ele só reservou 10 unidades de crédito, em vez de 22 que seria necessária para atender ao somatório dos créditos concedidos aos quatro correntistas. Neste exemplo dado, os clientes são os processos, as unidade de crédito representam os recursos, e o banqueiro faz o papel do Sistema Operacional.
+O algoritmo do banqueiro simplesmente considera cada solicitação no momento em que ela ocorre, e verifica se o atendimento desta solicitação leva a um cenário Em caso afirmativo, a solicitação é imediatamente atendida, em caso contrário, seu atendimento é adiado para um outro momento, a critério do Sistema Operacional. Para verificar se o estado é seguro, o S.O. verifica se ele dispõe de recursos para atender a pelo menos um cliente.
+Desde a época da publicação do algoritmo (1965), livros sérios de S.O. descrevem-no com detalhes. Infelizmente, apesar de teoricamente maravilhoso, este algoritmo é na prática inútil, pois os processos quase nunca sabem com antecedência a quantidade de recursos que vão precisar.
+PREVENÇÃO DE DEADLOCKS 
+Ataque ao Problema de Exclusão Mútua 
+Se não houver possibilidade de nenhum recurso ser entregue exclusivamente a um único processo, nunca terá configurado uma situação de deadlock. Usando a técnica do spooll para as saídas dos processos na impressora, vários processos poderão gerar saídas ao mesmo tempo. Neste modelo, o único processo que pode requerer a posse física da impressora é o gerente da impressora. Considerando que tal processo nunca precisa de outro recurso que não seja a impressora, com a adoção deste modelo não teremos deadlocks envolvendo a impressora.
+Lamentavelmente, nem todos os dispositivos podem ser gerenciados pela técnica do spooll. Além disso, se usarmos esta técnica para tratar da competição por espaço em disco, seremos levados a situações de deadlock.
+Ataque ao Problema da Condição de Espera Circular 
+A condição de espera circular pode ser eliminada de diversas maneiras. Uma delas é simplesmente seguindo regra de que um processo só está autorizado a usar apenas um recurso por vez. Se ele precisar de um segundo recurso, deve liberar o primeiro. Para um processo que precise copiar o conteúdo de uma fita inteira para a impressora, esta restrição é inaceitável.
+Os processos podem solicitar recursos sempre que necessário, mas todas as solicitações precisam ser feiras em ordem numérica. Um processo pode solicitar primeiro uma impressora, e depois uma unidade de fita, mas não pode requisitar primeiro a fita e depois a impressora.
+OUTROS ASPECTOS
+Bloqueio em Duas fases
+Apesar de tanto a prevenção quanto a detecção de deadlocks não apresentarem uma solução genérica promissora, existem muitos algoritmos de propósito específico que podem ser empregados com sucesso, obviamente que em casos especiais. O caso das bases de dados, onde uma operação muito freqüente é a de solicitar o bloqueio de um conjunto de registros, para então atualizá-los. Quando muitos processos estiverem rodando ao mesmo tempo, existe um perigo muito grande de isto vir a provocar um deadlock.
+Uma abordagem usada é do bloqueio em duas fases. Na primeira fase, o processo tenta bloquear todos os registros de que ele precisa, um de cada vez. Se tiver sucesso nesta empreitada, ela começa a segunda fase, realizando as atualizações e liberando registros os bloqueados. Nenhum trabalho efetivo é realizado na primeira fase.
+Esta estratégia não é aplicada. Nos sistemas de tempo real e nos de controle de processos, por exemplo, não é aceitável simplesmente terminar um processo que já tenha sido executado em parte, porque determinado recurso não se encontra disponível.
+Deadlocks que não Envolvem Recursos
+Os deadlocks podem ocorrer em outras situações, incluinod algumas que não envolvem recursos. Isto ocorre muitas vezes em semáforos, no qual um processo executa um DOWN em dois semáforos, mutex1 e mutex2. Se tais operações forem executadas na ordem errada, pode ocorrer uma situação de deadlock.
+Preterição Indefinida
+Um problema intimamente ligado à questão do deadlock é o fato de o processo ser preterido indefinidamente pelo algoritmo que concede o direito de uso de determinados recursos. Algumas políticas são necessárias para subsidiar a decisão de quem vai ficar com qual recurso e em que momento.
+Considere o caso da alocação da impressora e que o sistema utilize algum algoritmo que garanta que a alocação da impressora não vai levar a situações de deadlock.
+Agora considere que diversos processos desejam utilizá-la ao mesmo tempo. Qual deles deve ter o direito de usá-la?
+Um algoritmo possível para implementar a alocação da impressora é o que escolhe o processo com o menor arquivo a ser impresso. Este algoritmo maximiza o número de usuários satisfeitos com o sistema, e parece ser um algoritmo justo.
+

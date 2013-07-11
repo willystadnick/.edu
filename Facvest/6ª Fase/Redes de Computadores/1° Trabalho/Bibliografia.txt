@@ -1,0 +1,248 @@
+Tipos de Rede
+Redes WAN
+Redes LAN
+Acesso Discado
+
+Protocolo
+ATM, FDDI, Frame Relay e X.25
+Ethernet, Fast Ethernet, Token Ring e FDDI
+PPP e SLIP
+
+---
+Bb
+http://diegocanto.vilabol.uol.com.br/intro2.htm
+Bb
+---
+Bb
+http://www.urbi.com.br/servic.htm
+Bb
+---
+Bb
+http://www.abusar.org/manuais/vpi_vci.html
+Bb
+---
+Bb
+INTERFACE ATM PARA PC 
+Carlos Ribeiro1, Tiago Sá1, José Vilela2 e Henrique Silva3
+Departamento de Engenharia Electrotécnica, Universidade de Coimbra - Pólo II
+Instituto de Telecomunicações - Pólo de Coimbra
+Pólo II, Pinhal de Marrocos, 3030 COIMBRA
+Bb
+---
+Bb
+http://elianeferraz.vilabol.uol.com.br/atm.htm
+Bb
+---
+Bb
+http://www.projetoderedes.com.br/artigos/artigo_lan_emulation.php
+Bb
+---
+Bb
+http://www.redes.usp.br/conteudo.asp?assunto=25&formato=geral&secao=tecnologias
+Bb
+---
+Bb
+http://penta2.ufrgs.br/rc952/trab2/fddi1c.html
+Bb
+---
+Bb
+# Soares, L.F.G., Lemos, G. e Colcher, S. Redes de Computadores. Das LANs, MANs e WANs às Redes ATM. EMBRATEL e Editora Campus. Rio de Janeiro, 1995.
+# Alves, L. Comunicação de Dados. Editora MAKRON Books - McGraw Hill. São Paulo, 1992
+# Saunders, S. FDDI Switches: Immediate Relief for Backbones under Pressure. Data Communications International. November, 1995.
+# Johnson, J.T. MFS Makes a MAN Out of FDDI. Data Communications International. October, 1991.
+Bb
+---
+Bb
+http://www.pr.gov.br/batebyte/edicoes/2001/bb111/estagiario.htm
+TANENBAUM, A. S. Redes de computadores. 3. ed. Rio de Janeiro: Campus, 1994.
+Bb
+---
+Bb
+http://paginas.fe.up.pt/~goii2000/M3/redes4.htm
+Bb
+---
+Bb
+http://www.apostilando.com/download.php?cod=231&categoria=Redes
+Bb
+---
+
+Gigabit Ethernet
+
+Esta tecnologia é apontada como sendo um ótima opção para as redes de alta velocidade . Muitas coisas evoluíram e prometem evoluir com relação a família Ethernet e especificamente com o surgimento do Gigabit Ethernet. O Gigabit Ethernet promete suprir As necessidades das novas tecnologias que estão invadindo as redes . Isto inclui a padronização de protocolos para suportar as aplicações pesadas como as multimídia . Os padrões do Gigabit ainda não estão todos definidos .
+
+O padrão Gigabit Ethernet faz parte de uma evolução da tão aplicada família Ethernet . As taxas de transmissão prometidas pelo Gigabit são de 1 Gbps ou 1000 Mbps , o que é 10 vez mais rápido do que a tecnologia Fast Ethernet e 100 vezes mais que a taxa de transmissão do Ethernet .
+
+Histórico
+
+O padrão ATM demonstrou muita eficiência ao acabar com o congestionamento das redes por onde trafegam ao mesmo tempo voz , imagem e dados . Mas a partir de julho de 1998 , a situação mudou com a chegada no mercado de mais um integrante da família Ethernet , chamado Gigabit Ethernet , que é uma evolução natural do protocolo Ethernet , só que proporcionando um maior desempenho as redes .
+
+Uma vantagem do Gigabit é a economia , uma vez que as empresas que tiverem redes Ethernet vão poder evoluir para uma nova tecnologia sem grandes investimentos , já que as especificações serão mantidas .
+
+Características do Gigabit Ethernet
+
+Gigabit Ethernet emprega o mesmo protocolo CSMA/CD empregado nas suas predecessoras Ethernet , e além disso , o formato e tamanho do frame também é o mesmo .
+
+E além de suportar o modo de transmissão full-duplex , Gigabit Ethernet será ideal tanto para ser backbone das tecnologias 10/100 Base -T , como também melhorar a conexão para os servidores e futuramente substituir a tecnologia 100 Base-T também nos desktops .
+
+No modo de transmissão full-duplex , dois switches podem receber e enviar pacotes de informações ao mesmo tempo. No half-duplex , onde os switches não enviam informações simultaneamente , o Gigabit Ethernet irá usar o protocolo CSMA/CD de colisões .
+
+Performance : como já dissemos , o Gigabit Ethernet suportará taxas de transmissão muito maiores do que as conseguidas pela sua antecessora. E , vê-se que isso é necessário devido aos novos tipos de aplicações que estão surgindo e que exigem muito das redes de computadores . A princípio o Gigabit Ethernet deverá ser implementado em backbones , ou seja , nos pontos de maior tráfego das redes e, também para fazer a conexão de servidores . Com a chegada do Fast Ethernet nos desktops , esse aumento dos backbones se tornará muito útil .
+
+Flexibilidade : a flexibilidade é também um ponto bastante forte do padrão Gigabit Ethernet . Essa tecnologia tende a ser bastante aplicada em futuro muito breve, e porque não dizermos hoje, devido a sua compatibilidade com a mais aplicada tecnologia de redes atualmente, a Ethernet. Segundo estimativas, a tecnologia Ethernet é aplicada em 83% das conexões de PCs do mundo todo. O Gigabit emprega o mesmo protocolo CSMA/CD, a mesma estrutura de formato, a mesma estrutura de tamanho do padrão Ethernet e isto significa que os usuários podem migrar eficientemente para Gigabit com suas aplicações, sistemas operacionais, protocolos , que possuem. E deste modo não serão necessárias muitas alterações para a implantação do Gigabit.
+
+Custo: das tecnologias atuais para redes de alta velocidade, essa parece levar algumas vantagens. Pois, além da mencionada acima, e por causa dela, os investimentos para a implementação não serão elevados, pois muitos equipamentos já são compatíveis.
+
+Aplicações
+
+O Gigabit Ethernet , assim como o ATM , foi desenvolvido para fornecer uma largura de banda maior na rede , descongestionando os gargalos do backbone .
+
+Tipicamente esta tecnologia poderá ser aplicada nas seguintes tarefas ou situações : na posição de ponto central (core) de comutação de pacotes entre redes Ethernet e Fast Ethernet em um backbone corporativo , em backbone acadêmico (universidades) , nos provedores Internet ,em pontos de presença , atendendo a servidores de alto desempenho e , por fim , nos usuário que demandam alta largura de banda para uso de multimídia e outras aplicações .
+
+Em uma rede cujo projeto leve em conta o balanceamento do tráfego é possível oferecer , mesmo sem QoS , um ambiente propício para uso de aplicações multimídia que podem rodar com ótimo desempenho , sem serem afetadas por outros tipos de tráfego .
+
+Implementação
+
+Para a implementação do padrão Gigabit Ethernet o usuário precisa ter os acessórios certos . Por outro lado ele precisara observar que um switch de 1000 Mbps deverá conter determinados recursos . O primeiro deles , e o mais importante , é a funcionalidade na Camada 3 . Isso porque os 1000 Mbps de tráfego soando através dos canais de transmissão podem sufocar um roteador comum de modo que os Switches Gigabit Ethernet não apenas precisam lidar com a camada 2 , como também trabalhar com as funções da camada 3 na velocidade do fio . Dessa forma os roteadores ficam liberados da tarefa de rotear os protocolos de núcleo da rede , evitando congestionamentos de tráfego potencialmente perigosos .
+
+Outro ponto a ser considerado ao contemplar o Gigabit Ethernet é o gerenciamento . Certifique-se de que poderá encontrar e pagar um equipamento de monitoração apropriado com suporte ao padrão .
+
+O Gigabit Ethernet servirá as partes da rede que requerem uma maior largura de banda , ou seja , o aumento da performance nos pontos críticos da rede . Não se espera que ela seja , pelos menos inicialmente , implementada a níveis de desktop .
+
+Padrões
+
+Os principais objetivos do grupo de trabalho 802.3z são, basicamente, desenvolver padrões que:
+
+· Permitam operações half-duplex e full-duplex em velocidades de 1.000Mbps
+· Utilizem o formato do quadro Ethernet 802,3;
+· Utilizem o método de acesso CSMA/CD com suporte para uma repetidor por domínio de colisão;
+· Ofereçam compatibilidade com tecnologias 10Base -T e 100Base-T. O grupo de trabalho também identificou três objetivos específicos com relação as distâncias dos enlaces:
+· Enlace de fibra óptica multimodo com comprimento máximo de 500 metros;
+· Enlace de fibra óptica monomodo com comprimento máximo de 3 Km;
+· Enlace baseado em cobre (exemplo: cabo coaxial) com comprimento máximo de 25m .
+
+Gigabit Ethernet e suas vantagens
+
+Gigabit Ethernet tem como principais vantagens a popularidade da tecnologia Ethernet e o seu custo . Oferece um aumento de 10 vezes em relação ao desempenho da tecnologia mais popular o Fast Ethernet . Trata-se de uma tecnologia conhecida , protegendo o esforço feito em recursos humanos e em equipamentos . Não há nenhuma nova camada de protocolo para ser estudada, tendo consequentemente , uma pequena curva de tempo de aprendizagem em relação a atualização dos profissionais . A implementação dos comutadores e hubs Gigabit Ethernet deverá acontecer de forma simples e rápida , após um projeto que analise e defina onde os mesmos devem ser colocados dentro do backbone .
+
+Gigabit Ethernet e suas desvantagens
+
+Qualidade de Serviço (QoS)
+
+Além da alta velocidade , o a padrão Gigabit Ethernet não suporta QoS , que é um dos pontos mais fortes da tecnologia ATM . Desta forma , ele não pode garantir o cumprimento das exigências de aplicações como a videoconferência com grande número de participantes , ou mesmo uma transmissão de vídeo me tempo real de um ponto para muitos pontos .
+
+Para minimizar este problema , o IEEE trabalha no sentido de desenvolver um padrão que defina um esquema de prioridade ( IEEE 802.1p ) e possibilite algo "parecido" com o QoS .
+
+Gigabit Ethernet destina-se a três áreas de migração
+
+Será que os dois anos indispensáveis para que o Gigabit atinja a maturidade serão suficientes para despertar a imaginação multimídia das empresas que desenvolvem software ? Pelo sim ou pelo não , convém mantermo-nos na dúvida . Em contrapartida , os promotores da Aliança Gigabit Ethernet apostam dez contra um na banalização dos comutadores Fast Ethernet , tirando partido do tempo de incubação da norma Gigabit 802.3z .
+
+Atualmente os discursos de marketing antecipam a expansão desses vetores de migração . Nesta euforia expansionista , o backbone surge como primeiro território a conquistar . Posicionando-se no lugar dos comutadores Fast Ethernet , os equipamentos Gigabit Ethernet pretendem multiplicar por dez a capacidade do backbone como elemento integrador .
+
+Face ao ATM , o Gigabit Ethernet sofre de problemas de juventude . Consequentemente , o Gigabit Ethernet irá proliferar nesse território de eleição . No que se refere aos utilizadores , as limitações do backbone residem geralmente no primeiro nível da Ethernet comutada a 10 Mbit/s . As estações clientes de um mesmo segmento estão ligados uma única porta comutada .
+
+Quanto aos servidores mais solicitados , beneficiam de um acesso específico a 10 Mbit/s ,ou mesmo a 100 Mbits/s , nos ambientes melhor equipados .
+
+Por fim , no caso dos utilizadores de maior dimensão , as ligações ascendentes de interconexão são de natureza ATM e conduzem a um comutador com a mesma origem tecnológica . Evidentemente a carga de tráfego originada pelo Lan Emulation uma etapa de migração indispensável penaliza o ATM comparativamente com uma solução Gigabit Ethernet sem descontinuidade aparente .
+
+Uma vez que a compatibilidade descendente com a base instalada Ethernet esta assegurada pela normalização IEEE , isso constitui uma garantia de que em teoria , se trata de uma das implementações mais breves . No entanto , esta hipótese mantém-se dependente dos desempenhos intrínsecos a cada equipamento . E é aqui que reside o principal ponto da questão .
+
+A juventude dos produtos Gigabit Ethernet tornam difícil qualquer comparação com o ATM . Por ainda , os fornecedores mais destacados de soluções Gigabit tiram partido deste fato para desviar as atenções de quem anda a procura de débito , utilizando um jargão polissêmico . Expressões como "débito não bloqueante" , "débito de reserva" e "débito agregado", acompanhadas de números extravagantes , ressoam nas arenas de marketing do Gigabit sem qualquer tipo de arbitragem . Em contrapartida , esses mesmos fornecedores mantêm-se muito discretos sobre os procedimentos necessários para atualizar os seus antigos comutadores Ethernet/Fast Ethernet , para poderem uma porta Gigabit .
+
+O toque artístico que reina nas funções de administração de redes virtuais e de routing, turva ainda um pouco mais a visibilidade do comprador . Alguns comutadores Gigabit ocultam essas fraquezas com interpretações espirituosas de grupos de trabalho móveis, de isolamento do tráfego em broadcast , ou ainda de segurança .
+
+Servidores O segundo alvo dos fornecedores do Gigabit Ethernet
+
+Este processo de migração pressupõe uma vulgarização dos comutadores Fast Ethernet , a qual esta ainda bastante longe de ser efetiva .
+
+Perante este contexto , o routing é proposto como mediador para restabelecer a comunicação . São raros os routers existentes no mercado que são capazes de suportar o volume de tráfego Gigabit Ethernet . Na realidade , as capacidades de débito de pacotes por segundo apresentadas pelos construtores de comutadores de comutadores Gigabit ultrapassam as capacidades dos routers tradicionais embora esse débito constitua uma unidade de medida ambígua .
+
+O obstáculo dos routers é igualmente válido para a migração do FDDI para o Gigabit Ethernet , um processo que alguns vendedores já começam a apregoar . Os defensores da banda larga tentam demonstrar com alguns rascunhos que o FDDI , enquanto integrador da Ethernet ,também precisa do Gigabit Ethernet como backbone , a fim de adquirir um novo fôlego .
+
+Os especialistas da conjugação do FDDI com o Gigabit , por seu turno , pretendem substituir a velha guarda FDDI por um grande comutador Gigabit . Só que este esquema de substituição simplista coloca a difícil questão da sobrecarga dos routers integrados na base instalada FDDI . Submetidos a um regime de largura de banda similar , os postos clientes e os servidores expõem-se realmente aos riscos de congestionamento . Neste caso , o risco de contenção é proporcional a freqüência de solicitação dos servidores .
+
+Até agora , o bom senso recomendava que se multiplicasse o número de servidores para distribuir a carga . No entanto essa distribuição da carga de trabalho aumenta os custos de exploração .
+
+Uma nova geração de adaptadores que regulam o tráfego
+
+Este aumento de capacidade dos acessos aos servidores implica um aumento de capacidade proporcional dos postos de trabalho ou uma subexploração da largura de banda do Gigabit Ethernet .
+
+Uma outra solução de otimização consiste em isolar os servidores num mesmo segmento . A esta solução chama-se normalmente de Server Farm . Mas , apesar desta concentração dos servidores eliminar o efeito de contenção entre o servidor e seus clientes , o problema ressurge no segmento onde estão localizados os servidores .
+
+Todos estes obstáculos valorizam o Gigabit Ethernet como meio de interconexão ideal . Entretanto , o adaptador Gigabit Ethernet parece ser desproporcional para este papel de libertador , face a capacidade de processamento dos servidores usuais .
+
+Os testes mostram que adaptadores 100BaseT tradicionais explorados até ao máximo das suas possibilidades consomem cerca de 100% dos recursos da CPU de um posto de trabalho bem configurado . A mais recente geração de adaptadores Fast Ethernet resolve esta sobrecarga através de uma dicotomia do processamento da trama , passando a incidir sobre o início do pacote que compreende o cabeçalho e depois sobre os restos dos dados úteis .
+
+Mas esta segmentação digestível baseia-se no recursos da unidade central e dá origem a um conjunto de interrupções que é proporcional ao débito de transmissão . Esta limitação é incompatível com pretensões do Gigabit , pelo que obriga a criar uma nova geração de adaptadores dotados de um processador por exemplo , do tipo RISC com suficientes memórias buffer intermediárias .
+
+Esta unidade central autônoma adapta o ritmo das interrupções em função do fluxo . No caso de um tráfego incessante , o adaptador escalonará as solicitações do CPU para não o saturar . Em contrapartida , num contexto de trafego mais fluido , o número de interrupções será concentrado para minimizar o tempo de trânsito .
+
+De qualquer forma , apesar de todos os esforços que tem sido efetuados para aumentar a capacidade das placas Gigabit Ethernet , o 1Gbits/s irá esbarrar forçosamente nas limitações da adaptação protocolar e nas imperfeições do sistema operativo . Consequentemente , neste caso , o servidor estará satisfeito , em consumir um quarto do Gigabit prometido . No entanto , para aplicações muito exigentes em termos de largura de banda , a existência de um único adaptador Gigabit parece ser uma opção mais acertada do que uma justaposição de várias de placas Fast Ethernet a 100 Mbits/s . Nas suas divagações de marketing , os construtores prognosticam igualmente a emergência de adaptadores Gigabit em postos clientes utilizadores especializados , incluindo-se neste grupo nomeando aqueles que trabalham com aplicações CAD ou os que dedicam à criação multimédia .
+
+Contudo , na área multiserviço , a largura de banda parece ser secundária quando comparada com a garantia de qualidade de serviço .
+
+Algumas conexões onde o Gigabit Ethernet poderá ser útil
+
+Switch-para-servidor
+
+Melhorar a ligação entre switch e servidor para que o acesso as aplicações e ao servidor de arquivos sejam mais rápidas .
+
+Switch-para-swicht
+
+Melhorará os links de 100 Mbps entre os switches Fast Ethernet ou nos repetidores .
+
+Backbone
+
+Um backbone pode ser melhorado por se usar a tecnologia Gigabit Ethernet para se agregar vários switches de 100 Mbps a um de 1000 Mbps .
+
+Desktops
+
+Este tipo de implementação não será usada de início , mas acredita-se que com o tempo o Gigabit tomará conta também dos desktops tornando-se assim empregada em toda a rede .
+
+Cabeamento Gigabit Ethernet
+
+Inicialmente o Gigabit Ethernet irá ser implementado sobre fibra óptica, futuramente estará disponível também em cabos UTP.
+
+Um outro ponto a ser observado é o tamanho máximo da rede com seus cabos. Um problema surge nas implementações do Gigabit com relação ao domínio de colisão que limita as distâncias das redes. O limite da distância acontece devido ao método CSMA/CD que as Ethernet usam, porque essa limitação é o resultado do relacionamento entre o tempo requerido para transmitir o tamanho mínimo da taxa Ethernet ( 64 bytes ) e a habilidade para detectar uma colisão. A uma velocidade de 10 Mbps esse mecanismo conseguia detectar uma colisão a uma distância de 2 Km. A 100 Mbps ainda mantiveram o formato da taxa do Ethernet, mas devido a velocidade tiveram que diminuir o tamanho para 200m (cabo UTP). De modo que ainda mantivessem essa mesma taxa, a uma velocidade de 1000 Mbps, o tamanho da rede cairia para 20 a 25 m com cabos UPT-5 .
+
+Mais o comitê IEEE 802.3z, que está definido os padrões Gigabit, está trabalhando para chegar a um mecanismo que preserve o dominio de colisão do 100Base-T que é de 200m já que a esta distância e uma taxa de 64 bits é difícil de detectar uma colisão . Eles tiveram que mudar a camada MAC e criaram um mecanismo chamado carrier extensio que mantém os 200 m da 100Base-T . Ele funciona assim : sempre que um sinal é transmitido menor do que 512 bytes , a MAC do Gigabit envia um sinal especial ( e continua a monitorar as colisões ). Daí , a transmissão irá para o minímo de 512 bytes que é equivalente no tempo de transmissão a 64 bytes , e assim , quando ocorre uma colisão o CSMA/CD entra em ação .
+
+Além dessas medidas , o número de repetidores nos segmentosd aconselhados pelo comite 802.3z diminui em relação ao 100Base -T , de 2 para apenas 1.
+
+Mas para as necessidades de um tamanho maior e também por causa do problema de reflexão do sinal , será necessário instalar Gigabit Ethernet com fibras ópticas . No multi-mode a 3 Km . O problema é o preço , que para as fibras ópticas é muito superior tanto o material como a sua instalação . 
+
+Bb
+http://elianeferraz.vilabol.uol.com.br/gigabit.htm
+Bb
+---
+Bb
+http://www.siemens.com.br/glossario.asp?letra=F
+Bb
+---
+Bb
+http://www.intersight.com.br/f.html
+Bb
+---
+Bb
+http://www.geocities.com/SiliconValley/Network/7460/frame.htm
+Bb
+---
+Bb
+http://www.redes.usp.br/conteudo.asp?assunto=24&formato=geral&secao=tecnologias
+Bb
+---
+Bb
+http://www.cyclades.com.br/support/glossary.php
+Bb
+---
+Bb
+http://penta2.ufrgs.br/tp951/protocolos/x25_.html
+
+# [TAR86] Tarouco, Liane Margarida Rockenbach. 
+"Redes de Computadores Locais e de Longa Distância". 
+Editora McGraw-Hill, São Paulo, 1986.
+
+# [Tan94] Tanenbaum, Andrew S.
+"Redes de Computadores". 
+Editora Campus, Rio de Janeiro, 1994.
+Bb
+---

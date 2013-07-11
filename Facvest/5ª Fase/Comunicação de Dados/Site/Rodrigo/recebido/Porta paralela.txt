@@ -1,0 +1,96 @@
+Porta Paralela
+       A porta paralela é uma interface de comunicação entre o computador e um periférico. Quando a IBM criou seu primeiro PC (Personal Computer) ou Computador Pessoal, a idéia era conectar a essa Porta uma impressora, mas atualmente, são vários os periféricos que utilizam-se desta Porta para enviar e receber dados para o computador (exemplos: Scanners, Câmeras de vídeo, Unidade de disco removível e outros).
+       Se você conhece um pouco de eletrônica e domina uma linguagem de programação como: C/C++/C++Builder, Pascal/Delph ou mesmo o Visual Basic, poderá desenvolver um programa que controle um aparelho conectado à Porta paralela, ou um programa de transferência de arquivos entre dois computadores, utilizando um cabo paralelo como meio de transmissão. O seu conhecimento de Eletrônica servirá para você desenvolver sua própria placa Eletrônica, que será conectada ao DB25 da porta paralela.
+       Está página lhe fornecerá conhecimentos sobre a porta paralela, que o fará compreender e utilizá-la, de uma maneira não convencional, isto é, não somente para ser utilizada com uma impressora, mas também como qualquer outro aparelho, que o usuário tenha conhecimento sobre seu funcionamento, desejando controlá-lo através de seu Personal Computer, como diz a IBM. 
+Transmissão unidirecional
+       A porta paralela SPP (Standard Parallel Port) pode chegar a uma taxa de transmissão de dados a 150KB/s. Comunica-se com a CPU utilizando um BUS de dados de 8 bits.
+Para a transmissão de dados entre periféricos são usado 4 bits por vez.
+Transmissão bidirecional
+       A porta avançada EPP ( Enhanced Parallel Port ) chega a atingir uma taxa de transferência de 2 MB/s. Para atingir essa velocidade, será necessário um cabo especial.
+Comunica-se com a CPU utilizando um BUS de dados de 32 bits.
+Para a transmissão de dados entre periféricos são usado 8 bits por vez. 
+       A porta avançada ECP (Enhanced Capabilities Port) tem as mesmas características que a EPP, porém, utiliza DMA (acesso direto à memória), sem a necessidade do uso do processador, para a transferência de dados. Utiliza também um buffer FIFO de 16 bytes. 
+ 
+EXTENSÃO DO CABO PARALELO
+       A extensão do cabo para interligar um computador a um periférico, é de no máximo 8m. Na prática, utiliza-se um cabo com extensão menor. Quanto maior a extensão do cabo, maior é a interferência na transmissão dos dados.
+
+ 
+ ENDEREÇOS DA PORTA PARALELA
+
+       O seu computador nomeia as Portas Paralelas, chamando-as de LPT1, LPT2, LPT3 etc, mas, a Porta física padrão de seu computador é a LPT1, e seus endereços são: 378h ( para enviar um byte de dados pela Porta), 378+1h (para receber um valor através da Porta) e, 378+2h (para enviar dados). Às vezes pode está disponível a LPT2, e seus endereços são: 278h, 278+1h e 278+2h, com as mesmas funções dos endereços da porta LPT1 respectivamente.
+Nome da Porta	Endereço de memória	Endereço da Porta	Descrição
+LPT1	0000:0408	378 hexadecimal	888 decimal	Endereço base
+LPT2 	0000:040A	278 hexadecimal	632 decimal	Endereço base
+ 
+ 
+ REGISTRADORES
+
+       Utilizando a Porta Paralela conectada a uma impressora, os endereços terão nomes sugestivos, como segue abaixo:
+Nome	Endereços LPT1	Endereços LPT2	Descrição
+Registro de Dados	378h	278h	Envia um byte para a impressora
+Registro de Status	379h	279h	Ler o Status da impressora
+Registro de Controle	37Ah	27Ah	Envia dados de controle para a impressora
+
+ 
+ 
+ O CONECTOR DB25
+       O DB25 é um conector que fica na parte de trás do gabinete do computador, e é através deste, que o cabo paralelo se conecta ao computador para poder enviar e receber dados.
+       No DB25, um pino está em nível lógico 0 quando a tensão elétrica no mesmo está entre 0 à 0,4v. Um pino se encontra em nível lógico 1 quando a tensão elétrica no mesmo está acima de 3.1 e até 5v.
+       A figura abaixo mostra o conector padrão DB25, com 25 pinos, onde cada pino tem um nome que o identifica:
+DB25 que fica atrás do Micro
+
+
+                                                            DB25 que fica atrás do Micro
+                                                           ---------->>>>Figura 1
+
+                                                          Conector Macho do Cabo Paralelo
+                                                           ------------>>>>Figura 2
+
+                                                            Foto do conector DB25 macho do cabo Paralelo
+                                                             ------------>>>>Figura 3
+                                                            Esquema de funcionamento do DB25 no modo SPP 
+                                                            ------------>>>>Figura 4
+
+
+
+O CONECTOR MACHO CENTRONICS 36 PINOS
+       O conector macho Centronics 36 pinos faz parte do cabo da impressora, é através deste cabo que a impressora é conectada ao computador.
+       Quando desenvolvemos uma projeto que utilize uma interface para conectarmos ao computador, poderemos utilizar um conector centronics 36 pinos fêmea, isso faz com que nossa interface aproveite o cabo da impressora, onde poderemos conseguir com facilidade em lojas de Informática.
+       A figura abaixo mostra o conector Centronics 36 pinos e sua descrição:
+
+                                                                   ------------>>>>Figura 5
+
+                                                                    ------------>>>>Figura 6
+Significado de cada pino do conector Centronics 36 pinos 
+Número do Pino	Descrição
+1	Strob
+2 ao 9	Dados (D0...D7)
+10	Ack
+11	Busy
+12	Paper End
+13	Select Out
+14	Auto Feed
+15 ao 18	Não conectato
+19 ao 30	GROUND
+31	Init
+32	Error
+33	GROUND
+34 a 35	Não conectato
+36	Select In
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

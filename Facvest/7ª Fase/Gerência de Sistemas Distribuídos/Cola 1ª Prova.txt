@@ -1,0 +1,381 @@
+1. INTRODUÇÃO A GERÊNCIA DE SISTEMAS DISTRIBUÍDOS
+
+1.1. SISTEMAS DISTRIBUÍDOS & REDES DE COMPUTADORES
+Inicialmente iremos realizar uma distinção entre Redes de Computadores e Sistemas Distribuídos.
+Em um sistema distribuído, a existência de diversos computadores autônomos é transparente, ou seja, o usuário não possui conhecimento deles. Para executar um programa, o usuário poderá digitar normalmente um comando. Caberá ao sistema operacional selecionar o melhor processador, localizar e transportar todos os arquivos de entrada necessários e colocar os resultados no lugar apropriado. Em outras palavras, o usuário de um sistema distribuído não tem consciência de que há diversos processadores; para ele, é como se existisse um processador virtual. Devem ser automáticas as alocações de tarefas, para os processadores, e de arquivos, para os discos, e a movimentação dos arquivos entre os locais em que foram gerados e aqueles onde são necessários, assim, como as demais funções do sistema.
+Em uma rede de computadores, os usuários devem logar-se explicitamente com uma máquina, submeter explicitamente as tarefas remotas e movimentar explicitamente os arquivos.Em um sistema distribuído, nada é explícito; tudo é feito automaticamente pelo sistema, sem o conhecimento do usuário.
+Na prática um sistema distribuído é um sistema de software instalado em uma rede.
+O software dá a ele um alto grau de coesão e transparência. Conseqüentemente, é o software (particularmente o sistema operacional) que determina a diferença entre uma rede e um sistema distribuído, não o hardware.
+No entanto os dois assuntos têm uma série de pontos em comum. Por exemplo, os sistemas distribuídos e as redes de computadores precisam movimentar arquivos. A diferença está em quem é o responsável pela movimentação: o sistema ou o usuário.
+
+1.2. HISTÓRICO DOS SISTEMAS DISTRIBUÍDOS
+Origem: Sistemas Monolíticos e Mainframes
+No inicio eram os mainframes a plataforma dominante de tecnologia de informação [figura 1], onde se concentravam as regras ou ambientes de negócios, os bancos de dados e as interfaces do usuário. Todos disponibilizados por vários terminais mudos (burros, sem poder de processamento). Tinha um alto custo e atendiam a um grande número de usuários todos controlados por ele.
+Os softwares escritos para esta tecnologia são freqüentemente monolíticos, isto é, a interface do usuário, regras de negócios e acessos aos dados estão todos contidos em uma única aplicação.
+
+1.2.1. Evolução: Modelo Cliente Servidor
+Depois surgiu a geração de computadores de médio porte. Esses micomputadores eram mais leves, mais flexíveis, mais baratos e mais fáceis de utilizar que os computadores de grande porte.
+Essas máquinas tiveram uma década de sucesso, mas logo foram vítimas do surgimento de uma nova plataforma: o microcomputador ou computador pessoal (PC). E pela primeira, tarefas básicas de escritórios, tais como o compartilhamento de arquivos e impressoras se tornaram possíveis.
+Nessa evolução da tecnologia da informação, surge a computação cliente servidor [figura 2], modelo de gerenciamento de informação que divide o processamento de informação entre um computador que requer um serviço e outro que devolve um serviço, isto é, desempenha essa função numa plataforma que é mais bem adequada para este desempenho.
+Com este modelo, a distribuição dos componentes da aplicação são divididos da seguinte maneira: os componentes da aplicação ficam divididos da seguinte maneira: os componentes da base de dados ficam no servidor; os componentes da interface do usuário ficam no cliente e os das regras de negócios em um ou no outro, ou em ambos.
+Porém, este modelo apresentou falhas, pis com a mudança de um componente da parte do cliente, nova cópia do componente cliente (executável ou pacotes executáveis), tem de ser distribuída para cada usuário. Com o avanço de multicamadas no modelo cliente servidor, o modelo original ficou conhecido como arquitetura de duas camadas.
+
+1.2.2. Evolução das Camadas do Modelo Cliente Servidor
+A arquitetura cliente servidor foi sobre vários aspectos, uma revolução na computação. Apesar de resolver problemas das aplicações baseadas em mainframes, arquitetura cliente/servidor ainda apresentava falha. Por exemplo, a funcionalidade de acesso ao Banco de Dados (tal como consulta ( Query)) e regras de negócios, estavam embutidas no componente cliente, e qualquer alteração nas regras de negócios, ou acesso ao Banco de Dados, ou mesmo no próprio banco, freqüentemente obrigavam a atualização do componente para todos os usuários da aplicação, resultando em uma redistribuição da aplicação. 
+A tradicional arquitetura cliente/servidor (duas camadas) foi substituída pela de múltiplas camadas [figura 3]. Esta arquitetura divide o sistema em três camadas lógicas: a camada de interface de usuário, a camada de regras de negócio, e a camada de acesso ao Banco de Dados
+A arquitetura cliente/servidor multicamadas adiciona à arquitetura de duas camadas importantes pontos:
+. Torna a aplicação menos frágil, isolando as alterações do cliente do restante da aplicação;
+. Maior refinação nos componentes “escutáveis”, permitindo maior flexibilidade no desenvolvimento de qualquer aplicação;
+. Maior isolamento entre as camadas.
+A camada de interface do usuário comunica-se somente com a camada das regras de negócio, nunca diretamente com a camada de acesso aos dados. A camada de regras de negócio, por sua vez, comunica-se por um lado com a camada de interface de usuário e por outro lado com a camada de acesso a dados. Deste modo alterações feitas na camada de acesso aos dados não afetarão a camada de interface com usuáio, pois são isoladas uma da outra. Esta arquitetura permite que alterações sejam feitas na aplicação com menor probabilidade de afetar o componente cliente (o qual lembre-se, tem de ser redistribuído sempre que fora alterado).
+Nesta arquitetura, os componentes de regra de negócios, acesso a dados, e o próprio banco de dados podem rodar em máquinas diferentes, distribuindo melhor a carga das aplicações, e tornando-as mais robustas e escaláveis, isto é, havendo a distinção entre cliente e servidor, sendo que cliente pode fornecer componente, tal como um servidor.
+A Nova Geração: Sistemas Distribuídos Com a evolução da arquitetura cliente/servidor multicamadas, as aplicações evoluíram sua arquitetura para um modelo de sistemas distribuídos [figura 4]. Unidas ao paradigma de orientação a objetos, as aplicações podem referenciar-se a objetos do sistema em qualquer lugar da rede, proporcionando assim, maior flexibilidade de reutilização de códigos, tornando mais eficiente o desenvolvimento de aplicações
+Uma aplicação distribuída é composta por três camadas lógicas:
+. Camada de Apresentação: em geral, é centrada nas estações, principalmente emredes cliente/servidor. Em ambientes como a WEB, algumas funções de apresentação também ficam sob a responsabilidade do servidor de dados ou aplicações.
+. Camada de Aplicação: responsável pelas regras do negócio e pelo gerenciamento do fluxo de dados. Fica localizada nos servidores de aplicação, mas em alguns aspectos são manipuladas também pelo cliente e pelo servidor.
+. Camada de Dados: assume o controle sobre os dados, propriamente dito.
+
+1.3. NECESSIDADES DE GERENCIAMENTO
+Independente da dimensão das redes de computadores, a mesma precisa ser gerenciada, a fim de garantir aos usuários, a disponibilidade de serviços a um nível de desempenho aceitável. A expansão das redes aumenta a complexidade de seu gerenciamento, forçando a adoção de ferramentas automatizadas para a sua monitoração e controle. As necessidades de gerenciamento das redes estão atreladas e não limitadas aos seguintes fatores:
+. As redes estão ficando cada vez mais importantes para as empresas;
+. São infra-estruturas indispensáveis, são de missão crítica, pois não podem parar;
+. São cada vez maiores: atingem mais pessoas, mais lugares físicos da empresa, mais parceiros, até mesmo os clientes da empresa;
+. São cada vez mais heterogêneas: mesclando tecnologias e fornecedores;
+. A complexidade das tecnologias torna-se evidente, pois devem oferecer suporte para as aplicações multimídias, que não sejam de melhor esforço (áudio, vídeo, voz).
+. Ainda existe deficiência de pessoal qualificado;
+. Resultado: precisamos de boas soluções para gerenciar as redes. Gerência: é tudo que é necessário para manter as redes funcionando bem. O gerenciamento de redes pode ser entendido como o processo de controlar uma rede de computadores de tal modo que seja possível maximizar sua eficiência e produtividade. Tal processo compreende um conjunto de funções integradas que podem estar em uma máquina ou espalhados por milhares de quilômetros, em diferentes organizações e residindo em máquinas distintas. Aqui, é importante observar que com estas funções pode-se controlar uma rede de computadores e seus serviços, provendo mecanismos de monitoração, análise e controle dos dispositivos e recursos da rede.
+
+1.4. GERÊNCIA DE REDES E GERÊNCIA DE SISTEMAS
+Uma rede coorporativa não consiste somente da infra-estrutura da rede. Tudo tem que estar funcionado adequadamente, não apenas a infraestrutura da rede
+
+1.4.1. Gerência de Rede
+Na gerência de redes os seguintes elementos que compõem a rede devem ser gerenciados: roteadores; pontes; switches, hubs, repetidores, cabeamento, modems, servidores de terminais, multiplexadores, enlaces, conexões etc. Para cada um dos elementos que formam uma rede, tarefas típicas de gerenciamento devem ser efetuadas.
+
+1.4.2. Tarefas Típicas de Gerenciamento nos Elementos de Rede
+. Configuração de dispositivos: está relacionada com a forma que os elementos de rede serão configurados.
+. Administração de endereços IP: diz respeito ao modo com que os endereços de rede serão administrados, de forma estática (IPs fixos) ou de forma dinâmica (IPs dinâmicos distribuídos por servidores de DHCP, por exemplo).
+. Serviços de Diretórios: que políticas de acessos, atualizações de conteúdos serãoaplicadas aos serviços de diretórios. Diretórios são bases de dados otimizados para leitura e podem conter informações sobre pessoas, processos, recursos e grupos. São úteis para uma grande gamas de aplicações.
+. Monitoração de tráfego: que políticas serão adotadas para realizar a monitoração de todo o fluxo de pacotes que trafegam na rede.
+. Diagnóstico de faltas: está intimamente ligada com a prevenção, detecção e solução de problemas que possam causar falhas na rede.
+. Tratamento de alarmes: será necessário estabelecer limiares para gerar alarmes. Por exemplo, configurar uma ferramenta de gerência para que um alarme sonoro seja executado antes que uma falha ocorra na rede.
+. Restauração de serviço: utilizar mecanismos para recuperar ou restaurar um equipamento de rede.
+. Análises de Dados e Relatórios: todos os dados que trafegam na rede devem ser monitorados, analisados e muitas vezes controlados. Para que com base nos dados coletados, seja possível gerar relatórios de forma que os clientes da rede tenham conhecimento da disponibilidade/indisponibilidade de um recurso de rede, por exemplo.
+. Registro de Problemas: todos os problemas potenciais ocorridos nos equipamentos da rede devem ser registrados. Neste registro devem conter: hora inicio e término do problema; operador do equipamento; severidade do problema; descrição do problema; que outros equipamentos estão envolvidos; qual rede os equipamentos pertencem; endereço do equipamento; responsável pelo registro; disposição adotada na solução do problema.
+. Segurança de Rede: que soluções de segurança serão implementadas para amenizar a vulnerabilidade da rede. Uma forma segura seria a implantação de uma plataforma Firewall (plataformas compostas de hardware e software que separam e filtram o fluxo de dados local do externo), criando seguranças para o uso interno da companhia e acesso externo.
+. Inventário: é necessário ter uma documentação do levantamento preciso e atualizado de todos os componentes da rede.
+
+1.4.3. Gerência de Sistemas
+Na gerência de sistemas, os seguintes elementos que estão embutidos nas redes devem ser gerenciados: servidores de arquivos, servidores de impressão, servidores de banco de dados, servidores de aplicação, estações de trabalho, banco de dados, sistemas operacionais, correio eletrônico, aplicações etc. Para cada elemento tarefas típicas de gerenciamento devem ser efetuadas.
+Tarefas Típicas de Gerenciamento nos Elementos do Sistema
+. Automação de console: geralmente adota-se um servidor se console, onde os gerentes de rede poderão acessar de modo conveniente, seguro e remotas todas as portas console dos equipamentos da rede, a qualquer hora e em qualquer lugar.
+. Monitoração de Desempenho: em termos de métricas de Qualidade de Serviço (QoS) ou de serviços de melhor esforço, devem ser analisados se os serviços que estão sendo oferecidos aos usuários estão dentro de níveis pré-aceitáveis. Para isso alguns limiares serão estabelecidos, como por exemplo: qual deve ser o delay de uma LAN? Qual deve ser o atraso e a variação de atraso etc.
+. Diagnóstico de falhas: saber o porquê os níveis estabelecidos para as métricas não sendo cumpridos, detectar as causas das falhas: se for um problema de colisão na rede, se é um problema no link alocado etc.
+. Inventário: é necessário ter uma documentação do levantamento preciso e atualizado de todos os componentes que fazem parte do sistema.
+. Distribuição de software: conhecer toda a infra-estrutura da rede, serviços, atividades dos usuários, para que os softwares sejam adequadamente distribuídos na rede.
+. Controle de licenças de software: é imprescindível que se tenha um controle de todas as licenças de softwares de uma organização.
+. Administração de usuários (contas): esta tarefa está relacionada com administração e alocação de contas, autorizações, limites e restrições aos usuários.
+. Registro de Problemas: todos os problemas potenciais ocorridos nos equipamentos e/ou sistemas da rede devem ser registrados. Neste registro devem conter: hora inicio e término do problema; operador do equipamento; severidade do problema; descrição do problema; que outros equipamentos e/ou sistema estão envolvidos; qual rede os equipamentos pertencem; endereço do equipamento; responsável pelo registro; disposição adotada na solução do problema.
+. Gerência de Armazenamento: realizar um gerenciamento para saber a capacidade que os discos dos servidores podem suportar. Criar rotinas para que o sistema avise o administrador que os discos estão quase no limite de sua capacidade de armazenamento.
+. Backup dos Dados: a adoção de uma política de backup bem elaborada evitaráproblemas futuros. Lembre-se que perdas de informações não são causadas apenas por falhas nos equipamentos, mas também por desastres como fogo, umidade, roubo, explosões. Neste sentido recomenda-se a obtenção de um cofre de segurança para o armazenamento de mídias magnéticas e microfilmes. Não importa a política de backup que será adotada (fita, cd etc) o importante é saber que a mesma deve ser implementada.
+. Backup de Equipamento: o ideal seria que as empresas possuíssem equipamentos já prontos, configurados, para que na falha de um outro equipamento, este fosse substituído por um backup.
+. Gerência de Spool: esta tarefa está relacionada com a área de dispositivos de armazenamento.
+. Segurança de sistema: rotina de primordial importância, nela deverá ser realizada as permissões, autorizações, restrições dos usuários que terão acesso nos sistemas da rede. Um bom programa de antivírus deve estar instalado e atualizado em todos os servidores e estações de trabalho.
+Através do exposto é possível conhecer que tanto a Gerência de Redes quanto a
+Gerência de Sistemas são tarefas extremamente complexas e abrangentes, pois são constituídas de inúmeros elementos que necessitam ser gerenciados com eficiência. Para isto, necessita-se de recursos humanos altamente capacitados e competentes e principalmente de plataformas de Gerência para a monitoração e controle dos elementos que constituem as redes e os sistemas distribuídos
+
+1.4.4. Plataforma de Gerência
+A plataforma de gerência é "sistema operacional" da gerência; oferece funções básicas de gerência (comuns a muitas aplicações), oferece um ambiente para o desenvolvimento e a integração de aplicações; sobre as plataformas estão as diversas aplicações usadas pelos operadores. A plataforma deve prover serviços básicos para as aplicações QUE A USAM. A figura 6 apresenta um exemplo simplificado de plataforma de gerência.
+O exemplo acima ilustrou uma plataforma de gerência bem simplificada. Observe que a plataforma de gerência precisa de muitas aplicações com finalidades específicas porque não há como ter uma única aplicação zona de gerência. A dificuldade de construir aplicações está no fato de muitas vezes os fornecedores (desenvolvedores) não se especializam.
+São exemplos de plataforma de gerência: Openview da Hp; Sunnet Manager da Sun Microsystems; Netview da Ibm; Spectrum da Cabletron; Ca-Unicenter da Computer Associates; Whats Up Gold e Advence Net.
+
+2. ÁREAS FUNCIONAIS DE GERENCIAMENTO
+Uma separação funcional de necessidades no processo de gerenciamento foi apresentada pela ISO (International Organization for Standardization), como parte de sua especificação de Gerenciamento de Sistemas OSI: falhas, desempenho, configuração, contabilização e segurança.
+
+2.1. GERENCIAMENTO DE FALHAS
+Falhas não são o mesmo que erros. Uma falha é uma condição anormal cuja recuperação exige ação de gerenciamento. Uma falha normalmente é causada por operações incorretas ou um número excessivo de erros. Por exemplo, se uma linha de comunicação é cortada fisicamente, nenhum sinal pode passar através dela. Um grampeamento no cabo pode causar distorções que induzem à uma alta taxa de erros.
+Certos erros como, por exemplo, um bit errado em uma linha de comunicação, podem ocorrer ocasionalmente e normalmente não são consideradas falhas.
+Para controlar o sistema como um todo, cada componente essencial deve ser monitorado individualmente para garantir o seu perfeito funcionamento. Quando ocorre uma falha, é importante que seja possível, rapidamente:
+. Determinar o componente exato onde a falha ocorreu;
+. Isolar o resto da rede da falha, de tal forma que ela continue a funcionar sem interferências;
+. Reconfigurar ou modificar a rede para minimizar o impacto da operação sem o componente que falhou;
+. Reparar ou trocar o componente com problemas para restaurar a rede ao seu estado anterior.
+O impacto e a duração do estado de falha pode ser minimizado pelo uso de componentes redundantes e rotas de comunicação alternativas, para dar à rede um grau de “tolerância à falhas”.
+
+2.2. GERENCIAMENTO DE CONTABILIZAÇÃO
+Mesmo que nenhuma cobrança interna seja feita pela utilização dos recursos da rede, o administrador da rede deve estar habilitado para controlar o uso dos recursos por usuário ou grupo de usuários, com o objetivo de:
+. Evitar que um usuário ou grupo de usuários abuse de seus privilégios de acesso e monopolize a rede, em detrimento de outros usuários;
+. Evitar que usuários façam uso ineficiente da rede, assistindo-os na troca de procedimentos e garantindo a desempenho da rede;
+. Conhecer as atividades dos usuários com detalhes suficientes para planejar o crescimento da rede.
+O gerente da rede deve ser capaz de especificar os tipos de informações de contabilização que devem ser registrados em cada nodo, o intervalo de entrega de relatórios para nodos de gerenciamento de mais alto nível e os algoritmos usados no cálculo da utilização.
+
+2.3. GERENCIAMENTO DE CONFIGURAÇÃO
+O gerenciamento de configuração está relacionado com a inicialização da rede e com uma eventual desabilitação de parte ou de toda a rede. Também está relacionado com as tarefas de manutenção, adição e atualização de relacionamentos entre os componentes e do status dos componentes durante a operação da rede.
+Alguns recursos podem ser configurados para executar diferentes serviços como, por exemplo, um equipamento pode atuar como roteador, como estação de trabalho ou ambos. Uma vez decidido como o equipamento deve ser usado, o gerente de configuração pode escolher o software apropriado e um conjunto de valores para os atributos daquele equipamento.
+O gerente da rede deve ser capaz de, inicialmente, identificar os componentes da rede e definir a conectividade entre eles. Também deve ser capaz de modificar a configuração em resposta às avaliações de desempenho, recuperação de falhas, problemas de segurança, atualização da rede ou a fim de atender à necessidades dos usuários.
+Relatórios de configuração podem ser gerados periodicamente ou em resposta às requisições de usuários.
+
+2.4. GERENCIAMENTO DE DESEMPENHO
+O gerenciamento do desempenho de uma rede consiste na monitoração das atividades da rede e no controle dos recursos através de ajustes e trocas. Algumas das questões relativas ao gerenciamento do desempenho são:
+. Qual é o nível de capacidade de utilização?
+. O tráfego é excessivo?
+. O throughput foi reduzido para níveis aceitáveis?
+. Existem gargalos?
+. O tempo de resposta está aumentando?
+Para tratar estas questões, o gerente deve focalizar um conjunto inicial de recursos a serem monitorados, a fim de estabelecer níveis de desempenho. Isto inclui associar métricas e valores apropriados aos recursos de rede que possam fornecer indicadores de diferentes níveis de desempenho. Muitos recursos devem ser monitorados para se obter informações sobre o nível de operação da rede. Colecionando e analisando estas informações, o gerente da rede pode ficar mais e mais capacitado no reconhecimento de situações indicativas de degradação de desempenho. Estatísticas de desempenho podem ajudar no planejamento, administração e manutenção de grandes redes. Estas informações podem ser utilizadas para reconhecer situações de gargalo antes que elas causem problemas para o usuário final. Ações corretivas podem ser executadas, tais como, trocar tabelas de roteamento para balancear ou redistribuir a carga de tráfego durante horários de pico, ou ainda, em longo prazo, indicar a necessidade de expansão de linhas para uma determinada área.
+
+2.5. GERENCIAMENTO DE SEGURANÇA
+O gerenciamento da segurança provê facilidades para proteger recursos da rede e informações dos usuários. Estas facilidades devem estar disponíveis apenas para usuários autorizados. É necessário que a política de segurança seja robusta e efetiva e que o sistema de gerenciamento da segurança seja, ele próprio, seguro.
+O gerenciamento de segurança trata de questões como:
+. Geração, distribuição e armazenamento de chaves de criptografia;
+. Manutenção e distribuição de senhas e informações de controle de acesso;
+. Monitoração e controle de acesso à rede ou parte da rede e às informações obtidas dos nodos da rede;
+. Coleta, armazenamento e exame de registros de auditoria e logs de segurança, bem como ativação e desativação destas atividades.
+
+3. FUNÇÕES DE GERENCIAMENTO DE REDE
+As funções de gerenciamento de rede podem ser agrupadas em duas categorias: monitoração de rede e controle de rede. A monitoração da rede está relacionada com a tarefa de observação e análise do estado e configuração de seus componentes; é uma função de “leitura”. O controle da rede é uma função de “escrita” e está relacionada com a tarefa de alteração de valores de parâmetros e execução de determinadas ações.
+
+3.1. MONITORAÇÃO
+A monitoração consiste na observação de informações relevantes ao gerenciamento. Estas informações podem ser classificadas em três categorias:
+. Estática: caracteriza a configuração atual e os elementos na atual configuração, tais como o número e identificação de portas em um roteador.
+. Dinâmica: relacionada com os eventos na rede, tais como a transmissão de um pacote na rede.
+. Estatística: pode ser derivada de informações dinâmicas; ex. média de pacotes transmitidos por unidade de tempo em um determinado sistema.
+A informação de gerenciamento é coletada e armazenada por agentes e repassada para um ou mais gerentes. Duas técnicas podem ser utilizadas na comunicação entre agentes e gerentes: polling e event- reporting.
+A técnica de polling consiste em uma interação do tipo request/ response entre um gerente e um agente. O gerente pode solicitar a um agente (para o qual ele tenha autorização), o envio de valores de diversos elementos de informação. O agente responde com os valores constantes em sua MIB.
+Na técnica de event-reporting, a iniciativa é do agente. O gerente fica na escuta, esperando pela chegada de informações. Um agente pode gerar um relatório periodicamente para fornecer ao gerente o seu estado atual. A periodicidade do relatório pode ser configurada previamente pelo gerente. Um agente também pode enviar um relatório quando ocorre um evento significativo ou não usual.
+Tanto o polling quanto o event-reporting são usados nos sistemas de gerenciamento, porém a ênfase dada a cada um dos métodos difere muito entre os sistemas. Em sistemas de gerenciamento de redes de telecomunicações, a ênfase maior é dada para o método de relatório de evento. Em contraste, o modelo SNMP dá pouca importância ao relatório de evento. O modelo OSI fica entre estes dois extremos.
+A escolha da ênfase depende de um número de fatores, incluindo os seguintes:
+. A quantidade de tráfego gerada por cada método;
+. Robustez em situações críticas;
+. O tempo entre a ocorrência do evento e a notificação ao gerente;
+. A quantidade de processamento nos equipamentos gerenciados;
+. A problemática referente à transferência confiável versus transferência não confiável;
+. As aplicações de monitoração de rede suportadas;
+. As considerações referentes ao caso em que um equipamento falhe antes de enviar um relatório.
+
+3.2. CONTROLE DE REDE
+Esta parte do gerenciamento de rede diz respeito à modificação de parâmetros e à execução de ações em um sistema remoto. Todas as cinco áreas funcionais de gerenciamento (falhas, desempenho, contabilização, configuração e segurança), envolvem monitoração e controle. Tradicionalmente, no entanto, a ênfase nas três primeiras destas áreas, tem sido na monitoração, enquanto que nas duas últimas, o controle tem sido mais enfatizado. Alguns aspectos de controle na gerência de configuração e de segurança são apresentados a seguir.
+O controle de configuração inclui as seguintes funções:
+. Definição da informação de configuração - recursos e atributos dos recursos sujeitos ao gerenciamento;
+. Atribuição e modificação de valores de atributos;
+. Definição e modificação de relacionamentos entre recursos ou componentes da rede;
+. Inicialização e terminação de operações de rede;
+. Distribuição de software;
+. Exame de valores e relacionamentos;
+. Relatórios de status de configuração.
+O controle de segurança é relativo à segurança dos recursos sob gerenciamento, incluindo o próprio sistema de gerenciamento. Os principais objetivos em termos de segurança, são relativos a confidencialidade, integridade e disponibilidade. As principais ameaças à segurança referem-se à interrupção, interceptação, modificação e mascaramento.
+As funções de gerenciamento de segurança podem ser agrupadas em três categorias:
+. Manutenção da informação de segurança
+. Controle de acesso aos recursos
+. Controle do processo de criptografia.
+
+4. MODELOS DE GERENCIAMENTO DE REDE
+Um sistema de gerenciamento de rede é uma coleção de ferramentas para monitorar e controlar a rede, integradas da seguinte forma:
+. Uma única interface de operador, com um poderoso, mas amigável conjunto de comandos, para executar a maioria ou todas as tarefas de gerenciamento da rede;
+. Uma quantidade mínima de equipamentos separados, isto é, que a maioria do hardware e software necessário para o gerenciamento da rede seja incorporado nos equipamentos de usuários existentes.
+O software usado para realizar as tarefas de gerenciamento reside nos computadores hospedeiros (estações de trabalho) e nos processadores de comunicação (switches, routers, hubs, etc).
+Todos os equipamentos da rede, que fazem parte do sistema de gerenciamento, possuem um conjunto de software destinado às tarefas de coletar informações sobre as atividades relacionadas com a rede, armazenar estatísticas localmente e responder aos comandos do centro de controle da rede. Estes nodos são referenciados como AGENTES. No mínimo um hospedeiro da rede é designado para as tarefas de controlador da rede (GERENTE) e possui uma coleção de software chamada Aplicação de
+Gerenciamento da Rede. A aplicação de gerenciamento da rede possui uma interface que permite, a um usuário autorizado, gerenciar a rede. A figura 7 apresenta um cenário possível de um sistema de gerenciamento de rede.
+Um software de gerenciamento genérico é composto por:
+. Elementos gerenciados
+. Agentes
+. Gerentes
+. Bancos de Dados de Informações
+. Protocolos para troca de informações de gerenciamento
+. Interfaces para programas aplicativos
+. Interfaces com o usuário
+A arquitetura do software de gerenciamento residente no gerente e nos agentesvaria de acordo com a funcionalidade da plataforma adotada. Genericamente, o software pode ser dividido em três grandes categorias:
+. Software de apresentação (interface)
+. Software de gerenciamento (aplicação)
+. Software de suporte (base de dados e comunicação)
+
+4.1. SOFTWARE DE APRESENTAÇÃO
+A interface de usuário, em um sistema de gerenciamento, permite que o usuário monitore e controle a rede. Normalmente ela está localizada no sistema hospedeiro gerente. Em alguns casos é comum existir uma interface em alguns agentes a fim de permitir a execução de testes e também a visualização ou alteração de alguns parâmetros localmente. A figura 2.2 (a) mostra os dois blocos que representam o software de apresentação das informações de gerência.
+O principal, em qualquer sistema de gerenciamento, é que a interface seja unificada, isto é, que ela seja a mesma em qualquer nodo, permitindo que o usuário gerencie uma rede heterogênea com um mínimo de treinamento.
+Um dos perigos em qualquer sistema de gerenciamento é a sobrecarga de informações. Dependendo da configuração estabelecida, uma grande quantidade de informações pode ser disponibilizada para o usuário. As ferramentas da interface de apresentação devem organizar, sumarizar e simplificar, tanto quanto possível estas informações. Na maioria dos produtos existentes no mercado, são utilizados gráficos e tabelas para a apresentação das informações.
+
+4.2. SOFTWARE DE GERENCIAMENTO
+O software que fornece a aplicação de gerenciamento pode ser muito simples, como é o caso do modelo SNMP, ou muito complexo, como o modelo OSI. A figura 8 (b) mostra uma estrutura genérica de um software de gerenciamento organizada em três níveis: aplicação de gerenciamento de rede, elementos de serviço da aplicação e serviço de transporte de dados de gerenciamento da rede.
+A aplicação de gerenciamento de rede provê os serviços de interesse do usuário como, por exemplo, gerenciamento de falhas, de configuração, de segurança, etc. Os elementos de serviço da aplicação implementam as funções com propósito geral, que servem de suporte às diversas aplicações, tais como, alarmes genéricos ou sumarização de dados. O serviço de transporte de dados de gerenciamento consiste de um protocolo usado para a troca de informações entre gerentes e agentes e de uma interface de serviço para os elementos de serviço de aplicação.
+
+4.3. SOFTWARE DE SUPORTE AO GERENCIAMENTO
+Para executar suas tarefas, o software de gerenciamento necessita acessar uma base de informações de gerenciamento (MIB) e agentes e gerentes remotos.
+A MIB localizada em um nodo agente contém informações de gerenciamento que refletem a configuração e o comportamento do nodo e parâmetros que podem ser usados para controlar a operação do nodo. A MIB localizada no gerente contém informações específicas do nodo onde está localizada e informações resumidas sobre os agentes sob o seu controle.
+O módulo de acesso à MIB, mostrado na figura 8 (c), inclui software de gerenciamento de arquivos que habilitam o acesso à MIB. Adicionalmente, o módulo de acesso a MIB pode converter o formato local das informações para um formato padronizado do sistema de gerenciamento.
+O modelo de informação de um sistema de gerenciamento fornece a estrutura para representação, armazenamento e transferência das informações de gerenciamento. Esta estrutura é denominada SMI ( Structure Management Information) e, dependendo do sistema, poderá apresentar maior ou menor complexidade.
+No modelo OSI, a SMI é baseada no paradigma de orientação a objetos, enfatizando as hierarquias de classe, de containment e de registro. Já o modelo SNMP, utiliza conceitos de Tipos de Dados, embora a sua nomenclatura refira-se a objetos.
+O quadro 2 mostra exemplos de definição de objeto em cada um dos modelos.
+A comunicação entre gerentes e agentes é suportada por uma pilha de protocolos, tais como a pilha OSI ou a pilha TCP/IP. A arquitetura de comunicação suporta o protocolo de gerenciamento de rede que está localizado na camada de aplicação.
+Os serviços básicos de um sistema de gerenciamento de rede são os serviços de monitoração e controle. Estes serviços são obtidos através de primitivas para a leitura e escrita nos valores dos objetos gerenciados. Outros serviços adicionais são: criação e destruição de objetos gerenciados, execução de ações sobre objetos gerenciados e emissão de relatórios de eventos.
+A comunicação entre agentes e gerentes, a fim de alcançar estes serviços, deve seguir um conjunto de regras básicas, como em qualquer outra aplicação distribuída. Este conjunto de regras pode apresentar maior ou menor complexidade, dependendo do modelo adotado. O modelo OSI utiliza o protocolo CMIP ( Common Management Information Protocol) que apresenta funcionalidades para emitir relatórios diversos sobre a ocorrência de eventos, criar e destruir instâncias de classes de objetos, executar ações sobre objetos, ler e modificar valores de atributos de objetos e para a execução de operações sobre vários objetos a partir da definição de um escopo e de um filtro para a seleção de objetos. O modelo Internet utiliza o protocolo SNMP (Simple Network Information Protocol), cuja funcionalidade reside basicamente na leitura e alteração de valores de variáveis e em alguns relatórios de evento para situações específicas.
+
+---xxx---
+
+8. DOMÍNIOS DE NOMES
+Um endereço IP contém toda a informação necessária para identificar um hostconectado em qualquer ponto de uma rede TCP/IP, seja ela uma Intranet ou a própria Internet. Muito embora os endereços IP possam ser utilizados diretamente pelos usuários para especificar a origem e o destino de suas mensagens, é muito mais conveniente utilizar nomes pronunciáveis e fáceis de lembrar ao invés de endereços numéricos. Com base nesse princípio, a Internet adotou um padrão para representar os endereços dos hosts através de nomes ao invés de endereços IP. Deve-se observar, entretanto, que os nomes usados na Internet são apenas uma abstração em alto nível, não sendo utilizados diretamente pelo protocolo IP para efetuar o endereçamento. De fato, para que um comunicação possa ocorrer, é preciso converter o nome no endereço IP correspondente num processo denominado "resolução de nomes". O mecanismo de resolução de nomes é implementado de forma transparente para o usuário através de um serviço padronizado para redes TCP/IP denominado DNS (Domain Name Service).
+
+8.1 NETBIOS
+Netework Basic Input/Output Services: interface de programação padronizada, que permite escrever programas que se comunicam pela rede sem conhecer detalhes sobre os protocolos de comunicação utilizados. Padrão inicialmente proposto pela IBM, difundiuse e foi adotado por outros fabricantes de Sistemas Operacionais de Rede, como Novel e Microsoft. Juntamente com a interface de programação, o padrão NetBIOS propõe um modelo para dar nomes aos recursos da rede. Os nomes NetBIOS tem 16 caracteres de comprimento. O usuário atribui os 15 primeiros caracteres. O último caracter é reservado para identificar o tipo de recurso de rede (computador, grupo de computadores, serviço de comunicação, etc.).
+
+8.2 DOMÍNIOS NA INTERNET
+Conceito: O espaço de nomes na Internet é organizado em domínios. Os domínios são estruturas hierárquicas que permitem situar um host dentro da estrutura geográfica ou Organizacional da rede Internet.
+O nome de um host na Internet é representado de maneira hierárquica, adotando a representação genérica "host.domínio". Por exemplo, um host denominado epsilon, situado no departamento de Ciência da Computação da Universidade de Purdue é identificado pelo nome epsilon.cs.purdue.edu. O nome epsilon identifica o host e o nome cs.pudue.Edu representa o domínio ao qual host pertence. Um nome de domínio é geralmente composto por vários nomes, como nesse exemplo. O nome mais a esquerda representa o domínio mais abrangente, e é padronizado pelas autoridades que coordenam a Internet. Os demais nomes refletem a estrutura organizacional da instituição onde o host está localizado
+
+8.2.1 Registro dos nomes de Domínios
+Para que um nome de domínio seja reconhecido na Internet ele precisa ser registrado. O registro de nomes é feito pelas mesmas autoridades responsáveis por atribuir endereços IP na Internet. Toda instituição que deseja se conectar a Internet pode registrar um nome de domínio. Geralmente, apenas o nome do domínio de nível mais alto, que identifica a instituição como um todo, precisa ser registrado junto às autoridades da Internet.
+A instituição pode então dividir o seu domínio em vários níveis, de maneira a refletir sua organização interna.
+
+8.2.2 Observação
+Os nomes correspondentes ao nível mais alto da hierarquia de domínios da
+Internet podem ser combinados para resolver ambigüidades. Por exemplo, se o nome de uma empresa americana chamada "Júpiter" já estiver registrada sobre a denominação jupiter.com, uma empresa brasileira com o mesmo nome pode registrar-se como jupiter.com.br, sem ambigüidade. A prática de acrescentar o código do país como sendo o identificador de domínio mais amplo vem sendo amplamente adotada pelas entidades de registro de nomes na Internet. A exceção é os Estados Unidos, onde o código do país é geralmente omitido.
+Termos:
+. epsilon.cs.purdue.edu: Exemplo de um identificador completo de um host. Cada porção do nome tem um significado específico: epsilon identifica a máquina, cs identifica o departamento de ciência da computação, purdue identifica a Universidade e edu indica que se trata de um recurso localizado numa instituição de ensino. Cada um dos nomes edu, purdue e cs representa um domínio. Observe que o nome de domínio mais a esquerda é o mais abrangente. Quanto mais a direita estiver o nome, mais específico é o domínio.
+. com: nome de domínio utilizado para identificar organizações comerciais. 90
+. edu: nome de domínio utilizado para identificar instituições educacionais.
+. gov: nome de domínio utilizado para identificar instituições do governo.
+. mil: nome de domínio utilizado para identificar grupos militares.
+. net: nome de domínio utilizado para identificar grandes centros de suporte das redes.
+. org: nome de domínio utilizado para identificar outros tipos de organizações.
+. int: nome de domínio utilizado para identificar organizações internacionais
+. código do país: nome de domínio utilizado para identificar um país. Em geral, a Internet utiliza apenas duas letras para identificar um país. Por exemplo: br para Brasil, jp para Japão, uk para Reino Unido, fr para França, etc.
+. raiz: Nó superior da árvore de domínios. O nome da raiz nunca é citada na composição de um nome de domínio na Internet.
+
+8.3 RESOLUÇÃO DE NOMES DE DOMÍNIO
+Conceito: Processo que consiste em descobrir qual o endereço IP correspondente a um nome de host expresso na hierarquia de domínios.
+Os nomes de domínios não são utilizados diretamente pelos protocolos de comunicação TCP/IP. Antes que uma comunicação possa ser efetuada, é preciso que o nome de domínio seja resolvido no seu endereço IP correspondente. O processo de resolução de nomes, isto é, descobrir qual o endereço IP correspondente ao nome de um domínio, acontece de maneira transparente ao usuário antes que a comunicação propriamente dita seja iniciada.
+
+8.4 DNS
+Conceito: Abreviatura de Domain Name System. O DNS é um serviço padronizado que permite armazenar, administrar e resolver os nomes de domínio na Internet.
+O processo de resolução de nomes de domínio na Internet é implementado através de um serviço padronizado denominado DNS. O serviço de DNS é constituído de duas partes principais: um banco de dados e um protocolo de consulta de nomes. O banco de dados do DNS armazena o mapeamento entre os nomes de domínios e os endereços IP. O protocolo de consulta de nomes define um conjunto de mensagens padronizadas que permite que o software de rede do host consulte o banco de dados para descobrir um endereço IP sem a intervenção do usuário.
+
+8.4.1 Servidor de DNS
+O serviço de resolução de nomes DNS funciona segundo o princípio clienteservidor.
+O servidor de DNS é um computador responsável por auxiliar os demais computadores da rede no processo de resolução de nomes. O banco de dados contendo o mapeamento entre os nomes de domínio e os endereços IP estão armazenados no sistema de arquivos do servidor.
+
+8.4.2 DNS na Intranet
+Numa intranet, o servidor de DNS é um computador conectado diretamente a rede interna privativa da empresa. O próprio administrador da rede é responsável por atualizar o registro dos nomes no servidor de DNS.
+
+8.4.3 DNS na Intranet
+Na Internet, diversos servidores de DNS são utilizados para auxiliar no processo de resolução de nomes. Cada servidor contém apenas uma porção dos nomes registrados na Internet. Quando um cliente precisa resolver um nome, ele consulta o servidor de DNS mais próximo. Se a informação não estiver armazenada no seu banco de dados local, o próprio servidor de DNS se encarrega de consultar os outros servidores para resolver o nome. Os servidores de DNS usados na Internet ficam sob a tutela das mesmas autoridades responsáveis por efetuar o registro de nomes na Internet.
+
+---xxx---
+
+ARQUITETURA SNMP
+O protocolo SNMP (Simple Network Management Protocol) [CAR93] [MIC95], é padrão de gerenciamento aceito pela comunidade internacional, em termos de sua funcionalidade e potencialidade da sua organização interna.
+Foi originalmente desenvolvido na comunidade Internet para monitorar , achar e resolver problemas de roteadores e bridges. O SNMP fornece habilidade para monitorar e informar o status de comunicação entre: 
+. Computadores executando Windows NT;
+. Servidores LAN;
+. Roteadores ou gateways; 
+. Minicomputadores ou computadores mainframe; 
+. Servidores de terminal (Terminal Servers); 
+. Ligando hubs.
+O SNMP usa uma arquitetura distribuída de gerenciamento de sistemas e agentes. O serviço SNMP envia uma informação para um ou mais hosts, quando um host solicita ou quando um evento significativo ocorre.
+Um dos pioneiros a implantar os protocolos SNMP foi o fornecedor de gateways, bridges e roteadores. Normalmente, o fornecedor desenvolve o agente SNMP e posteriormente uma interface para a estação gerente da rede. Em geral estes produtos funcionam para vários sistemas operacionais, como DOS e outros, e é muito comum que estes fornecedores incluam bibliotecas e utilitários que permitam a criação de aplicações de gerenciamento com características específicas para alguns componentes da rede.
+As implementações básicas do SNMP permitem monitorar e isolar falhas. Já aplicações mais sofisticadas permitem gerenciar o desempenho e a configuração da rede. Estas aplicações, em geral, incorporam menus e alarmes codificados em cores.
+
+MODELO DE FUNCIONAMENTO
+O modelo arquitetural SNMP é uma coleção de estações de gerenciamento e elementos de rede. Estas estações executam aplicações de gerenciamento que monitoram e controlam os elementos de rede. Os elementos de rede são equipamentos tais como hospedeiros, gateways, servidores de terminais, e similares, que possuem agentes de gerenciamento, responsáveis pela execução das funções de gerenciamento de rede, requisitadas pelas estações de gerenciamento. O protocolo SNMP é usado para transportar a informação de gerenciamento entre as estações de gerenciamento e os agentes existentes nos elementos de rede.
+A arquitetura de gerência de rede em sistemas abertos usa os conceito de gerente e agente, os quais trocam informações entre si a respeito dos objetos gerenciados, através dos protocolos específicos de cada arquitetura e de uma estrutura de dados denominada MIB. Esta relação entre gerente, agente e MIB, é mostrada esquematicamente na figura a seguir:
+
+OBJETIVOS DA ARQUITETURA
+O modelo proposto busca minimizar o número e a complexidade de funções de gerenciamento realizadas pelos agentes de gerenciamento. As razões que tornam este objetivo atrativo, são:
+. o custo de desenvolvimento do software de agente de gerenciamento, necessário para suportar o protocolo é significativamente reduzido;
+. o grau de funcionalidade suportado remotamente é proporcionalmente aumentado, à medida que se aumenta a utilização dos recursos internet na tarefa de gerenciamento;
+. a quantidade de funções de gerenciamento, que são suportadas remotamente, é gradativamente aumentada, através da imposição de algumas restrições sobre a forma e sofisticação das ferramentas de gerenciamento.
+. conjuntos simplificados de funções de gerenciamento são facilmente entendidos e utilizados pelos desenvolvedores de ferramentas de gerenciamento de redes.
+O segundo objetivo do protocolo é que o paradigma funcional para monitoração e controle deve ser suficientemente extensível para acomodar aspectos adicionais, e possivelmente não previstos, da operação e gerenciamento de redes.
+O terceiro objetivo é que a arquitetura deve ser, tanto quanto possível, independente da arquitetura e dos mecanismos de hospedeiros e gateways particulares.
+
+FUNÇÕES DA ARQUITETURA
+A arquitetura SNMP consiste de uma solução para o problema de gerenciamento de redes, em termos de:
+. o escopo da informação de gerenciamento comunicada pelo protocolo;
+. a representação da informação de gerenciamento comunicada pelo protocolo;
+. operações sobre a informação de gerenciamento, suportadas pelo protocolo;
+. a forma e o significado das trocas entre entidades de gerenciamento;
+. a definição dos relacionamentos administrativos entre entidades de gerenciamento;
+. a forma e o significado das referências às informações de gerenciamento.
+
+MODELO DE INFORMAÇÃO
+Dois documentos definem a informação de gerenciamento no modelo SNMP: o RFC 1065 Estrutura da Informação de Gerenciamento e o RFC 1066- Base de Informação de Gerenciamento. Os dois documentos foram projetados para serem compatíveis tanto com o SNMP quanto com o modelo de gerenciamento OSI, porém, o modelo de informação de gerenciamento OSI utiliza definições mais complexas. 
+As funções de gerenciamento de rede podem ser agrupadas em duas categorias: monitoração de rede e controle de rede. A monitoração da rede está relacionada com a tarefa de observação e análise do estado e configuração de seus componentes; é uma função de "leitura". O controle da rede é uma função de "escrita" e está relacionada com a tarefa de alteração de valores de parâmetros e execução de determinadas ações.
+
+MONITORAÇÃO DA REDE
+A monitoração consiste na observação de informações relevantes ao gerenciamento. Estas informações podem ser classificadas em três categorias:
+. Estática: caracteriza a configuração atual e os elementos na atual configuração, tais como o número e identificação de portas em um roteador.
+. Dinâmica: relacionada com os eventos na rede, tais como a transmissão de um pacote na rede.
+. Estatística: pode ser derivada de informações dinâmicas; ex. média de pacotes transmitidos por unidade de tempo em um determinado sistema.
+A informação de gerenciamento é coletada e armazenada por agentes e repassada para um ou mais gerentes. Duas técnicas podem ser utilizadas na comunicação entre agentes e gerentes: polling e event-reporting. 
+A técnica de polling consiste em uma interação do tipo request/response entre um gerente e um agente. O gerente pode solicitar a um agente (para o qual ele tenha autorização), o envio de valores de diversos elementos de informação. O agente responde com os valores constantes em sua MIB.
+Na técnica de event-reporting, a iniciativa é do agente. O gerente fica na escuta, esperando pela chegada de informações. Um agente pode gerar um relatório periodicamente para fornecer ao gerente o seu estado atual. A periodicidade do relatório pode ser configurada previamente pelo gerente. Um agente também pode enviar um relatório quando ocorre um evento significativo ou não usual.
+Tanto o polling quanto o event-reporting são usados nos sistemas de gerenciamento, porém a ênfase dada a cada um dos métodos difere muito entre os sistemas. Em sistemas de gerenciamento de redes de telecomunicações, a ênfase maior é dada para o método de relatório de evento. Em contraste, o modelo SNMP dá pouca importância ao relatório de evento. O modelo OSI fica entre estes dois extremos.
+A escolha da ênfase depende de um número de fatores, incluindo os seguintes:
+. a quantidade de tráfego gerada por cada método;
+. robustez em situações críticas;
+. o tempo entre a ocorrência do evento e a notificação ao gerente;
+. a quantidade de processamento nos equipamentos gerenciados;
+. a problemática referente à transferência confiável versus transferência não confiável
+. as aplicações de monitoração de rede suportadas;
+. as considerações referentes ao caso em que um equipamento falhe antes de enviar um relatório.
+
+CONTROLE DE REDE
+Esta parte do gerenciamento de rede diz respeito à modificação de parâmetros e à execução de ações em um sistema remoto. Todas as cinco áreas funcionais de gerenciamento (falhas, desempenho, contabilização, configuração e segurança), envolvem monitoração e controle. Tradicionalmente, no entanto, a ênfase nas três primeiras destas áreas, tem sido na monitoração, enquanto que nas duas últimas, o controle tem sido mais enfatizado. Alguns aspectos de controle na gerência de configuração e de segurança são apresentados a seguir.
+O controle de configuração inclui as seguintes funções:
+. definição da informação de configuração - recursos e atributos dos recursos sujeitos ao gerenciamento;
+. atribuição e modificação de valores de atributos;
+. definição e modificação de relacionamentos entre recursos ou componentes da rede;
+. inicialização e terminação de operações de rede;
+. distribuição de software;
+. exame de valores e relacionamentos;
+. relatórios de status de configuração.
+O controle de segurança é relativo à segurança dos recursos sob gerenciamento, incluindo o próprio sistema de gerenciamento. Os principais objetivos em termos de segurança, são relativos à confidencialidade, integridade e disponibilidade. As principais ameaças à segurança referem-se à interrupção, interceptação, modificação e mascaramento.
+As funções de gerenciamento de segurança podem ser agrupadas em três categorias:
+. manutenção da informação de segurança
+. controle de acesso aos recursos
+. controle do processo de criptografia.
+
+A BASE DE INFORMAÇÕES DE GERENCIAMENTO - MIB
+A MIB é uma coleção estruturada de objetos gerenciados. Objetos gerenciados representam os recursos sujeitos ao gerenciamento. Cada nodo do sistema de gerenciamento mantém uma MIB que reflete o estado dos recursos gerenciados naquele nodo. Uma entidade de gerenciamento pode monitorar os recursos de um nodo, lendo os valores dos objetos na MIB e pode controlar os recursos de um nodo, modificando estes valores.
+Pode-se dizer ainda que a MIB é o elemento de ligação entre o gerente e agente em um sistema de gerência, onde estão localizadas as estruturas de dados através das quais as informações são passadas entre eles. Tem como objetivo descrever os objetos gerenciáveis em uma rede, é uma estrutura conceitual que se constitui na visão que o gerente tem dos objetos gerenciáveis dos elementos da rede.
+Basicamente, são quatro os tipos de MIBs: MIB I, MIB II, MIB experimental e MIB privada, descritas sucintamente a seguir:
+As MIBs do tipo I e II fornecem informações gerais sobre o equipamento gerenciado, sem levar em conta as características específicas deste equipamento. A MIB II, é uma evolução da MIB I, que introduziu novas informações além daquelas encontradas na MIB I. Através das MIBs do tipo I e II é possível obter informações como tipo e status da interface (Ethernet , Token-Ring ), número de pacotes transmitidos, número de pacotes com erros, informações sobre protocolo de transmissões, etc.
+Os objetos da mib-2 são subdivididos nos seguintes grupos:
+. system: informações gerais sobre o sistema;
+. interfaces: informações sobre cada uma das interfaces do sistema para a sub-rede;
+. at(address translation; deprecated): descreve a tabela de translação de endereços para mapeamento de endereços internet para endereços de sub-rede;
+. ip: informação relativa a experiências de implementação e execução do protocolo IP (internet protocol) no sistema;
+. icmp: informação relativa a experiências de implementação e execução do protocolo ICMP (internet control message protocol) no sistema;
+. tcp: informação relativa a experiências de implementação e execução do protocolo TCP (transmission control protocol) no sistema;
+. udp: informação relativa a experiências de implementação e execução do protocolo UDP (user datagram protocol) no sistema;
+. egp: informação relativa a experiências de implementação e execução do protocolo EGP (external gateway protocol) no sistema;
+. transmission: fornece informações sobre esquemas de transmissão e protocolos de acesso em cada interface do sistema;
+. snmp: informação relativa a experiências de implementação e execução do protocolo SNMP (simple network management protocol) no sistema;
+As MIBs experimentais são aquelas que estão em fase de testes, com a perspectiva de serem adicionadas ao padrão e que, em geral, fornecem características mais específicas sobre a tecnologia dos meios de transmissão e equipamentos empregados.
+As MIBs privadas são específicas dos equipamentos gerenciados, possibilitando que detalhes peculiares a um determinado equipamento possam ser obtidos. É desta forma que é possível se obter informações sobre colisões, configuração, swap de portas, e muitas outras, de um hub. Também é possível fazer um teste, reinicialização ou desabilitar uma ou mais portas do hub através de MIBs proprietárias.
+No ambiente de Protocolo TCP/IP o modelo de informações de gerência é mais simples que no Modelo de Referência OSI. A construção das MIBs obedece as especificações contidas nos documentos denominados SMI para a versão1 do SNMP e, mais recentemente, para o SNMPv2. Estas especificações impõem um alto grau de simplicidade na descrição das MIBs para tornar o processo de gerência de fácil implementação.
+Neste ambiente não se aplicam todos os conceitos de orientação a objetos encontrado no RM-OSI. A unidade básica de acesso em uma MIB SNMP é representada por um atributo simples, que é denominado objeto, definido por um tipo e pelas operações que podem ser realizadas sobre ele. A unidade básica de acesso é uma classe de objeto, definida por um conjunto de atributos e de operações. Embora não exista a definição de classes, os objetos das MIBs SNMP são organizados em grupos que representam uma determinada funcionalidade de um elemento de rede.
+
+MONITORAÇÃO REMOTA - RMON MIB
+A mais importante adição ao conjunto de padrões SNMP foi a RMON MIB (Remote Monitoring MIB). Utilizando apenas informações da MIB-II, o gerente de redes não consegue ter uma idéia do tráfego existente nas redes onde os recursos gerenciados estão instalados porque estas informações referem-se apenas ao próprio recurso onde o agente está executando. Em uma grande rede, com vários nós gerenciados e não gerenciados, fica praticamente impossível inspecionar variáveis da MIB-II de todos os agentes da rede para se ter uma idéia do tráfego entre eles.
+Outro problema com os agentes SNMP tradicionais é que estes não são capazes de analisar seus próprios dados e, por exemplo, serem programados para enviarem notificações quando certos limiares nas variáveis forem atingidos. Isto força a estação de gerenciamento a ficar inspecionando (fazendo polling) as variáveis das diversas entidades de gerenciamento, causando um tráfego excessivo na rede.
+A tecnologia de RMON consiste na presença de um monitor instalado na rede que se deseja estudar, coletando informações e, eventualmente, enviando notificações sobre a ocorrência de eventos. O monitor pode ser tanto um dispositivo dedicado à captura de dados e sua análise, como pode estar implementado em estações de trabalho, servidores, roteadores, hubs, etc.
+Essencialmente, a RMON é uma extensão da MIB Internet. Através da escrita em variáveis desta MIB, o gerente pode programar o monitor para coletar dados e armazená-los em tabelas para serem recuperados posteriormente.
+A RMON foi projetada para atingir os seguintes objetivos:
+. operação off-line: o monitor coleta e armazena estatísticas que podem ser recuperadas pela estação gerente a qualquer momento;
+. monitoração preemptiva: o monitor está sempre ativo, continuamente rodando diagnósticos e armazenando dados;
+. detecção e alerta de problemas: o monitor pode verificar continuamente determinadas condições e comunicá-las quando ocorrerem;
+. resumo dos dados: o monitor é capaz de realizar algum processamento como, por exemplo, descobrir os 10 hosts mais ativos na rede;
+. múltiplos gerentes: o monitor deve suportar várias estações gerentes.
+
+GERENCIAMENTO SNMP DO WINDOWS NT
+O serviço SNMP é um gerenciamento padrão de redes amplamente usado em TCP/IP e redes IPX. Servidores Windows NT e Windows NT Workstation fornecem serviços SNMP que permitem que os computadores baseados em Windows NT sejam gerenciados usando programas de gerenciamento de redes SNMP.
+Servidores e Workstation Windows NT implementam versão 1 do SNMP por um agente SNMP que permite um gerenciamento SNMP remoto e centralizado de: servidores NT, workstations NT, servidores NT baseado em WIN, servidores NT baseado em DHCP e servidores NT baseado em IIS.
+Servidores e Workstations NT provêem o serviço SNMP como a estrutura necessária para a gerenciamento de redes, mas não provê um programa gerente SNMP. Existem muitas utilidades no gerente SNMP disponíveis com o servidor NT e no kit de recursos para Workstations, e outros programas de gerenciamento de redes de melhor acabamento podem ser obtidos pela Microsoft ou por terceiros. O servidor SMS (Microsoft System Server) fornece suporte para o gerenciamento SNMP. Outros programas de gerenciamento de redes, assim como Hewlett Packard Open View , IBM LAN NetView e NMC para Windows NT podem ser obtidos de terceiros. 
+
+IMPLEMENTAÇÃO DE SNMP BASEADO EM WINDOWS NT
+O termo gerenciamento de redes geralmente refere-se a funções específicas administrativas e a capacidade para fazer as funções de um computador centralizado, freqüentemente denominado como uma console de gerenciamento. 
+Para fazer um gerenciamento centralizado de redes, o gerenciador deve ser capaz de ler dados de outros computadores na rede, inclusive o seguinte: 
+. Identificação do protocolo de rede e estatísticas; 
+. Identificação dinâmica dos computadores ligados a rede; 
+. Dados da configuração de software e hardware; 
+. Performance dos computadores e estatísticas de uso; 
+. Eventos nos computadores e mensagens de erros; 
+. Estatísticas de uso de programas e aplicações. 

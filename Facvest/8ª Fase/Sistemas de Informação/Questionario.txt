@@ -1,0 +1,49 @@
+Para Pensar: Como os sistemas de gerenciamento de relações com clientes modificaram a maneira das organizações atenderem a seus clientes? Como as organizações aqui descritas beneficiaram-se da utilização de sistemas CRM?
+R: Aumentando o relacionamento com o cliente final, as organizações beneficiam-se com as informações obtidas e geram maior lucro e qualidade de serviço. No caso das organizaçoes descritas, a utilização de sistemas CRM beneficiou a qualidade do serviço prestado ao cliente final, implementando o uso da informação gerenciada de fácil acesso a todos os níveis da administração do negócio.
+
+1. Identifique e descreva os quatro níveis de hierarquia organizacional. Que tipos de sistemas de informação atendem a cada nível?
+R: Operacional: é o nível organizacional que acompanha atividades básicas da organização, como vendas, contas a receber, folha de pagamento, etc. Os sistemas de processamento de transações (SPTs) atendem a este nível, facilitando o acesso a informação.
+   Conhecimento: é o nível de suporte aos trabalhadores do conhecimento e de dados da organização. Os sistemas de trabalhadores do conhecimento (STCs) e os sistemas de automação de escritório atendem a este nível, ajundando no fluxo de documentos.
+   Gerencial: é o nível que monitora, controla e realiza a tomada de decisões sobre os procedimentos administrativos. Os sistemas de informações gerenciais (SIGs) e os sistemas de apoio a decisão (SADs) atendem a este nível, auziliando no gerenciamento e na tomada de decisões a curto e longo prazo.
+   Estratégico: é o nível que resolve as questões estratégicas tanto da organização quanto do ambiente externo. Os sistemas de apoio executivo (SAEs) compatibilizam as mudanças do ambiente externo com a capacidade da organização.
+
+2. Liste e descreva resumidamente os principais tipos de sistemas em organizações.
+R: SPTs: sistemas de processamento de transações são sistemas que atendem as funções básicas de uma organização.
+   STCs: sistemas de trabalhadores do conhecimento são sistemas que atendem as necessidades de informação do nível de conhecimento da organização.
+   Sistemas de automação de escritório: são sistemas que auxiliam os trabalhadores de dados (e também do conhecimento) manipulando ou disseminando a informação.
+   SIGs: sistemas de informação gerenciais são sistemas que dão suporte as funções do nível gerencial, gerando relatórios que apoiam as funções de planejamento.
+   SADs: sistemas de apoio a decisão são sistemas que apoiam a tomada de decisões não-usuais, gerando estimativas úteis ao gerenciamento da organização.
+   SAEs: sistemas de apoio ao executivo são sistemas que auxiliam os gerentes seniores na tomada de decisões no nível estratégico da organização.
+
+3. Quais os cinco tipos de SPT nas organizações empresariais? Que funções desempenham? Dê exemplos de cada uma.
+R: Sistemas de vendas/marketing: desempenham funções de gerenciamento de vendas, pesquisa de mercado e promoções. Ex.: sistema de informação de pedidos.
+   Sistemas de fabricação/produção: desempenham funções de programação, compras, expedição/recebimento e engenharia. Ex.: sistema de controle de maquinário.
+   Sistemas financeiros/contábeis: desempenham funções de orçamento, livro-razão, faturamento e contabilidade de custo. Ex.: sistema de gerenciamento de investimentos.
+   Sistemas de recursos humanos: desempenham funções de registro de pessoal, benefícios, remuneração e relações trabalhistas. Ex.: sistema de acompanhamento de carreira.
+   Outros tipos (universidade): desempenham funções de matrículas, registro de notas, cursos e ex-alunos. Ex.: sistema de histórico escolar.
+
+4. Descreva as funções realizadas por sistemas de trabalhadores de conhecimento e por sistemas de automação de escritório e algumas aplicações típícas de cada um.
+R: As funções realizadas atendem as necessidades de informação no nível de conhecimento da organização. Aplicações de tecnologia de informação projetadas para aumentar a produtividade são típicas desses sistemas.
+
+5. Quais são as características do SIG? Quais as diferenças entre o SIG e o SPT? E entre o SIG e o SAD?
+R: Os SIGs se caracterizam basicamente por resumir e relatar as operações básicas da organização. Sua diferença para com os SPT está na forma com que os dados gerados são aproveitados para se gerar informação útil ao nível gerencial. Já os SADs se aproveitam da informação gerada pelos SIGs para auxiliar em suas funções específicas.
+
+6. Quais são as características do SAD? Quais são as diferenças entre essas características e as do SAE?
+R: As características de um SAD são o fornecimento de informações para tomada de decisões pelos gerentes da organização. Suas diferenças para as características do SAE estão no ambito da tomada de decisão, cabendo aos SAEs uma visão mais estratégica.
+
+7. Descreva o relacionamento entre STP, sistemas de automação de escritório, STC, SIG, SAD e SAE.
+R: Os vários tipos de sistemas da organização têm independências comum a cada um. Os SPTs são os maiores produtores de informações que são requisitadas por outros sistemas, que, por sua vez, produzem informações para outros sistemas.
+
+8. Liste e descreva os sistemas de informação que atendem a cada uma das principais áreas funcionais de uma empresa.
+R: Vendas e Marketing: no nível estratégico monitoram as tendências que afetam os novos produtos e oportunidades, apoiando o planejamento de novos produtos e serviços e monitorando o desempenho dos concorrentes; no nível gerencial dão suporte a pesquisa de mercado, a campanhas de propaganda e promocionais e a determinação de preços; no nível do conhecimento apoiam estações de trabalho de análise de marketing; no nível operacional ajudam a localizar e contatar clientes potenciais, rastrear vendas, processar pedidos e dar suporte ao serviço de atendimento aos clientes.
+   Fabricação e Produção: no nível estratégico abordam metas de longo prazo; no nível gerencial analisam e monitoram custos de fabricação e produção; no nível do conhecimento criam e distribuem conhecimentos especializados que orientam o processo de produção; no nível operacional tratam do monitoramento e controle de produção.
+   Financeira e Contábil: no nível estratégico estabelecem metas de investimento e propiciam previsões de longo alcance para desempenho financeiro; no nível gerencial ajudam gerentes a supervisionar e controlar os recursos financeiros; no nível do conhecimento fornecem ferramentas analíticas para maximizar o retorno para a empresa; no nível operacional monitoram o fluxo de recursos da empresa.
+   Recursos Humanos: no nível estratégico identificam os requisitos da força de trabalho; no nível gerencial auxiliam na monitoração e analise sobre o recrutamento, alocação e remuneração dos funcionários; no nível do conhecimento dão suporte as atividades de análise relacionadas a descrição de funções, aos treinamento e a elaboração de planos de carreira; no nível operacional registram o recrutamento e a colocação dos funcionários da empresa.
+
+9. O que é um processo de negócios? Dê dois exemplos de processos para as áreas funcionais da empresa e um exemplo de processo transfuncional.
+R: Processo de negócio é a maneira pela qual o trabalho é organizado, coordenado e focado para produzir um produto ou serviço de valor. Ex.: Montagem do produto (Fabricação e produção), Pagamento de credores (Finanças e contabilidade), Processamento do pedido (Vendas, Contabilidade e Fabricação)
+
+10. O que é gerenciamento do relacionamento com clientes? Por que ele é tão importante para as empresas? Como os sistemas de informação facilitam o gerenciamento do relacionamento com clientes?
+R: É o gerenciamento de todos os modos como uma empresa trata seus clientes existentes e seus potenciais clientes novos. É importante pois a visão de que para as empresas os clientes eram como uma fonte de receita a serem exploradas, agora esta mudando para uma visão de que se tratam de ativos de longo prazo que precisam ser nutridos por meio do gerenciamento das relações com clientes. Os sistemas de informação consolidam as informações acerca dos clientes para a empresa, facilitando na busca dessas informações e fornecendo ferramentas analíticas para auxiliar nos processos de negócios relacionados ao cliente.
+
+Zefini

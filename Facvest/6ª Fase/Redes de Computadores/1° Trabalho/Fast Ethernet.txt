@@ -1,0 +1,3 @@
+Fast Ethernet
+
+Também conhecido como 100Base-T, é a opção mais simples para migrar a atual base instalada Ethernet (baseada em 10Base-T) para uma taxa de 100Mbits por segundo. Além da performance, outro ponto positivo da Fast Ethernet é o custo, pois aproveita-se todo o investimento realizado em cabeamento, desde que se utilize cabeamento categoria 4 ou 5.

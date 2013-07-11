@@ -1,0 +1,356 @@
+Normas de interfaces série:
+
+fig 1 - 
+
+Sinais EIA-232 (Conector DB9) - para PC
+
+DCD - Data Carrier Detect - Informa o DTE que está presente uma portadora compatível na linha.
+DSR - Data Set Ready - E activado pelo DCE para indicar ao DTE que está ligado.
+RD (RxD) - Receive Data Line - Linha de recepção de dados em serie. Quando o DCD está inactivo, o RD deve permanecer no estado “Mark”
+RTS - Request to Send - Este sinal e activado pelo DTE para indicar que esta pronto a transmitir dados. O DCE deve-se preparar então para receber dados.
+TD (TxD) - Transmit Data Line - Linha de envio de dados serie, quando nada está a ser transmitido deve permanecer no estado “Mark”, Para que os dados sejam transmitidos é necessário que o DSR, DTR, RTS e CTS estejam activos.
+CTS - Clear to Send - Sinal activado pelo DTE para indicar que está pronto para receber dados. O CTS é activado em resposta a uma condição simultânea de RTS, DSR e DTR.
+DTR - Data Terminal Ready - Informa o DCE de que o DTE está activo. Este sinal deve ser activado por parte do DTE antes que active o DSR. Quando este sinal é removido o DCE termina a ligação em curso.
+RI - Ring Indicator - Informa o DTE de que está a receber um pedido de ligação. Usado no atendimento automático de ligações.
+GND - Signal Ground - Referência comum para todos os outros sinais.
+
+RS-232
+
+Para comunicação assíncronas são necessários só 10 linhas (9 pinos + blindagem)
+Na versão D o pino 1 é modificado para dar protecção de blindagem
+RTS activa a portadora do modem, e modem activa CTS automaticamente (com um delay)
+DTR, pode ser activado como resposta ao sinal de Ring, para dizer ao modem para atender
+Canais secundários: para comunicar no sentido inverso a ritmos mais baixos (ex: 75bps)
+
+fig 2 - 
+fig 3 - 
+fig 4 - 
+
+RS-232 (V.24)
+
+fig 5 - 
+
+Null Modem 9 pinos
+
+Mecanismo para ligar duas máquinas directamente, simulando a existência de modems 
+
+fig 6 - 
+
+Null modem 25 pinos
+
+fig 7 - 
+
+Cabo null-modem Racional Assíncrono
+
+fig 8 - 
+
+EIA-232 Características 
+
+Circuito não balanceado (norma v-28)
+
+Tensões de saída:
+5…15V (Space/0) (RS232C) 5...25(RS232D)
+-5…-15V (Mark/1) (RS232C) -5…-25V (RS232D)
+
+Tensões de entrada:
+> 3V (Space/0) (RS232C) 
+< -3V (Mark/1) (RS232C)
+
+Máximo “Slew Rate” na saída de 30V/?S
+Débito Máximo de 20Kbps (se cabo de 15 m)
+Carga capacitiva do cabo < 2500pF (para um cabo de 15m a 20m)
+
+Interface EIA232D
+
+Conector de 9 pinos
+				(9 pinos)	(25 pinos)
+Signal Ground		GND	5		7
+Transmited Data		TxD	3		2
+Received Data		RxD	2		3
+Request to Send		RTS	7		4	
+Clear to Send		CTS	8		5
+Data Set Ready		DSR	6		6
+Data Carrier Detect	DCD	1		8
+Data Terminal Ready	DTR	4		20
+Ring Indicator		RI	9		22
+
+Conector DB9 para DB25
+
+fig 9 - 
+
+EIA-RS232
+
+Testes por hardware:local e remotos (analógicos)
+
+fig 10 - 
+
+Normas eléctricas:
+
+V.28
+
+fig 11 - 
+
+loop de corrente 20mA. Mais imune ao ruído <figura12>
+
+HW da Porta Serial
+
+PC XT
+
+normalmente têm um UART 8250 com Xtal de 1.8432 Mhz
+capacidade de transmissão a 9 600 bps
+
+PC AT 
+
+normalmente têm um UART 16450
+capacidade de transmissão a 19 200 bps
+
+PC 386 e 486 antigos
+
+normalmente têm um UART 16450
+capacidade de transmissão a 38 400 bps
+
+PC 486 e Pentium
+
+normalmente têm um UART 16550
+buffer FIFO de 16 bytes
+capacidade de transmissão a 115 200 bps
+
+Modems Internos (topo de gama) em PC 486 e Pentium
+capacidade de transmissão a 230 400 bps
+buffer FIFO de 32 bytes
+
+Configuração da Porta Série
+
+Configuração típica para comunicar com um Modem
+
+fig 13 - 
+
+Há razões para outras configurações ??
+
+Caracter “A” numa Comunicação Assíncrona
+
+fig 14 - 
+
+Outras Interfaces-série
+
+RS-449 
+
+Normas Eléctricas: RS 422 ou V.11, RS423 ou V.10
+Sinais idênticos ao V.24 só que balanceados (V.11)
+Conector de 37 pinos (conector de 9 pinos adicional para secundário)
+
+EIA-530
+
+surgiu em 1987 
+25 pinos
+
+V.35
+
+Sinais idênticos (funcional) ao V.24 - uns balanceados (V.11) outros não (V.28)
+Conector de 34 pinos (pode ter 60 pinos- proprietária)
+
+X.21- síncrona
+
+Sinais balanceados (V.11)
+Conector de 15 pinos 
+
+G.703 (para Hierarquias digitais PDH)
+
+Sinais balanceados no conectores de 15 pinos (E1) ou jack (T1)
+Cabo Coaxial
+
+RS-423B (não balanceado)
+Receptor diferencial
+Transmissor não balanceado
+120Kbps—30m
+3kbps—1.2Km
+
+fig 15 - 
+
+fig 16 - 
+
+RS-422A (V.11 ou X.26)
+
+É norma eléctrica
+Balanceada
+Transmissor pode ser implementado com potenciais de +5 e -5V
+Receptor decide o nível de + 0.2V e - 0.2V
+Um transmissor RS-422 pode funcionar com receptores RS-423
+Um transmissor RS-422 não pode funcionar com receptores RS-232
+Ponto a ponto, até 10 receptores por driver (Tx)
+
+fig 17 - 
+
+Normas elétricas: RS422 e RS423
+
+fig 18 - 
+
+RS422 / RS485 - Características
+
+fig 19 - 
+
+RS-485
+
+Entendido como upgrade do RS-422A
+Half duplex
+Multiponto
+Balanceado
+Não especifica connector
+Normalmente L=1.2Km, (AWG=24)
+Não especifica ritmo
+
+Transmissão Balanceada de Dados
+
+Vantagens:
+
+Baixa sensibilidade ao crosstalk de outras linhas de sinal.
+Boa redução de ruído provocado por fontes externas.
+Boa redução ao ruído do modo comum.
+Altos débitos possíveis ( > 10Mbps )
+Permite linhas de transmissão com comprimentos da ordem dos 1000m.
+
+Desvantagens:
+
+Técnicas mais complexas no desenho dos circuitos
+Pares entrelaçados (Twisted Pair) necessários.
+Custo mais elevado.
+
+Exemplos:
+
+ITU-T V.11 (RS422), ISO8482 (RS485)
+
+EIA RS-449
+
+Pretendia suceder a RS-232
+Aumentar ritmos e distâncias
+Fornece canal de standby, novas linhas de teste massas de envio e recepção (balanceamento)
+Conector dupla de 37 pinos e de 9 pinos
+
+fig 20 - 
+
+Até 2 Mbps
+Até 60m
+Não especifica níveis de sinais (usa RS422 e RS423)
+
+RS-530
+
+Surgiu em finais de 1980 para suceder à RS-449
+Continua a referenciar os sinais das normas RS-422 e RS-423
+Usa conector de 25 pinos
+Usa sinais balanceados em vez dos sinais secundários e do ring indicator do RS-232
+Para redes não comutada de circuitos
+
+X.21
+
+1976
+Prevista para uma rede de acesso digital
+Usa especificações eléctricas de sinais das normas RS-422A (x.26) e RS-423A (x.27)
+Até 64kbps
+Usa sinais de controle em série face às normas RS-232, RS-449 ou RS-530.
+conector de 15 pinos
+
+fig 21 - 
+
+ITU-V.35
+
+Usada em WAN (PSDN)
+Síncrona
+Conector de 34 pinos
+1968
+Taxas de 48kbps a 168kbps
+Revista várias vezes, hoje suporta até 6Mbps
+É o interface preferido em routers, gateways, pontes remotas
+Interface balanceada (sinais RS-422), para sinais e clock
+
+V.35 (RS-430)
+
+DTE e DCE usam conectores fêmeas
+Pinos especificados na norma ISO 2593
+Cabos com conectores macho em cada ponta
+
+fig 22 - 
+
+V.35:pinout
+
+fig 23 - 
+
+fig 24 - 
+
+V.35
+
+Só 21 pinos lhe foram atribuídos sinais
+Potencial 0.55v +-20% (.44 a .66V) para definir nível 0/1
+
+fig 25 - 
+
+V35: 34 pinos e 60 pinos
+
+fig 26 - 
+
+fig 27 - 
+
+Interface física de RDIS-RJ45
+
+fig 28 - 
+
+Interface ISO 8877
+
+fig 29 - 
+
+Ligação de conectores RJ45
+
+fig 30 - 
+
+Características conectores RJ-45
+
+fig 31 - 
+
+Tomadas e painéis de conectores ISO 8877
+
+fig 32 - 
+
+Conectores ópticos: Redes Locais
+
+fig 33 - 
+
+Cabo coaxial fino:LANS e G.703
+
+fig 34 - 
+
+fig 35 - 
+
+USB
+
+Universal Serial Bus
+Suporta até 127 dispositivos
+Transmissão de 1.5 Mbits/s até 12 Mbits/s
+Com win98 apareceram drivers, daí o seu uso em modems, scanners, keyboards, fax, fonia, mouse, impressora
+Codificação de linha: NRZI
+Z=90Hom 
+Connector 4 pinos
+5 metros de cabo por segmento, 28AWG
+
+IEEE1392 (FireWire)
+
+Até 63 dispositivos em cascata
+Ritmo até 400MBps
+Para ligar dispositivos de alta velocidade (real-time áudio, vídeo, set top boxes, digital VCR, DVD, HDD)
+Com condutores de AWG 28 cabos até 4.5m, se usar 24 AWG cabos até 14m
+
+Visão de futuras conexões em PCs
+
+fig 36 - 
+
+USB e IEEE1394 
+
+fig 37 - 
+
+AWG - mm
+
+fig 38 - 
+
+Bibliografia
+
+Data Communications, Fred Halsall Cap. 2.3, 2.6.
+Engenharia de redes Informáticas, F. Boavida	Cap 4.
+Understanding Data Communications, Gilbert Held cap 4:pags 130-151, cap 5: pags 225-227.

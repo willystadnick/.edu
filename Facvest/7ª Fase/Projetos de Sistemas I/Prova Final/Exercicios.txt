@@ -1,0 +1,78 @@
+1) No que está focado o Modelo Orientado a Objetos?
+Está focado na compreensão e facilitar a abstração de um mundo utilizando-se de três métodos de organização: Diferenciação, Distinção entre o todo e parte e Classificação. Em resumo, é uma maneira de organizarmos um software como uma coleção de objetos discretos que incorporam: Estrutura de dados e Comportamento associado.
+
+2) Faca uma definição de Classe e Objeto.
+Classe: As classes são tipos de objetos que descrevem as informações armazenadas e os serviços providos por um objeto. Em outras palavras, são padrões a partir dos quais os objetos as criados.
+Objeto: São instâncias de classes. Quando uma classe e instanciada, é alocado espaço na memória para o armazenamento dos atributos de uma instancia definidos na declaração da classe.
+Penso: [...] Classes dão formato e características (atributos) e habilidades e utilidades (métodos) aos objetos.
+
+3) Faça um comparativo entre o modelo procedimental e o modelo orientado a objeto.
+Tradicional (procedimental): Dados, variáveis. Chamadas a funções, procedimentos. Funções, procedimentos. Estrutura (Ex.: Record), ocorrência de estrutura
+Orientada a Objetos: Atributos; Mensagens; Classe (+); Instância, objeto, herança.
+
+4) Um elemento de primeira ordem em uma linguagem de programação é aquele que pode ser usado nas principais construções, tais como:
+
+5) Defina:
+a) Encapsulamento:: Empacotamento de dados de um objeto, acesso somente por métodos.
+b) Polimorfismo:: Capacidade de objetos diferentes derivados da mesma classe executarem métodos de nomes iguais, mas com comportamento diferentes.
+c) Herança:: possibilidade de compartilhar atributos e métodos em classes e objetos. Atributos e métodos definidos na superclasse são repassados para as subclasses.
+
+6) Defina Projeto Orientado a Objeto e quais suas aplicações exemplifique.
+POO tem como principal objetivo abstrair um mundo com um conjunto de objetos limitados a suas atividades visando apresentar um ou vários modelos da sua interação dentro deste mundo. Com essa maneira de representar um sistema, pode-se obter uma manutenção facilitada e com uma maior reutilização de suas funcionalidades.
+
+7) Como é feita a identificação de classes?
+São normalmente identificadas a partir dos substantivos presentes na especificação do programa.
+
+8) Faça um exemplo de instância de classes.
+Comando: <classe> <objeto> = new <classe> ();
+Ex: Pessoa Funcionário = new Pessoa ();
+
+9) O que são atributos e quais os tipos existentes?
+Atributos têm um nome e um tipo, eles definem o comportamento estático de um objeto. Consideram-se dois tipos: de instâncias ou de classe. Os de classe são estáticos para todos os objetos e os de instancias são pertinentes a cada objeto especifico.
+
+10) Defina:
+a) Método:: Serviços que podem ser solicitados a uma instancia, ou seja, o comportamento dinâmico da instancia.
+b) Visibilidade:: É como é definido a acessibilidade de um atributo ou método de uma classe. Atributos e métodos podem ser: publico, privado ou protegido.
+
+11) O que é um Identificador de objetos?
+Através de um Identificador é possível especificar sobre que objeto se deseja atuar. Pode ser um endereço de memória ou um número que o referencie.
+
+12) Defina caso de uso e exemplifique.
+Caso de uso é uma descrição narrativa de uma seqüência ou conjunto de eventos que ocorre quando um ator (agente externo) usa um sistema para realizar uma tarefa.
+
+13) Quais são os passos para identificar um caso de uso?
+Um conjunto de questões deve ser observado para se identificar um caso de uso: Quais serviços os atores querem do sistema? | O sistema armazena informações? Quais atores criam, lêem, atualizam ou eliminam estas informações. | O sistema necessita notificar algum ator sobre mudanças no seu estado interno? | Existe algum evento externo que o sistema deva saber? Qual ator informa ao sistema sobre estes eventos
+
+14) Defina atores.
+Trata-se de quem usa, opera, interage com sistema. Um ator pode ser uma pessoa comum ou até mesmo outro sistema.
+
+15) Quais são os passos para identificar atores?
+Um conjunto de questões deve ser observado para se identificar um ator: Quem usa o sistema? | Quem instala o sistema? | Quem inicia ou finaliza o sistema? | Quem fornece informações ao sistema? | Quem solicita informações do sistema? | Quais outros sistemas usam o sistema?
+
+16) Faça um exemplo descrevendo os atores e associando os atores a casos de uso.
+Atores: - Cliente: Pessoa que compra produtos - Funcionário: Pessoa que realiza operações especificas na loja e atendimentos ao cliente. - Transportador: empresa que entrega o produto - Sistema de pagamento: sistema que debita valor da conta de cartão de credito do usuário. - Sistema de estoque: sistema que controla o estoque de produtos da loja.
+Associando atores a casos de uso: - Cliente: fazer pedido, verificar pedido, cancelar pedido. - Funcionário: fazer pedido, verificar pedido, cancelar pedido. - Transportador: Calcular postagem, entregar o produto. - Sistema de pagamento: ??? - Sistema de estoque: ???
+
+17) Descreva o caso de uso de um sistema acadêmico "Efetuar Matricula" e apresente seu Curso Normal.
+Curso Normal: O caso de uso começa quando o acadêmico seleciona o item "Fazer matrícula" no menu. O sistema requisita o preenchimento de um formulário com os dados pessoais e que o acadêmico selecione as matérias e/ou cursos que deseja matricular-se. Após o preenchimento e submissão corretos do formulário feito pelo acadêmico, o sistema checa o formulário e, se tudo certo até aqui, o sistema pede a confirmação da matrícula. Feita a confirmação pela escolha do item "Efetuar Matrícula" no menu, o sistema finaliza a operação gravando os dados do acadêmico no BD e mostrando uma mensagem de matrícula efetuada com sucesso.
+
+18) Descreva o modelo básico para representar um caso de uso.
+Efetuar Matricula (on-line)
+Atores: - Acadêmico
+Fluxo de eventos: - O acadêmico seleciona "fazer matricula" no menu. - O sistema fornece um formulário pedindo os dados necessários para efetuar matrícula. - O acadêmico preenche o formulário e seleciona submeter. - O sistema verifica se o formulário foi preenchido adequadamente. - O sistema mostra uma mensagem para o acadêmico mostrando todas as suas escolhas e solicita ao acadêmico uma confirmação. - O acadêmico seleciona efetuar matrícula. - O sistema grava os dados do acadêmico no BD finalizando a matrícula. - O sistema mostra uma mensagem informando que a matrícula foi efetuada com sucesso.
+
+19) Represente uma Generalização/Especialização de atores.
+Acadêmico: Acadêmico pagante: Matrícula c/ opcionais de disciplinas | Acadêmico bolsista: Matrícula obrigatória
+
+20) Apresente a visão geral de um sistema e retire os atores e os casos de uso, descrevendo o seu curso normal e alternativo, obrigatoriamente os atores terão generalização.
+Visão geral: O sistema deverá encontrar um pedido, realizado pelo usuário, mediante o fornecimento do número do pedido pelo usuário. Depois de encontrar o pedido o sistema mostra os dados atuais referentes à situação do pedido.
+Atores: Cliente, Funcionário.
+Caso de uso: Verificar pedido
+Atores: -Cliente, Funcionário.
+Fluxo de eventos: 1) O usuário seleciona "menu pedido". 2) O sistema procura pedido 3) O sistema mostra os dados da situação do pedido e o caso de uso termina.
+Fluxo Alternativo: Se no passo 2 o pedido não for encontrado, então o sistema informa que o pedido não foi cadastrado.
+Pré Condição: o usuário ter feito o pedido e saber o numero do pedido.
+Pos condição: o sistema fornecer os dados com a situação do pedido.
+Generalização: ???
+Funcionário: Vendedor | Gerente
+Cliente: Especial | Comum

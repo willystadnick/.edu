@@ -1,0 +1,278 @@
+Capítulo 5
+
+
+5.0 ENTRADA/SAÍDA
+
+O código para entrada/saída é expressivo em um sistema operacional, pois uma das principais funções é controlar os dispositivos de entrada/saída do computador, cujo processo de transferência é essencialmente assíncrono.
+
+5.1 PRINCÍPIOS DO HARDWARE DE ENTRADA E SAÍDA
+
+A programação de diversos dispositivos de entrada/ saída está diretamente relacionada ao seu funcionamento interno.
+
+5.1.1 DISPOSITIVOS DE ENTRADA/SAÍDA
+
+Os dispositivos de entrada/saída podem ser divididos em duas categorias:
+Dispositivos de bloco: são aqueles que armazenam dados em blocos de tamanho fixo(tamanhos comuns de 128bytes até 1.024bytes). Cada um desses blocos possui seu próprio endereço, podendo ler ou escrever em um bloco independente dos demais.
+Dispositivos de caracter: liberam ou aceitam um conjunto de caracteres, sem seguir uma estrutura de bloco e não é endereçável.
+É bom exemplificar que esta divisão não é perfeita, pois existem dispositivos que não se ajustam a eles como é o caso das telas de micros ou terminais mapeados na memória. Mas é um modelo suficiente para quem busca a independência de dispositivos
+
+5.1.3 ACESSO DIRETO À MEMÓRIA (DMA)
+
+A DMA foi inventada para tirar o processador deste trabalho de baixo nível, após ter o bloco no buffer e verificado a ocorrência de erros, a controladora copia o primeiro byte para o endereço especificado no registrador de memória da controladora DMA. A seguir ela incrementa o valor do endereço, e decrementa um byte do total de bytes que foram transferidos. Este processo termina quando o número de bytes chega a zero e é aí que a controladora gera uma interrupção e o sistema operacional não irá mais precisar ler o bloco para a memória.
+As controladoras que suportam operações de acesso direto à memória (DMA) são as desenvolvidas para dispositivos de blocos. 
+
+5.1.2 CONTROLADORAS DE DISPOSITIVOS
+
+Os dispositivos de entrada/saída são normalmente formados por uma parte mecânica e outra eletrônica. A parte eletrônica normalmente é uma placa de circuito impresso que pode ser chamado de controlador de dispositivo ou adaptadora, sua função é converter o fluxo serial de dados em blocos de bytes, montar e fazer correções (quando necessárias).
+ A parte mecânica é o dispositivo propriamente dito. Sendo que quase sempre o sistema operacional  trata com as controladoras e não com os dispositivos.
+
+5.2 PRINCÍPIOS DO SOFTWARE DE ENTRADA/SAÍDA
+
+Fundamentam-se na idéia de organização em uma série de níveis, sendo o mais baixo deles direcionado a  esconder do usuário as características peculiares do hardware, e o restante por apresentar uma boa interface fácil de usar.
+
+
+5.2.1 OBJETIVOS DO SOFTWARE DE ENTRADA/SAÍDA
+
+O objetivo principal do software de entrada/saída é a independência de dispositivos, e no caso de incompatibilidade de dispositivos é função do Sistema Operacional gerenciá-los utilizando drivers compatíveis
+
+5.2.2 MANIPULADORES DE INTERRUPÇÃO 
+
+Faz com que o processo de entrada/saída anteriormente bloqueado esteja pronto para executar novamente.
+
+5.2.3 DRIVERS DE DISPOSITIVOS
+
+Recebem requisições por software e emitem comandos para a controladora, verificando se estes comandos foram executados corretamente.
+
+5.2.4 SOFTWARE DO SISTEMA OPERACIONAL INDEPENDENTE DO DISPOSITIVO 
+
+Tem como principais funções, uma interface uniforme para os drivers, identificação, proteção, fornecimento de um tamanho de bloco independente dos dispositivos, e ainda bufferização, alocação de espaço para blocos, alocação e liberação de dispositivos dedicados e informação de erros.
+
+5.2.5 SOFTWARE DO NÍVEL DO USUÁRIO
+
+Rotinas de bibliotecas, ligadas junto com programas de usuários.
+
+5.3 DISCOS
+
+Armazenar em discos tem as seguintes vantagens sobre guardá-las na memória principal:
+? Grande capacidade de armazenamento;
+? Custo por bit é menor;
+? Não se perde informação ao desligar a máquina.
+
+5.3.1:Hardware de Disco:
+
+É possível através deste dispositivo acionar comandos de posicionamento para várias unidades de discos ao mesmo tempo (seeks sobrepostos).Isto é possível pela utilização de recursos, como pipelines. A possibilidade de se utilizar dois ou mais seeks ao mesmo tempo reduz consideravelmente o tempo médio de acesso.
+
+5.3.2:Algoritmos para escalonamento do braço de disco:
+
+O objetivo de alcançar uma melhor performance do sistema e um bom gerenciamento das prioridades deste, tornam esta ferramenta muito significativa. Utilizando o sistema FCFS (primeiro a chegar é o primeiro a sair) quase não apresentará otimização. Mas com o SSF (menor seek primeiro) reduz quase a metade o movimento do braço, comparado com o FCFS. 
+Outro sistema é chamado de RAID (Redundant Array of Inespensive Disks).Quando um problema ocorre, um bit de cada palavra será perdido, mas como o código de Hamming pode corrigir um bit errado, o sistema continua a trabalhar.
+
+5.3.3 Tratamento de Erros:
+
+Os erros mais comuns ocorrem por:
+? Falha de programação (pela imprecisão de parâmetros no programa);
+? Transiente no cheksum (sujeira na cabeça do controlador);
+? Erro parâmetro no cheksum (disco danificado);
+? Erro de seek (imprecisão do braço da controladora);
+? Erro da controladora (recusa comandos).
+
+
+5.3.4 Cache em disco:
+Para agilizar processos alguns drivers possuem uma cache secreta, não perceptível aos Softwares para não haver a necessidade de realizar transferências de disco. 
+Outros controladores mantém a cache na própria memória interna e assim utilizando o hardware da DMA. Através destes sistemas é possível ler e escrever trilhas inteiras com apenas um comando.
+
+5.3.5 Ram Disks:
+
+Este dispositivo de bloco tem acesso instantâneo, não utilizando comandos de seek ou pela potência rotacional, tornando possível o armazenamento de programas que são freqüentemente utilizados. A Ram disk é dividida em N blocos, dependendo da quantidade de memória alocada. Para fazer transferência de dados, o driver localiza o dado na Ram e diretamente o transfere ao local designado.
+
+5.4 CLOCKS 
+
+São excenciais para o funcionamento dos sistemas com compartilhamento de tempo. Mantém o relógio interno da máquina e evita que um processo monopolize o processador. Em geral o Clock implementado por software toma forma de drive de dispositivo, não sendo um dispositivo de bloco e nem de caracter.
+
+5.4.1 Clock por Hardware
+
+Dois tipos são mais utilizados: O mais simples é extraído da linha de alimentação de 110v ou 220v e causam uma interrupção a cada ciclo de tensão, que é de 50 ou 60Hz. O outro é construído a partir de um oscilador a cristal, um contador e um registrador de armazenamento. Um sinal de alta precisão é enviado a um contador que o faça contar até zero e então interromper o processador.
+Existem dados programáveis como:
+modo one-shot: decrementa o valor recebido do registro de armazenamento até chegar a zero. Quando gera uma interrupção e espera uma nova inicialização. 
+de onda quadrada:  não espera um estímulo externo, mas copia automaticamente o valor do registro de armazenamento para o contador e repete o processo de busca e tratamento do sinal até uma nova ordem. 
+Com um Clock programável a freqüência de interrupções pode ser controlada por software, além de manipular outra funções como contagem crescente, interrupções desabilitadas, etc.
+ 
+5.4.2 Clock por Software
+
+Este sistema deve gerar interrupções a intervalos determinados. Qualquer outra tarefa utilizando o clock é feita por software, pelo Driver do Clock. O Driver do Clock mantém o clock ativo, evita que o processos rodem mais tempo que o necessário, contabiliza o uso do processador, manipula sistemas como o Alarm e os Watch-dog-times para o sistema., controla monitorações e estatísticas dos valores acumulados. 
+
+5.5 Terminais
+
+Cada computador tem sempre, no mínimo um terminal usado para a comunicação com os usuários do sistema. 
+
+5.5.1 Hardware do terminal
+
+Os terminas RS-232 são dispositivos compostos de um teclado e de um vídeo que se comunicam usando uma interface serial, através de um conector com 25 pinos, as velocidades de transmissão mais utilizadas são de 1.200, 2400, 4800 e 9600 por segundo.
+Para fazer a conversão caractere-serial e serial-caractere são utilizados chips chamados URTS(Universal Asynchronous Receiver Transmitters).
+Para imprimir um caractere, o driver de terminal escreve na interface, onde ele é armazenado, e depois deslocado bit a bit em direção a linha de transmissão pela UART. Devido a demora na taxa de transmissão, o driver geralmente coloca um caractere na interface e se auto bloqueia, aguardando pela interrupção gerada pela interface quando o caractere tiver sido transmitido, e a UART estiver pronta para escrever um novo caractere. 
+Os terminais burros trabalham exatamente da mesma forma, a única diferença que ao invés de imprimir em papel eles exprimem em uma tela.
+Os terminais de vídeo inteligente são de fato pequenos computadores, com programas gravados em EPROM E ROM esses terminais podem entender certas seqüências de escape.
+
+5.5.2 Terminais mapeados na memória
+
+Esses terminais são parte integrante dos próprios computadores, eles fazem sua própria interface através de uma memória especial chamada RAM de vídeo, que pertence ao espaço de endereçamento do computador, e é endereçada pelo processador da mesma forma que o restante da memória. 
+Na Ram de vídeo tem um chip denominado controlador de vídeo este chip retira bytes da ram de vídeo e gera sinais de vídeo. O monitor gera um feixe de elétrons que varre a tela horizontalmente, desenhando os pontos que nela aparecem. os sinais do controlador de vídeo modulam o feixe de elétrons se um dado ponto deverá ou não ser iluminado. 
+Os terminais bit-map usam o mesmo principio, exceto que cada bit na ram de vídeo controla um único pixel na tela, permitindo uma aplicações gráficas mais sofisticadas.
+
+5.5.3 Softwares de entrada
+
+Orientada ao caractere - modo cru (raw) O driver simplesmente recebe o caractere e passa adiante sem qualquer modificação (tornando o teclado totalmente dependente da maquina).
+ Orientada a linha - modo cozido (cooked) O driver analisa a seqüência e digitada e passa adiante apenas a entrada correta Cada tecla pressionada gera uma interrupção e o driver do teclado a obter durante esta interrupção.
+Tanto no modo cru como no modo cozido os caracteres precisam ser guardados em buffer.
+A bufferização acontece de duas formas:
+1 - O driver possui um pool central de buffers, cada um deles armazenando caracteres. Associada a cada terminal, existe uma estrutura de dados que contém, entre outros itens, um ponteiro para a cadeia de buffers para as entradas coletadas do terminal. Conforme os caracteres vão sendo digitados, mais buffers são adquiridos e coletados na cadeia. Quando um caractere for passado para um programa de usuário, os buffers são removidos e postos de volta no pool.
+2 - direto na própria estrutura de dados do terminal, sem usar o pool buffers, sendo teclado e monitor separados e independentes um do outro, fica a critério do software colocar ou não na tela os caracteres digitados. Este processo é denominado eco.
+O driver do teclado deve do caso em que mais de 80 caracteres são digitados em um terminal de 80 linhas, dependendo da aplicação ele deve invadir outra linha, deve tratar da tabulação.
+O driver do teclado deve ajustar os caracteres no formato esperado pelo sistema, para poder atualizar convenientemente o conteúdo da tela.
+Os caracteres para troca de linha e retorno do carro são mais demorados para serem colocados na tela que um digito comum.
+No modo cozido os caracteres de entrada terão significados especiais exemplo o backspace que não adiciona nenhum novo caractere apenas retira um caractere.
+
+5.5.4 Softwares de saída
+
+Cada terminal RS - 232 tem um buffer associado na memória que podem ou não ser dedicados, quando os programas copiam para um terminal, a saída é primeiro copiada para os buffers depois que toda a saída estiver copiada nos buffers ela começa a ser impressa caractere por caractere.
+Com os terminais mapeados na memória os caracteres a serem impressos são retirados um a um do espaço do usuário e colocados na RAM de vídeo. Um driver para o terminal mapeado na memória precisa controlar por software a posição real da RAM de vídeo, de forma que os caracteres a serem impressos possam ser colocados na posição corrente possa ser atualizada.
+
+
+
+
+
+10 COMUNICAÇÃO NOS SISTEMAS DISTRIBUÍDOS
+
+Em um sistema distribuído e sistema monoprocessador é forma de implementar a comunicação entre processos e totalmente diferente. Todos os Sistemas Operacionais Distribuídos necessitam de comunicação entre si. Deste os modelos mais simples como um semáforo e os mais complexos. Senão seriam apenas vários computadores isolados em ilhas.
+
+10.1 PROTOCOLOS EM CAMADAS
+
+Os Protocolos contém informações que tornam possível a compatibilidade em vários aspectos. Portanto pode-se definir protocolos, como um idioma para comunicação nos sistemas distribuídos. 
+
+10.1.1 O Nível Físico
+
+O nível físico trata da organização da transmissão dos 0s e 1s. Controlando a quantidade de volts necessários a representar cada um dos dois níveis lógicos, a que freqüência eles devem ser transmitidos, se a transmissão de dados pode ser feita nos dois sentidos simultaneamente. Para que, quando uma maquina enviar um bit 0 , as outras recebam um bit 0.
+
+10.1.2 O nível do Enlace de Dados
+
+O enlace de dados é responsável pela implementação  de mecanismos que detectem e corrijam erros nas redes. Para tanto, os bits são agrupados em unidades, denominados quadros. A função deste nível é verificar se os quadros estão sendo corretamente recebidos.
+
+10.1.3 O nível da rede
+A principal tarefa do nível de rede é escolher o melhor caminho também chamado de roteamento.
+
+10.1.4 O nível de transporte
+
+A função do nível de transporte é fornecer o serviço recuperação de erros. A idéia é que o nível da sessão possa enviar uma mensagem para o de transporte, com a expectativa de que ela seja entregue sem nenhuma perda.
+Ao receber uma mensagem do nível de sessão, o nível de transporte abre a mensagem em pedaços, pequenos o suficiente para cada um conter um único pacote, atribuindo a cada de tais pedaços um número seqüencial. Ao término deste trabalho, ele transmite todos eles. A discussão no cabeçalho do nível de transporte diz respeito aos pacotes que foram enviados, aos que foram recebidos, quanto de espaço há no receptor para aceitá-los, além de outros assuntos similares.
+
+10.1.5 O nível de sessão
+
+Ele fornece uma metodologia para controle de diálogo, de forma a estabelecer qual das partes está falando, além de fornecer também facilidades para sincronização. 
+
+10.1.6 O nível de apresentação
+
+O nível de apresentação cuida do significado dos bits enviados por um transmissor. No nível de apresentação é possível definirem-se registros contendo campos para recebimentos da informação estruturada, e então fazer com que o transmissor informe ao receptor que a mensagem é composta por registros em determinados formatos. 
+
+10.1.7 O nível de aplicação
+
+O nível de aplicação é, na verdade, composto por um conjunto de diversos protocolos voltados para diferentes atividades, como correio eletrônico, transferência de arquivos, e conexão de terminais remotos a computadores através de uma rede.
+
+10.2 O modelo cliente-servidor
+
+Os protocolos em camadas, que seguem a linha do OSI, parecem uma forma bastante elegante e conveniente de se organizar um sistema distribuído. Neste modelo, um transmissor estabelece uma conexão com um receptor (um pipe de bits), e bombeia os bits dentro deste pipe. Porém a existência de muitos cabeçalhos cria uma dose considerável de overhead no sistema.
+
+10.2.1 Clientes e servidores
+
+A idéia por trás deste é a de estruturar o sistema operacional como um grupo de processos cooperantes, denominados servidores, que oferecem serviços a processos usuários (solicitam serviços através de mensagens). As máquinas servidoras normalmente rodam o mesmo microkernel, onde tanto os clientes quanto os servidores roam como processos usuários, conforme visto anteriormente. Uma máquina pode rodar um único processo, vários clientes, vários servidores, ou uma mistura dos dois.
+
+10.3.1OPERAÇÃO BÁSICA DA CHAMADA REMOTA A PROCEDIMENTO
+
+Para compreender o funcionamento da chamada remota a procedimento é importante entender como funciona a chamada a procedimento em uma máquina convencional. Para fazer a chamada o procedimento chamador coloca os parâmetros na pilha em ordem, após ter terminado a execução, armazena o valor de retorno em um registrador, remove seu endereço de retorno e transfere o controle de volta a quem chamou, fazendo com que a pilha retorne ao seu estado original. Os parâmetros podem ser chamados por valor ou por referência. 
+Um parâmetro chamado por valor é simplesmente copiado da pilha. Para o procedimento chamado, este é igual a uma variável local inicializada, se ele for modificado durante a execução deste procedimento, seu valor original no procedimento que chamou não será afetado.
+Um parâmetro passado por referência é um ponteiro, ou seja, o que vai realmente para a pilha é o endereço da variável, e não o valor desta. Se o procedimento chamado alterar o valor deste parâmetro, o modificará também no procedimento chamador.
+Existe ainda um outro mecanismo para passagem de parâmetros, denominado chamada por cópia/restauração. Consiste em copiar uma variável para a pilha pelo procedimento chamador, e então copiá-la de volta após a execução da chamada, substituindo o valor original.
+A idéia por trás da chamada remota a procedimento é fazer com que esta se pareça tanto quanto possível com uma chamada local, ou seja, o procedimento chamador não deve se preocupar com o fato do procedimento chamado estar ou não rodando em uma máquina diferente, e vice-versa. 
+
+10.3.2 PASSAGEM DE PARÂMETROS
+
+A função do stub de cliente é a de tomar seus parâmetros, empacotá-los em uma mensagem e enviá-los ao stub do servidor. O empacotamento dos parâmetros em uma mensagem é chamado de ordenação de parâmetros.
+O stub do cliente forma uma mensagem com os parâmetros e coloca na mensagem o nome ou o número do procedimento a ser chamado. Quando a mensagem chega ao servidor, o stub a examina para saber qual o procedimento a que ela se refere, e, então, faz a chamada apropriada.
+Quando o servidor termina a execução, seu stub retoma o controle, empacotando o resultado em uma mensagem. Esta é enviada para o stub do cliente, que a desempacota e retorna o valor obtido ao procedimento-cliente.
+Para evitar erros de interpretação  ocasionado por máquinas diferentes, os procedimentos são enviados com uma campo a mais para identificação dos parâmetros. Com isso torna-se possível realizar qualquer tipo de conversão
+O maior problema ligado às chamadas remotas a procedimentos é a passagem de ponteiros, pois estes só têm significado no espaço de endereçamento do processo no qual está sendo usado.
+Uma das soluções seria proibir a passagem de ponteiros e de parâmetros por referência. As modificações que o servidor faz usando o ponteiro afetam diretamente o buffer da mensagem dentro do stub do servidor.
+
+10.3.3 LIGAÇÃO DINÂMICA
+
+É a maneira como o cliente localiza o servidor. Sempre que uma interface é registrada ou tem seu registro cancelado, será necessária uma quantidade substancial de mensagens, de maneira a manter todos os ligadores sincronizados e atualizados, gerando mais overhead.
+
+10.3.4 SEMÂNTICA DA CHAMADA REMOTA A PROCEDIMENTO EM PRESENÇA DE FALHAS
+
+O objetivo da chamada remota é manter escondido do usuário os procedimentos relativos à comunicação remota, fazendo com que as chamadas pareçam invocar procedimentos locais. Enquanto o cliente e o servidor estiverem funcionando perfeitamente, a chamada remota a procedimento é admirável. Os problemas começam com o surgimento eventual de erros. Estas falhas podem ser:
+
+? cliente não é capaz de localizar o servidor
+Neste caso, um dos motivos é o servidor estar fora do ar. Para solucionar pode-se utilizar o mecanismo que faz com que o erro vire uma exceção. Em algumas linguagens é possível escrever procedimentos especiais que são chamados quando da ocorrência de erros específicos, os manipuladores podem ser usados com este propósito.
+Mas, infelizmente nem toda linguagem suporta exceções e sinais.
+
+? Perda de mensagens solicitando serviço
+Basta fazer com que o kernel inicialize um temporizador quando do envio de uma mensagem de solicitação. Se este expirar antes da chegada de uma resposta ou de uma mensagem de reconhecimento, o kernel deve enviar a mensagem novamente. 
+
+? Perda de mensagens com resposta
+Uma solução seria utilizar novamente o recurso do temporizador, mas, neste caso, o kernel do cliente não está seguro a respeito do motivo pelo qual a resposta não chegou. 
+
+? Quedas do servidor
+Um método chamado semântica é aguardar até que o servidor dê um novo boot. Um segundo método chamado de semântica de no máximo uma vez, o kernel desiste imediatamente e reporta o problema. Uma terceira alternativa é não garantir absolutamente nada.
+
+
+? Queda do cliente
+Quando um cliente envia uma mensagem de solicitação de trabalho para um servidor, e sai do ar antes que este tenha podido responder, está sendo realizado um processamento órfão. Estes processamentos gastam o tempo do processador e também podem bloquear arquivos ou ocupar recursos escassos. 
+
+10.3.5 ASPECTOS RELATIVOS A IMPLEMENTAÇÃO
+
+O sucesso ou fracasso de um sistema distribuído depende de sua performance, que depende da velocidade de comunicação entre suas partes componentes.
+
+PROTOCOLOS PARA CHAMADA REMOTA A PROCEDIMENTO
+
+A escolha do protocolo deve ser analisada, teoricamente qualquer um vai servir, desde que transporte os bits do kernel do cliente para o do servidor. A primeira decisão diz respeito ao uso de protocolos orientados a conexão ou que não requerem conexão explícita entre as partes comunicantes. 
+A segunda questão é sobre o uso de um protocolo padrão ou de um especialmente projetado para sistemas baseados em chamadas remotas a procedimento.
+Um último aspecto diz respeito ao tamanho dos pacotes e das mensagens.
+CONFIRMAÇÕES
+
+Quando as chamadas tiverem que ser divididas surge a questão de confirmar, ou não, estes individualmente. Uma estratégia conhecida como pare-e-espere faz com que o cliente envie o pacote, e espere por uma confirmação do servidor para enviar o próximo. Outra alternativa conhecida como protocolo em rajadas, o cliente envia todos os pacotes o mais rápido que puder, e o servidor reconhece a mensagem inteira quando todos os pacotes forem recebidos.
+Outra técnica conhecida como repetição seletiva o servidor guarda o pacote não danificado em buffer, junto com os anteriores, aguarda que os próximos pacotes cheguem sem problemas, e então solicitar ao cliente a retransmissão apenas o pacote danificado. 
+
+Confirmações 
+
+Quando as chamadas remotas a procedimento tiverem que ser divididas em vários pacotes pequenos, surge uma questão : Os pacotes devem ou não ser confirmados individualmente? Suponha, que um cliente deseja escrever um bloco de dados de 4k em um servidor de arquivo, mas o sistema não pode tratar de pacotes maiores que 1k.Uma estratégia conhecida como protocolo pare-e-espere faz com que o cliente envie o pacote 0,com os primeiros 1k e assim sucessivamente até o último.
+Na alternativa conhecida como protocolo de rajadas, o cliente enviar todos os pacotes tão rápido quanto puder, neste caso o servidor reconhece a mensagem inteira, quando todos os pacotes de mensagem forem recebidos.
+Quando um pacote chega e o receptor não está preparado vai haver um erro denominado erro por excesso de pacotes e o pacote entrante é perdido.Com o protocolo em rajadas e perfeitamente possível a ocorrência de erros por excesso. Sendo o problema causado pelo fato do chip estar desabilitado temporariamente enquanto processa uma interrupção ,um transmissor esperto pode introduzir um retardo entre o envio de dois pacotes. Se o retardo necessário for pequeno o transmissor pode aguardar em loop de espera ocupada se for grande pode setar um temporizador.
+
+Caminho critico
+
+A seqüência de instruções que é executada a cada chamada remota é denominada caminho crítico. Ele começa quando um cliente chama um stub de cliente, prossegue com o trap para kernel , com a interrupção do lado do servidor, com a ativação do stub para servidor, e finalmente termina no servidor que executa o trabalho solicitado e despacha a resposta através do caminho inverso. 
+Schroeder e Burrows (1990) colocaram um pouco de luz na questão ao analisar em detalhes o caminho critico da chamada remota a procedimento implementada na estação de trabalho multiprocessada DEC firefly .
+Seus estudos mostram que:
+- Para uma chamada nula os custos dominantes dizem a troca de contexto para o stub do servidor, quando o pacote chega a rotina de tratamento da interrupção e ao movimento dos pacotes para a interface da rede a fim de serem transmitidos.
+- Para uma chamada remota de 1440 bytes, o quadro muda consideravelmente sendo agora o tempo de transmissão pela ethernet o grande ofensor, e com o tempo de movimentação de pacotes de/para interface de rede vindo logo atrás.
+
+Cópia
+
+A questão das cópias é um aspecto que com freqüência domina os tempos gastos na execução das chamadas remotas. 
+Uma característica do hardware que ajuda muito na eliminação de cópias desnecessárias, é chamada scatter-gather. Um chip de interface de rede que pode implementar esta técnica é programado para montar um pacote através da concatenação de dois ou mais buffers.
+Em geral a eliminação de cópias é mais fácil de ser realizada do lado da transmissão do que no da recepção. 
+
+GERÊNCIA DO TEMPO
+
+devido ao ruído na comunicação ou ao overflow no buffer de recepção, mensagens podem ser perdidas, em conseqüência, a maioria dos protocolos inicializa um temporizador sempre que uma mensagem e expedida e uma resposta(outra mensagem ou simplesmente um reconhecimento ) e esperada. Se a resposta não chegar em determinado tempo, o temporizador sinaliza, e a mensagem original e retransmitida .
+Muitos sistemas mantém uma tabela de processos onde cada entrada possui todas as informações sobre cada um dos processos do sistema. 
+
+10.3.6 Áreas de problemas 
+
+Um  problema muito freqüente é o acesso irrestrito por parte de procedimentos locais e variáveis globais remotas e vice-versa que não pode ser implementado mesmo que a proibição deste tipo de acesso venha a violar o princípio da transparência que diz que os programas não podem agir de forma diferente quando estiverem rodando em sistemas que suportam chamadas remotas a procedimento.
+Outro problema diz respeito a linguagem C, por exemplo calculando o produto interno de dois vetores sem especificar o tamanho de tais vetores. O final de cada vetor pode estar amarrado a ocorrência de um determinado valor conhecido apenas pelos procedimentos envolvidos na chamada remota. Sob tais circunstâncias e virtualmente impossível determinar o tamanho dos parâmetros .
+A solução para este problema e forçar o programador a definir o tamanho Máximo de todos os parâmetros quando escrever a especificação formal do servidor. 
+
+10.4 Introdução a comunicação grupal 
+
+Um grupo é um conjunto de processos que agem juntos, de maneira especificada pelo sistema ou por um usuário. A propriedade fundamental dos grupos é quando uma mensagem é enviada para o grupo, todos os membros deste grupo devem recebê-la .
+

@@ -1,0 +1,31 @@
+programa exemplo
+
+variavel
+	prova1: numero
+	prova2: numero
+	trabalho: numero
+	media: numero
+	qtde: numero
+	cont: numero
+
+constante
+	#meta1:='2'
+	#meta2:='2'
+
+{
+	para cont := '1' ate qtde faca
+	{ 
+	escreva ("Notas das provas 1 e 2:  ")
+	leia (prova1, prova2)	
+	escreva ("Nota do trabalho:  ")
+	media := eq(((prova1+prova2)/2+trabalho)/2)  
+              	escreva ("Media encontrada:  ",media)
+		se media >= #meta1 entao
+			escreva ("Aluno aprovado")
+		se media < #meta2 entao
+			escreva ("Aluno reprovado")
+		senao
+			escreva ("Aluno em exame")
+	}
+	escreva ("Total de alunos:", qtde)
+}

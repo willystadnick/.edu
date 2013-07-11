@@ -1,0 +1,40 @@
+[Transport layer protocols]
+0,RAWSOCKET,Raw socket
+1,ICMP,Internet Control Message Protocol 
+2,IGMP,Internet Group Management Protocol 
+3,GGP,Gateway to Gateway Protocol 
+4,IPIIP, IP in IP Encapsulation 
+5,ST,Internet Stream Protocol 
+#6,TCP,Transmission Control Protocol 
+7,CBT,Core Based Trees 
+8,EGP,Exterior Gateway Protocol 
+11,NVP,Network Voice Protocol 
+#17,UDP,User Datagram Protocol 
+18,TMux,Transport Multiplexing Protocol 
+20,HMP,Host Monitoring Protocol 
+27,RDP,Reliable Data Protocol 
+28,IRTP,Internet Reliable Transaction Protocol 
+30,NETBLT,Network Block Transfer 
+#35,IDPR,Inter-Domain Policy Routing Protocol 
+#38,IDPR,Inter-Domain Policy Routing Protocol 
+42,SDRP,Source Demand Routing Protocol 
+#46,RSVP,Resource ReSerVation Protocol 
+47,GRE,Generic Routing Encapsulation 
+50,ESP,Encapsulating Security Payload 
+51,AH,IP Authentication Header 
+54,NARP,NBMA Address Resolution Protocol 
+55,MEP,Minimal Encapsulation Protocol 
+57,SKIP,Simple Key management for Internet Protocol 
+58,ICMPv6,Internet Control Message Protocol for IPv6 
+81,VMTP,Versatile Message Transaction Protocol 
+89,MOSPF,Multicast Open Shortest Path First 
+89,OSPF,Open Shortest Path First Routing Protocol 
+92,MTP,Multicast Transport Protocol 
+101,IFMP,Ipsilon Flow Management Protocol 
+103,PIM,Protocol Independent Multicast 
+108,IPPCP,IP Payload Compression Protocol 
+112,VRRP,Virtual Router Redundancy Protocol
+113,PGM,Pragmatic General Multicast 
+123,PTP,Performance Transparency Protocol 
+132,SCTP,Stream Control Transmission Protocol 
+#134,RSVP,Resource ReSerVation Protocol 

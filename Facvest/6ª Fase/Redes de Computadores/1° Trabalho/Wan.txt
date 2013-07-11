@@ -1,0 +1,13 @@
+WAN
+
+Wide Área Network (Rede de alcance remoto) 
+
+Rede formada pela ligação de computadores localizados em regiões fisicamente distantes (permitem a interconexão de LANs). As WANs normalmente utilizam linhas de transmissão de dados fornecidos por empresas de telecomunicações, tais como a Embratel, GlobalOne, MetroRed, NetStream, etc.
+
+A necessidade de transmissão de dados entre computadores surgiu com os mainframes, bem antes do aparecimento dos PC's. Com os PC's houve um aumento da demanda por transmissão de dados à longa distância. Isto levou ao surgimento de diversos serviços de transmissão de dados (RENPAC, TRANSDATA, MINASPAC). Os serviços são geralmente de aluguel de linhas privadas (Leased lines) ou discadas (Switched) permitindo a utilização de diversos protocolos tais como SNA, PPP/TCP-IP, etc. 
+
+As redes WAN's estão passando por uma evolução muito grande com a aplicação de novas tecnologias de telecomunicações com a utilização de fibra ótica (Optical fiber). Novos padrões estão surgindo como a ATM (Asynchronous Transfer Mode) que disponibiliza a transmissão de dados, som e imagem em uma única linha e em altíssima velocidade (300Mbps ou superior). A velocidade passa a ser determinada pelos equipamentos que processam as informações (Clientes/Servidores) e não do meio físico. 
+
+A conexão entre os equipamentos geralmente e feita através de Modem's de 33.6K ou 56K. 
+
+Entre os recursos e dispositivos a serem utilizados na comunicação entre os equipamentos podemos citar: HUB com cabo par-trançado, cabo coaxial, placas de rede, repeaters, bridges, etc.

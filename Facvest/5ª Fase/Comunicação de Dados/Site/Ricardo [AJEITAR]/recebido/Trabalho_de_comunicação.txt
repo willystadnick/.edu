@@ -1,0 +1,81 @@
+MULTIPLEXAÇÃO
+É o conjunto de técnicas utilizadas para aproveitar a capacidade de transmissão de um canal de transmissão.
+ 
+IDÉIA BÁSICA
+Misturar as INFOS/SINAIS provenientes de diferentes usuários e transmiti-los sinultâneamente pelo mesmo canal de comunicação. 
+Ao chegarem na outra extremidade do canal de comunicação, os sinais/INFOS são separados e encaminhados aos respectivos destinos.
+PREMISSA
+Capacidade de                 
+ transmissão do meio    >   capacidade de produzir INFO dos usuários
+Há compartilhamento do meio de transmissão
+(figura 1)
+
+OBSERVAÇÕES:
+
+A comunicação se dá entre pares de usuários T1-R1, T2-R2, etc.
+Dois tipos principais de multiplexação:
+TDM e FDM
+Outros : STDM
+
+TDM =“Time Division Multiplexing”
+Multiplexação por divisão de tempo. 
+Compartilhar / repartir o tempo de acesso ao canal de comunicação entre os diversos usuários.
+(figura 2)
+
+É feito um rodízio entre os usuários: cada usuário tem o direito de transmitir pelo meio físico durante uma determinada fatia de tempo (“TIME SLOT ”).
+(figura 3)
+
+FDM “Frequency Division Multiplexing”
+IDÉIA:
+Dividir a largura de banda (BW) do meio de transmissão entre os usuários, alocando uma faixa de freqüências (canal) para cada usuário.
+(figura 4)
+(figura 5)
+(figura 6)
+FDM para três sinais na Banda de Voz 
+(figura 7)
+
+Premissa:
+A largura de banda do meio de transmissão é maior do que a soma das larguras de banda dos usuários individualmente.
+Se essa premissa não for atendida, então ocorrerá recobrimento espectral (mistura de espectros) e não será mais possível separar os espectros dos sinais na outra extremidade do canal (portanto os receptores não receberão a informação que foi enviada: falha na comunicação!).
+
+HIERARQUIA NO FDM
+Grupo
+12 canais de voz  (4kHz cada) = 48kHz
+Faixa de 60kHz a 108kHz
+Supergrupo
+60 canais
+FDM de 5 grupos de sinais sob portadoras entre 420 KHz and 612 KHz
+Mastergrupo
+10 supergrupos
+
+Exemplo de Sistemas FDM
+Televisão
+Radio
+Longa Distância
+xDSL
+
+STDM “Statistical TDM”
+Multiplexação por divisão de tempo estatística.
+QUAL É O PROBLEMA:
+Usuários podem apresentar taxas de dados muito diferentes, de transmissão de vídeo a períodos ociosos (nada para transmitir), e isso varia no decorrer do tempo.
+(figura 8)
+
+to =tempo ocioso: 
+tempo em que não se está utilizando o mio de transmissão, o usuário não está transmitindo, não está aproveitando toda a seu slot time (janela de tempo).
+Isso significa que o sistema de Tx, está sendo  subutilizado.
+Por isso, muitos time slots são desperdiciados
+
+SOLUÇÃO:
+Statistical TDM aloca os time slots (janelas de tempo) dinamicamente baseado na demanda.
+O Multiplexador monitora as linhas de entrada e coleta os dados até completar o frame.
+(figura 9)
+
+VANTAGENS
+Não há desperdício de tempo (to) com esta estratégia.
+Os usuários que possuem maior necessidade, ganham mais tempo (slot time maior).
+Os usuários com menor taxa de utilização têm sua time slot reduzido.
+
+DESVANTAGENS
+A taxa de saída de dados é menor que as taxas de entrada.
+Pode causar problemas durante os períodos de pico.
+      Buffers 

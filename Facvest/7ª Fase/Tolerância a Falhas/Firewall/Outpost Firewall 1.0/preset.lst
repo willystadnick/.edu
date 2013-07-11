@@ -1,0 +1,3837 @@
+; General
+
+[E-Mail Client]
+DefaultState: 1
+RuleName: Send mail by Default E-Mail Client
+Protocol: TCP
+RemotePort: 25
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Read News By Default E-Mail Client
+Protocol: TCP
+RemotePort: 119
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Receive mail by Default E-Mail Client
+Protocol: TCP
+RemotePort: 110
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Default E-Mail Client IMAP connection
+Protocol: TCP
+RemotePort: 143
+Direction: Outbound
+AllowIt
+
+[Browser]
+DefaultState: 1
+RuleName: Browser HTTP rule
+Protocol: TCP
+RemotePort: 80-83
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Browser HTTPS connection
+Protocol: TCP
+RemotePort: 443
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Browser SOCKS connection
+Protocol: TCP
+RemotePort: 1080
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Browser PROXY connection
+Protocol: TCP
+RemotePort: 3128, 8080, 8088
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Browser FTP connection
+Protocol: TCP
+RemotePort: 21
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Browser FTP DATA connection
+Protocol: TCP
+RemotePort: 20
+Direction: Inbound
+AllowIt
+
+DefaultState: 1
+RuleName: Browser PASV FTP connection
+Protocol: TCP
+RemotePort: 1024-65535
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Browser PASV FTP connection
+Protocol: TCP
+LocalPort: 1024-65535
+Direction: Inbound
+AllowIt
+
+[Download Manager]
+DefaultState: 1
+RuleName: Download Manager
+Protocol: TCP
+RemotePort: 80-83, 443, 1080, 3128, 8080, 8088, 11523
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Download Manager FTP connection
+Protocol: TCP
+RemotePort: 21
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Download Manager FTP DATA connection
+Protocol: TCP
+RemotePort: 20
+Direction: Inbound
+AllowIt
+
+[FTP Client]
+DefaultState: 1
+RuleName: FTP connection
+Protocol: TCP
+RemotePort: 21
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: FTP DATA connection
+Protocol: TCP
+RemotePort: 20
+Direction: Inbound
+AllowIt
+
+[Telnet Client]
+DefaultState: 1
+RuleName: Default Telnet connection
+Protocol: TCP
+RemotePort: 23
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Default Secure Telnet connection
+Protocol: TCP
+RemotePort: 22
+Direction: Outbound
+AllowIt
+
+[Time Synchronizer]
+DefaultState: 1
+RuleName: Time Synchronizer connection
+Protocol: UDP
+RemotePort: 123
+AllowIt
+
+DefaultState: 1
+RuleName: Time Synchronizer connection
+Protocol: UDP
+RemotePort: 37
+AllowIt
+
+DefaultState: 1
+RuleName: Time Synchronizer connection
+Protocol: TCP
+RemotePort: 37
+AllowIt
+
+DefaultState: 1
+RuleName: Time Synchronizer connection
+Protocol: TCP
+RemotePort: 13
+Direction: Outbound
+AllowIt
+
+; E-Mail
+
+[Outlook Express]
+VisibleState: 0
+Exe:
+Outlook Express, msimn.exe
+DefaultState: 1
+RuleName: Send mail by Outlook Express
+Protocol: TCP
+RemotePort: 25
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Read News By Outlook Express
+Protocol: TCP
+RemotePort: 119
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Receive mail by Outlook Express
+Protocol: TCP
+RemotePort: 110, 995
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Outlook Express IMAP connection
+Protocol: TCP
+RemotePort: 143
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Outlook Express HTTP connection
+Protocol: TCP
+RemotePort:  80-83, 443, 1080, 3128, 8080, 8088, 11523
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Outlook Express LDAP connection
+Protocol: TCP
+RemotePort: 389
+Direction: Outbound
+AllowIt
+
+[The BAT]
+VisibleState: 0
+Exe:
+The BAT, thebat.exe
+DefaultState: 1
+RuleName: Send mail by The BAT
+Protocol: TCP
+RemotePort: 25
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Read News By The BAT
+Protocol: TCP
+RemotePort: 119
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Receive mail by The BAT
+Protocol: TCP
+RemotePort: 110
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: The BAT IMAP connection
+Protocol: TCP
+RemotePort: 143
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: The Bat LDAP connection
+Protocol: TCP
+RemotePort: 389
+Direction: Outbound
+AllowIt
+
+[Becky!]
+VisibleState: 0
+Exe:
+Becky!, b2.exe
+DefaultState: 1
+RuleName: Send mail by Becky!
+Protocol: TCP
+RemotePort: 25
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Read News By Becky!
+Protocol: TCP
+RemotePort: 119
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Receive mail by Becky!
+Protocol: TCP
+RemotePort: 110
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Becky! IMAP connection
+Protocol: TCP
+RemotePort: 143
+Direction: Outbound
+AllowIt
+
+[Eudora]
+VisibleState: 0
+Exe:
+Eudora, eudora.exe
+DefaultState: 1
+RuleName: Send mail by Eudora
+Protocol: TCP
+RemotePort: 25
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Receive mail by Eudora
+Protocol: TCP
+RemotePort: 110
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Eudora IMAP connection
+Protocol: TCP
+RemotePort: 143
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Eudora HTTP connection
+Protocol: TCP
+RemotePort:  80-83, 443, 1080, 3128, 8080, 8088, 11523
+Direction: Outbound
+AllowIt
+
+[Calypso]
+VisibleState: 0
+Exe:
+Calypso, calypso.exe
+DefaultState: 1
+RuleName: Send mail by Calypso
+Protocol: TCP
+RemotePort: 25
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Receive mail by Calypso
+Protocol: TCP
+RemotePort: 110
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Calypso LDAP connection
+Protocol: TCP
+RemotePort: 389
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Calypso HTTP connection
+Protocol: TCP
+RemotePort:  80-83, 443, 1080, 3128, 8080, 8088, 11523
+Direction: Outbound
+AllowIt
+
+; Browser
+[Internet Explorer]
+VisibleState: 0
+Exe:
+Internet Explorer, iexplore.exe
+DefaultState: 1
+RuleName: Internet Explorer HTTP connection
+Protocol: TCP
+RemotePort: 80-83
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Internet Explorer HTTPS connection
+Protocol: TCP
+RemotePort: 443
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Internet Explorer SOCKS connection
+Protocol: TCP
+RemotePort: 1080
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Internet Explorer PROXY connection
+Protocol: TCP
+RemotePort: 3128, 8080, 8088
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Internet Explorer Gopher connection
+Protocol: TCP
+RemotePort: 70
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Internet Explorer Web Folders
+Protocol: TCP
+LocalPort: 1375
+Direction: Inbound
+AllowIt
+
+DefaultState: 1
+RuleName: Internet Explorer Web Folders
+Protocol: UDP
+LocalPort: 1040-1050
+Direction: Inbound
+AllowIt
+
+DefaultState: 1
+RuleName: Internet Explorer FTP connection
+Protocol: TCP
+RemotePort: 21
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Internet Explorer FTP DATA connection
+Protocol: TCP
+RemotePort: 20
+Direction: Inbound
+AllowIt
+
+[Netscape Navigator]
+VisibleState: 0
+Exe:
+Netscape Navigator, netscape.exe
+DefaultState: 1
+RuleName: Netscape HTTP connection
+Protocol: TCP
+RemotePort: 80-83
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Netscape HTTPS connection
+Protocol: TCP
+RemotePort: 443
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Netscape SOCKS connection
+Protocol: TCP
+RemotePort: 1080
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Netscape PROXY connection
+Protocol: TCP
+RemotePort: 3128, 8080, 8088
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Netscape Messenger Send Mail
+Protocol: TCP
+RemotePort: 25
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Netscape Messenger Read News
+Protocol: TCP
+RemotePort: 119
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Netscape Messenger Receive Mail
+Protocol: TCP
+RemotePort: 110
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Netscape Messenger IMAP connection
+Protocol: TCP
+RemotePort: 143
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Netscape FTP connection
+Protocol: TCP
+RemotePort: 21
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Netscape FTP DATA connection
+Protocol: TCP
+RemotePort: 20
+Direction: Inbound
+AllowIt
+
+[Netscape Mail Notification]
+VisibleState: 0
+Exe:
+Netscape Mail Notification, nsnotify.exe
+DefaultState: 1
+RuleName: Netscape Mail Notification
+Protocol: TCP
+RemotePort: 110
+AllowIt
+
+[Opera]
+VisibleState: 0
+Exe:
+Opera, opera.exe
+DefaultState: 1
+RuleName: Opera HTTP connection
+Protocol: TCP
+RemotePort: 80-83
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Opera SOCKS connection
+Protocol: TCP
+RemotePort: 1080
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Opera PROXY connection
+Protocol: TCP
+RemotePort: 3128, 8080, 8088
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Opera FTP connection
+Protocol: TCP
+RemotePort: 21
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Opera FTP DATA connection
+Protocol: TCP
+RemotePort: 20
+Direction: Inbound
+AllowIt
+
+[NetCaptor]
+VisibleState: 0
+Exe:
+NetCaptor, netcaptor.exe
+DefaultState: 1
+RuleName: NetCaptor HTTP connection
+Protocol: TCP
+RemotePort: 80-83
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: NetCaptor HTTPS connection
+Protocol: TCP
+RemotePort: 443
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: NetCaptor SOCKS connection
+Protocol: TCP
+RemotePort: 1080
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: NetCaptor PROXY connection
+Protocol: TCP
+RemotePort: 3128, 8080, 8088
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: NetCaptor Gopher connection
+Protocol: TCP
+RemotePort: 70
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: NetCaptor Web Folders
+Protocol: TCP
+LocalPort: 1375
+Direction: Inbound
+AllowIt
+
+DefaultState: 1
+RuleName: NetCaptor Web Folders
+Protocol: UDP
+LocalPort: 1040-1050
+Direction: Inbound
+AllowIt
+
+DefaultState: 1
+RuleName: NetCaptor FTP connection
+Protocol: TCP
+RemotePort: 21
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: NetCaptor FTP DATA connection
+Protocol: TCP
+RemotePort: 20
+Direction: Inbound
+AllowIt
+
+[Smart Explorer]
+VisibleState: 0
+Exe:
+Smart Explorer, sexplorer.exe
+DefaultState: 1
+RuleName: Smart Explorer HTTP connection
+Protocol: TCP
+RemotePort: 80-83
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Smart Explorer HTTPS connection
+Protocol: TCP
+RemotePort: 443
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Smart Explorer SOCKS connection
+Protocol: TCP
+RemotePort: 1080
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Smart Explorer PROXY connection
+Protocol: TCP
+RemotePort: 3128, 8080, 8088
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Smart Explorer Gopher connection
+Protocol: TCP
+RemotePort: 70
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Smart Explorer Web Folders
+Protocol: TCP
+LocalPort: 1375
+Direction: Inbound
+AllowIt
+
+DefaultState: 1
+RuleName: Smart Explorer Web Folders
+Protocol: UDP
+LocalPort: 1040-1050
+Direction: Inbound
+AllowIt
+
+DefaultState: 1
+RuleName: Smart Explorer FTP connection
+Protocol: TCP
+RemotePort: 21
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Smart Explorer FTP DATA connection
+Protocol: TCP
+RemotePort: 20
+Direction: Inbound
+AllowIt
+
+[Mozilla]
+VisibleState: 0
+Exe:
+Mozilla, mozilla.exe
+DefaultState: 1
+RuleName: Mozilla HTTP connection
+Protocol: TCP
+RemotePort: 80-83
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Mozilla HTTPS connection
+Protocol: TCP
+RemotePort: 443
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Mozilla SOCKS connection
+Protocol: TCP
+RemotePort: 1080
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Mozilla PROXY connection
+Protocol: TCP
+RemotePort: 3128, 8080, 8088
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Mozilla Gopher connection
+Protocol: TCP
+RemotePort: 70
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Mozilla FTP connection
+Protocol: TCP
+RemotePort: 21
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Mozilla FTP DATA connection
+Protocol: TCP
+RemotePort: 20
+Direction: Inbound
+AllowIt
+
+DefaultState: 1
+RuleName: Mozilla Send Mail
+Protocol: TCP
+RemotePort: 25, 110
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Mozilla Read News
+Protocol: TCP
+RemotePort: 119
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Mozilla Receive Mail
+Protocol: TCP
+RemotePort: 110
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Mozilla IMAP connection
+Protocol: TCP
+RemotePort: 143
+Direction: Outbound
+AllowIt
+
+[MyIE Web Browser]
+VisibleState: 0
+Exe:
+MyIE Web Browser, myie.exe
+DefaultState: 1
+RuleName: MyIE Web Browser HTTP connection
+Protocol: TCP
+RemotePort: 80-83
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: MyIE Web Browser HTTPS connection
+Protocol: TCP
+RemotePort: 443
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: MyIE Web Browser SOCKS connection
+Protocol: TCP
+RemotePort: 1080
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: MyIE Web Browser PROXY connection
+Protocol: TCP
+RemotePort: 3128, 8080, 8088
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: MyIE Web Browser Gopher connection
+Protocol: TCP
+RemotePort: 70
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: MyIE Web Folders
+Protocol: TCP
+LocalPort: 1375
+Direction: Inbound
+AllowIt
+
+DefaultState: 1
+RuleName: MyIE Web Folders
+Protocol: UDP
+LocalPort: 1040-1050
+Direction: Inbound
+AllowIt
+
+DefaultState: 1
+RuleName: MyIE Web Browser FTP connection
+Protocol: TCP
+RemotePort: 21
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: MyIE Web Browser FTP DATA connection
+Protocol: TCP
+RemotePort: 20
+Direction: Inbound
+AllowIt
+
+; Proxies
+
+[WebWasher]
+VisibleState: 0
+Exe:
+WebWasher, wwasher.exe
+DefaultState: 1
+RuleName: WebWasher connection
+Protocol: TCP
+RemotePort: 80-83, 443, 1080, 3128, 8080, 8088, 11523
+Direction: Outbound
+AllowIt
+
+; Download Manager
+[ReGet]
+VisibleState: 0
+Exe:
+ReGet, reget.exe
+ReGet Deluxe, regetdx.exe
+ReGet Junior, regetjr.exe
+DefaultState: 1
+RuleName: ReGet connection
+Protocol: TCP
+RemotePort: 80-83, 443, 1080, 3128, 8080, 8088, 11523
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: ReGet FTP connection
+Protocol: TCP
+RemotePort: 21
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: ReGet FTP DATA connection
+Protocol: TCP
+RemotePort: 20
+Direction: Inbound
+AllowIt
+
+DefaultState: 1
+RuleName: ReGet PASV FTP connection
+Protocol: TCP
+RemotePort: 1024-65535
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: ReGet PASV FTP connection
+Protocol: TCP
+LocalPort: 1024-65535
+Direction: Inbound
+AllowIt
+
+[ReGet Update]
+VisibleState: 0
+Exe:
+ReGet Update, regetupd.exe
+DefaultState: 1
+RuleName: ReGet Updater
+Protocol: TCP
+RemotePort: 80, 3128, 8080, 1080, 11523
+Direction: Outbound
+AllowIt
+
+[Mass Downloader]
+VisibleState: 0
+Exe:
+Mass Downloader, massdown.exe
+DefaultState: 1
+RuleName: Mass Downloader connection
+Protocol: TCP
+RemotePort: 80-83, 443, 1080, 3128, 8080, 8088, 11523
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Mass Downloader FTP connection
+Protocol: TCP
+RemotePort: 21
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Mass Downloader FTP DATA connection
+Protocol: TCP
+RemotePort: 20
+Direction: Inbound
+AllowIt
+
+DefaultState: 1
+RuleName: Mass Downloader PASV FTP connection
+Protocol: TCP
+RemotePort: 1024-65535
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Mass Downloader PASV FTP connection
+Protocol: TCP
+LocalPort: 1024-65535
+Direction: Inbound
+AllowIt
+
+[NetAnts]
+VisibleState: 0
+Exe:
+NetAnts, netants.exe
+DefaultState: 1
+RuleName: NetAnts connection
+Protocol: TCP
+RemotePort: 80-83, 443, 1080, 3128, 8080, 8088, 11523
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: NetAnts FTP connection
+Protocol: TCP
+RemotePort: 21
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: NetAnts FTP DATA connection
+Protocol: TCP
+RemotePort: 20
+Direction: Inbound
+AllowIt
+
+DefaultState: 1
+RuleName: NetAnts PASV FTP connection
+Protocol: TCP
+RemotePort: 1024-65535
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: NetAnts PASV FTP connection
+Protocol: TCP
+LocalPort: 1024-65535
+Direction: Inbound
+AllowIt
+
+[Lightning Download]
+VisibleState: 0
+Exe:
+Lightning Download, lightning.exe
+DefaultState: 1
+RuleName: Lightning Download connection
+Protocol: TCP
+RemotePort: 80-83, 443, 1080, 3128, 8080, 8088, 11523
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Lightning Download FTP connection
+Protocol: TCP
+RemotePort: 21
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Lightning Download FTP DATA connection
+Protocol: TCP
+RemotePort: 20
+Direction: Inbound
+AllowIt
+
+DefaultState: 1
+RuleName: Lightning Download PASV FTP connection
+Protocol: TCP
+RemotePort: 1024-65535
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Lightning Download PASV FTP connection
+Protocol: TCP
+LocalPort: 1024-65535
+Direction: Inbound
+AllowIt
+
+[Star Downloader]
+VisibleState: 0
+Exe:
+Star Downloader, stardown.exe
+DefaultState: 1
+RuleName: Star Downloader connection
+Protocol: TCP
+RemotePort: 80-83, 443, 1080, 3128, 8080, 8088, 11523
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Star Downloader FTP connection
+Protocol: TCP
+RemotePort: 21
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Star Downloader FTP DATA connection
+Protocol: TCP
+RemotePort: 20
+Direction: Inbound
+AllowIt
+
+DefaultState: 1
+RuleName: Star Downloader PASV FTP connection
+Protocol: TCP
+RemotePort: 1024-65535
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Star Downloader PASV FTP connection
+Protocol: TCP
+LocalPort: 1024-65535
+Direction: Inbound
+AllowIt
+
+[FlashGet]
+VisibleState: 0
+Exe:
+FlashGet, jetcar.exe
+FlashGet, flashget.exe
+DefaultState: 1
+RuleName: FlashGet connection
+Protocol: TCP
+RemotePort: 80-83, 443, 1080, 3128, 8080, 8088, 11523
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: FlashGet FTP connection
+Protocol: TCP
+RemotePort: 21
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: FlashGet FTP DATA connection
+Protocol: TCP
+RemotePort: 20
+Direction: Inbound
+AllowIt
+
+[Go!Zilla]
+VisibleState: 0
+Exe:
+Go!Zilla, go.exe
+DefaultState: 1
+RuleName: Go!Zilla connection
+Protocol: TCP
+RemotePort:  80-83, 443, 1080, 3128, 8080, 8088, 11523
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Go!Zilla FTP connection
+Protocol: TCP
+RemotePort: 21
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Go!Zilla FTP DATA connection
+Protocol: TCP
+RemotePort: 20
+Direction: Inbound
+AllowIt
+
+[GetRight]
+VisibleState: 0
+Exe:
+GetRight, getright.exe
+DefaultState: 1
+RuleName: GetRight connection
+Protocol: TCP
+RemotePort:  80-83, 443, 1080, 3128, 8080, 8088, 11523
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: GetRight FTP connection
+Protocol: TCP
+RemotePort: 21
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: GetRight FTP DATA connection
+Protocol: TCP
+RemotePort: 20
+Direction: Inbound
+AllowIt
+
+[Net Vampire]
+VisibleState: 0
+Exe:
+Net Vampire, vampire.exe
+DefaultState: 1
+RuleName: Net Vampire connection
+Protocol: TCP
+RemotePort:  80-83, 443, 1080, 3128, 8080, 8088, 11523
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Net Vampire FTP connection
+Protocol: TCP
+RemotePort: 21
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Net Vampire FTP DATA connection
+Protocol: TCP
+RemotePort: 20
+Direction: Inbound
+AllowIt
+
+; Offline Browser
+
+[Teleport Pro]
+VisibleState: 0
+Exe:
+Teleport Pro, pro.exe
+DefaultState: 1
+RuleName: Teleport Pro connection
+Protocol: TCP
+RemotePort:  80-83, 443, 1080, 3128, 8080, 8088, 11523
+Direction: Outbound
+AllowIt
+
+[Offline Explorer]
+VisibleState: 0
+Exe:
+Offline Explorer, oe.exe
+DefaultState: 1
+RuleName: Offline Explorer connection
+Protocol: TCP
+RemotePort:  80-83, 443, 1080, 3128, 8080, 8088, 11523
+Direction: Outbound
+AllowIt
+
+[SuperHTTP Web Spider]
+VisibleState: 0
+Exe:
+SuperHTTP Web Spider, superhttp.exe
+DefaultState: 1
+RuleName: SuperHTTP connection
+Protocol: TCP
+RemotePort:  80-83, 443, 1080, 3128, 8080, 8088, 11523
+Direction: Outbound
+AllowIt
+
+[WebZIP]
+VisibleState: 0
+Exe:
+WebZIP, webzip.exe
+DefaultState: 1
+RuleName: WebZIP connection
+Protocol: TCP
+RemotePort:  80-83, 443, 1080, 3128, 8080, 8088, 11523
+Direction: Outbound
+AllowIt
+
+; Agnitum Products
+
+[Tauscan Update]
+VisibleState: 0
+Exe:
+Tauscan Update, taupdate.exe
+DefaultState: 1
+RuleName: Tauscan Update
+Protocol: TCP
+RemotePort: 80, 8080, 3128, 1080
+Direction: Outbound
+AllowIt
+
+[Agnitum Products Update]
+VisibleState: 0
+Exe:
+Outpost Update, aupdrun.exe
+DefaultState: 1
+RuleName: Agnitum Products Update
+Protocol: TCP
+RemotePort: 20, 21, 80, 443, 3128, 1080, 8080
+Direction: Outbound
+AllowIt
+
+[Jammer]
+VisibleState: 0
+Exe:
+Jammer, jammer.exe
+DefaultState: 1
+RuleName: Jammer Report
+Protocol: TCP
+RemotePort: 25
+Direction: Outbound
+AllowIt
+
+; FTP
+
+[Windows FTP Client]
+VisibleState: 0
+Exe:
+Windows FTP Client, ftp.exe
+DefaultState: 1
+RuleName: Windows FTP client connection
+Protocol: TCP
+RemotePort: 21
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Windows FTP client DATA connection
+Protocol: TCP
+RemotePort: 20
+Direction: Inbound
+AllowIt
+
+DefaultState: 1
+RuleName: Windows FTP client PASV connection
+Protocol: TCP
+RemotePort: 1024-65535
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Windows FTP client PASV connection
+Protocol: TCP
+LocalPort: 1024-65535
+Direction: Inbound
+AllowIt
+
+[CuteFTP]
+VisibleState: 0
+Exe:
+CuteFTP, cutftp32.exe
+DefaultState: 1
+RuleName: CuteFTP connection
+Protocol: TCP
+RemotePort: 21
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: CuteFTP DATA connection
+Protocol: TCP
+RemotePort: 20
+Direction: Inbound
+AllowIt
+
+DefaultState: 1
+RuleName: CuteFTP PASV FTP connection
+Protocol: TCP
+RemotePort: 1024-65535
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: CuteFTP PASV FTP connection
+Protocol: TCP
+LocalPort: 1024-65535
+Direction: Inbound
+AllowIt
+
+[BulletProof FTP]
+VisibleState: 0
+Exe:
+BulletProof FTP, bpftp.exe
+DefaultState: 1
+RuleName: BulletProof FTP connection
+Protocol: TCP
+RemotePort: 21
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: BulletProof FTP DATA connection
+Protocol: TCP
+RemotePort: 20
+Direction: Inbound
+AllowIt
+
+DefaultState: 1
+RuleName: BulletProof PASV FTP connection
+Protocol: TCP
+RemotePort: 1024-65535
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: BulletProof PASV FTP connection
+Protocol: TCP
+LocalPort: 1024-65535
+Direction: Inbound
+AllowIt
+
+[PrimaSoft AutoFTP]
+VisibleState: 0
+Exe:
+PrimaSoft AutoFTP, ftppro.exe
+DefaultState: 1
+RuleName: PrimaSoft AutoFTP connection
+Protocol: TCP
+RemotePort: 21
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: PrimaSoft AutoFTP DATA connection
+Protocol: TCP
+RemotePort: 20
+Direction: Inbound
+AllowIt
+
+DefaultState: 1
+RuleName: PrimaSoft AutoFTP PASV connection
+Protocol: TCP
+RemotePort: 1024-65535
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: PrimaSoft AutoFTP PASV connection
+Protocol: TCP
+LocalPort: 1024-65535
+Direction: Inbound
+AllowIt
+
+[FlashFXP]
+VisibleState: 0
+Exe:
+FlashFXP, flashfxp.exe
+DefaultState: 1
+RuleName: FlashFXP FTP connection
+Protocol: TCP
+RemotePort: 21
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: FlashFXP FTP DATA connection
+Protocol: TCP
+RemotePort: 20
+Direction: Inbound
+AllowIt
+
+DefaultState: 1
+RuleName: FlashFXP PASV FTP connection
+Protocol: TCP
+RemotePort: 1024-65535
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: FlashFXP PASV FTP connection
+Protocol: TCP
+LocalPort: 1024-65535
+Direction: Inbound
+AllowIt
+
+[FTP Now]
+VisibleState: 0
+Exe:
+FTP Now, ftp now.exe
+DefaultState: 1
+RuleName: FTP Now connection
+Protocol: TCP
+RemotePort: 21
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: FTP Now DATA connection
+Protocol: TCP
+RemotePort: 20
+Direction: Inbound
+AllowIt
+
+DefaultState: 1
+RuleName: FTP Now PASV connection
+Protocol: TCP
+RemotePort: 1024-65535
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: FTP Now PASV connection
+Protocol: TCP
+LocalPort: 1024-65535
+Direction: Inbound
+AllowIt
+
+[TurboFTP]
+VisibleState: 0
+Exe:
+TurboFTP, turboftp.exe
+DefaultState: 1
+RuleName: TurboFTP connection
+Protocol: TCP
+RemotePort: 21
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: TurboFTP DATA connection
+Protocol: TCP
+RemotePort: 20
+Direction: Inbound
+AllowIt
+
+DefaultState: 1
+RuleName: TurboFTP PASV connection
+Protocol: TCP
+RemotePort: 1024-65535
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: TurboFTP PASV connection
+Protocol: TCP
+LocalPort: 1024-65535
+Direction: Inbound
+AllowIt
+
+[AbsoluteFTP]
+VisibleState: 0
+Exe:
+AbsuluteFTP, absoluteftp.exe
+DefaultState: 1
+RuleName: AbsoluteFTP connection
+Protocol: TCP
+RemotePort: 21
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: AbsoluteFTP DATA connection
+Protocol: TCP
+RemotePort: 20
+Direction: Inbound
+AllowIt
+
+DefaultState: 1
+RuleName: AbsoluteFTP PASV connection
+Protocol: TCP
+RemotePort: 1024-65535
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: AbsoluteFTP PASV connection
+Protocol: TCP
+LocalPort: 1024-65535
+Direction: Inbound
+AllowIt
+
+[RemFTP]
+VisibleState: 0
+Exe:
+RemFTP, remftp.exe
+DefaultState: 1
+RuleName: RemFTP connection
+Protocol: TCP
+RemotePort: 21
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: RemFTP DATA connection
+Protocol: TCP
+RemotePort: 20
+Direction: Inbound
+AllowIt
+
+DefaultState: 1
+RuleName: RemFTP PASV connection
+Protocol: TCP
+RemotePort: 1024-65535
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: RemFTP PASV connection
+Protocol: TCP
+LocalPort: 1024-65535
+Direction: Inbound
+AllowIt
+
+[Simply COOL FTP]
+VisibleState: 0
+Exe:
+Simply COOL FTP, scftp.exe
+DefaultState: 1
+RuleName: Simply COOL FTP connection
+Protocol: TCP
+RemotePort: 21
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Simply COOL FTP DATA connection
+Protocol: TCP
+RemotePort: 20
+Direction: Inbound
+AllowIt
+
+DefaultState: 1
+RuleName: Simply COOL PASV FTP connection
+Protocol: TCP
+RemotePort: 1024-65535
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Simply COOL PASV FTP connection
+Protocol: TCP
+LocalPort: 1024-65535
+Direction: Inbound
+AllowIt
+
+[Crystal FTP]
+VisibleState: 0
+Exe:
+Crystal FTP, crystalftp.exe
+DefaultState: 1
+RuleName: Crystal FTP connection
+Protocol: TCP
+RemotePort: 21
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Crystal FTP DATA connection
+Protocol: TCP
+RemotePort: 20
+Direction: Inbound
+AllowIt
+
+DefaultState: 1
+RuleName: Crystal FTP new version check
+Protocol: TCP
+RemotePort: 80
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Crystal FTP PASV connection
+Protocol: TCP
+RemotePort: 1024-65535
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Crystal FTP PASV connection
+Protocol: TCP
+LocalPort: 1024-65535
+Direction: Inbound
+AllowIt
+
+[KenFTP]
+VisibleState: 0
+Exe:
+KenFTP, ken ftp.exe
+DefaultState: 1
+RuleName: KenFTP connection
+Protocol: TCP
+RemotePort: 21
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: KenFTP DATA connection
+Protocol: TCP
+RemotePort: 20
+Direction: Inbound
+AllowIt
+
+DefaultState: 1
+RuleName: KenFTP PASV connection
+Protocol: TCP
+RemotePort: 1024-65535
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: KenFTP PASV connection
+Protocol: TCP
+LocalPort: 1024-65535
+Direction: Inbound
+AllowIt
+
+[FTP Commander]
+VisibleState: 0
+Exe:
+FTP Commander, ftpcomm.exe
+DefaultState: 1
+RuleName: FTP Commander connection
+Protocol: TCP
+RemotePort: 21
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: FTP Commander DATA connection
+Protocol: TCP
+RemotePort: 20
+Direction: Inbound
+AllowIt
+
+DefaultState: 1
+RuleName: FTP Commander PASV connection
+Protocol: TCP
+RemotePort: 1024-65535
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: FTP Commander PASV connection
+Protocol: TCP
+LocalPort: 1024-65535
+Direction: Inbound
+AllowIt
+
+[FTP Navigator]
+VisibleState: 0
+Exe:
+FTP Navigator, ftpnavi.exe
+DefaultState: 1
+RuleName: FTP Navigator connection
+Protocol: TCP
+RemotePort: 21
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: FTP Navigator DATA connection
+Protocol: TCP
+RemotePort: 20
+Direction: Inbound
+AllowIt
+
+DefaultState: 1
+RuleName: FTP Navigator PASV connection
+Protocol: TCP
+RemotePort: 1024-65535
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: FTP Navigator PASV connection
+Protocol: TCP
+LocalPort: 1024-65535
+Direction: Inbound
+AllowIt
+
+[AceFTP]
+VisibleState: 0
+Exe:
+AceFTP, aceftp.exe
+DefaultState: 1
+RuleName: AceFTP connection
+Protocol: TCP
+RemotePort: 21
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: AceFTP DATA connection
+Protocol: TCP
+RemotePort: 20
+Direction: Inbound
+AllowIt
+
+DefaultState: 1
+RuleName: AceFTP PASV connection
+Protocol: TCP
+RemotePort: 1024-65535
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: AceFTP PASV connection
+Protocol: TCP
+LocalPort: 1024-65535
+Direction: Inbound
+AllowIt
+
+[AutoSyncFTP]
+VisibleState: 0
+Exe:
+AutoSyncFTP, autosyncftp.exe
+DefaultState: 1
+RuleName: AutoSyncFTP connection
+Protocol: TCP
+RemotePort: 21
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: AutoSyncFTP DATA connection
+Protocol: TCP
+RemotePort: 20
+Direction: Inbound
+AllowIt
+
+DefaultState: 1
+RuleName: AutoSyncFTP PASV connection
+Protocol: TCP
+RemotePort: 1024-65535
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: AutoSyncFTP PASV connection
+Protocol: TCP
+LocalPort: 1024-65535
+Direction: Inbound
+AllowIt
+
+[Click FTP]
+VisibleState: 0
+Exe:
+Click FTP, click ftp.exe
+DefaultState: 1
+RuleName: Click FTP connection
+Protocol: TCP
+RemotePort: 21
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Click FTP DATA connection
+Protocol: TCP
+RemotePort: 20
+Direction: Inbound
+AllowIt
+
+DefaultState: 1
+RuleName: Click FTP PASV connection
+Protocol: TCP
+RemotePort: 1024-65535
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Click FTP PASV connection
+Protocol: TCP
+LocalPort: 1024-65535
+Direction: Inbound
+AllowIt
+
+[CoffeeCup Direct FTP]
+VisibleState: 0
+Exe:
+CoffeeCup Direct FTP, directftp5.exe
+DefaultState: 1
+RuleName: CoffeeCup Direct FTP connection
+Protocol: TCP
+RemotePort: 21
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: CoffeeCup Direct FTP DATA connection
+Protocol: TCP
+RemotePort: 20
+Direction: Inbound
+AllowIt
+
+DefaultState: 1
+RuleName: CoffeeCup Direct FTP PASV connection
+Protocol: TCP
+RemotePort: 1024-65535
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: CoffeeCup Direct FTP PASV connection
+Protocol: TCP
+LocalPort: 1024-65535
+Direction: Inbound
+AllowIt
+
+[DC SmartFTP]
+VisibleState: 0
+Exe:
+DC SmartFTP, dcsmartftp.exe
+DefaultState: 1
+RuleName: DC SmartFTP connection
+Protocol: TCP
+RemotePort: 21
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: DC SmartFTP DATA connection
+Protocol: TCP
+RemotePort: 20
+Direction: Inbound
+AllowIt
+
+DefaultState: 1
+RuleName: DC SmartFTP PASV connection
+Protocol: TCP
+RemotePort: 1024-65535
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: DC SmartFTP PASV connection
+Protocol: TCP
+LocalPort: 1024-65535
+Direction: Inbound
+AllowIt
+
+[FileZilla]
+VisibleState: 0
+Exe:
+FileZilla, filezilla.exe
+DefaultState: 1
+RuleName: FileZilla FTP connection
+Protocol: TCP
+RemotePort: 21
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: FileZilla FTP DATA connection
+Protocol: TCP
+RemotePort: 20
+Direction: Inbound
+AllowIt
+
+DefaultState: 1
+RuleName: FileZilla PASV FTP connection
+Protocol: TCP
+RemotePort: 1024-65535
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: FileZilla PASV FTP connection
+Protocol: TCP
+LocalPort: 1024-65535
+Direction: Inbound
+AllowIt
+
+[Site Publisher]
+VisibleState: 0
+Exe:
+Site Publisher, sitepub.exe
+DefaultState: 1
+RuleName: Site Publisher FTP connection
+Protocol: TCP
+RemotePort: 21
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Site Publisher FTP DATA connection
+Protocol: TCP
+RemotePort: 20
+Direction: Inbound
+AllowIt
+
+DefaultState: 1
+RuleName: Site Publisher PASV FTP connection
+Protocol: TCP
+RemotePort: 1024-65535
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Site Publisher PASV FTP connection
+Protocol: TCP
+LocalPort: 1024-65535
+Direction: Inbound
+AllowIt
+
+[FTP Voyager]
+VisibleState: 0
+Exe:
+FTP Voyager, ftpvoyager.exe
+DefaultState: 1
+RuleName: FTP Voyager connection
+Protocol: TCP
+RemotePort: 21
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: FTP Voyager DATA connection
+Protocol: TCP
+RemotePort: 20
+Direction: Inbound
+AllowIt
+
+DefaultState: 1
+RuleName: FTP Voyager PASV connection
+Protocol: TCP
+RemotePort: 1024-65535
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: FTP Voyager PASV connection
+Protocol: TCP
+LocalPort: 1024-65535
+Direction: Inbound
+AllowIt
+
+[FTPRight]
+VisibleState: 0
+Exe:
+FTPRight, ftpright.exe
+DefaultState: 1
+RuleName: FTPRight connection
+Protocol: TCP
+RemotePort: 21
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: FTPRight DATA connection
+Protocol: TCP
+RemotePort: 20
+Direction: Inbound
+AllowIt
+
+DefaultState: 1
+RuleName: FTPRight PASV connection
+Protocol: TCP
+RemotePort: 1024-65535
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: FTPRight PASV connection
+Protocol: TCP
+LocalPort: 1024-65535
+Direction: Inbound
+AllowIt
+
+[IglooFTP Pro]
+VisibleState: 0
+Exe:
+IglooFTP Pro, iglooftp pro.exe
+DefaultState: 1
+RuleName: IglooFTP Pro connection
+Protocol: TCP
+RemotePort: 21
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: IglooFTP Pro DATA connection
+Protocol: TCP
+RemotePort: 20
+Direction: Inbound
+AllowIt
+
+DefaultState: 1
+RuleName: IglooFTP Pro PASV connection
+Protocol: TCP
+RemotePort: 1024-65535
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: IglooFTP Pro PASV connection
+Protocol: TCP
+LocalPort: 1024-65535
+Direction: Inbound
+AllowIt
+
+[Magellan Explorer]
+VisibleState: 0
+Exe:
+Magellan Explorer, magellan.exe
+DefaultState: 1
+RuleName: Magellan Explorer FTP connection
+Protocol: TCP
+RemotePort: 21
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Magellan Explorer FTP DATA connection
+Protocol: TCP
+RemotePort: 20
+Direction: Inbound
+AllowIt
+
+DefaultState: 1
+RuleName: Magellan Explorer PASV FTP connection
+Protocol: TCP
+RemotePort: 1024-65535
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Magellan Explorer PASV FTP connection
+Protocol: TCP
+LocalPort: 1024-65535
+Direction: Inbound
+AllowIt
+
+[Microviet Internet FTP]
+VisibleState: 0
+Exe:
+Microviet Internet FTP, internet ftp.exe
+DefaultState: 1
+RuleName: Microviet Internet FTP connection
+Protocol: TCP
+RemotePort: 21
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Microviet Internet FTP DATA connection
+Protocol: TCP
+RemotePort: 20
+Direction: Inbound
+AllowIt
+
+DefaultState: 1
+RuleName: Microviet Internet FTP PASV connection
+Protocol: TCP
+RemotePort: 1024-65535
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Microviet Internet FTP PASV connection
+Protocol: TCP
+LocalPort: 1024-65535
+Direction: Inbound
+AllowIt
+
+[miniftp]
+VisibleState: 0
+Exe:
+miniftp, miniftp.exe
+DefaultState: 1
+RuleName: miniftp connection
+Protocol: TCP
+RemotePort: 21
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: miniftp DATA connection
+Protocol: TCP
+RemotePort: 20
+Direction: Inbound
+AllowIt
+
+DefaultState: 1
+RuleName: miniftp PASV connection
+Protocol: TCP
+RemotePort: 1024-65535
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: miniftp PASV connection
+Protocol: TCP
+LocalPort: 1024-65535
+Direction: Inbound
+AllowIt
+
+[NetLoad]
+VisibleState: 0
+Exe:
+NetLoad, netload.exe
+DefaultState: 1
+RuleName: NetLoad FTP connection
+Protocol: TCP
+RemotePort: 21
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: NetLoad FTP DATA connection
+Protocol: TCP
+RemotePort: 20
+Direction: Inbound
+AllowIt
+
+DefaultState: 1
+RuleName: NetLoad PASV FTP connection
+Protocol: TCP
+RemotePort: 1024-65535
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: NetLoad PASV FTP connection
+Protocol: TCP
+LocalPort: 1024-65535
+Direction: Inbound
+AllowIt
+
+[WebFTP]
+VisibleState: 0
+Exe:
+WebFTP, webftp3.exe
+DefaultState: 1
+RuleName: WebFTP connection
+Protocol: TCP
+RemotePort: 21
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: WebFTP DATA connection
+Protocol: TCP
+RemotePort: 20
+Direction: Inbound
+AllowIt
+
+DefaultState: 1
+RuleName: WebFTP PASV connection
+Protocol: TCP
+RemotePort: 1024-65535
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: WebFTP PASV connection
+Protocol: TCP
+LocalPort: 1024-65535
+Direction: Inbound
+AllowIt
+
+[WS_FTP]
+VisibleState: 0
+Exe:
+WS_FTP, ftp95pro.exe
+DefaultState: 1
+RuleName: WS_FTP connection
+Protocol: TCP
+RemotePort: 21
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: WS_FTP DATA connection
+Protocol: TCP
+RemotePort: 20
+Direction: Inbound
+AllowIt
+
+DefaultState: 1
+RuleName: WS_FTP PASV connection
+Protocol: TCP
+RemotePort: 1024-65535
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: WS_FTP PASV connection
+Protocol: TCP
+LocalPort: 1024-65535
+Direction: Inbound
+AllowIt
+
+[Windows Sockets FTP Client]
+VisibleState: 0
+Exe:
+WinFTP, winftp32.exe
+DefaultState: 1
+RuleName: WinFTP connection
+Protocol: TCP
+RemotePort: 21
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: WinFTP DATA connection
+Protocol: TCP
+RemotePort: 20
+Direction: Inbound
+AllowIt
+
+DefaultState: 1
+RuleName: WinFTP PASV connection
+Protocol: TCP
+RemotePort: 1024-65535
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: WinFTP PASV connection
+Protocol: TCP
+LocalPort: 1024-65535
+Direction: Inbound
+AllowIt
+
+[FAR Manager]
+VisibleState: 0
+Exe:
+Far Manager, far.exe
+DefaultState: 1
+RuleName: FAR manager FTP connection
+Protocol: TCP
+RemotePort: 21
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: FAR manager FTP DATA connection
+Protocol: TCP
+RemotePort: 20
+Direction: Inbound
+AllowIt
+
+DefaultState: 1
+RuleName: FAR manager PASV FTP connection
+Protocol: TCP
+RemotePort: 1024-65535
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: FAR manager PASV FTP connection
+Protocol: TCP
+LocalPort: 1024-65535
+Direction: Inbound
+AllowIt
+
+; Telnet
+
+[SecureCRT]
+VisibleState: 0
+Exe:
+SecureCRT, securecrt.exe
+DefaultState: 1
+RuleName: SecureCRT connection
+Protocol: TCP
+RemotePort: 22
+Direction: Outbound
+AllowIt
+
+[AlphaCom Terminal Emulator]
+VisibleState: 0
+Exe:
+AlphaCom, alpha.exe
+DefaultState: 1
+RuleName: AlphaCom telnet connection
+Protocol: TCP
+RemotePort: 23
+Direction: Outbound
+AllowIt
+
+[Anzio]
+VisibleState: 0
+Exe:
+Anzio, anzio32r.exe
+DefaultState: 1
+RuleName: Anzio telnet connection
+Protocol: TCP
+RemotePort: 23
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Anzio rlogin connection
+Protocol: TCP
+RemotePort: 513
+Direction: Outbound
+AllowIt
+
+[Com]
+VisibleState: 0
+Exe:
+Com, com75.exe
+DefaultState: 1
+RuleName: Com telnet connection
+Protocol: TCP
+RemotePort: 23
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Com incoming telnet connection
+Protocol: TCP
+LocalPort: 23
+Direction: Inbound
+AllowIt
+
+DefaultState: 1
+RuleName: Com FTP connection
+Protocol: TCP
+RemotePort: 21
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Com FTP DATA connection
+Protocol: TCP
+RemotePort: 20
+Direction: Inbound
+AllowIt
+
+DefaultState: 1
+RuleName: Com PASV FTP connection
+Protocol: TCP
+RemotePort: 1024-65535
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Com PASV FTP connection
+Protocol: TCP
+LocalPort: 1024-65535
+Direction: Inbound
+AllowIt
+
+[Emu]
+VisibleState: 0
+Exe:
+Emu, emu.exe
+DefaultState: 1
+RuleName: Emu telnet connection
+Protocol: TCP
+RemotePort: 23
+Direction: Outbound
+AllowIt
+
+[IVT]
+VisibleState: 0
+Exe:
+IVT, ivt.exe
+DefaultState: 1
+RuleName: IVT telnet connection
+Protocol: TCP
+RemotePort: 23
+Direction: Outbound
+AllowIt
+
+[KoalaTerm]
+VisibleState: 0
+Exe:
+KoalaTerm, mkt.exe
+DefaultState: 1
+RuleName: KoalaTerm telnet connection
+Protocol: TCP
+RemotePort: 23
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: KoalaTerm echo connection
+Protocol: TCP
+RemotePort: 7
+Direction: Outbound
+AllowIt
+
+[Mocha]
+VisibleState: 0
+Exe:
+Mocha, mtn5250.exe
+DefaultState: 1
+RuleName: Mocha telnet connection
+Protocol: TCP
+RemotePort: 23
+Direction: Outbound
+AllowIt
+
+[NetTerm]
+VisibleState: 0
+Exe:
+NetTerm, netterm.exe
+DefaultState: 1
+RuleName: NetTerm telnet connection
+Protocol: TCP
+RemotePort: 23
+Direction: Outbound
+AllowIt
+
+[Nexus Mainframe Terminal]
+VisibleState: 0
+Exe:
+Nexus Mainframe Terminal, nmt.exe
+DefaultState: 1
+RuleName: Nexus Mainframe Terminal telnet connection
+Protocol: TCP
+RemotePort: 23
+Direction: Outbound
+AllowIt
+
+[Putty]
+VisibleState: 0
+Exe:
+Putty, nmt.exe
+DefaultState: 1
+RuleName: Putty telnet connection
+Protocol: TCP
+RemotePort: 23
+Direction: Outbound
+AllowIt
+
+[Quick3270]
+VisibleState: 0
+Exe:
+Quick3270, quick3270.exe
+DefaultState: 1
+RuleName: Quick3270 telnet connection
+Protocol: TCP
+RemotePort: 23
+Direction: Outbound
+AllowIt
+
+[ShellTelnet]
+VisibleState: 0
+Exe:
+ShellTelnet, shellnet.exe
+DefaultState: 1
+RuleName: ShellTelnet telnet connection
+Protocol: TCP
+RemotePort: 23
+Direction: Outbound
+AllowIt
+
+[TelStar]
+VisibleState: 0
+Exe:
+TelStar, telstar.exe
+DefaultState: 1
+RuleName: TelStar telnet connection
+Protocol: TCP
+RemotePort: 23
+Direction: Outbound
+AllowIt
+
+[Telnet Streamer]
+VisibleState: 0
+Exe:
+Telnet Streamer, xns.exe
+Telnet Streamer, tns.exe
+DefaultState: 1
+RuleName: Telnet Streamer connection
+Protocol: TCP
+RemotePort: 23
+Direction: Outbound
+AllowIt
+
+[TN3270]
+VisibleState: 0
+Exe:
+TN3270, tn3270.exe
+DefaultState: 1
+RuleName: TN3270 telnet connection
+Protocol: TCP
+RemotePort: 23
+Direction: Outbound
+AllowIt
+
+; Communication
+
+[ICQ]
+Exe:
+Mirabilis ICQ, icq.exe
+DefaultState: 1
+RuleName: ICQ Server connection
+Protocol: UDP
+RemotePort: 4000
+Direction: Inbound
+AllowIt
+
+DefaultState: 1
+RuleName: ICQ Server connection
+Protocol: UDP
+RemotePort: 4000
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: ICQ Client Connection
+Protocol: TCP
+RemotePort: 1024-65535
+Direction: Inbound
+AllowIt
+
+DefaultState: 1
+RuleName: ICQ Client Connection
+Protocol: TCP
+RemotePort: 1024-65535
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: ICQ Send Mail
+Protocol: TCP
+RemotePort: 25
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: ICQ Receive Mail
+Protocol: TCP
+RemotePort: 110
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: ICQ HTTP connection
+Protocol: TCP
+RemotePort: 80-83, 443, 1080, 3128, 8080, 8088, 11523
+Direction: Outbound
+AllowIt
+
+[MSN Messenger]
+VisibleState: 0
+Exe:
+MSN Messenger Service, msmsgs.exe
+DefaultState: 1
+RuleName: Default MSN Messenger Connection
+Protocol: TCP
+RemotePort: 1863
+Direction: Outbound
+AllowIt
+
+[Odigo]
+VisibleState: 0
+Exe:
+Odigo, odigo.exe
+DefaultState: 1
+RuleName: Odigo Connection
+Protocol: TCP
+RemotePort: 80, 3128, 8080, 1080, 2562
+Direction: Outbound
+AllowIt
+
+[IRC]
+Exe:
+mIRC, mirc32.exe
+mIRC, mirc.exe
+DefaultState: 1
+RuleName: mIRC connection
+Protocol: TCP
+RemotePort: 6660-6670
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: mIRC AUTH connection
+Protocol: TCP
+LocalPort: 113
+Direction: Inbound
+AllowIt
+
+[Microsoft NetMeeting]
+Exe:
+Microsoft NetMeeting, conf.exe
+DefaultState: 1
+RuleName: Microsoft NetMeeting Conference
+Protocol: TCP
+RemotePort: 1000-2999
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Microsoft NetMeeting Conference
+Protocol: UDP
+RemotePort: 49600-49700
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Microsoft NetMeeting LDAP connection
+Protocol: TCP
+RemotePort: 389
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Microsoft NetMeeting HTTP connection
+Protocol: TCP
+RemotePort:  80-83, 443, 1080, 3128, 8080, 8088, 11523
+Direction: Outbound
+AllowIt
+
+[Microsoft Chat]
+VisibleState: 0
+Exe:
+Microsoft Chat, cchat.exe
+DefaultState: 1
+RuleName: Microsoft Chat connection
+Protocol: TCP
+RemotePort: 6667
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Microsoft Chat AUTH connection
+Protocol: TCP
+RemotePort: 113
+Direction: Inbound
+AllowIt
+
+[Yahoo! Messenger]
+VisibleState: 0
+Exe:
+Yahoo! Messenger, ypager.exe
+DefaultState: 1
+RuleName: Yahoo! Messenger HTTP connection
+Protocol: TCP
+RemotePort: 80-83, 443, 1080, 3128, 8080, 8088, 11523
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Yahoo! Messenger Send Mail
+Protocol: TCP
+RemotePort: 25
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Yahoo! Messenger Login
+Protocol: TCP
+RemotePort: 23, 5050
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Yahoo! Messenger Conference TCP connection
+Protocol: TCP
+RemotePort: 5000, 5001
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Yahoo! Messenger Conference UDP connection
+Protocol: UDP
+LocalPort: 5000
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Yahoo! Messenger Call Center
+Protocol: UDP
+RemotePort: 6801
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Yahoo! Messenger Call Center
+Protocol: UDP
+LocalPort: 5000, 5055
+Direction: Inbound
+AllowIt
+
+DefaultState: 1
+RuleName: Yahoo! Messenger Call Center
+Protocol: TCP
+RemotePort: 7800-7825
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Yahoo! Messenger WebCam
+Protocol: TCP
+RemotePort: 5100
+Direction: Outbound
+AllowIt
+
+[Yahoo! AutoUpdater]
+VisibleState: 0
+Exe:
+Yahoo! AutoUpdater, yupdater.exe
+DefaultState: 1
+RuleName: Yahoo! Messenger AutoUpdater
+Protocol: TCP
+RemotePort: 80-83, 443, 1080, 3128, 8080, 8088, 11523
+Direction: Outbound
+AllowIt
+
+; Antiviral Update
+
+[Symantec LiveUpdate]
+VisibleState: 0
+Exe:
+Symantec LiveUpdate, lucomserver.exe
+DefaultState: 1
+RuleName: Symantec LiveUpdate HTTP
+Protocol: TCP
+RemotePort: 80-83, 443, 1080, 3128, 8080, 8088, 11523
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Symantec LiveUpdate FTP
+Protocol: TCP
+RemotePort: 21
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Symantec LiveUpdate FTP DATA
+Protocol: TCP
+RemotePort: 20
+Direction: Inbound
+AllowIt
+
+[KAV Updater]
+VisibleState: 0
+Exe:
+KAV Updater, avpupd.exe
+DefaultState: 1
+RuleName: KAV Updater HTTP connection
+Protocol: TCP
+RemotePort: 80-83, 443, 1080, 3128, 8080, 8088, 11523
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: KAV Updater FTP connection
+Protocol: TCP
+RemotePort: 21
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: KAV Updater FTP DATA connection
+Protocol: TCP
+RemotePort: 20
+Direction: Inbound
+AllowIt
+
+[McAfee Update]
+VisibleState: 0
+Exe:
+McAfee VirusScan Update, mupdate.exe
+DefaultState: 1
+RuleName: McAfee Update
+Protocol: TCP
+RemotePort: 80-83, 443, 1080, 3128, 8080, 8088, 11523
+Direction: Outbound
+AllowIt
+
+
+; Net Utilites
+
+[NetLab]
+VisibleState: 0
+Exe:
+NetLab, netlab.exe
+DefaultState: 1
+RuleName: Get Time NetLab connection
+Protocol: TCP
+RemotePort: 37
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: NetLab WhoIs Connection
+Protocol: TCP
+RemotePort: 43
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: NetLab Quote Connection
+Protocol: TCP
+RemotePort: 17
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: NetLab Finger Connection
+Protocol: TCP
+RemotePort: 79
+Direction: Outbound
+AllowIt
+
+[SmartWhois]
+VisibleState: 0
+Exe:
+SmartWhois, sw3.exe
+DefaultState: 1
+RuleName: SmartWhoIs Connection
+Protocol: TCP
+RemotePort: 43
+Direction: Outbound
+AllowIt
+
+[NeoTrace]
+VisibleState: 0
+Exe:
+NeoTrace, neotrace.exe
+DefaultState: 1
+RuleName: Neotrace HTTP
+Protocol: TCP
+RemotePort: 80-83, 443, 1080, 3128, 8080, 8088, 11523
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Neotrace WhoIs
+Protocol: TCP
+RemotePort: 43
+Direction: Outbound
+AllowIt
+
+; Time Synchronizers
+
+[Chameleon Clock]
+VisibleState: 0
+Exe:
+Chameleon Clock, chamclock.exe
+DefaultState: 1
+RuleName: Chameleon Clock time connection
+Protocol: UDP
+RemotePort: 123
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Chameleon Clock time connection
+Protocol: UDP
+RemotePort: 123
+Direction: Inbound
+AllowIt
+
+[Advanced System Agent]
+VisibleState: 0
+Exe:
+Advanced System Agent, asa_ext.exe
+DefaultState: 1
+RuleName: Advanced System Agent time connection
+Protocol: UDP
+RemotePort: 123
+AllowIt
+
+[12Ghosts Synchronize]
+VisibleState: 0
+Exe:
+12Ghosts Synchronize, 12sync.exe
+DefaultState: 1
+RuleName: 12Ghosts Synchronize SNTP connection
+Protocol: UDP
+RemotePort: 123
+AllowIt
+
+DefaultState: 1
+RuleName: 12Ghosts Synchronize time connection
+Protocol: UDP
+RemotePort: 37
+AllowIt
+
+DefaultState: 1
+RuleName: 12Ghosts Synchronize time connection
+Protocol: TCP
+RemotePort: 37
+AllowIt
+
+[1st Atomic Time]
+VisibleState: 0
+Exe:
+1st Atomic Time, 1stat.exe
+DefaultState: 1
+RuleName: 1st Atomic Time SNTP connection
+Protocol: UDP
+RemotePort: 123
+AllowIt
+
+DefaultState: 1
+RuleName: 1st Atomic Time daytime connection
+Protocol: TCP
+RemotePort: 13
+Direction: Outbound
+AllowIt
+
+[Absolute Time Corrector]
+VisibleState: 0
+Exe:
+Absolute Time Corrector, atc.exe
+DefaultState: 1
+RuleName: Absolute Time Corrector connection
+Protocol: TCP
+RemotePort: 37
+Direction: Outbound
+AllowIt
+
+[AceClock Pro]
+VisibleState: 0
+Exe:
+AceClock Pro, aceclock.exe
+DefaultState: 1
+RuleName: AceClock Pro SNTP connection
+Protocol: UDP
+RemotePort: 123
+AllowIt
+
+DefaultState: 1
+RuleName: AceClock Pro time connection
+Protocol: TCP
+RemotePort: 37
+Direction: Outbound
+AllowIt
+
+[Atom Timer]
+VisibleState: 0
+Exe:
+Atom Timer, atomt.exe
+DefaultState: 1
+RuleName: Atom Timer daytime connection
+Protocol: TCP
+RemotePort: 13
+Direction: Outbound
+AllowIt
+
+[AtomSync]
+VisibleState: 0
+Exe:
+AtomSync, atomuhr.exe
+DefaultState: 1
+RuleName: AtomSync SNTP connection
+Protocol: UDP
+RemotePort: 123
+AllowIt
+
+[Attache Transparent Clock]
+VisibleState: 0
+Exe:
+Attache Clock, attacheclock.exe
+Attache Clock, configtool.exe
+DefaultState: 1
+RuleName: Attache Clock SNTP connection
+Protocol: UDP
+RemotePort: 123
+AllowIt
+
+[Desktop Atomic Clock]
+VisibleState: 0
+Exe:
+Desktop Atomic Clock, dac.exe
+DefaultState: 1
+RuleName: Desktop Atomic Clock daytime connection
+Protocol: TCP
+RemotePort: 13
+Direction: Outbound
+AllowIt
+
+[DS Clock]
+VisibleState: 0
+Exe:
+DS Clock, dsclock.exe
+DefaultState: 1
+RuleName: DS Clock SNTP connection
+Protocol: UDP
+RemotePort: 123
+AllowIt
+
+[Easy Time]
+VisibleState: 0
+Exe:
+Easy Time, easytime.exe
+DefaultState: 1
+RuleName: Easy Time SNTP connection
+Protocol: UDP
+RemotePort: 123
+AllowIt
+
+[EZTimeSync]
+VisibleState: 0
+Exe:
+EZTimeSync, eztimesync.exe
+DefaultState: 1
+RuleName: EZTimeSync connection
+Protocol: TCP
+RemotePort: 37
+Direction: Outbound
+AllowIt
+
+[Dimension 4]
+VisibleState: 0
+Exe:
+Dimension 4, d4.exe
+DefaultState: 1
+RuleName: Dimension 4 SNTP connection
+Protocol: UDP
+RemotePort: 123
+AllowIt
+
+DefaultState: 1
+RuleName: Dimension 4 time connection
+Protocol: TCP
+RemotePort: 37
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Dimension 4 time connection
+Protocol: UDP
+RemotePort: 37
+Direction: Outbound
+AllowIt
+
+[NMEATime]
+VisibleState: 0
+Exe:
+NMEATime, nmeatime.exe
+DefaultState: 1
+RuleName: NMEATime daytime connection
+Protocol: TCP
+RemotePort: 13
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: NMEATime SNTP connection
+Protocol: UDP
+RemotePort: 123
+AllowIt
+
+[SolidSync]
+VisibleState: 0
+Exe:
+SolidSync, solidsync.exe
+DefaultState: 1
+RuleName: SolidSync time connection
+Protocol: TCP
+RemotePort: 37
+Direction: Outbound
+AllowIt
+
+[Tardis]
+VisibleState: 0
+Exe:
+Tardis, tardis.exe
+DefaultState: 1
+RuleName: Tardis SNTP connection
+Protocol: UDP
+RemotePort: 123
+AllowIt
+
+DefaultState: 1
+RuleName: Tardis time connection
+Protocol: UDP
+RemotePort: 37
+AllowIt
+
+DefaultState: 1
+RuleName: Tardis time connection
+Protocol: TCP
+RemotePort: 37
+AllowIt
+
+DefaultState: 1
+RuleName: Tardis daytime connection
+Protocol: TCP
+RemotePort: 13
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Tardis HTTP connection
+Protocol: TCP
+RemotePort: 80
+Direction: Outbound
+AllowIt
+
+[Tech-Pro World Clock]
+VisibleState: 0
+Exe:
+Tech-Pro World Clock, worldclock.exe
+DefaultState: 1
+RuleName: Tech-Pro World Clock connection
+Protocol: TCP
+RemotePort: 37
+Direction: Outbound
+AllowIt
+
+[TimeSync]
+VisibleState: 0
+Exe:
+TimeSync, timesync.exe
+DefaultState: 1
+RuleName: TimeSync time connection
+Protocol: TCP
+RemotePort: 37
+Direction: Outbound
+AllowIt
+
+[Time Sync Pro]
+VisibleState: 0
+Exe:
+Time Sync Pro, timesync.exe
+DefaultState: 1
+RuleName: Time Sync Pro SNTP connection
+Protocol: UDP
+RemotePort: 123
+AllowIt
+
+[TSync]
+VisibleState: 0
+Exe:
+TSync, tsync.exe
+DefaultState: 1
+RuleName: TSync time connection
+Protocol: TCP
+RemotePort: 37
+Direction: Outbound
+AllowIt
+
+[WebTime]
+VisibleState: 0
+Exe:
+WebTime, webtime.exe
+DefaultState: 1
+RuleName: WebTime time connection
+Protocol: TCP
+RemotePort: 37
+Direction: Outbound
+AllowIt
+
+[WebTime]
+VisibleState: 0
+Exe:
+WebTime, webtime.exe
+DefaultState: 1
+RuleName: WebTime time connection
+Protocol: TCP
+RemotePort: 37
+Direction: Outbound
+AllowIt
+
+[YATS32]
+VisibleState: 0
+Exe:
+YATS32, yats32.exe
+DefaultState: 1
+RuleName: YATS32 SNTP connection
+Protocol: UDP
+RemotePort: 123
+AllowIt
+
+; Multimedia
+
+[WinAmp]
+VisibleState: 0
+Exe:
+WinAmp, winamp.exe
+DefaultState: 1
+RuleName: WinAmp Connection
+Protocol: TCP
+RemotePort: 8000-8900
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: WinAmp MiniBrowser Connection
+Protocol: TCP
+RemotePort: 80-83, 443, 1080, 3128, 8080, 8088, 11523
+Direction: Outbound
+AllowIt
+
+[Windows Media Player]
+VisibleState: 0
+Exe:
+Windows Media Player, mplayer2.exe
+Windows Media Player, wmplayer.exe
+RuleName: Windows Media Player Conenction
+Protocol: TCP
+RemotePort: 80, 3128, 8080, 1755, 8000, 8001
+Direction: Outbound
+AllowIt
+
+[QuickTime]
+VisibleState: 0
+Exe:
+QuickTime Player, quicktimeplayer.exe
+DefaultState: 1
+RuleName: QuickTime Player Connection
+Protocol: TCP
+RemotePort: 554
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: QuickTime Player Connection
+Protocol: UDP
+RemotePort: 2001
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: QuickTime Player HTTP Connection
+Protocol: TCP
+RemotePort: 80-83, 443, 1080, 3128, 8080, 8088, 11523
+Direction: Outbound
+AllowIt
+
+[RealPlayer]
+VisibleState: 0
+Exe:
+RealPlayer, realplay.exe
+DefaultState: 1
+RuleName: RealPlayer Connection
+Protocol: TCP
+RemotePort: 554, 7070, 7071
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: RealPlayer HTTP Connection
+Protocol: TCP
+RemotePort: 80-83, 443, 1080, 3128, 8080, 8088, 11523
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: RealPlayer Inbound UDP Connection
+Protocol: UDP
+LocalPort: 6770-32000
+Direction: Inbound
+AllowIt
+
+DefaultState: 1
+RuleName: RealPlayer Outbound UDP Connection
+Protocol: UDP
+RemotePort: 6770-32000
+Direction: Outbound
+AllowIt
+
+; Internet Search
+
+[Copernic]
+VisibleState: 0
+Exe:
+Copernic, copernicsvr.exe
+DefaultState: 1
+RuleName: Copernic search connection
+Protocol: TCP
+RemotePort: 80
+Direction: Outbound
+AllowIt
+
+; P2P
+
+[iMesh]
+VisibleState: 0
+Exe:
+iMesh, imeshclient.exe
+DefaultState: 1
+RuleName: iMesh connection
+Protocol: TCP
+RemotePort: 4000-5000
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: iMesh HTTP connection
+Protocol: TCP
+RemotePort: 80-83, 443, 1080, 3128, 8080, 8088, 11523
+Direction: Outbound
+AllowIt
+
+[KaZaA Media Desktop]
+VisibleState: 0
+Exe:
+KaZaA Media Desktop, kazaa.exe
+DefaultState: 1
+RuleName: KaZaA Media Desktop outbound connection
+Protocol: TCP
+RemotePort: 1214
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: KaZaA Media Desktop inbound connection
+Protocol: TCP
+LocalPort: 1214
+Direction: Inbound
+AllowIt
+
+DefaultState: 1
+RuleName: KaZaA Media Desktop HTTP connection
+Protocol: TCP
+RemotePort: 80-83, 443, 1080, 3128, 8080, 8088, 11523
+Direction: Outbound
+AllowIt
+
+[Morpheus]
+VisibleState: 0
+Exe:
+Morpheus, morpheus.exe
+Morpheus, morpheusp.exe
+DefaultState: 1
+RuleName: Morpheus outbound connection
+Protocol: TCP
+RemotePort: 1214
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Morpheus inbound connection
+Protocol: TCP
+LocalPort: 1214
+Direction: Inbound
+AllowIt
+
+DefaultState: 1
+RuleName: Morpheus HTTP connection
+Protocol: TCP
+RemotePort: 80-83, 443, 1080, 3128, 8080, 8088, 11523
+Direction: Outbound
+AllowIt
+
+[WinMX]
+VisibleState: 0
+Exe:
+WinMX, winmx.exe
+DefaultState: 1
+RuleName: WinMX server connection
+Protocol: TCP
+RemotePort: 6699, 7729-7735
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: WinMX inbound UDP connection
+Protocol: UDP
+RemotePort: 6257
+Direction: Inbound
+AllowIt
+
+DefaultState: 1
+RuleName: WinMX inbound TCP connection
+Protocol: TCP
+LocalPort: 6699
+Direction: Inbound
+AllowIt
+
+DefaultState: 1
+RuleName: WinMX HTTP connection
+Protocol: TCP
+RemotePort: 80-83, 443, 1080, 3128, 8080, 8088, 11523
+Direction: Outbound
+AllowIt
+
+[Direct Connect]
+VisibleState: 0
+Exe:
+Direct Connect, direct connect.exe
+DefaultState: 1
+RuleName: Direct Connect outbound connection
+Protocol: TCP
+RemotePort: 411
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Direct Connect inbound connection
+Protocol: TCP
+LocalPort: 412
+Direction: Inbound
+AllowIt
+
+DefaultState: 1
+RuleName: Direct Connect HTTP connection
+Protocol: TCP
+RemotePort: 80-83, 443, 1080, 3128, 8080, 8088, 11523
+Direction: Outbound
+AllowIt
+
+[AudioGalaxy]
+VisibleState: 0
+Exe:
+AudioGalaxy, agsatellite.exe
+DefaultState: 1
+RuleName: AudioGalaxy outbound connection
+Protocol: TCP
+RemotePort: 21, 1117-5190, 41000 - 50000
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: AudioGalaxy inbound connection
+Protocol: TCP
+LocalPort: 21, 1117-5190, 41000 - 50000
+Direction: Inbound
+AllowIt
+
+[BearShare] 
+VisibleState: 0
+Exe:
+Bearshare, bearshare.exe
+DefaultState: 1
+RuleName: BearShare HTTP connection
+Protocol: TCP
+RemotePort: 3128, 8080, 8088
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Outbound allowed
+Protocol: TCP
+RemotePort: 6346-6349
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Inbound allowed
+Protocol: TCP
+LocalPort: 6346
+Direction: Inbound
+AllowIt
+
+[Gnotella] 
+VisibleState: 0
+Exe:
+Gnotella, gnotella.exe
+DefaultState: 1
+RuleName: Gnotella HTTP connection
+Protocol: TCP
+RemotePort: 80, 3128, 8080, 8088
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Gnotella outgoing connection
+Protocol: TCP
+RemotePort: 6346-6352
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Gnotella incoming connection
+Protocol: TCP
+LocalPort: 6346
+Direction: Inbound
+AllowIt
+
+[Blubster] 
+VisibleState: 0
+Exe:
+Blubster, blubster.exe
+DefaultState: 1
+RuleName: Blubster HTTP connection
+Protocol: TCP
+RemotePort: 80, 3128, 8080, 8088
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Blubster outgoing connection
+Protocol: UDP
+RemotePort: 41170
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Blubster incoming connection
+Protocol: UDP
+LocalPort: 41170
+Direction: Inbound
+AllowIt
+
+; Storage
+
+[Storage]
+VisibleState: 1
+Exe:
+Filo by i-drive, idriveproxy.exe
+DefaultState: 1
+RuleName:  i-drive storage server
+Protocol: TCP
+RemotePort: 443
+AllowIt
+
+; Microsoft
+
+[Microsoft Excel]
+VisibleState: 0
+Exe:
+Microsoft Excel, excel.exe
+DefaultState: 1
+RuleName: Microsoft Excel HTTP
+Protocol: TCP
+RemotePort: 80-83, 443, 1080, 3128, 8080, 8088, 11523
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Microsoft Excel FTP
+Protocol: TCP
+RemotePort: 21
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Microsoft Excel FTP DATA
+Protocol: TCP
+RemotePort: 20
+Direction: Inbound
+AllowIt
+
+DefaultState: 1
+RuleName: Microsoft Excel E-Mail
+Protocol: TCP
+RemotePort: 25, 110
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Microsoft Excel LDAP
+Protocol: TCP
+RemotePort: 389
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Microsoft Excel MSSQL
+Protocol: TCP
+RemotePort: 1433, 1434
+Direction: Outbound
+AllowIt
+
+[Microsoft Word]
+VisibleState: 0
+Exe:
+Microsoft Word, winword.exe
+DefaultState: 1
+RuleName: Microsoft Word HTTP
+Protocol: TCP
+RemotePort: 80-83, 443, 1080, 3128, 8080, 8088, 11523
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Microsoft Word FTP
+Protocol: TCP
+RemotePort: 21
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Microsoft Word FTP DATA
+Protocol: TCP
+RemotePort: 20
+Direction: Inbound
+AllowIt
+
+DefaultState: 1
+RuleName: Microsoft Word E-Mail
+Protocol: TCP
+RemotePort: 25, 110
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Microsoft Word LDAP
+Protocol: TCP
+RemotePort: 389
+Direction: Outbound
+AllowIt
+
+[Microsoft Access]
+VisibleState: 0
+Exe:
+Microsoft Access, msaccess.exe
+DefaultState: 1
+RuleName: Microsoft Access HTTP
+Protocol: TCP
+RemotePort: 80-83, 443, 1080, 3128, 8080, 8088, 11523
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Microsoft Access FTP
+Protocol: TCP
+RemotePort: 21
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Microsoft Access FTP DATA
+Protocol: TCP
+RemotePort: 20
+Direction: Inbound
+AllowIt
+
+DefaultState: 1
+RuleName: Microsoft Access E-Mail
+Protocol: TCP
+RemotePort: 25, 110
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Microsoft Access LDAP
+Protocol: TCP
+RemotePort: 389
+Direction: Outbound
+AllowIt
+
+; Word Processing
+
+[EditPad Pro]
+VisibleState: 0
+Exe:
+EditPad Pro, editpadpro.exe
+DefaultState: 1
+RuleName: Send mail by EditPad Pro
+Protocol: TCP
+RemotePort: 25
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: Download/Update EPP Syntax Colour Schemes
+Protocol: TCP
+RemotePort: 80
+RemoteHost: 216.92.230.239
+Direction: Outbound
+AllowIt
+
+; Encryption
+
+[PGP Keys ]
+VisibleState: 0
+Exe:
+PGP Keys, pgpkeys.exe
+DefaultState: 1
+RuleName: PGP Keys HTTP connection
+Protocol: TCP
+RemotePort: 80-83, 443, 1080, 3128, 8080, 8088, 11523
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: PGP Keys Server connection
+Protocol: TCP
+RemotePort: 11370-11371
+Direction: Outbound
+AllowIt
+
+DefaultState: 1
+RuleName: PGP Keys LDAP connection
+Protocol: TCP
+RemotePort: 389
+Direction: Outbound
+AllowIt
+
+; Games
+
+[Medal of Honour: Allied Assault]
+VisibleState: 0
+Exe:
+Medal of Honour: Allied Assault, mohaa.exe
+DefaultState: 1
+RuleName: Medal of Honour outbound UDP connection
+Protocol: UDP
+Direction: Outbound
+RemotePort: 12203, 12206
+AllowIt
+
+DefaultState: 1
+RuleName: Medal of Honour inbound UDP connection
+Protocol: UDP
+Direction: Inbound
+RemotePort: 12203, 12206
+AllowIt
+
+DefaultState: 1
+RuleName: Medal of Honour - send 'heartbeat' to master server
+Protocol: UDP
+Direction: Outbound
+RemotePort: 27900
+RemoteHost: 216.177.89.34
+AllowIt
+
+[Championship Manager]
+VisibleState: 0
+Exe:
+Championship Manager, cm0001.exe
+DefaultState: 1
+RuleName: Championship Manager TCP Connection
+Protocol: TCP
+RemotePort: 6667
+AllowIt
+
+DefaultState: 1
+RuleName: Championship Manager UDP Connection
+Protocol: UDP
+RemotePort: 6667
+AllowIt
+
+[Ultima Online]
+VisibleState: 0
+Exe:
+Ultima Online, uo.exe
+RuleName: Ultima Online
+Protocol: TCP
+RemotePort: 7785, 9999, 5001-5010, 7775-7777, 8800-8900
+AllowIt
+
+[Quake II]
+VisibleState: 0
+Exe:
+Quake II, quake2.exe
+DefaultState: 1
+RuleName: Quake II TCP Connection
+Protocol: TCP
+RemotePort: 27901
+AllowIt
+
+DefaultState: 1
+RuleName: Quake II UDP Connection
+Protocol: UDP
+RemotePort: 27910-27961
+AllowIt
+
+[Quake III]
+VisibleState: 0
+Exe:
+Quake III, quake3.exe
+DefaultState: 1
+RuleName: Quake III TCP Connection
+Protocol: TCP
+RemotePort: 27950-27952
+AllowIt
+
+DefaultState: 1
+RuleName: Quake III UDP Connection
+Protocol: UDP
+RemotePort: 27910-27961
+AllowIt
+
+[Unreal]
+VisibleState: 0
+Exe:
+Unreal, unreal.exe
+DefaultState: 1
+RuleName: Unreal TCP Connection
+Protocol: TCP
+RemotePort: 7777, 8888, 27900
+AllowIt
+
+DefaultState: 1
+RuleName: Unreal UDP Connection
+Protocol: UDP
+RemotePort: 7777-7781
+AllowIt
+
+[Delta Force]
+VisibleState: 0
+Exe:
+Delta Force, df.exe
+DefaultState: 1
+RuleName: Delta Force TCP Connection
+Protocol: TCP
+RemotePort: 3100-3999
+AllowIt
+
+DefaultState: 1
+RuleName: Delta Force UDP Connection
+Protocol: UDP
+RemotePort: 3100-3999, 3568-3569
+AllowIt
+
+[Half-Life]
+VisibleState: 0
+Exe:
+Half-Life, hl.exe
+DefaultState: 1
+RuleName: Half-Life TCP Connection
+Protocol: TCP
+RemotePort: 6000-6003, 7001
+AllowIt
+
+DefaultState: 1
+RuleName: Half-Life UDP Connection
+Protocol: UDP
+RemotePort: 27000-27020
+AllowIt
+
+[Game Zone]
+VisibleState: 0
+Exe:
+Game Zone Client, zclientm.exe
+DefaultState: 0
+RuleName:  MSN(tm) Zone TCP Connection
+Protocol: TCP
+RemotePort: 6667, 8000-9000, 9110, 9113, 8995-11000, 28800-29000
+AllowIt
+
+DefaultState: 1
+RuleName: MSN(tm) Zone UDP Connection
+Protocol: UDP
+RemotePort: 0, 8000-9000, 9000-9100, 28800-29000
+AllowIt
+
+DefaultState: 1
+RuleName:  DirectX and Direct Play Games TCP Connection
+Protocol: TCP
+RemotePort: 2300-2400, 47264
+AllowIt
+
+DefaultState: 1
+RuleName: DirectX and Direct Play Games UDP Connection
+Protocol: UDP
+RemotePort: 2300-2400
+AllowIt

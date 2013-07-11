@@ -1,0 +1,123 @@
+INTRODUÇÃO
+
+O gerenciamento de memória é a parte do sistema operacional responsável pelo gerenciamento de memória, pois é ele quem controla quais os segmentos de memória que estão em uso, aloca, libera e avalia quando a memória principal não é grande o bastante para guardar todos os processos. Assim, veremos quais as formas existentes e as mais eficazes de gerenciar memórias.
+
+GERÊNCIA DE MEMÓRIA SEM SWAPPING OU PAGINAÇÃO
+
+Os sistemas de gerenciamento de memória são divididos em duas grandes categorias: aqueles que movem os processos entre a memória principal e o disco (swapping ou paginação), e aqueles que não movimentam os processos entre tais dispositivos de armazenamento.
+
+Monoprogramação sem Swapping ou Paginação
+
+O esquema mais simples de alocação de memória a processos é aquele no qual só existe um único processo na memória em cada instante, sendo permitido que tal processo use toda a memória disponível. O usuário carrega a memória principal com um processo vindo do disco, e este assume o controle de todos os recursos da máquina. Mas este esquema foi muito usado até 1960, ele foi abandonado desde então. Na técnica usualmente utilizada pelos microcomputadores a memória é dividida entre o sistema operacional e um único processo usuário.
+Quando o sistema estiver organizado desta forma, somente um processo pode estar rodando por vez.
+
+Multiprogramação e Utilização da Memória
+
+Em um sistema multiprogramado, vários processos residem na memória simultaneamente. Os usuários simplesmente colocam os processos no computador, que planeja a sua execução de acordo com um critério predefinido. Apesar da monoprogramação ainda ser usada em alguns computadores de pequeno porte, nas máquinas maiores ela raramente é utilizada. Uma razão que motiva fortemente o uso da multiprogramação é tornar mais fácil programar uma aplicação, dividindo-a por dois ou mais processos. Outra motivação é o fato de os grandes computadores muitas vezes fornecerem serviço interativo para vários usuários simultaneamente, serviço este que força a existência de mais de um processo na memória ao mesmo tempo, de forma a se obter uma performance aceitável.
+
+Multiprogramação com Partições Fixas 
+
+Algumas linguagem permitem que o usuário construa programas nos quais defina atividades concorrentes. Enquanto o programa é executado, ele pode gerar novos processos, que passam então a competir pelos recursos do sistema. Note que a multiprogramação em geral não implica que múltiplos processos estejam sendo executados simultaneamente. Em vez disso, caso haja apenas uma CPU, eles são executados em turno.
+Se todos os processos puderem residir na memória ao mesmo tempo o sistema operacional poderá mudar o controle de um para outro muito mais rapidamente. Isso porque o sistema não terá de procurá-los na memória secundária, já que os acessos ao disco são relativamente lentos.
+Quando múltiplos processos residem na memória simultaneamente os problemas de gerenciamento e proteção são mais complexos. O sistema não deve apenas se proteger dos usuários, deve também proteger os usuários uns dos outros. Permitir que um processo altere arbitrariamente outro é inaceitável e muitas vezes perigoso.
+Uma abordagem simples para o gerenciamento de memória em sistemas multiprogramados envolve a divisão da memória em regiões de tamanho fixo, denominadas partições. O sistema operacional deve ter uma tabela de dados indicando quais partições estão disponíveis. 
+Essa tabela é chamada tabela de partições.
+O tamanho das partições fixas é definido no momento da geração do sistema e permanece constante, a menos que o sistema seja reinicializado, porém, as partições podem ou não ser do mesmo tamanho.
+De qualquer forma, uma vez determinado o tamanho de uma partição, ele não poderá ser alterado.
+
+Partições Fixas de Mesmo Tamanho
+
+Quando alguém inicia um processo, o sistema operacional examina a tabela de partições. Se uma entrada da tabela indica uma partição vazia, o carregador armazena nela o código do processo.
+O sistema altera a entrada da tabela de partições para mostrar que ela está ocupada. Quando um processo termina, o sistema operacional muda novamente a entrada da tabela de partições para indicar que ela está livre. O carregador pode então armazenar um novo processo lá.
+Quando há mais processos do que partições, uma solução é armazenar os processos adicionais em uma fila.
+Quando um processo termina, liberando uma partição, o carregador pode então ocupá-la com o processo que está em primeiro lugar na fila. Uma fila única é apenas uma maneira de manipular processos em espera. Outras abordagens incluem filas de prioridade e filas múltiplas.
+Infelizmente partições fixas utilizam a memória de maneira ineficiente. O tamanho da partição faz parte do esquema do sistema operacional. Sendo assim, ele pode não corresponder às necessidades de memória dos processos existentes.
+O problema de memória desperdiçada chama-se fragmentação. A fragmentação é insignificante quando o tamanho da partição se aproxima bem dos quesitos de memória do processo. 
+No entanto, ela torna-se substancial quando existem muitos processo pequenos. Uma grande quantidade de memória fica simplesmente inutilizada, e todo o computador fica subutilizado. Além disso, quando um processo precisa de mais de uma partição de memória, o problema torna-se ainda mais grave. As partições são muito pequenas e o processo simplesmente não pode ser executado.
+
+Partições Fixas de Tamanhos Diferentes
+
+Na prática, supor que todos os processos precisarão da mesma quantidade de memória é irreal.
+A maioria dos sistemas tem tanto processos pequenos quanto processos grandes, e em geral eles coexistem pacificamente. No entanto, a incapacidade de prever o tamanho de um processo leva a problemas significativos. Assim, supondo que sabemos que ocasionalmente haverá um processo grande, em vez de criar partições de igual tamanho, poderíamos ter uma variedade de tamanhos.
+
+Partições Variáveis
+
+O sistema pode designar um processo que tenha pequenas necessidades de memória a uma partição pequena. Da mesma maneira, pode designar um processo com grandes necessidades de memória a uma partição grande. Se nosso objetivo for minimizar a fragmentação, então certamente faz mais sentido armazenar um processo de 30K em uma partição de 40K em vez de usar uma partição de 80K.
+Mas ainda restam 10K de memória desperdiçada. Talvez o sistema possa encontrar um processo cujas necessidades correspondam mais precisamente ao tamanho da partição. A falha aqui é que o projetista do sistema operacional tem de tentar prever o tamanho dos processos para encontrar o melhor tamanho de partição. Às vezes, os processos têm de ser modificados para satisfazer a novas regulamentações ou a novas políticas. O ponto importante é que as necessidades de um processo usualmente mudam com frequência. Raramente poderemos prever o número e o tamanho dos processospor longos períodos de tempo. Um bom sistema deve adaptar-se às necessidades do usuário não vice-versa.
+Talvez a solução esteja nas partições variáveis. Aqui não definimos previamente as partições.
+Em vez disso, o sistema operacional as define dinamicamente com base nas necessidades dos processos correntes, O sistema Operacional cria uma partição cujo tamanho corresponde exatamenteàs necessidades de memória do processo. Quando o processo termina, o sistema então libera a memória.
+Por exemplo, a Tabela 1 mostra as necessidades de memória dos processos que estão entrando em um sistema.
+
+fig 1 - 
+
+Vamos supor que eles entrem na ordem indicada.
+O sistema operacional cria uma partição para cada processo. A Figura 3 mostra a organização da memória. Nesse caso, cada partição corresponde exatamente às necessidades do processo. Conseqüentemente, não há fragmentação.
+A tabela não tem mais um número fixo de entradas. Em vez disso, ela varia com o número de partições. Além do mais, a ela deve conter também a posição de qualquer espaço livre. Com as partições fixas, todo o espaço livre estava nas partições disponíveis. Com as partições variáveis, ele deve ser especificado explicitamente. A Tabela 2.4 mostra a tabela de partições correspondente ao arranjo da Figura 3.
+
+fig 2 - 
+
+Fragmentação
+
+A organização da memória pelo sistema operacional é consistente com as necessidades dos processos, e na Figura 3 não há fragmentação. Além disso, como não há tamanho de partição predefinido, não precisamos preocupar-nos com processos muito grandes. O sistema pode cuidar deles, desde que não requeiram mais memória do que a existente.
+
+fig 3 - Memória de partição variável, com seis partições alocadas.
+
+Coalescência
+
+Usamos o termo coalescência para descrever a combinação de partições adjacentes de memória livre. A coalescência requer um sistema operacional mais Complexo. Pode parecer simples localizar partições adjacentes, mas na prática é um pouco mais complicado. Lembre-se, as figuras tendem a simplificar as coisas. Mas a tabela de partições contém as informações necessárias. Devem ser criados algoritmos para pesquisar as tabelas e procurar por partições livres adjacentes.
+Sem a coalescência, o sistema operacional vê muitas partições pequenas de memória livre. Em um caso extremo, toda a memória poderia ficar disponível; mas, se o sistema a vê como muitas partições pequenas, um novo processo poderia ainda assim não caber, apesar de não haver outros processos residentes. Isso seria o máximo em desperdício de memória.
+
+Compactação
+
+A relocação dos processos para tornar contíguas todas as partições ocupadas é chamada compactação. A Figura 4 mostra a memória depois que o sistema compacta a disposição mostrada na Figura 3.
+
+fig 4 -
+
+No papel a compactação parece ser urna solução elegante; no entanto, a movimentação de processos pela memória tem seu preço. As referências à memória que cada instrução faz dependem da posição do processo na memória.
+Se o processo muda de lugar, as referências ficam incorretas.
+Basicamente, há duas respostas para esse problema. Uma é aceitar o custo e relocar fisicamente os processos para novas áreas, o que pode envolver a mudança das referências de memória nas instruções ou a alteração do registrador de base que contém o endereço inicial do processo.
+A outra resposta é projetar um sistema no qual as instruções que fazem referência à memória são independentes de sua posição na memória. Em sistemas assim, a referência de memória de uma instrução é alterada durante sua análise para corresponder à posição real. Á primeira vista, isso pode parecer raro, mas é comum.
+
+Relocação e Proteção
+
+A multiprogramação acopla dois problemas que precisam ser resolvidos: relocação e proteção. Quando um programa principal é ligado, os procedimentos de usuário e os procedimentos da biblioteca são combinados em um único espaço de endereçamento, o ligador deve conhecer o endereço a partir do qual este programa deverá ser carregado na memória.
+Suponha que a primeira instrução seja uma chamada a um processo que esteja no endereço relativo 100, dentro do arquivo binário produzido pelo ligador. Se este programa for carregado na partição 1, esta instrução fará com que a instrução do endereço absoluto 100 seja executada a seguir. Ocorre que tal endereço pertence ao espaço de endereçamento do sistema operacional. É necessário então gerar uma chamada para 100K+100 em vez de para 100. Se o programa for carregado na partição 2, deve ser gerada uma chamada para 200K+100, e assim por diante. Tal processo é conhecido como problema da relocação.
+Uma possível solução para ele seria modificar as instruções conforme a partição onde o programa fosse carregado. Programas na partição 1 deveriam ter 100K adicionados a cada endereço gerado, os da partição 2, 200K, e assim por diante. Para realizar a relocação durante a carga do programa, o ligador deve incluir no código binário um conjunto de informações sobre quais palavras são endereços relocáveis e quais são códigos de operação, constantes e outros itens que não devem ser relocados.
+
+Gerência de Memória com Mapeamento de Bits
+
+Com o emprego do mapeamento de bits, a memória é dividida em unidades de alocação, tão pequenas quanto poucas palavras ou tão grandes quanto vários quilobits.
+Correspondendo a cada unidade de alocação definida, há um bit do mapa de bits que é 0 se a unidade estiver livre e 1 se estiver ocupada, ou vice-versa.
+Quanto menor a unidade de alocação, maior o mapa de bits. Se uma unidade de alocação escolhida for muito grande, o mapa de bits será pequeno, mas uma parcela considerável de memória poderá ser desperdiçada na última unidade, se o tamanho do processo não for um múltiplo exato do tamanho da unidade de alocação.
+O mapa de bits é uma forma simples de controlar a alocação da memória, pois seu tamanho só depende do tamanho da memória e do tamanho da unidade de alocação. O principal deste método ocorre quando for necessário trazer para a memória um processo que ocupar k unidades de alocação. O gerente de memória deve procurar por k bits 0 consecutivos no mapa. Esta procura é excessivamente lenta, de forma que, na prática, os mapas de bit raramente são usados.
+
+Gerência de Memória com Listas Ligadas
+
+Uma outra forma de controlar a alocação da memória é mantendo uma lista ligada dos segmentos livres e ocupados da memória. Estende-se por segmentos um processo ou um buraco entre dois processos.
+Quando os processos e os buracos são mantidos numa lista ordenada por endereços, vários algoritmos podem ser usados para alocar memória para um novo processo ou para um processo que precise ser transferido do disco para a memória.
+
+Gerência de Memória Usando o Sistema Buddy
+
+O sistema buddy é um algoritmo para gerenciamento de memória que tira vantagem de fato de os computadores usarem números binários para o endereçamento, como uma forma de acelerar o merge dos buracos adjacentes quando um processo termina ou quanto é retirado da memória.
+Infelizmente, apesar de extremamente eficiente sob o aspecto da velocidade, o sistema buddy não é eficiente em termos de utilização da memória. O problema decorre obviamente da necessidade de se arredondar a requisição feita pelo processo para a próxima potência inteira de 2.
+
+Memória Virtual
+
+Uma análise mostra que as dificuldades têm uma origem principal: a tentativa de manter a memória livre em um bloco contíguo para maximizar seu uso.
+Talvez essa seja a abordagem errada. Em vez de rearranjar a memória para corresponder a suas necessidades, deveríamos perguntar como um processo poderia usar a memória livre arbitrariamente. Por exemplo, vamos supor que a memória livre existe em áreas não-contíguas.
+Frequentemente isso é feito em sistemas multiusuário. A idéia é dividir o código e os dados de um processo em seções distintas, chamadas páginas de programa ou simplesmente páginas. De maneira correspondente, dividimos a memória em unidades chamadas páginas de memória. Uma página de memória é uma seção contígua do mesmo tamanho de uma página. Para armazenar um processo na memória, simplesmente armazenamos suas páginas nas páginas de memória disponíveis. Note que as páginas de memória não precisam ser contíguas.
+
+fig 5 -
+
+Se o sistema operacional usa partições variáveis para gerenciar a memória, ele não poderia colocar o processo G na memória. Como há três páginas de memória não-utilizadas, isso certamente não e sensato. No entanto, dividindo-se o código do processo G em três páginas, o sistema pode então armazenar cada página em uma página de memória disponível. A Figura 6 mostra o resultado.
+
+fig 6 -
+
+Os processos são armazenados em memória não-contígua, mas o usuário não toma conhecimento desse fato. A organização do usuário é chamada memória virtual. 
+A memória virtual refere-se às posições (endereços virtuais) que a CPU usa para buscar as instruções do processo e também àquelas posições às quais as instruções se referem. Elas são as posições criadas pelos montadores ou compiladores e linkers. A memória virtual é o Lugar onde o processo “parece” estar.
+Ao inverso, a memória real refere-se às posições nas quais o processo realmente reside. A memória real e a virtual usualmente não são a mesma coisa. O sistema operacional permite que o usuário acredite que o processo resida em posições contíguas predeterminadas. Como é o sistema quem faz a distribuição, o usuário não precisa saber o que aconteceu. O hardware e o software enganam completamente o usuário, fazendo-o acreditar que a configuração de memória virtual realmente existe.
+Considere o caso extremo onde cada página de memória tem apenas um byte. Como o sistema operacional tem de controlar a disponibilidade de cada página de memória, ele tem de armazenar uma tremenda quantidade de informações. Por exemplo, se houvesse 8 megabytes de memória de usuário, o sistema operacional precisaria de uma tabela com 8 milhões de entradas.
+Vamos supor que o sistema divida a memória em páginas de memória de 1024 bytes. Nesse caso, o sistema operacional deve controlar o estado de apenas 8 mil páginas de memória, e a tabela terá 8 mil entradas, e não 8 milhões. É óbvio que isso representa uma grande economia, O problema é que o sistema pode alocar mais memória do que o processo precisa. Um processo que precise de três páginas e meia de memória obterá quatro.
+Se fizermos as páginas de memória maiores, o sistema operacional terá de controlar um número menor dessas páginas de memória (supomos um total de memória fixo), e precisará de uma tabela menor. Porém, há mais desperdício. 
+Alocação de uma página de memória inteira quando apenas uma fração dela é necessária gera um desperdício proporcional ao tamanho da página de memória. 
+Por outro Lado, páginas de memória menores reduzem o desperdício, O problema aqui é que a tabela tem de ser muito grande.

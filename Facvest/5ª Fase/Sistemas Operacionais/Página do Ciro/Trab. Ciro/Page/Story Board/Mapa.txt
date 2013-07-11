@@ -1,0 +1,20 @@
+Para melhor entendimento do Story Board:
+
+
+A página terá uma interface inicial chamada de Principal e mais 4 subpáginas, sendo possível acessa-las pela página Principal.
+
+Tanto a Página Principal quanto as subpáginas serão divididas em:
+Cabeçalho;
+Corpo;
+Rodapé.
+
+O cabeçalho e o rodapá definido no Layout serão o mesmo tanto para a Página Principal quanto para as subpáginas.
+
+Em todos os cabeçalhos tera um menu com informações da subpagina, facilitando assim o acesso imediato ao assunto desejado.
+
+No cabeçalho de todas as subpáginas tera um link apontando para a Página Principal, sendo assim possível retornar a Página Principal.
+
+No rodapé da página tera o e-mail de todos os que desenvolveram o layout, podendo assim enviar e-mail aos mesmos.
+
+No corpo da Página Principal terá informações sobre a fase, o curso e a disciplina dos acadêmicos.
+No corpo das subpáginas terá sempre no meio um logo transparente adequado ao link vindo acima o texto tambem adequado ao link.

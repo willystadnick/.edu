@@ -1,0 +1,5 @@
+Acesso discado
+
+Permite ao usuário conexão a internet através de um computador convencional e uma linha telefônica normal.
+
+É a forma mais simples de conexão a Internet, podendo ser usado de qualquer local mesmo fazendo um DDD em caso de emergência. Na maioria dos casos não possui custo de instalação, bastando apenas que seu computador pessoal possua uma placa de modem ligada a rede telefônica convencional e contrato com um provedor de acesso gratuito, muito existente nos dias atuais.

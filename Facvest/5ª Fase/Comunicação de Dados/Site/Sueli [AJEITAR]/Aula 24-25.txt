@@ -1,0 +1,224 @@
+Comunicação de Dados
+
+Aula 24-25
+
+Meios de Transmissão – Canais de Tx
+
+
+INTRODUÇÃO
+
+O mundo das redes de computadores e de comunicação de dados não existiria se não existisse um meio pelo qual os dados fossem transferidos.
+As duas grandes categorias de meios de comunicação incluem:
+*O meio físico
+*Wireless
+
+
+CARACTERÍSTICAS DE UM CANAL
+
+A escolha de um meio físico adequado é fundamental para a implementação de sistemas de comunicação eficientes. Porém esta escolha depende de alguns fatores como:
+
+PROPRIEDADES
+•	Resistência aos Sinais – Atenuação - (Função da Freqüência)
+
+•	Tempo de Propagação dos Sinais - (Função da Freqüência)
+
+•	Imunidade ao Ruído
+
+
+LIMITAÇÕES IMPOSTAS PELAS PROPRIEDADES
+
+Distância (Comprimento)
+Solução: Uso de Repetidores (Amplificadores)
+
+Largura de Banda - Gama de freqüências permitida
+Solução: Uso de Equalizadores
+
+Capacidade de um canal
+Velocidade de Transmissão Máxima (bps)
+Fórmula de Nyquist
+Fórmula de Shannon-Hartley
+
+TIPOS DE CANAIS
+
+Privados
+Instalados pela própria entidade operadora
+Ex.: Redes Locais
+
+Públicos
+Instalados por uma entidade que depois os aluga a outra entidade. Os canais públicos podem ser de 2 tipos:
+Comutados: 
+Ex.: Quando uma operadora aluga uma rede inteira.
+
+Dedicados: 
+Ex: Quando uma operadora aluga apenas uma linha, para um usuário.
+		
+
+MEIO FÍSICO DE TRANSMISSÃO
+
+O fio é a maneira mais difundida de conectar dispositivos de rede.
+Existem vários tipos de cabos, adequados às mais variadas situações. Eles podem ser agrupados em 3 grandes grupos:
+Par trançado;
+Cabo Coaxial;
+Fibra  Óptica.
+
+Twisted Pair Wire=Par Entrelaçado ou trançado
+
+São dois ou mais pares de fios condutores que têm sido trançados entre si. Os cabos de par trançado são classificados por CATEGORIA que vão da categoria 1 até a 7. 
+
+
+Fig.1
+
+
+A vantagem de se trançar os cabos, é a minimizão das interferências eletromagnética entre os fios e com a blindagem pode-se melhorar ainda mais a imunidade a interferências. 
+
+Características
+
+Largura de Banda: Razoável
+Capacidade: Razoável (1 Mbps em 100m) (10Mbps) - Depende do comprimento e da secção
+Imunidade ao Ruído: Razoável - 	Interferência igual nos dois condutores
+Atenuação: Elevada para altas freqüências ( skin efect)
+Custo: Baixo
+
+Aplicações: Telefones (Transm. Analógica), LAN - UTP e STP (Transm. Digital)
+
+
+Fig.2
+
+
+Cabo Coaxial
+
+Trata-se de um condutor elétrico central de cobre e uma malha metálica envolvente, separadas por um isolante.
+
+
+Fig.3
+
+
+CARACTERÍSTICAS
+Largura de Banda: Boa (350 MHz)
+Capacidade: Boa (10Mbps em 1Km) (Depende do comprimento)
+Imunidade ao Ruído: Muito Boa (A malha protege o condutor de interferências)
+Atenuação: Baixa
+Custo: Médio
+
+APLICAÇÕES
+Telefones (Transm. Digital)
+LAN (Transm. Digital)
+
+TIPOS DE CABOS COAXIAIS
+Os cabos coaxiais podem ser do tipo thinnet (thin) e thicknet (think).
+
+THINNET (THIN)
+
+O tipo Thin pertence à família RG 58, 50 W, utilizada em comunicações com distância máxima de 185m e 30 Estações(pontos).
+A tecnologia utilizada no coaxial thin é a Baseband, que utiliza sinalização digital na qual os cabos levam um canal de dados digital.
+
+Fig.4
+
+
+THICKNET (THINK)
+
+O tipo Thick pertence à família RG 59, 75 W e a tecnologia utilizada é a Broadband, que transmite sinais analógicos e é capaz de suportar múltiplos canais de dados e além disto, permite multiplexação em freqüência .
+Este tipo de cabo é empregado em redes de TV a cabo, telefonia, pequenas redes de computadores e pode abranger distâncias maiores com auxílio de amplificadores.
+
+Fig.5
+
+
+Fibra Óptica
+
+É constituído por um fino cabo de fibra de vidro aproximadamente mais fino que um fio de cabelo, coberto por uma envoltura plástica e empacotado dentro de um cabo isolado. Um foto diodo ou laser existentes, geram pulsos de luz as quais viajam através do cabo de fibra óptica e são recebidos por um foto receptor.
+
+
+Fig.6
+
+
+CARACTERÍSTICAS
+
+Largura de Banda: Muito Boa (20 THz)
+Capacidade: Muito Boa (1Gbps em 1Km)
+Imunidade ao Ruído: Ótima, no caso do ruído eletromagnético total.
+Custo: Elevado.
+Atenuação: Muito Baixa.
+Maior espaçamento entre repetidores (10 Km)
+
+APLICAÇÕES
+
+Telefones (Transmissão Digital)
+LAN e MAN (Transmissão Digital)
+
+É além disto é comum misturar fibra ótica com par trançado em LANs como pode ser visto na figura abaixo.
+
+
+Fig.9
+
+
+
+FO – CARACTERÍSTICAS DE TRANSMISSÃO
+Funciona como guia de onda de 1014 até 1015 Hz com porções do infravermelho e espectro visível
+Light Emitting Diode (LED): Barata, Faixa de temperatura de operação maior, Maior durabilidade.
+Injection Laser Diode (ILD): Maior eficiência, maior taxa de dados.
+Wavelength Division Multiplexing
+
+
+Fig.10
+
+
+WIRELESS
+
+Radio, transmissões por satélite e luz infravermelho que utilizam o ar como meio de propagação. A luz visível ocupa a faixa do espectro que vai de 400 THz (vermelho) a 750 THz (violeta).
+Cada fonte ocupa um diferente conjunto de freqüências no espectro eletromagnético.
+
+CARACTERÍSTICAS GENÉRICAS
+Meio não guiado
+Transmissão e recepção via antena
+Direcional: O feixe é focalizado e por isto Requer um Alinhamento cuidadoso, pois o sinal passa de uma antena emissora para uma outra receptora que devem estar perfeitamente alinhadas .
+
+Omnidirecional: Espalha o sinal em todas as direções(360°) e  pode ser recebido por muitas antenas.
+
+Baixa Freqüência: As ondas eletromagnéticas possuem maior comprimento de onda (k) o que faz com que contornem mais facilmente os obstáculos (paredes, lâmpadas, etc) e a tendência é serem omnidirecionais.
+
+Altas Freqüências: O comprimento de onda é pequeno o que faz com que as ondas sejam bloqueadas facilmente por obstáculos e a transmissão tende a ser direcional  (as antenas devem estar alinhadas).
+
+LF / MF / HF: As ondas tendem a seguir a curvatura da terra.
+Ex.: Rádio AM.
+
+HF / VHF: As ondas tendem a serem absorvidas pela terra e as que conseguem alcançar a IONOSFERA são refletidas e retornam à terra. Esse processo pode se repetir por várias vezes, sendo possível transmitir a grandes distâncias.
+Ex.: Rádio amador, transmissões militares.
+
+UHF: Propagam-se praticamente em linha reta e não são refletidas pela IONOSFERA. Podemos assim dizer que são perdidas no espaço.
+Ex.: Transmissão de TV.
+
+SHF / EHF
+Ex.: Micro-ondas.
+
+Fig.12
+
+
+MICRO-ONDAS TERRESTRE
+
+Este tipo de transmissão é baseado na superfície, ou seja,  sua transmissão é dada por linha de vista,  as torres devem estar dentro de uma faixa de aproximadamente   20 a 30 milhas (32 a 48 km) umas das outras. Freqüentemente, as antenas de micro-ondas estão instaladas em torres e edifícios para melhorar e facilitar a transmissão.  
+
+
+Fig.13
+
+
+Os dados deste tipo de transmissão são transmitidos em centenas de milhões de bits por segundo e popularmente é aplicado por empresas de telefonia e transmissões de negócios. 
+
+MICRO-ONDAS POR SATÉLITE
+
+Similar a micro-ondas de superfície, com a diferença que os sinais viajam desde uma estação na superfície da terra para um satélite, retornando para outra estação na superfície, este processo de transmissão de sinais pode ser melhor visualizado na figura abaixo.
+
+Fig.14 
+
+Os satélites tornaram-se realidade por volta do século XX e são postos em órbita com a ajuda de foguetes propulsores 
+Este tipo de transmissão têm múltiplas aplicações como: observação militar e reconhecimento de áreas estratégicas do globo; estudos metereológicos; avaliação dos recursos naturais do planeta; repetição de sinais de televisão e rádio; e comunicação entre regiões distantes do planeta.
+Os satélites podem ser classificados segundo a sua órbita:
+LEO – Low Earth Orbit: 100 – 1000 milhas. 
+	Utilizada por pagers, wireless, e-mail, telefonia móvel, video-conferência e espionagem.
+
+MEO – Middle Earth Orbit: 1000 – 22,3000 milhas. Utilizada por GPS e pelo governo.
+
+GEO – Geosynchronous Earth Orbit: - 22,300 milhas. Utilizada para monitoração do clima, Televisão e operações do governo.
+
+HEO – Highly Elliptical Orbit : Este tipo de órbita é utilizada para espionagem e por organizações científicas para fotografar corpos celestes e funciona da seguinte maneira quando o satélite está longe, toma as fotos e quando está  perto da terra, transmite os dados.
+
+Fig.15

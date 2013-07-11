@@ -1,0 +1,204 @@
+Engenharia de Software: Teoria e Prática
+Modelagem do Processo e Ciclo de Vida
+Elaine Harada Teixeira de Oliveira
+Extraído do livro de Shari L. Pfleeger
+1o. semestre/2004
+
+Tópicos da aula
+O que é ‘processo’?
+Produtos de desenvolvimento de software, processos e recursos
+Modelos de processo de desenvolvimento de software
+Ferramentas e técnicas para a modelagem do processo
+
+O que é processo?
+Conjunto de tarefas ordenadas
+Uma série de etapas que envolvem atividades, restrições e recursos para alcançar a saída desejada
+Quando envolve a elaboração de um produto, podemos chamar de ciclo de vida
+Processo de desenvolvimento de software pode ser chamado de ciclo de vida do software
+Descreve a ‘vida’ do produto de software desde a concepção até a implementação, entrega, utilização e manutenção
+
+Processo inclui:
+Todas as principais atividades do processo
+Recursos; está sujeito a um conjunto de restrições (como um cronograma)
+Produtos intermediários e finais
+Subprocessos, com hierarquia ou organizados de algum modo
+Critérios de entrada e saída para cada atividade
+Seqüência de atividades, de modo que a ordem de execução de uma para outra seja clara
+Conjunto de diretrizes que explicam os objetivos de cada atividade
+Restrições e controles para cada atividade, recurso ou produto
+
+Ainda sobre processo…
+Cada estágio é por si só um processo (ou coleção de processos) que pode ser descrito como conjunto de atividades
+Cada atividade envolve restrições, resultados e recursos
+Ex.: a análise e definição dos requisitos precisa ter como entrada inicial uma declaração das funções e características desejadas para o produto, expressas pelo usuário
+Cada processo pode ser descrito de várias maneiras, utilizando texto, figuras ou uma combinação desses recursos.
+Existem várias maneiras de se fazer essa descrição, geralmente organizada como modelo que contém as principais características do processo.
+
+Exemplo – Bolo de chocolate com cobertura
+Processo: fazer um bolo de chocolate com cobertura.
+Procedimentos: comprar os ingredientes, encontrar os utensílios de cozinha apropriados.
+Receita: descrição do procedimento de fazer a massa e assar o bolo. Contém atividades, restrições e recursos.
+Atividades: bater os ovos antes de misturar os outros ingredientes.
+Restrições: especificação da temperatura ‘esquente o chocolate até derreter antes de misturar o açúcar’.
+Recursos: farinha, açúcar, ovos e chocolate.
+Possibilidade de modificar tendo a receita para documentar o processo.
+
+Razões para modelar um processo
+Formar um entendimento comum
+Encontrar inconsistências, redundâncias e omissões
+Encontrar e avaliar atividades propostas mais adequadas aos objetivos
+Fazer um processo geral para uma situação particular na qual ele será utilizado
+
+Exemplos de modelos de processo
+Modelo cascata
+Prototipação
+Modelo em V
+Especificação operacional
+Modelo transformacional
+Desenvolvimento em fases: incrementos e iterações
+Modelo em espiral
+
+Modelo cascata
+Um dos primeiros modelos (Royce, 1970)
+O desenvolvimento de um estágio deve terminar antes do próximo começar
+Simples, mas não reflete, efetivamente, o modo como o código é desenvolvido
+Derivado do mundo do hardware
+
+Modelo cascata
+O modelo em cascata
+
+Modelo cascata
+O processo de desenvolvimento de software na realidade
+
+Modelo cascata com prototipação
+Prototipação é um sub-processo do modelo
+Protótipo - produto parcialmente desenvolvido, que possibilita aos clientes e desenvolvedores examinarem certos aspectos do sistema proposto e decidir se eles são ou não apropriados ou adequados para o produto acabado
+Validação – assegura que o sistema implementou todos os requisitos, de maneira que cada função do sistema possa ser relacionada com um requisito particular na especificação
+Verificação – assegura que cada função opera corretamente.
+A validação assegura que o desenvolvedor está construindo o sistema certo (de acordo com a especificação), e a verificação avalia a qualidade da implementação
+
+Modelo cascata com prototipação
+O modelo cascata com prototipação
+
+Modelo em V
+Variação do modelo cascata, que demonstra como as atividades de teste estão relacionadas com a análise e o projeto (Ministério de Defesa da Alemanha, 1992)
+Modelo em cascata: enfoque nos documentos e artefatos
+Modelo em V: enfoque na atividade e correção
+
+Modelo em V
+O modelo em V
+
+Prototipação
+Pode ser base para um modelo de processo efetivo
+Objetivos gerais: reduzir o risco e a incerteza do desenvolvimento
+O modelo da prototipação
+
+Especificação operacional
+Para muitos sistemas, a incerteza sobre os requisitos leva a mudanças e problemas posteriores no desenvolvimento.
+Zave (1984) sugere um modelo de processo que permite aos desenvolvedores e clientes examinarem antecipadamente os requisitos e suas implicações no desenvolvimento, de modo que possam discutir e resolver algumas incertezas.
+Os requisitos do problema são avaliados ou executados de modo a demonstrar o comportamento do sistema
+
+Especificação operacional
+O modelo de especificação operacional
+Ex: se a especificação requer que os sistema trabalhe com até 24 usuários, uma especificação executável pode ajudar os analistas a determinar a influência do número de usuários no desempenho do sistema
+
+Modelo transformacional
+Utilizando apoio automatizado, o processo transformacional aplica uma série de transformações para uma especificação em um sistema que pode ser fornecido (Balzer, 1981a)
+As transformações podem conter:
+mudanças nas representações de dados
+seleção de algoritmos
+otimização
+compilação
+A abordagem transformacional promete muito
+O grande empecilho é a necessidade de uma especificação forma expressa precisamente, de tal modo que as transformações possam operar nela.
+
+Modelo transformacional
+O modelo transformacional
+
+Desenvolvimento em fases: incrementos e iterações
+Ênfase: diminuir o tempo de desenvolvimento, pois o mercado exige agilidade
+Diminuir o tempo realizando o desenvolvimento em fases
+O modelo de desenvolvimento em fases
+
+Desenvolvimento em fases: incrementos e iterações
+Duas abordagens mais populares são:
+desenvolvimento incremental
+desenvolvimento iterativo
+No desenvolvimento incremental, o sistema é dividido em subsistemas por funcionalidades
+O desenvolvimento iterativo entrega um sistema completo desde o começo e então muda a funcionalidade de cada subsistema a cada nova versão
+
+Desenvolvimento em fases: incrementos e iterações
+Os modelos incremental e iterativo
+INCREMENTAL
+
+Modelo em espiral
+Proposto por Boehm (1988)
+Cada loop na espiral representa uma fase do processo de software e é dividido em quatro setores:
+Definição de objetivos: determinação dos objetivos, alternativas e restrições
+Avaliação e redução de riscos: análise de alternativas e identificação/resolução dos riscos
+Desenvolvimento e validação: escolha de um modelo de desenvolvimento para o sistema
+Planejamento: traçado dos planos para a próxima fase do projeto
+
+Modelo em espiral
+Com relação ao setor de desenvolvimento e validação, se:
+Riscos relacionados à interface com o usuário: prototipação evolucionária
+Riscos de segurança: desenvolvimento com base em transformações formais
+Risco de integração dos sistemas: modelo em cascata
+Explícita consideração dos riscos
+
+Modelo em espiral
+O modelo em espiral
+
+Ferramentas e técnicas para a modelagem do processo
+Modelo estático: Notação de Lai (1991)
+atividade – alguma coisa que acontecerá em um processo
+seqüência – a ordem das atividades
+modelo de processo – uma visão de interesse sobre o sistema
+recursos – item necessário, que pode ser uma ferramenta ou pessoa
+controle – influência externa sobre a aprovação do processo. Podem ser manuais ou automáticos, humanos ou mecânicos
+política – um princípio de orientação
+organização – a estrutura hierárquica dos agentes do processo
+Prentice Hall
+Prentice Hall
+Prentice Hall
+
+Modelo dinâmico de processo
+Elucida o processo, de modo que possamos ver como os produtos intermediários e final são transformados
+Simula alternativas e faz mudanças para melhorar o processo
+Abdel-Hamid (1996) especificou quatro áreas principais que afetam a produtividade:
+produção de software
+gerenciamento de recursos humanos
+planejamento
+controle
+
+Modelo dinâmico de processo
+Produção de software – aspectos de garantia da qualidade, taxa de aprendizado e desenvolvimento
+Gerenciamento de recursos humanos – trata da contratação, rotatividade e experiência do pessoal
+Planejamento – cronograma e pressões que este causa
+Controle – trata da medida do progresso e do esforço requerido para finalizar o projeto
+
+Modelo dinâmico de processo
+Estrutura de desenvolvimento de software (Abdel-Hamid, 1996)
+
+Propriedades desejáveis das ferramentas e técnicas para modelagem de processos
+Facilitar o entendimento humano e a comunicação
+Apoiar a melhoria do processo
+Apoiar o gerenciamento do processo
+Fornecer orientação automatizada para a utilização do processo
+Apoiar a execução automatizada do processo
+
+Exemplo de sistema de informação
+
+Referências Bibliográficas
+BALZER, Robert. Transformational implementation: an example. IEEE Transactions on Software Engineering, SE, v.7, n.1, p. 3-14. Jan. 1981.
+GARVIN, D. What does ‘product quality’ really mean? Sloan Management Review, p.25-45, 1984.
+LIONS, J. L. et al. Ariane 5 Flight 501 Failure: report by the inquiry board. European Space Agency, 1996.
+GERMAN MINISTRY OF DEFENSE. V-Model: software lifecycle process model, General Reprint No. 250. Bundesminister des Innern, Koordomoerungs und Beratungstelle der Bundesregierung fur Informationstechnik in der Bundesverwaltung, 1992.
+Relatório que descreve um modelo de processo usado pelo Departamento de Defesa da Alemanha
+
+Referências Bibliográficas
+PFLEEFER, Shari L. Engenharia de software: teoria e prática, 2. ed. São Paulo: Prentice Hall, 2004.
+WASSERMAN, A. I. Toward a discipline of software engineering. IEEE Software, v.13, n.6, p.23-31. Nov. 1996.
+ROBERTSON, James; ROBERTSON, Suzanne. Complete systems analysis: the workbook, the textbook, the answers. Nova York: Dorst House Publishing,1994.
+ROYCE, W. W. Managing the developmentof large software systems: concepts and techniques. In: PROCEEDINGS OF WESCON. Ago. 1970.
+A primeira publicação que menciona o modelo cascata.

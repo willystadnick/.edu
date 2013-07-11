@@ -1,0 +1,134 @@
+ENTRADA/SAÍDA
+
+O código para entrada/saída é expressivo em um sistema operacional, pois uma das principais funções é controlar os dispositivos de entrada/saída do computador, cujo processo de transferência é essencialmente assíncrono.
+
+PRINCÍPIOS DO HARDWARE DE ENTRADA E SAÍDA
+
+A programação de diversos dispositivos de entrada/ saída está diretamente relacionada ao seu funcionamento interno.
+
+DISPOSITIVOS DE ENTRADA/SAÍDA
+
+Os dispositivos de entrada/saída podem ser divididos em duas categorias:
+Dispositivos de bloco: são aqueles que armazenam dados em blocos de tamanho fixo(tamanhos comuns de 128bytes até 1.024bytes). Cada um desses blocos possui seu próprio endereço, podendo ler ou escrever em um bloco independente dos demais.
+Dispositivos de caracter: liberam ou aceitam um conjunto de caracteres, sem seguir uma estrutura de bloco e não é endereçável.
+É bom exemplificar que esta divisão não é perfeita, pois existem dispositivos que não se ajustam a eles como é o caso das telas de micros ou terminais mapeados na memória. Mas é um modelo suficiente para quem busca a independência de dispositivos
+
+ACESSO DIRETO À MEMÓRIA (DMA)
+
+A DMA foi inventada para tirar o processador deste trabalho de baixo nível, após ter o bloco no buffer e verificado a ocorrência de erros, a controladora copia o primeiro byte para o endereço especificado no registrador de memória da controladora DMA. A seguir ela incrementa o valor do endereço, e decrementa um byte do total de bytes que foram transferidos. Este processo termina quando o número de bytes chega a zero e é aí que a controladora gera uma interrupção e o sistema operacional não irá mais precisar ler o bloco para a memória.
+As controladoras que suportam operações de acesso direto à memória (DMA) são as desenvolvidas para dispositivos de blocos. 
+
+CONTROLADORAS DE DISPOSITIVOS
+
+Os dispositivos de entrada/saída são normalmente formados por uma parte mecânica e outra eletrônica. A parte eletrônica normalmente é uma placa de circuito impresso que pode ser chamado de controlador de dispositivo ou adaptadora, sua função é converter o fluxo serial de dados em blocos de bytes, montar e fazer correções (quando necessárias).
+A parte mecânica é o dispositivo propriamente dito. Sendo que quase sempre o sistema operacional  trata com as controladoras e não com os dispositivos.
+
+PRINCÍPIOS DO SOFTWARE DE ENTRADA/SAÍDA
+
+Fundamentam-se na idéia de organização em uma série de níveis, sendo o mais baixo deles direcionado a  esconder do usuário as características peculiares do hardware, e o restante por apresentar uma boa interface fácil de usar.
+
+OBJETIVOS DO SOFTWARE DE ENTRADA/SAÍDA
+
+O objetivo principal do software de entrada/saída é a independência de dispositivos, e no caso de incompatibilidade de dispositivos é função do Sistema Operacional gerenciá-los utilizando drivers compatíveis
+
+MANIPULADORES DE INTERRUPÇÃO 
+
+Faz com que o processo de entrada/saída anteriormente bloqueado esteja pronto para executar novamente.
+
+DRIVERS DE DISPOSITIVOS
+
+Recebem requisições por software e emitem comandos para a controladora, verificando se estes comandos foram executados corretamente.
+
+SOFTWARE DO SISTEMA OPERACIONAL INDEPENDENTE DO DISPOSITIVO 
+
+Tem como principais funções, uma interface uniforme para os drivers, identificação, proteção, fornecimento de um tamanho de bloco independente dos dispositivos, e ainda bufferização, alocação de espaço para blocos, alocação e liberação de dispositivos dedicados e informação de erros.
+
+SOFTWARE DO NÍVEL DO USUÁRIO
+
+Rotinas de bibliotecas, ligadas junto com programas de usuários.
+
+DISCOS
+
+Armazenar em discos tem as seguintes vantagens sobre guardá-las na memória principal:
+- Grande capacidade de armazenamento;
+- Custo por bit é menor;
+- Não se perde informação ao desligar a máquina.
+
+Hardware de Disco
+
+É possível através deste dispositivo acionar comandos de posicionamento para várias unidades de discos ao mesmo tempo (seeks sobrepostos).Isto é possível pela utilização de recursos, como pipelines. A possibilidade de se utilizar dois ou mais seeks ao mesmo tempo reduz consideravelmente o tempo médio de acesso.
+
+Algoritmos para escalonamento do braço de disco
+
+O objetivo de alcançar uma melhor performance do sistema e um bom gerenciamento das prioridades deste, tornam esta ferramenta muito significativa. Utilizando o sistema FCFS (primeiro a chegar é o primeiro a sair) quase não apresentará otimização. Mas com o SSF (menor seek primeiro) reduz quase a metade o movimento do braço, comparado com o FCFS. 
+Outro sistema é chamado de RAID (Redundant Array of Inespensive Disks).Quando um problema ocorre, um bit de cada palavra será perdido, mas como o código de Hamming pode corrigir um bit errado, o sistema continua a trabalhar.
+
+Tratamento de Erros:
+
+Os erros mais comuns ocorrem por:
+- Falha de programação (pela imprecisão de parâmetros no programa);
+- Transiente no cheksum (sujeira na cabeça do controlador);
+- Erro parâmetro no cheksum (disco danificado);
+- Erro de seek (imprecisão do braço da controladora);
+- Erro da controladora (recusa comandos).
+
+Cache em disco:
+
+Para agilizar processos alguns drivers possuem uma cache secreta, não perceptível aos Softwares para não haver a necessidade de realizar transferências de disco. 
+Outros controladores mantém a cache na própria memória interna e assim utilizando o hardware da DMA. Através destes sistemas é possível ler e escrever trilhas inteiras com apenas um comando.
+
+Ram Disks:
+
+Este dispositivo de bloco tem acesso instantâneo, não utilizando comandos de seek ou pela potência rotacional, tornando possível o armazenamento de programas que são freqüentemente utilizados. A Ram disk é dividida em N blocos, dependendo da quantidade de memória alocada. Para fazer transferência de dados, o driver localiza o dado na Ram e diretamente o transfere ao local designado.
+
+CLOCKS 
+
+São excenciais para o funcionamento dos sistemas com compartilhamento de tempo. Mantém o relógio interno da máquina e evita que um processo monopolize o processador. Em geral o Clock implementado por software toma forma de drive de dispositivo, não sendo um dispositivo de bloco e nem de caracter.
+
+Clock por Hardware
+
+Dois tipos são mais utilizados: O mais simples é extraído da linha de alimentação de 110v ou 220v e causam uma interrupção a cada ciclo de tensão, que é de 50 ou 60Hz. O outro é construído a partir de um oscilador a cristal, um contador e um registrador de armazenamento. Um sinal de alta precisão é enviado a um contador que o faça contar até zero e então interromper o processador.
+Existem dados programáveis como:
+modo one-shot: decrementa o valor recebido do registro de armazenamento até chegar a zero. Quando gera uma interrupção e espera uma nova inicialização. 
+de onda quadrada:  não espera um estímulo externo, mas copia automaticamente o valor do registro de armazenamento para o contador e repete o processo de busca e tratamento do sinal até uma nova ordem. 
+Com um Clock programável a freqüência de interrupções pode ser controlada por software, além de manipular outra funções como contagem crescente, interrupções desabilitadas, etc.
+ 
+Clock por Software
+
+Este sistema deve gerar interrupções a intervalos determinados. Qualquer outra tarefa utilizando o clock é feita por software, pelo Driver do Clock. O Driver do Clock mantém o clock ativo, evita que o processos rodem mais tempo que o necessário, contabiliza o uso do processador, manipula sistemas como o Alarm e os Watch-dog-times para o sistema., controla monitorações e estatísticas dos valores acumulados. 
+
+Terminais
+
+Cada computador tem sempre, no mínimo um terminal usado para a comunicação com os usuários do sistema. 
+
+Hardware do terminal
+
+Os terminas RS-232 são dispositivos compostos de um teclado e de um vídeo que se comunicam usando uma interface serial, através de um conector com 25 pinos, as velocidades de transmissão mais utilizadas são de 1.200, 2400, 4800 e 9600 por segundo.
+Para fazer a conversão caractere-serial e serial-caractere são utilizados chips chamados URTS(Universal Asynchronous Receiver Transmitters).
+Para imprimir um caractere, o driver de terminal escreve na interface, onde ele é armazenado, e depois deslocado bit a bit em direção a linha de transmissão pela UART. Devido a demora na taxa de transmissão, o driver geralmente coloca um caractere na interface e se auto bloqueia, aguardando pela interrupção gerada pela interface quando o caractere tiver sido transmitido, e a UART estiver pronta para escrever um novo caractere. 
+Os terminais burros trabalham exatamente da mesma forma, a única diferença que ao invés de imprimir em papel eles exprimem em uma tela.
+Os terminais de vídeo inteligente são de fato pequenos computadores, com programas gravados em EPROM E ROM esses terminais podem entender certas seqüências de escape.
+
+Terminais mapeados na memória
+
+Esses terminais são parte integrante dos próprios computadores, eles fazem sua própria interface através de uma memória especial chamada RAM de vídeo, que pertence ao espaço de endereçamento do computador, e é endereçada pelo processador da mesma forma que o restante da memória. 
+Na Ram de vídeo tem um chip denominado controlador de vídeo este chip retira bytes da ram de vídeo e gera sinais de vídeo. O monitor gera um feixe de elétrons que varre a tela horizontalmente, desenhando os pontos que nela aparecem. os sinais do controlador de vídeo modulam o feixe de elétrons se um dado ponto deverá ou não ser iluminado. 
+Os terminais bit-map usam o mesmo principio, exceto que cada bit na ram de vídeo controla um único pixel na tela, permitindo uma aplicações gráficas mais sofisticadas.
+
+Softwares de entrada
+
+Orientada ao caractere - modo cru (raw) O driver simplesmente recebe o caractere e passa adiante sem qualquer modificação (tornando o teclado totalmente dependente da maquina).
+ Orientada a linha - modo cozido (cooked) O driver analisa a seqüência e digitada e passa adiante apenas a entrada correta Cada tecla pressionada gera uma interrupção e o driver do teclado a obter durante esta interrupção.
+Tanto no modo cru como no modo cozido os caracteres precisam ser guardados em buffer.
+A bufferização acontece de duas formas:
+1 - O driver possui um pool central de buffers, cada um deles armazenando caracteres. Associada a cada terminal, existe uma estrutura de dados que contém, entre outros itens, um ponteiro para a cadeia de buffers para as entradas coletadas do terminal. Conforme os caracteres vão sendo digitados, mais buffers são adquiridos e coletados na cadeia. Quando um caractere for passado para um programa de usuário, os buffers são removidos e postos de volta no pool.
+2 - direto na própria estrutura de dados do terminal, sem usar o pool buffers, sendo teclado e monitor separados e independentes um do outro, fica a critério do software colocar ou não na tela os caracteres digitados. Este processo é denominado eco.
+O driver do teclado deve do caso em que mais de 80 caracteres são digitados em um terminal de 80 linhas, dependendo da aplicação ele deve invadir outra linha, deve tratar da tabulação.
+O driver do teclado deve ajustar os caracteres no formato esperado pelo sistema, para poder atualizar convenientemente o conteúdo da tela.
+Os caracteres para troca de linha e retorno do carro são mais demorados para serem colocados na tela que um digito comum.
+No modo cozido os caracteres de entrada terão significados especiais exemplo o backspace que não adiciona nenhum novo caractere apenas retira um caractere.
+
+Softwares de saída
+
+Cada terminal RS - 232 tem um buffer associado na memória que podem ou não ser dedicados, quando os programas copiam para um terminal, a saída é primeiro copiada para os buffers depois que toda a saída estiver copiada nos buffers ela começa a ser impressa caractere por caractere.
+Com os terminais mapeados na memória os caracteres a serem impressos são retirados um a um do espaço do usuário e colocados na RAM de vídeo. Um driver para o terminal mapeado na memória precisa controlar por software a posição real da RAM de vídeo, de forma que os caracteres a serem impressos possam ser colocados na posição corrente possa ser atualizada.

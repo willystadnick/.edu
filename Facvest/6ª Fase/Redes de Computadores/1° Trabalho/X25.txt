@@ -1,0 +1,25 @@
+X.25
+
+O protocolo X.25 permite o acesso a redes públicas ou privadas operando com a comutação de pacotes sendo orientado a bit.
+
+O X.25 surgiu em 1976 e dominou claramente as comunicações WAN durante muitos anos. As redes X.25 usam a técnica de comutação de pacotes com circuitos virtuais, definem 3 níveis: “Physical Level”, “Link Access Level” e “Packet Level”.
+
+O nível físico (Physical Level) funciona em modo sincrono com um total de 7 ligações electricas e conectores de 15 pinos. As taxas de transmissão suportadas podem ser consideradas bastante baixas para os requesitos actuais, estando limitadas a um máximo de 64 Kbps.
+
+O nível de ligação lógica (Link Access Level) do X.25 proporciona controle de fluxo e erros entre nós através do protocolo de janela deslizante.
+
+O nível de pacote (Packet Level) implementa outros mecanismos de controlo de fluxo e erros, semelhantes aos da camada inferior, mas que podem agora funcionar em dois modos: entre nós intermédios ou entre nós finais.
+
+O X.25 é um conjunto de protocolos especificado pelo ITU-T que define uma disciplina de comunicação entre equipamentos DTE (hosts, terminais, roteadores) e uma rede de pacotes, que pode ser pública ou privada. Esta disciplina regulariza o estabelecimento da conexão, transmissão e recepção de dados, desconexão e controle do fluxo de dados entre os equipamentos que fazem uso dessa rede de pacotes.
+
+De forma diferente das tecnologias ponto-a-ponto, as redes de pacotes permitem que um equipamento a elas conectado possa transmitir e receber dados de vários equipamentos, utilizando para isso um único meio físico de comunicação.
+
+A transmissão de dados ocorre entre o terminal cliente denominado de Data Terminal Equipment (DTE) e um equipamento de rede denominado Data Circuit Terminating Equipment (DCE). A transmissão dos pacotes de dados são realizados através de um serviço orientado a conexão (a origem manda uma mensagem ao destino pedindo a conexão antes de enviar os pacotes), garantindo assim a entrega dos dados na ordem correta, sem perdas ou duplicações.
+
+O X.25 trabalha com três camadas do modelo OSI:
+
+* Camada Física: define as características mecânicas e elétricas da interface do Terminal e da Rede. A transmissão é feita de modo síncrono e full duplex.
+
+* Camada de Enlace: responsável por iniciar, verificar e encerrar a transmissão dos dados na ligação física entre o DTE e o DCE. Responsável pelo sincronismo, detecção e correção de erros durante a transmissão.
+
+* Camada de Rede: responsável pelo empacotamento dos dados. Define se a transmissão será realizada por Circuito Virtual (conexões temporárias, estabelecidas somente no momento da comunicação) ou por Circuito Virtual Permanente (conexões permanentes, não existe a necessidade de realizar uma chamada para estabelecer conexão).

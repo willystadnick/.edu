@@ -1,0 +1,46 @@
+PROBLEMAS COM MEIO FÍSICO DE TRANSMISSÃO
+
+LIMITAÇÃO EM BANDA
+
+Atenuação que o meio de transmissão exerce sobre o sinal, depende da freqüência do sinal.
+
+Sinais de Alta Freqüência sofrem mais atenuação ao passarem pelo meio físicos. Uma vez que a atenuação é dependente da freqüência, é conveniente representá-la no DF. Do sinal.
+
+MODELO SIMPLES PARA ATENUAÇÃO
+
+fig 1 - 
+
+fc = (freqüência de corte) do meio de transmissão, como sinais quaisquer são compostos por várias sinusóides de freqüências crescentes, o meio físico corta as sinusóides com freqüência maior do que a freqüência de corte fc, e deixa passar as sinusóides
+com freqüência menor do que fc.
+Assim, o meio físico altera o espectro do sinal portador da INFO.
+
+fig 2 - 
+
+fig 3 - 
+
+fig 4 - 
+
+Sempre que o sinal a ser transmitido possuir Largura de Banda maior que a Largura de banda do meio de transmissão, o sinal recebido será DISTORCIDO.
+Para avaliar o sinal recebido, deve-se sobrepor o espectro do sinal a ser transmitido com o modelo G(f) do meio de transmissão no DF.
+
+fig 5 - 
+
+
+Todas as componentes (sinusóides) do sinal transmitido que possuírem f > fc serão cortadas pelo meio de transmissão.
+
+Todas as componentes do Espectro de X(t) com freqüência f>fc serão cortadas.
+As freqüências. Menores não sofrerão alterações. O meio atuou como um filtro,deixando passar alguma componentes de X(t) e cortando outras.
+
+fig 6 - 
+
+Como o espectro do sinal enviado é diferente do sinal recebido, é provável que a informação que estava contida originalmente em X(t), também tenha sido alterada.
+A alteração do sinal transmitido pode ser grande ou pequena, depende do grau de modificação do espectro do sinal enviado.
+Se espectro recebido for aproximadamente igual ao espectro enviado é possível que a informação transportada se preserve.
+
+fig 7 -
+
+Descontinuidade Rede Barramento Eco desejável: radares, sonares, ultrasom, diagnóstico.  Eco indesejável: em transmissão de dados, o sinal refletido pode se misturar com sinal transmitido e distorcer o sinal recebido no receptor.
+Geralmente acontece no cabos coaxiais.
+Minimizando-se as descontinuidades que o sinal encontrará é possível minimizar os ecos. (casamento de impedâncias = terminadores em redes Ethernet).
+
+fig 8 - 

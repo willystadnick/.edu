@@ -1,0 +1,17 @@
+FDDI
+
+Fiber-Distributed Data Interface
+
+Destina-se à transmissão de dados por fibra óptica para redes locais (LAN). As redes desta tecnologia podem ter uma extensão máxima de 200 km e podem suportar milhares de utilizadores. Com velocidades de transmissão de 100Mbps, costumam ser utilizadas na ligação de 2 ou mais LANs. É utilizado também como backbone em MAN's.
+
+Em 1980, com a finalidade de desenvolver uma rede de alto desempenho, foi formado um grupo de trabalho chamado de ANSI X3T9.5. O FDDI foi criado em junho de 1983 com o objetivo de oferecer uma rede de alto desempenho de propósito geral, utilizando-se da estrutura do padrão de redes locais IEEE 802, da fibra ótica como meio de transmissão e da topologia em anel duplo.
+
+Seu funcionamento é baseado no Token Ring (IEEE 802.5), ou seja, utiliza o token passing como protocolo de acesso ao meio, mas, ao contrário do Token Ring, permite a existência de mais de um datagrama no meio físico.
+
+As redes FDDI têm uma topologia dupla em anel, que consiste em dois aneis fechados e onde os pacotes viajam em direcções opostas nos aneis. Ambos os aneis podem transportar dados ao mesmo tempo, mas o anel primário é utilizado no transporte de dados enquanto o secundário funciona como backup. Caso se utilizem os dois aneis para transporte de dados, a capacidade da rede para passa para 200 Mbps, e a distância máxima diminui para 100 km.
+
+O FDDI é um produto do American National Standards Committee, e foi desenvolvido de acordo com o modelo OSI (Open Systems Interconnect) de camadas funcionais. As redes FDDI também são conhecidas como ANSI X3T9.5
+
+Possui 4 tipos de nós distintos, o DAS (Dual-Attached Stations), o SAS (Single-Attached Stations), o SAC (Single-Attached Concentrators), e o DAC (Dual-Attached Concentrators). Os nós DAS e DAC ligam-se em ambos os aneis, enquanto os nós SAS e SAC ligam-se somente ao anel primário. Caso um cabo seja danificado ou uma ligação falhe, o nó DAS ou DAC nos extremos da quebra/falha fará o roteamento dos dados por forma a passarem pelo anel secundário no local da falha, mantendo assim a rede a funcionar. O principal problema da FDDI é o preço, uma vez que os adaptadores e cabos são relativamente caros quando comparados com tecnologias com a mesma velocidade.
+
+O FDDI-II é uma outra versão de FDDI mas com a capacidade acrescida de um serviço de comutação de circuitos de forma a permitir a transmissão de sinais de voz pela rede. Entretanto estão a ser conduzidos esforços para a interconexão de redes FDDI às redes SONET ( Syncronous Optical NETwork ) ainda em desenvolvimento.

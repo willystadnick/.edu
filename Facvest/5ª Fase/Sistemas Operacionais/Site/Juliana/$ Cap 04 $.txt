@@ -1,0 +1,146 @@
+SISTEMA DE ARQUIVOS
+
+Arquivo: é a informação armazenada em disco ou em qualquer outro dispositivo externo de armazenamento, em unidades. Os processos podem então ler informação de arquivos existentes e/ou criar outros, escrevendo informações em tais arquivos. A informação armazenada em arquivos deve ser persistente, isto é, não deve ser afetada pela criação ou término de um processo. Um arquivo só pode desaparecer quando seu proprietário assim desejar.
+
+Arquivos são gerenciados pelo sistema operacional. As formas de estrutura-los, identifica-los, acessa-los, utiliza-los, protege-los e implementa-los são tópicos muito importantes a serem considerados no projeto de um sistema operacional. De forma geral, a parte do sistema operacional responsável pelo tratamento dos arquivos é denominada sistema de arquivos.
+
+Identificação de Arquivos: arquivos são um mecanismo de abstração que fornece uma forma de armazenar e recuperar informações em disco. Isso deve ser feito de uma tal forma que mantenha o usuário isolado dos detalhes a respeito de como as informações são armazenadas, e de como os discos efetivamente trabalham. Quando um processo cria um arquivo, é preciso que tal arquivo receba um nome, normalmente dado pelo processo. Os sistemas operacionais aceitam como nomes de arquivos válidos conjuntos de um a oito caracteres.
+
+A maioria dos sistemas operacionais suporta nomes de arquivos compostos de duas partes separadas por um ponto, como prog.c. A parte seguinte ao ponto é denominada extensão de arquivo e quase sempre indica alguma característica do arquivo. Em exemplo de arquivo é file.bak, que significa arquivo backup.
+
+Em alguns casos, as extensões de arquivo são simples convenções, não havendo nenhuma obrigatoriedade em seu uso. Um arquivo chamado file.txt muito provavelmente deve ser um arquivo de texto, mas este nome é muito mais para  lembrar esta característica a seus usuários do que para fornecer alguma informação para o computador. Por outro lado, em geral, um compilador C exige que os arquivos a serem compilados tenham a extensão .c, podendo recusar-se a compilar aqueles que não tenham tal extensão.
+
+Estrutura do Arquivo: os arquivos podem ser estruturados de diversas formas. 
+
+a) Seqüência de bytes: o fato de o sistema operacional olhar o arquivo como nada mais que uma seqüência de bytes dá uma flexibilidade espantosa ao sistema de arquivos. Os programas de usuários podem colocar o que desejarem nos arquivos e identifica-los da forma que lhes for conveniente.
+b) Seqüência de Registro: neste modelo, o arquivo é uma seqüência de registros de tamanho fixo, cada um deles com estrutura interna característica.
+c) Árvore: nesta organização, um arquivo é composto de uma árvore de registros, não necessariamente do mesmo tamanho, cada um dos quais contendo um campo com chave numa posição fixa do registro. A árvore é ordenada pelo campo de chave, de modo a permitir uma busca rápida de determinada chave.
+
+Tipos de Arquivo: 
+
+· Os arquivos regulares são aqueles que contêm a informação do usuário.
+· Os diretórios são arquivos do sistema usados na manutenção do sistema de arquivos. 
+· Os arquivos especiais de caracteres estão diretamente ligados á entrada/saída e são usados para a modelagem de dispositivos seriais de entrada/saída, tais como terminais, impressoras e redes.
+· Os arquivos especiais blocados são usados para modelar discos.
+
+Acesso a Arquivos: os primeiros sistemas operacionais só permitiam que o acesso a seus arquivos fosse realizado de maneira seqüêncial. Estes arquivos, cujo butes ou registros podem ser lidos em qualquer ordem, são denominados arquivos de acesso randômico ou de acesso aleatório.
+
+Os arquivos de acesso randômico são fundamentais para a implementação de uma série de aplicações como, por exemplo, uma base de dados.
+
+Atributos dos Arquivos:  cada arquivo tem necessariamente um nome e um conjunto de dados. Além disso, o sistema operacional associa a cada arquivo algumas outras informações, como por exemplo a data e a hora em que o arquivo foi criado e seu tamanho. Chamamos estes itens extras de atributos do arquivo. A figura mostra alguns exemplos, sem ter a pretensão de esgotar as possibilidades.
+
+Campo		Significado
+Proteção	Quem tem acesso ao arquivo e de que maneira
+Password	Password necessária para acessar o arquivo
+Criador		Identificação de quem criou o arquivo
+Tamanho atual	Número de bytes do arquivo
+
+Operações sobre Arquivos: os arquivos existem para armazenar informação e permitir a sua posterior recuperação. Os vários sistemas operacionais existentes implementam diversas operações diferentes para armazenamento e recuperação de informações em arquivos. A seguir, as chamadas de sistema mais comuns relacionadas ao sistema de arquivos. Create, delete, open, close, read, write, append, seek, get attributes, set attributes, rename.
+
+Diretório de Arquivos: depois de entrar no sistema, o usuário pode criar, acessar ou apagar arquivos. O sistema armazenará informações sobre os arquivos no diretório de arquivos do usuário. Esse diretório é um outro arquivo que o sistema operacional usa. O sistema operacional armazena sua posição no registro do número da conta do usuário.
+
+Diretórios Hierárquicos: um diretório hierárquico é semelhante á organização hierárquica das empresas, órgãos governamentais e instituições.
+
+Um usuário que está no diretório-raiz em geral vê somente as entradas do próximo ou segundo nível. Mas um nível pode incluir outras coisas além de entradas de arquivos. Ele pode compreender também subdiretórios, que contêm o próximo nível de entradas. Um subdiretório, por sua vez, é um diretório que pode conter entradas de arquivos e de subdiretórios subordinados. Um usuário pode entrar em um subdiretório e examinar seu conteúdo. 
+
+Uma vantagem é que o usuário que está em um subdiretório vê somente o que está nele. Definindo e nomeando subdiretórios adequadamente, o usuário pode colocar várias posições na hierarquia.
+
+Nomes de Arquivos: quando o sistema de arquivos é organizado como uma árvore de diretórios, é necessária uma regra para a formação dos nomes de arquivos. Existem dois métodos muito conhecidos. No primeiro, a cada arquivo é dado um nome de caminho absoluto composto do caminho do diretório-raiz até o arquivo.
+
+O segundo método de formação do nome de arquivos é conhecido como nome de arquivo relativo, e é usado em conjunto com o conceito de diretório de trabalho ou diretório corrente. Um usuário pode designar um determinado diretório para ser o diretório corrente, caso em que os nomes de caminho que não começarem no diretório-raiz são considerados relativos ao diretório corrente.
+
+Diretórios no MS-DOS: no MS-DOS, diretórios podem conter outros diretórios, levando a uma estrutura hierárquica para o sistema de arquivos. É comum no MS-DOS que diferentes programas de aplicação comecem criando um diretório, no diretório-raiz, e colocando todos os seus arquivos nele, de maneira que aplicações diferentes não entrem em conflito.
+
+O MS-DOS tem comandos para criar, mudar e eliminar diretórios: MKDIR, CHDIR e RMDIR, respectivamente.  Ele é a raiz (base) da hierarquia. Como tal, o usuário acessa tudo por meio dele. Após a inicialização, um disco contém somente o diretório-raiz. Não há arquivos ou subdiretórios até que o usuário os crie.
+
+Arquivos Compartilhados: quando vários usuários estão trabalhando juntos em um projeto, eles comumente precisam compartilhar  arquivos. Em decorrência disto, muitas vezes é conveniente que um arquivo compartilhado apareça simultaneamente em diretórios diferentes que pertençam a diferentes usuários.
+
+Gerência do Espaço em Disco: os arquivos são normalmente armazenados em disco, de forma que a gerência do espaço em disco é de grande importância para os projetistas de sistemas de arquivos. São possíveis duas estratégias genéricas para armazenamento de um arquivo de n bytes: são alocados ao arquivo n bytes consecutivos do espaço disponível no disco, ou o arquivo é espalhado por um número de blocos não necessariamente contíguos.
+
+Tamanho do Bloco: tomada a decisão de armazenar arquivos em blocos de tamanho fixo, vem á tona a questão do tamanho dos blocos. Esta decisão é tão importante quanto a que fixa o tamanho da página em um sistema paginado. Levando em conta o fato de  os discos serem organizados, o setor, a trilha e o cilindro são candidatos óbvios para a unidade de alocação. Se o sistema  for paginado, o tamanho da página também entra na disputa como sério candidato á unidade de alocação. O uso de uma unidade de alocação muito pequena vai significar que cada arquivo será composto por muitos blocos. A leitura de cada bloco gera um atraso, devido ao tempo de seek e a latência rotacional do disco, de forma que a leitura de um arquivo constituído de muitos blocos pequenos será uma operação muito lenta.
+
+Backups: os arquivos em disquete podem ter seu bachup realizado simplesmente copiando todo o conteúdo deste disquete em outro virgem, recém-formatado. Os arquivos em discos rígidos de pouca capacidade podem ser copiados diretamente do disco para uma fita magnética que pode ser a fita-padrão de nove trilhas (que armazena em torno de 50M por rolo), ou uma fita streamer (com vários tamanhos disponíveis no mercado), ou mesmo em uma fita de vídeo de 8mm.
+
+Uma alternativa á cópia de todos os arquivos todos os dias é a chamada cópia incremental. A maneira mais simples de se implementar esta estratégia é fazer uma cópia completa periodicamente, digamos, semanalmente ou mensalmente, e fazer uma cópia diária apenas daqueles arquivos que foram modificados desde a última cópia completa. Uma estratégia melhor é copiar os arquivos modificados desde a última cópia, mesmo que não tenha sido a completa.
+
+O MS-DOS dá uma certa assistência á realização de backups. Associando a cada arquivo existe um atributo denominado bit de arquivo. Quando o sistema de arquivo sofrer um backup, todos estes bits recebem valor zero. A partir daí, sempre que um arquivo for alterado, o sistema operacional automaticamente seta  o bit correspondente a ele. Quando chegar o momento do próximo backup, o programa responsável por ele verifica todos os bits de todos os arquivos, e só faz backup daqueles cujo bit estiver setado. Ele também zera todos estes bits para permitir a monitoração de futuras modificações nestes arquivos.
+
+Consistência do Sistema de Arquivos: uma outra área onde a confiabilidade é um aspecto importante é em relação á consistência do sistema de arquivos. Muitos sistemas de arquivos lêem e modificam blocos. Se houver uma pane antes que todas as modificações tenham sido efetivadas, o sistema de arquivos pode ser levado a uma condição de inconsistência. Este problema é particularmente grave se alguns dos blocos que não tenham sido completamente modificados for um nó-i, um diretório, ou um bloco que contenha a lista dos blocos livres. 
+
+Para tratar do problema da inconsistência do sistema de arquivos, muitos computadores têm um programa utilitário que verifica a consistência de seu sistema de arquivos. Ele deve rodar quando a inicialização do sistema, em especial após a ocorrência de algum tipo de falha. Podem ser realizados dois tipos diferentes de verificação de consistência: em blocos e em arquivos.
+
+Segurança: sua função principal é armazenar, recuperar e gerenciar de modo geral grandes quantidades de informação. Isso é viável somente porque periféricos como os dispositivos de disco de alta velocidade podem manter as informações. A proteção destas informações contra acessos não autorizados é, portanto, uma das principais tarefas de qualquer sistema de arquivos.
+
+A segurança pode ser analisada de várias formas. Dois de seus mais importantes aspectos são a perda de dados e os intrusos. Algumas das razões mais comuns para a perda de dados são as seguintes:
+
+1- Atos de Deus: incêndio, inundações, terremotos, guerras, tumultos ou ratos roendo fitas ou disquetes.
+2- Erros de hardware ou de software: falhas no processamento, erros de comunicação, bugs em programas, discos ou fitas ilegíveis.
+3- Erros humanos: entrada de dados incorreta, montagem errada de fita ou de disco, perda de uma fita ou de um disco, rodar o programa errado.
+
+A maioria de tais problemas pode ser resolvida mantendo-se um backup confiável, de preferência guardado bem longe dos dados originais.
+
+Outro aspecto do problema de segurança é a privacidade: proteger os indivíduos do mau uso das informações disponíveis a seu respeito. Isto envolve questões morais e legais.
+
+Bom Senso: estranhamente, uma medida de segurança eficaz não tem nada que ver com software sofisticado ou algoritmos de codificação inteligentes. Na verdade, tem que ver com o uso do bom senso. Aqui estão algumas maneiras fáceis de evitar problemas comuns, mas desagradáveis.
+
+· Faça cópias de segurança (backups).
+· Tranque os dados valiosos.
+· Mude freqüentemente as senhas e use senhas criativas.
+· Mantenha a boca fechada.
+
+Os cenários acima descrevem problemas que você pode evitar com um pouco de bom senso e cuidado. Faça sempre cópias de dados importantes. Mesmo que você seja cuidadoso com os discos e fitas, não há garantia de que um dispositivo com defeito não venha a destruí-los. A maioria dos centros de processamento de dados copia regularmente os arquivos do usuário como precaução contra esse tipo de problema. Mantenha os dados críticos em locais  seguros. Por definição, crítico significa que há pessoas que não devem ter acesso a esses dados. Mantenha em segredo suas senhas e use senhas que não sejam fáceis de adivinhar. Não adianta você ter uma senha que você não protege ou que seja óbvia.
+
+Acessos Restritos: os apagamentos de disco impedem acesso não-autorizado a dados eliminados logicamente. Mas como impedir o acesso não-autorizado a outros dados?  Como impedir que alguém examine seus arquivos? Em alguns casos, você pode querer que outros vejam seus arquivos, mas não que os altere.
+
+Em sistemas de tempo compartilhado, a entrada de diretórios de um arquivo pode conter uma lista de contas que têm acesso a ele. Se alguém tenta acessar o arquivo por meio de uma conta não-autorizada, o sistema intervém e impede o acesso. O usuário que criou o arquivo pode especificar quais contas podem acessa-lo. As entradas de diretórios de arquivos também podem conter senhas atribuídas a um arquivo em sua criação. Qualquer usuário que tente acessar o arquivo tem de digitar a senha. O usuário que criou o arquivo define a senha. Assim como as contas, as senhas de arquivos devem ser mudadas periodicamente.
+
+Os arquivos podem ter modos de acesso atribuídos no instante em que são abertos. Um modo de acesso indica tipos de acesso permitido. Os modos típicos são:
+
+· Leitura. O arquivo só pode ter lido. Uma tentativa de alteração produzirá uma mensagem de erro ou fará o programa abortar.
+· Escrita. O arquivo somente pode ser gravado, e (geralmente) lido também.
+· Executável. O arquivo pode ser carregado na memória e executado. Porém, ele não pode ser lido ou alterado.
+
+Codificação: uma medida adicional de segurança é armazenar os dados em um formato alterado. Chamamos isso de codificação ou encriptação. Ou seja, quando um usuário autorizado armazena dados em um arquivo, um procedimento muda seu formato. Qualquer outro usuário que consiga acesso não-autorizado aos dados verá somente o formato alterado. 
+
+Naturalmente, se um usuário autorizado quiser ler os dados, outro procedimento terá de restaurar sua forma original. Chamamos isso de decodificação ou desencriptação.
+
+Vírus: um vírus é um segmento de código que se prende a  arquivos executáveis e faz coisas imprevisíveis. Eles geralmente penetram em um sistema e fazem alterações não-autorizadas em um programa ou em dados. Em muitos casos, o vírus é inserido em um aplicativo e destrói uma pequena parte do programa ou dos dados cada vez que é executado. Esses, naturalmente, são os mais perigosos.
+
+Um vírus que apaga um arquivo ou enche o sistema com arquivos estranhos é incômodo e ilegal, mas as cópias de segurança em geral minimizam seus efeitos. Esses vírus também são facilmente detectáveis por software especial.
+
+Autenticação do Usuário: muitos esquemas de proteção baseiam-se no fato de que os sistemas conhecem a identidade de cada um de seus usuários. O problema da identificação de usuário quando eles se logam é conhecido como autenticação do usuário. A maioria dos métodos de autenticação procura identificar alguma coisa que o usuário conheça, alguma coisa que ele tenha, ou algo que ele seja.
+
+Senhas (Passwords): a forma de identificação mais usada é a que requer que o usuário digite uma senha. A proteção através de senha é fácil de entender e de implementar.
+
+Outros computadores exigem que seus usuários troquem regularmente suas senhas, para tentar limitar os estragos causados pela descoberta da senha. A forma mais radical de implementação desta idéia é fornecer ao usuário uma lista de senhas, que ele deve usar a cada seção, uma a uma e em ordem. Caso um espião venha a descobrir a senha usada, não vai poder fazer nada com ela, pois da próxima vez ela será outra. Menos óbvio é o fato de a senha nunca dever ser armazenada no computador em forma não-criptografada, e que nem o pessoal da gerência do centro de computação deve dispor de uma lista de senhas não-criptografadas. 
+
+Uma variação da idéia da autenticação por senha é a de forçar cada usuário a responder uma  longa lista de questões e armazenar as respostas em forma criptografada.
+
+Outra variação é a resposta-desafio. Quando este método é usado, o usuário apodera-se de um determinado algoritmo ao se cadastrar no sistema, por exemplo, x2
+
+. Por ocasião do login, o sistema coloca na tela um argumento, digamos 7. Neste caso, se o usuário digitar 49 terá acesso ao sistema, caso contrário não. Pode haver um algoritmo que seja válido pela manhã, outro á tarde e outro á noite. Eles podem variar também de acordo com o dia da semana, e por aí vai.
+
+Domínios de Proteção: um sistema de computador contém muitos objetos aos quais é necessário dar proteção. Tais objetos podem ser hardware, tais como processadores, segmentos de memória, terminais, unidades de disco, impressoras, ou podem ser software, tais como processos, arquivos, bases de dados ou semáforos. Um domínio é um conjunto de pares (objetos, direitos). Cada par especifica um objeto, e um subconjunto das operações que podem ser realizadas sobre ele. Um direito neste contexto significa permissão para efetuar uma de tais operações.
+
+A cada instante, todo processo roda em determinado domínio de proteção. Em outras palavras, existe um conjunto de objetos que ele pode acessar, e sobre cada um desses objetos, ele tem um conjunto de direitos. Os processos podem mudar de domínio no decorrer de sua execução. As regras para trocas de domínio dependem fundamentalmente do sistema operacional.
+
+Lista de Controle de Acessos: consiste em associar a cada objeto uma lista (ordenada) contendo todos os domínios que podem acessar o objeto, juntamente com a forma de acesso permitida. Esta lista recebe o nome de lista de controle de acesso.
+
+O proprietário de um objeto pode mudar a qualquer momento sua lista de controle de acesso, tornando fácil proibir acessos antes permitidos. O único problema é que as mudanças de uma lista não vão afetar os usuários que estavam usando o objeto (por exemplo, aqueles que estavam com arquivos abertos).
+
+Capacidades: quando este método é usado, associa-se a cada processo uma lista de objetos que podem ser acessados, junto com a indicação das operações permitidas em cada um deles. Em outras palavras, seu domínio, ao qual dá-se o nome de lista de capacidade, sendo seus itens individuais chamados de capacidades. Cada capacidade possui um campo de Tipo que informa qual o tipo de objeto ela é, em campo de Direitos, que é um mapa de bits indicando as operações permitidas, e um campo de Objeto, que é um ponteiro para o próprio objeto. 
+
+Torna-se óbvio que as listas de capacidades, ou listas-C, como elas são também conhecidas, precisam ser protegidas contra adulterações por parte dos usuários.
+
+Além dos direitos específicos, dependente dos objetos, tais como leitura e execução, as capacidades usualmente têm direitos genéricos aplicados a todos os objetos. Exemplos de direitos genéricos são dados abaixo:
+
+1- Copiar uma capacidade: criar uma nova capacidade para o mesmo objeto.
+2- Copiar um objeto: criar um objeto duplicado, com a mesma capacidade.
+3- Remover uma capacidade: apagar uma entrada da lista-C (o objeto não é afetado por esta operação).
+4- Destruir um objeto: remover de forma permanente um objeto e uma capacidade.  
+
+Modelo de Proteção: as matrizes de proteção são constantemente modificadas quando novos objetos são criados, velhos são destruídos, e quando os proprietários resolvem aumentar ou restringir o conjunto de usuários com acesso a seus objetos. Deve-se prestar muita atenção para se modelar sistemas de proteção nos quais a matriz de proteção muda constantemente.
+
+Harrison et al.(1976) identificaram seis operações primitivas sobre a matriz de proteção que podem ser usadas como base na modelagem de qualquer sistema de proteção. Tais operações são: criar objeto, apagar objeto, criar domínio, apagar domínio, inserir direito, e remover direito. 
+
+Estas seis primitivas podem ser combinadas em comandos de proteção. São estes comandos de proteção que os programas de usuário podem executar para mudarem a matriz.

@@ -1,0 +1,142 @@
+INTODUÇÃO AOS SISTEMAS DISTRIBUIDOS
+
+O crescimento incremental é um ponto muito importante a ser considerado. Muitas vezes uma empresa compra um mainframe pensando em realizar nele todo o seu trabalho computacional. Se a empresa prospera e a carga de trabalho na máquina aumenta, vai chegar um momento em que o mainframe não será mais adequado, pois não há mais possibilidade de expandi-lo. As únicas soluções para isto são comprar uma máquina maior (se existir), ou comprar um segundo mainframe. Ambas as soluções podem vir a prejudicar bastante o operacional da empresa. Em contraste, com um sistema distribuído que ele seja expandido gradualmente, conforme a necessidade.
+
+9.1.1 VANTAGENS DOS SISTEMAS DISTRIBUIDOS SOBRE OS CENTRALIZADOS
+
+
+
+>>> 01imagemcapitulo0910.jpg <<<
+
+
+
+9.1.2 VANTAGENS DOS SISTEMAS DISTRIBUIDOS SOBRE OS PCs INDEPENDENTES 
+Um sistema distribuído é potencialmente mais flexível do que um conjunto de computadores pessoais entregues a cada um dos usuários individualmente. Paradoxalmente, um bom modelo de Sistema distribuído é, exatamente, entregar a cada usuário um computador pessoal, só que conectado a uma rede local. Outra possibilidade de se implementat um sistema distribuído é ter tanto computadores dedicado s a usuários específicos, quanto computadores compartilhados por todos os usuários, sendo que normalmente os compartilhados são de porte maior que os particulares.
+
+VANTAGENS DOS SISTEMAS DISTRIBUIDOS SOBRE OS PCs QUE OPERAM ISOLADAMENTE 
+
+
+
+>>> 02imagemcapitulo0910.jpg <<<
+
+
+
+9.1.3 DESVANTAGENS DOS SISTEMAS DISTRIBUIDOS
+
+
+
+>>> 03imagemcapitulo0910.jpg  <<<
+
+
+
+Obs: È muito provável que dentro de poucos anos a maioria das empresas venha a ligar seus computadores, formando imensos sistemas distribuídos, para fornecer a seus usuários serviços melhores, mais baratos , e mais convenientes. 
+
+9.2 CONCEITO DE HARDWARE
+
+O termo Hardware refere-se à máquina física e aos seus periféricos – componentes eletrônicos – bem como as peças metálicas e plásticas.
+Constituem o Hardware de um microcomputador todas as partes eletrônicas e mecânicas, ou seja, gabinete, monitor, unidade de discos, placas, etc.
+
+9.2.1 SISTEMAS MULTIPROCESSADORES LIGADOS POR BARRAMENTO
+
+Os sistemas multiprocessadores ligados por barramento, são compostos por determinado número de processadores conectados a um barramento comum, todos eles acessando uma memória também comum. 
+
+Uma configuração muito simples para tal sistema emprega um backplane ou uma placa- mãe de alta velocidade, ao quais seriam ligadas as placas com os processadores e com as memórias. Um barramento típico tem 32 linhas de endereço, 32 de dados, e provavelmente de 20 a 30 linhas de controle. Todas estas linhas podem estar fisicamente ativas ao mesmo tempo. Para o conteúdo de uma palavra da memória.
+
+
+
+>>> 04imagemcapitulo0910.jpg <<<
+
+
+
+9.2.2 SISTEMAS MULTIPROCESSADORES LIGADOS POR COMUTAÇÃO
+
+Os multiprocessadores baseados em barramento, incluindo os baseados nas snoopy cachê, são limitados pela quantidade máxima de processadores suportada pelo sistema (em torno de 64) . Para superare isso é necessário o uso de redes de comutação, tal como a crosbar, a omega, ou algo similir. As redes crossbar muito grandes são caríssimas, enquanto que as redes omega com muitos processadores e memórias, além de caras são excessivamente lentas. As chamadas máquinas NUMA precisam de algorítimos muito complexos para resolver o probema local adequado para armazenamento do software. Disso tudo a conclusão é uma só: A construção de um sistema multiprocessador com memória compartilhada, fortemente acoplado, e com um tamanho relativamente grande, é uma tarefa difícil e muito cara.
+
+9.2.3 SISTEMAS MULTICOMPUTADORES LIGADOS POR BARRAMENTO
+
+A construção de um sistema multicomputador (sem memória compartilhada) não apresenta a mesma gama de dificuldades, pois neste caso cada processador tem uma conexão direta com sua própria mem´ria local. O único problema resume-se a como os processadores vão-se comunicar uns com os outros. Fica claro que também neste caso é necessário algum esquema de interconexão, mas como tal esquema só envolve a comunicação processador-a- processador, o volume do tráfego gerado será várias ordens de magnitude menor que quando a ede também é usada para suportar o tráfego entre processadores e memórias.
+
+9.2.4 SISTEMAS MULTICOMPUTADORES LIGADOS POR COMUTAÇÃO
+
+Contudo, o caminho mias longo possível de ser percorrido também cresce em escala logarítmica com o tamanho da estrutura, em contraste com o crescimento experimentado pela topologia em grade. Que varia com o quadrado de número de processadores. Há vários anos já existem disponíveis comercialmente sistemas com 1024 processadores baseados no hipercubo. Atualmente, já se tem notícia de que sistema com16384 processadores, ligados segundo a topologia hipercubo, estará em breve no mercado.
+
+9.3 CONCEITO DE SOFTWARE
+
+SOFTWARE BÁSICO
+Desta classe fazem parte às linguagens de programação e os sistemas operacionais. As linguagens de programação são usadas como ferramentas na construção de outros softwares. Os sistemas operacionais controlam todas as atividades do microcomputador.
+SOFTWARE APLICATIVO
+Podem ser subdivididos em : Aplicativos genéricos (processadores de texto, planilhas eletrônicas, etc.) que visam atender a uma larga faixa de usuários com características e necessidades diferentes, e aplicativos específicos, que são desenvolvidos para resolver apenas um determinado problema, de um determinado usuário(ex; Um sistema de controle de estoque para uma loja).
+
+SISTEMAS OPERACIONAIS DE REDE E O NFS
+
+Esta forma de comunicação é extremamente primitiva, e levou os projetistas destes sistemas a buscar forma mais convenientes de comunicação e de compartilhamento de informação. Uma das abordagens consiste em fornecer um sistema de arquivo compartilhado globalmente, acessível a partir de todas as estações de trabalho, sistema este suportado por uma ou mais máquinas dedicadas denominadas servidores de arquivo. Os servidores de arquivo devem aceitar requisições de leitura ou escrita de arquivos, partindo de programas de usuário que estejamrodando em qualquer uma das demais máquinas (não servidores), conhecidas como clientes.
+
+A ARQUITETURA DO NFS
+
+A característica básica da arquitetura do NFS é o fato de os servidores exportarem seus diretórios e de os clientes montarem remotamente estes diretórios. Se dois ou mais clientes montarem o mesmo diretório ao mesmo tempo. Eles poderão comunicar-se através do compartilhamento de arquivos de seus diretórios comuns. Um programa em um cliente pode criar um arquivo, e outro programa em um cliente diferente pode ler este arquivo. Feitas as montagens devidas, não é preciso fazer mais nada para permitir o compartilhamento dos arquivos. Os arquivos compartilhados são justamente aqueles pertencentes a hierarquia de diretóris de várias máquinas, podendo ser lidos e escritos da maneira usual. Esta simplicidade é, o maior atrativo do NFS.
+
+OS PROTOCOLOS DO NFS
+
+O NFS usa o mecanismo de proteção UNIX, com os bits rwx para o proprietário para o grupo, e para os demais usuários. Originalmente, cada mensagem de solicitação ao servidor continha apenas as identificações do usuário e do grupo do processo que chamou, informações necessárias para que o servidor possa validar o acesso. Na verdade, o sistema acredita que o cliente nunca venha blefar. Ocorre que vários anos de experiência demonstraram que este comportamento é no mínimo ingênuo. Atualmente, pode ser usado um sistema público de criptografia para estabelecer uma forma segura de validar o cliente e o servidor a cada solicitação e a cada resposta. 
+
+Quando esta opção estiver habilitada, um cliente mal- intencionado não vai poder encarrar um outro cliente, por desconhecer a chave secreta do outro usuário. Deve-se observar que a criptografia só é usada na identificação fdas partes envolvidas. Os dados nunca são criptografados .
+
+IMPLEMENTAÇÃO DO NFS
+
+Estrutura em camadas do NFS
+
+
+
+>>> 05imagemcapitulo0910.jpg  <<<
+
+
+
+Exemplo, podemos observar que apesar do NFS prover de um sistema de arquivos compartilhado, por causa do sistema resultante ser uma espécie de remendo do UNIX, as semãnticas de acesso a arquivos não são muito bem definidas, e se pusermos um conjunto de programas cooperantes para rodar mais de uma vez, poderemos obter resultados diferentes em cada uma. Dependendo de condições de corrida. Além do mais, o único assunto do qual o NFS trata é muito popular e amplamente utilizado. 
+
+9.3.2 Sistemas Verdadeiramente Distribuídos
+
+Um Sistema distribuído tem que rodar em um conjunto de máquinas sem memória compartilhada, máquinas estas que mesmo assim aparecem como um único computador para seus usuários.
+Em um sistema distribuído deve haver um único sistema de comunicação entre processos único e global, que qualquer processo fale com qualquer outro. Isto não permite que haja mecanismos diferentes em maquinas diferentes, nem um mecanismo para comunicação global e outro para a comunicação remota.
+Como uma conseqüência lógica de se ter a mesma interface para chamadas de sistemas em todos os lugares, e normal que Kernels idênticos rodem em todos os processos do sistema. Fazendo isto, fica fácil coordenar as atividades que precisam ser globais.
+
+9.3.3 Sistemas Multiprocessadores de Tempo Compartilhado
+
+O fundamento desta classe de sistema tem como característica é a existência de uma única fila de processos prontos: uma lista de todos os processos do sistemas que não estão bloqueados, e que só estão rodando por falta de processador disponível. Tal fila nada mais é que uma estrutura de dados mantida na memória compartilhada.
+Na verdade, em alguns multiprocessadores,um dos processadores fica dedicado a rodar o sistema operacional, enquanto os demais processadores rodam os demais programas do usuário, usando a mesma memória para todos os processadores ficando claro que os métodos usados pelos multiprocessadores não são aplicáveis a maquinas que não disponham de de memória compartilhada.
+
+
+9.4. ASPECTOS DE PROJETOS
+
+9.4.1 Transparência
+
+Os projetistas do sistema fazem aparentar que um conjunto de maquinas seja visto como se fossem único sistema de tempo compartilhado, construído nos moldes de um processador único. Um sistema que alcança este objetivo é considerado transparente.
+
+Isto é ter um complexo sistema de processadores, memórias, funcionando a em nível simples para um usuário comum que aparenta a ser um único processador, sem que ele tenha que se preocupar com como os dados estão sendo processados.Por exemplo a Transparência à localização é definida quando os usuários não precisam saber onde recursos se encontram ficando esta tarefa 100% para o sistema operacional
+- Transparência à migração => Os recursos podem trocar de lugar à vontade sem ter que mudar de nome
+- Transparência à replicação => Os usuários não devem saber quantas cópias existem
+- Transparência à concorrência => Vários usuários podem compartilhar automaticamente os recursos
+- Transparência ao paralelismo => Podem ocorrer atividades paralelas sem que os usuários venham a saber
+Transparência é quando os modos de processamento ficam ocultos para o usuário sem que ele tenha que se estressar com isto pois ele nem ira saber.
+
+9.4.2 Flexibilidade
+
+E se suma importância que um projeto seja flexível, as decisões de projeto que hoje parecem bem razoáveis poderão revelar-se erradas mais tarde. A melhor maneira de se evitar problemas é mantendo várias opções em aberto. Existem duas arquiteturas de sistemas distribuídos. O Kernel monolítico diz que cada maquina deve rodar um Kernel tradicional que fornece a maioria dos serviços a ele próprio. 
+
+O Microkernel acha que o Kernel deve fornecer tão pouco quanto possível, como o grosso dos serviços do sistema operacional sendo prestado a partir de servidores no nível do usuário. 
+
+
+9.4.3 Confiabilidade
+
+Um dos problemas em sistemas distribuídos dependentes e riscos um processador falhar e então por conseqüência todos falharam por causa e um. (a confiabilidade do sistema seria o resultado de uma operação AND). Mas um dos objetivos originais que se buscava com a construção de sistemas distribuídos era faze-los mais que os sistemas centralizados. A idéia básica por trás disso e que se por algum motivo uma falhar as outras continuaram a rodar o SO (a confiabilidade global do sistema seria o resultado de uma operação OR).Para isto ser possível apenas um processador suportar o todo a sistema operacional que na pratica isto não geralmente não acontece. Um sistema altamente confiável precisa ter uma disponibilidade altíssima. Os dados confiados a guarda do sistema não podem, perder-se ou sofrer qualquer tipo de alteração.
+
+9.4.4 Performance 
+
+A Performance de um sistema distribuído é importante tam quanto a transparência, flexibilidade e confiabilidade, pois ele não vai ter nenhuma serventia se lento. uma delas é o tempo de resposta na comunicação. O envio de uma mensagem e a obtenção de resposta corresponde sobre uma rede local leva em torno de 1 milisegundo. 
+
+A maior parte deste tempo é gasto no tratamento de protocolo de ambos os lados, em vez da transmissão de dados propriamente dito. Então para otimizar a performance, devemos diminuir o numero de mensagens enviadas. A dificuldade com esta estratégia e que a melhor forma de se ganhar performance e ter varias atividades rodando em paralelo , mas para isto é necessário muitas mensagens transmitidas.
+
+9.4.5 Escalabilidade
+
+No futuro haverá a possibilidade e viabilidade de redes em altas escalas a maioria dos sistemas atuais projetada para trabalhar com poucas centenas de processadores. Considere o processo de instalar um terminal telefônico on-line em cada residência e em cada ponto comercial estes terminais, vão permitir o acesso on-line a uma base de dados contendo todos os telefones, eliminando as caríssimas listas telefônicas, consultas às telefonistas. 
+E isto também se pode ser aplicado a outros setores banco, correios,reserva de aviões, hotéis, teatros, restaurantes. A questão é: os métodos atualmente empregados para o desenvolvimento de sistemas distribuídos são suportar tal crescimento. Como seria possível centralizar o controle sobre celulares e localiza atual de 50 milhões de pessoas todas elas acessando o mesmo computador ?
+

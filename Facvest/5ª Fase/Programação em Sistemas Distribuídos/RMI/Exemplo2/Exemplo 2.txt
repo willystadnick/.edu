@@ -1,0 +1,4 @@
+Este exemplo, utiliza RMI para estabelecer uma conexão de um cliente com um servidor Remoto.
+O cliente utiliza um único método: - public void soma(float n1, float n2)
+
+O cliente, ao se comunicar com o servidor, passa os valores das variáveis n1 e n2 utilizadas no método soma. O servidor retornará o valor da soma.

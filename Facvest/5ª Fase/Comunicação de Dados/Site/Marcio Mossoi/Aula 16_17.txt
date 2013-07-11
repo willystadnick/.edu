@@ -1,0 +1,146 @@
+PROBLEMAS COM MEIO FISICO DE TRANSMISSAO - CONT
+
+CAPACIDADE DE TRANSMISSAO
+
+Problemas com o meio fisico diminuem a capacidade de transmissao do mesmo.
+Atenuacao resolve-se com amplificadores.
+
+Ecos
+Resolve-se com casamento de impedancias (terminadores).
+
+Limitacao em Banda e Ruidos
+
+Solucao mais complicada!
+Dado um meio fisico de transmissao (conhecidos G(f) e o nivel de ruido), como avaliar a sua capacidade de transmissao?
+
+Teorema de Nyquist
+
+Considera BW.
+
+Teorema de Shannon
+
+Considera BW e nivel de ruido.
+
+Teorema de Nyquist
+
+MAXIMA TAXA DE DADOS: MTD (bits/seg. ou bps)
+
+fig 1 - 
+
+BW = BAND WIDTH = Largura de Banda (Hz)
+V = Numero de Niveis do sinal digital.
+
+Exemplo:
+
+Transmissao de sinal digital NRZ pela linha telefonica.
+
+BW j 3000KHz
+Sinal digital NRZ: V=2 (bit 0 e bit1)
+
+MTD = 2.3000 .log22 = 6000 bits /seg.
+MTD = 6 Kbps
+
+Como e possivel atingir taxas de 33,6 Kbps e 56 Kbps na linha telefonica (modens domesticos)?
+
+fig 2 - 
+
+Analise de situacao do sinal X(t) e Y(t)
+Aumento da Taxa de dados: diminuicao de tp
+
+fig 3 - 
+
+Conclusao:
+
+A diminuicao do tempo de cada bit provoca a expansao do espectro.
+Como o meio fisico e Limitado em Banda, o espectro sera alterado = sinal recebido com DISTORCOES.
+Outra possibilidade: Aumentar V -> usar sinais digitais multiniveis = CODIFICACAO MULTIBIT
+
+Codificacao Multibit
+
+Manter tp, aumentar V.
+Aumentar V significa aumentar a quantidade de bits enviados por cada pulso.
+1 pulso digital = n bits com n>1
+
+Exemplo: sinal digital Quaternario (V=4)
+
+fig 4 - 
+
+1 pulso digital = 2 bits
+V=4
+MTD=2.3000 . log24=12Kbps
+
+Conclusao:
+
+O teorema de Nyquist atesta que pode-se aumentar a taxa de dados em meios fisicos com Banda Limitada apenas aumentando o numero de bits por pulso (log2V), o que implica no uso de sinais digitais mais complexos, com mais niveis (V maior).
+
+Teorema de Shannon
+
+MAXIMA TAXA DE DADOS: MTD (bits/seg. ou bps )
+
+fig 6 - 
+
+BW = BAND WIDTH= Largura de Banda (Hz)
+SNR = Signal Noise Ratio= Relacao Sinal/Ruido
+
+fig 7 - 
+
+Psinal=Potencia do Sinal
+Pruido=Potencia do Ruido
+
+fig 8 - 
+
+(em dB)
+
+No teorema de Shannon nao aparece V (numero de niveis do sinal digital), ou seja: segundo Shannon em canais de comunicacao sujeitos a ruidos, nao adianta aumentar a quantidade de bits/pulso do sinal (codificacao multibit).
+O aumento indefinido de V nao resultara em um aumento efetivo da MTD.
+
+Exemplo:
+
+Transmissao de sinal digital NRZ pela linha telefonica. Qual e a MTD segundo Shannon?
+
+Canal Telefonico
+
+Ruidoso: SNRdB j 30dB
+Limitado em Banda: BW j 3KHz
+Sinal digital NRZ: V=2 (bit 0 e bit1)
+
+SNRdB=30dB = 10 .log10SNR Å® SNR=1000
+
+MTD = BW.log2(1+SNR) = 3000 .log2(1+1000) j= 30000 bits /seg.
+MTD = 30 Kbps
+
+Exemplo:
+
+fig 10 - 
+
+Ambos os sinais possuem a mesma taxa de transmissao: BR = 1/tp= 1/0,1= 10 bauds
+
+Taxa de Dados
+Representa a quantidade de informacao digital enviada a cada segundo, sendo medida em bps (bits/seg.).
+Ela possui relacao direta com a taxa de transmissao (BR) e com o tipo de sinal usado:
+
+fig 9 - 
+
+Exemplo:
+
+fig 10 - repete figura
+
+Ambos os sinais possuem a mesma taxa de transmissao:
+BR = 1/tp= 1/0,1= 10 bauds
+TDA=BR.b= BR.log2V=10 . log22=10bps
+TDB=BR.b= BR.log2V=10 . log24=20bps
+
+Taxa de Transmissao X Taxa de Dados
+
+Taxa de Transmissao:
+
+Representa a taxa de variacao do sinal, o numero de vezes por segundo que o sinal altera seu valor.
+Pode ser vista como a quantidade de pulsos (digitais) enviados por segundo (independente a amplitude dos mesmos).
+E medida em bauds, em homenagem a Emile Baudot 
+
+fig 11 - 
+
+BR do ingles Baud Rate
+tp = tempo de duracao do pulso
+
+Um modem operando a 1000 bauds significa que esta enviando 1000 pulsos/sinalizacoes a cada segundo.

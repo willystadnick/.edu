@@ -1,0 +1,132 @@
+Tutorial para Execução Local:
+
+ Abrir uma janela de comando e ir até o local onde foi salvo a aplicação
+	cd \java\sistbanc
+ Compilar as aplicações java 
+	javac Banco.java
+	javac BancoImpl.java
+	javac Terminal.java
+	javac Cliente.java
+ Gerar os arquivos stub e skeleton para possibilitar o RMI
+	rmic BancoImpl
+ Iniciar o serviço RMIRegistry
+	start rmiregistry
+ Executar a classe servidor
+	java BancoImpl
+ Abrir outra janela de comando e ir até o local onde foi salvo a aplicação
+	cd \java\sistbanc
+ Executar a classe cliente
+	java Terminal
+ Navegar pelos menus do programa
+ Finalizar a classe cliente (2ª janela de comando) atraves de comando interno
+ Finalizar a classe servidor (1ª janela de comando)
+	Ctrl + C
+ Finalizar o serviço RMIRegistry
+	Ctrl + C
+ Fechar as janelas de comando abertas
+	exit
+
+----------------------------------------------------------------------------
+
+Tutorial para Execução Remota: (RMIRegistry & Servidor) <==> (Cliente)
+
+1° PC
+ Abrir uma janela de comando e ir até o local onde foi salvo a aplicação
+	cd \java\sistbanc
+ Compilar as aplicações java 
+	javac Banco.java
+	javac BancoImpl.java
+	javac Terminal.java
+	javac Cliente.java
+ Gerar os arquivos stub e skeleton para possibilitar o RMI
+	rmic BancoImpl
+ Iniciar o serviço RMIRegistry
+	start rmiregistry
+ Executar a classe servidor
+	java BancoImpl
+
+2° PC
+ Abrir uma janela de comando e ir até o local onde foi salvo a aplicação
+	cd \java\sistbanc
+ Compilar as aplicações java 
+	javac Banco.java
+	javac BancoImpl.java
+	javac Terminal.java
+	javac Cliente.java
+ Gerar os arquivos stub e skeleton para possibilitar o RMI
+	rmic BancoImpl
+ Executar a classe cliente indicando o IP da maquina onde está sendo
+executado o servidor
+	java Terminal 192.168.0.1
+ Navegar pelos menus do programa
+ Finalizar a classe cliente atraves de comando interno
+ Fechar as janelas de comando abertas
+	exit
+
+1° PC
+ Finalizar a classe servidor
+	Ctrl + C
+ Finalizar o serviço RMIRegistry
+	Ctrl + C
+ Fechar a janela de comando aberta
+	exit
+
+----------------------------------------------------------------------------
+
+Tutorial para Execução Remota: (RMIRegistry & Servidor) <==> (Cliente)
+
+1° PC
+ Abrir uma janela de comando e ir até o local onde foi salvo a aplicação
+	cd \java\sistbanc
+ Compilar as aplicações java 
+	javac Banco.java
+	javac BancoImpl.java
+	javac Terminal.java
+	javac Cliente.java
+ Gerar os arquivos stub e skeleton para possibilitar o RMI
+	rmic BancoImpl
+ Iniciar o serviço RMIRegistry
+	start rmiregistry
+
+2° PC
+ Abrir uma janela de comando e ir até o local onde foi salvo a aplicação
+	cd \java\sistbanc
+ Compilar as aplicações java 
+	javac Banco.java
+	javac BancoImpl.java
+	javac Terminal.java
+	javac Cliente.java
+ Gerar os arquivos stub e skeleton para possibilitar o RMI
+	rmic BancoImpl
+ Executar a classe servidor
+	java BancoImpl
+
+3° PC
+ Abrir uma janela de comando e ir até o local onde foi salvo a aplicação
+	cd \java\sistbanc
+ Compilar as aplicações java 
+	javac Banco.java
+	javac BancoImpl.java
+	javac Terminal.java
+	javac Cliente.java
+ Gerar os arquivos stub e skeleton para possibilitar o RMI
+	rmic BancoImpl
+ Executar a classe cliente indicando o IP da maquina onde está sendo
+executado o serviço RMIRegistry
+	java Terminal 192.168.0.1
+ Navegar pelos menus do programa
+ Finalizar a classe cliente atraves de comando interno
+ Fechar as janelas de comando abertas
+	exit
+
+2° PC
+ Finalizar a classe servidor
+	Ctrl + C
+ Fechar a janela de comando aberta
+	exit
+
+1° PC
+ Finalizar o serviço RMIRegistry
+	Ctrl + C
+ Fechar a janela de comando aberta
+	exit

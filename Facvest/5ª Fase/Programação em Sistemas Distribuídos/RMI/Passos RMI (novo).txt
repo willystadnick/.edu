@@ -1,0 +1,23 @@
+- Editar a interface que lista os métodos que podem ser utilizados pelos clientes
+- Salvá-la (RmiServidorImpl.java)
+- Editar a classe Servidor que implementa os métodos listados na interface
+- Salvá-la (RmiServidor.java)
+- Editar a classe que implementa o cliente
+- Salvá-la (RmiCliente.java)
+
+- Abrir 4 janelas do DOS para compilar e executar a aplicação cliente/Servidor RMI
+
+- Janela 1 - Compilar a interface (no prompt do comando digitar: javac RmiServidorImpl.java)
+- janela 2 - Compilar o servidor (no prompt do comando digitar: javac RmiServidor.java)
+- janela 3 - Compilar o cliente (no prompt do comando digitar: javac RmiCliente.java)
+
+- janela 1 - digitar: rmic RmiServidorImpl (será gerado o stub e skeleton)
+- Janela 4 - digitar: start rmiregistry
+
+- janela 2 - executar a Interface que lista os métodos (no prompt do comando digitar: java RmiServidorImpl)
+- janela 3 - executar o cliente (no prompt do comando digitar: java RmiCliente)
+
+
+
+
+

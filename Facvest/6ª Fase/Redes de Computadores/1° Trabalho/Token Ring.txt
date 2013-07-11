@@ -1,0 +1,7 @@
+Token Ring
+
+Uma rede token ring é uma LAN na qual todos os computadores estão ligadas em anel ou em estrela. Nesta rede é usado um bit (token) por forma a evitar colisões de dados entre computadores que pretendem enviar mensagens ao mesmo tempo. O protocolo token ring é o segundo mais utilizado em LANs depois do protocol o Ethernet. O protocolo token ring da IBM deu origem a uma versão normalizada, vindo a ser especificada como IEEE 802.5. O protocolo IEEE 802.5 permite a transmissão de dados a velocidades de 4 ou 16Mbps.
+
+ANSI/IEEE 802.5 (ISO 8802-5) é o padrão para redes em anel utilizando passagem de permissão como método de acesso. O padrão provê a especificação necessária para redes utilizando como meio de transmissão o par trançado.
+
+Neste tipo de redes existem pacotes vazios que circulam permanentemente na rede. Assim que um computador pretende enviar uma mensagem insere um token num pacote vazio, o que pode consistir somente na mudança de um 0 para 1 de um bit algures no pacote, a seguir é inserida a mensagem nesse pacote e o destinatário. O pacote é examinado por cada computador, até que chega a vez do destinatário da mensagem que copia então a mensagem do pacote e muda o token para 0. Quando o pacote chega de novo ao emissor este ao ver que o token está a 0 sabe que a mensagem foi recebida e copiada, removendo então a mensagem do pacote. O pacote continua a circular vazio pronto para ser agarrado por um computador que necessite de enviar uma mensagem.

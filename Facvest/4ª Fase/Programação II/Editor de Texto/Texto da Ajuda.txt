@@ -1,0 +1,90 @@
+====================================================================
+
+Sobre:
+
++------------------------------------------------------------------+
+|								   |
+|   Programa objeto do trabalho da disciplina de Programação II    |
+|								   |
+|          do curso de Ciência da Computação da FacVest            |
+|								   |
+|------------------------------------------------------------------+
+|								   |
+|        Acadêmicos: Roger Coan		4ª fase			   |
+|	       	     Willy Stadnick				   |
+|								   |
+|------------------------------------------------------------------+
+|								   |
+|	       É-é-é 	isso 	a-aí 	p-p-pessoal		   |
+|								   |
++------------------------------------------------------------------+
+
+====================================================================
+
+Arquivo de Ajuda:
+
+Escuta aqui, caralh*.
+Essa merd* de programa é tão facil e você ainda quer ajuda?
+Porr*, vai ser burr* assim no infern*, lazarent*.
+Vai pedir ajuda de algo mais difícil como AutoCAD, Photoshop ou
+outra coisa realmente fod*, sua ant*.
+
+...
+
+Ah, ta bom... vou ajudar... só mais dessa vez seu anima*.
+Presta bem atenção então:
+Tem uma barra de ferramentas bem no topo do programa.
+É mais ou menos assim:
+
+[] Arquivo Editar Formatar Janelas Ajuda
+
+E não fica zoando minha explicação, porr*...
+Acha que é facil ficar desenhando no Bloco de Notas?
+
+...
+
+Por partes então:
+
+-Arquivo-
+* Novo			Abre um novo documento
+* Abrir			Abre um documento existente
+* Salvar		Salva um documento em arquivo
+* Salvar Como		Salva um documento com um nome diferente
+* Fechar		Fecha o documento atual
+* Fechar Todas		Fecha todos os documentos abertos
+* Imprimir		Imprime o documento atual
+* Sair			Sai do programa
+
+
+-Editar-
+* Recortar		Retira do texto e joga para a área de
+				transferencia o conteudo da seleção
+* Copiar		Copia para a área de transferencia o
+				conteudo da seleção
+* Colar			Cola o conteúdo da área de transferencia
+				para o texto
+* Selecionar Tudo	Seleciona o documento inteiro
+
+-Formatar-
+* Fonte			Muda o padrão das letras na tela, tais
+				como fonte, cor, tamanho, etc
+* Estilos		Muda o estilo da escrita para Negrito,
+				Itálico e Sublinhado
+* Alinhamento		Permite alinhar o texto pela direita,
+				esquerda e alinhar de forma
+				justificada
+
+-Janelas-
+* Cascata		Organiza as janelas internas do programa
+				em forma de cascata
+* Lado a Lado
+	-> Horizontal		Organiza as janelas internas do
+					programa lado a lado
+					na horizontal
+	-> Vertical		Organiza as janelas internas do
+					programa lado a lado
+					na Vertical
+
+-Ajuda-
+* Sobre			Abre este arquivo que você está lendo.
+====================================================================

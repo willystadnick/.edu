@@ -1,0 +1,305 @@
+<HTML> 
+<HEAD> 
+<TITLE>SEMAFORO</TITLE>
+<link href="css/estilos.css" rel="stylesheet" type="text/css">
+<BODY>
+<p> 
+  <script language=javascript>
+
+var cont        = 0;
+var controlador = 0;
+var vet = new Array(5);
+var vet1 = new Array(5);
+function fila()
+{
+	document.result.Dado1.value = vet[1];
+	document.result.Dado2.value = vet[2];
+	document.result.Dado3.value = vet[3];
+	document.result.Dado4.value = vet[4];
+	document.result.Dado5.value = vet[5];
+}
+
+function Acessa()
+{
+ if (document.result.Solicitante.value !='')
+ {
+ 	if (controlador == 0)
+  	{
+        for (var j=1;j<=5; ++j)
+		{
+			vet1[j] = '';
+			vet[j] = '';	
+        }		
+		document.result.Critica.value = document.result.Solicitante.value;
+    	controlador = 1;
+  	}
+    else
+    {
+   		if (cont<5)
+		{
+	    	cont = cont + 1;
+    	  	vet[cont] = document.result.Solicitante.value;
+      		fila();
+   		}
+        else
+        	alert('Fila Cheia');
+    }
+  document.result.Solicitante.value = "";
+ }
+ else
+ 	alert('Falta o Valor do Parametro!');
+} 
+
+function Descarrega()
+{
+	var a = 0;
+	if (cont != 0)
+    {
+      document.result.Ultimo.value = document.result.Critica.value;
+      document.result.Critica.value = vet[1];
+      for (a=1;a<=cont-1; ++a)
+	  	vet1[a] = vet[a+1];
+      for (a=1;a<=cont-1; ++a)
+	    vet[a] = vet1[a];
+      cont = cont -1;
+	  vet[cont+1] = '';
+    }
+    else
+    {
+      if (controlador==1)
+      {
+         document.result.Ultimo.value = document.result.Critica.value;
+         document.result.Critica.value = " ";
+         controlador = 0;
+      }
+      else
+	  {	
+		document.result.Ultimo.value = '';   
+		 for (var j=1;j<=5; ++j)
+		{
+			vet1[j] = '';
+			vet[j] = '';	
+        }
+		alert('Não existe Processo para descaregar');
+	  }	
+    }
+   fila();
+}
+
+function Demo()
+{
+    Demo_Critica();
+}
+function Demo_Critica()
+{
+    document.result.Critica.value = 101010;
+	setTimeout('Demo_D1()',2000);
+}
+function Demo_D1()
+{
+ document.result.Dado1.value = 111011;
+	setTimeout('Demo_D2()',2000);
+}	
+function Demo_D2()
+{
+ document.result.Dado2.value = 110011;
+	setTimeout('Demo_D3()',2000);
+}		
+function Demo_D3()
+{
+ document.result.Dado3.value = 111111;
+	setTimeout('Demo_D4()',2000);
+}		
+function Demo_D4()
+{
+ document.result.Dado4.value = 101000;
+	setTimeout('Demo_D5()',2000);
+}		
+function Demo_D5()
+{
+ document.result.Dado5.value = 111000;
+ setTimeout('Demo_Saida()',2000);
+}		
+
+function Demo_Saida()
+{
+    document.result.Ultimo.value = document.result.Critica.value;
+	document.result.Critica.value = document.result.Dado1.value;
+	document.result.Dado1.value = document.result.Dado2.value;
+	document.result.Dado2.value = document.result.Dado3.value;
+	document.result.Dado3.value = document.result.Dado4.value;
+	document.result.Dado4.value = document.result.Dado5.value;
+	document.result.Dado5.value = " ";
+	setTimeout('Demo_SD1()',2000);
+}
+function Demo_SD1()
+{
+    document.result.Ultimo.value = document.result.Critica.value;
+	document.result.Critica.value = document.result.Dado1.value;
+	document.result.Dado1.value = document.result.Dado2.value;
+	document.result.Dado2.value = document.result.Dado3.value;
+	document.result.Dado3.value = document.result.Dado4.value;
+	document.result.Dado4.value = " ";
+	document.result.Dado5.value = " ";
+	setTimeout('Demo_SD2()',2000);
+}	
+function Demo_SD2()
+{
+    document.result.Ultimo.value = document.result.Critica.value;
+	document.result.Critica.value = document.result.Dado1.value;
+	document.result.Dado1.value = document.result.Dado2.value;
+	document.result.Dado2.value = document.result.Dado3.value;
+	document.result.Dado3.value = " ";
+	document.result.Dado4.value = " ";
+	document.result.Dado5.value = " ";
+	setTimeout('Demo_SD3()',2000);
+}		
+function Demo_SD3()
+{
+    document.result.Ultimo.value = document.result.Critica.value;
+	document.result.Critica.value = document.result.Dado1.value;
+	document.result.Dado1.value = document.result.Dado2.value;
+	document.result.Dado2.value = " ";
+	document.result.Dado3.value = " ";
+	document.result.Dado4.value = " ";
+	document.result.Dado5.value = " ";
+	setTimeout('Demo_SD4()',2000);
+}		
+function Demo_SD4()
+{
+    document.result.Ultimo.value = document.result.Critica.value;
+	document.result.Critica.value = document.result.Dado1.value;
+	document.result.Dado1.value = " ";
+	document.result.Dado2.value = " ";
+	document.result.Dado3.value = " ";
+	document.result.Dado4.value = " ";
+	document.result.Dado5.value = " ";
+	setTimeout('Demo_SD5()',2000);
+}		
+function Demo_SD5()
+{
+    document.result.Ultimo.value = document.result.Critica.value;
+	document.result.Critica.value = " ";
+	document.result.Dado1.value = " ";
+	document.result.Dado2.value = " ";
+	document.result.Dado3.value = " ";
+	document.result.Dado4.value = " ";
+	document.result.Dado5.value = " ";
+    alert("FIM DA DEMONSTRACAO");
+}		
+</script>
+<table width="600" border="0" cellpadding="0" cellspacing="1">
+  <tr>
+    <td bgcolor="#FFFFFF">
+<table width="100%" border="0">
+        <tr> 
+          <td class="texto"><strong>Academico: Eduardo Conrado Grimaldi</strong></td>
+        </tr>
+        <tr class="texto"> 
+          <td>&nbsp;</td>
+        </tr>
+        <tr> 
+          <td> <table width="80" border="0" cellpadding="0" cellspacing="1" bgcolor="#FF9900">
+              <tr> 
+                <td height="15" align="center" bgcolor="#FFFFFF" class="texto"><font color="#FF9900"><strong>SEMAFORO</strong></font></td>
+              </tr>
+            </table></td>
+        </tr>
+      </table></td>
+  </tr>
+</table>
+<FORM name=result>
+  <table width="600" border="0" cellpadding="0" cellspacing="1" bgcolor="#FF9900">
+    <tr>
+      <td background="fundo.gif" bgcolor="#FFFFFF"> 
+        <table width="600" border="0">
+          <tr> 
+            <td class="texto"> <div align="center"><strong>Processo Solicitante</strong></div></td>
+            <td class="texto"> <div align="center"><strong>Fila de Espera</strong></div></td>
+            <td class="texto"> <div align="center"><strong>Ultimo Processo</strong></div></td>
+          </tr>
+          <tr> 
+            <td><div align="center"> 
+                <INPUT name=Solicitante class="form" size=30>
+              </div></td>
+            <td> <div align="center"> 
+                <input name=Dado1 class="form" onFocus="refresh();" size=30>
+              </div></td>
+            <td><div align="center"> 
+                <input name=Ultimo class="form" onFocus="refresh();" size=30>
+              </div></td>
+          </tr>
+          <tr> 
+            <td><div align="center"> 
+                <table width="130" border="0" cellpadding="0" cellspacing="1" bgcolor="#FF6600">
+                  <tr> 
+                    <td height="15" align="center" bgcolor="#FFFFFF"><a href="javascript:Acessa()" class="botao"><strong><font color="#FF6600">Acessar 
+                      Regiao Critica</font></strong></a></td>
+                  </tr>
+                </table>
+              </div></td>
+            <td> <div align="center"> 
+                <input name=Dado2 class="form" onFocus="refresh();" size=30>
+              </div></td>
+            <td><div align="center"></div></td>
+          </tr>
+          <tr> 
+            <td><div align="center"> </div></td>
+            <td> <div align="center"> 
+                <input name=Dado3 class="form" onFocus="refresh();" size=30>
+              </div></td>
+            <td><div align="center"></div></td>
+          </tr>
+          <tr> 
+            <td><div align="center"></div></td>
+            <td> <div align="center"> 
+                <input name=Dado4 class="form" onFocus="refresh();" size=30>
+              </div></td>
+            <td><div align="center"></div></td>
+          </tr>
+          <tr> 
+            <td>&nbsp;</td>
+            <td> <div align="center"> 
+                <input name=Dado5 class="form" onFocus="refresh();" size=30 border="0">
+              </div></td>
+            <td><div align="center"> </div></td>
+          </tr>
+          <tr> 
+            <td><div align="center"> </div></td>
+            <td valign="bottom" class="texto"> <div align="center">
+                <p><strong><font color="#FF6600">Regiao Critica</font></strong></p>
+              </div></td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr> 
+            <td>&nbsp;</td>
+            <td><div align="center"> 
+                <input name=Critica class="form" onFocus="refresh();" size=30>
+              </div></td>
+            <td><p>&nbsp;</p></td>
+          </tr>
+          <tr> 
+            <td>&nbsp;</td>
+            <td><div align="center"> 
+                <table width="130" border="0" cellpadding="0" cellspacing="1" bgcolor="#FF6600">
+                  <tr> 
+                    <td height="15" align="center" bgcolor="#FFFFFF"><a href="javascript:Descarrega()" class="botao"><strong><font color="#FF6600">Sair 
+                      da Regiao Critica</font></strong></a><font color="#FF6600"><strong></strong></font></td>
+                  </tr>
+                </table>
+              </div></td>
+            <td><div align="right">
+                <table width="130" border="0" cellpadding="0" cellspacing="1" bgcolor="#FF6600">
+                  <tr> 
+                    <td height="15" align="center" bgcolor="#FFFFFF" class="botao"><div align="center"><a href="javascript:Demo()" class="botao"> 
+                        <strong><font color="#FF6600">Demo</font></strong></a></div></td>
+                  </tr>
+                </table>
+              </div></td>
+          </tr>
+        </table></td>
+    </tr>
+  </table>
+</FORM>
+<br>
+</body></html>

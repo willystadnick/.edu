@@ -1,0 +1,19 @@
+ATM
+
+Asynchronous Transfer Mode (Modo de Transferência Assíncrono)
+
+Tecnologia de comunicação ou mais especificamente, de comutação rápida de pacotes que suporta taxas de transferência de dados variando de velocidades sub-T1 (menos de 1,544 Mbps) até 10 Gbps.
+
+O ATM (Asynchronous Transfer Mode) foi um protocolo criado basicamente para atender aos requisitos de transmissão de voz, dados e vídeo nas Redes Digitais de Serviços Integrados de faixa larga (B-ISDN). Posteriormente, o protocolo apresentou uma série de novos atrativos com relação ao seu aproveitamento nas redes de computadores por possibilitar altas taxas de transmissão, baixa latência, QoS, entre outras vantagens.
+
+O protocolo ATM não impõe limitações físicas quanto a distâncias, como também não impõe limites na largura de banda a ser disponibilizada, pois, o tráfego de dados se dá ponto-a-ponto entre as estações por meio de circuitos virtuais e os links ATM podem rodar a uma velocidade de 622Mbps ou mais. Assim, uma rede local sobre ATM permitiria a implementação de segmentos de redes que excederiam as limitações de redes reais em termos de alcance físico, largura de banda e número de estações.
+
+Como outros serviços de comutação de pacotes (Frame Relay, SMDS), ATM atinge suas altas velocidades em parte pela transmissão de dados em células de tamanho fixo, e dispensando protocolos de correção de erros. Em vez disso, ele depende da integridade das linhas digitais para assegurar a integridade dos dados.
+
+Todas as informações são transportadas pela rede através das células ATM. Propõe-se a servir de transporte comum para diversos tipos de tráfego, como dados, voz (áudio), imagem estatística e vídeo.
+
+Entre outras importantes diferenças em relação às tecnologias de comunicação de dados existentes pode-se notar que a ATM emerge com a possibilidade de ser algo como a tecnologia de all area network, uma vez que pode ser utilizada tanto em redes de longa distância (WAN's), quanto em redes locais (LAN's), passando pelas redes intermediárias, as redes de área metropolitana (MAN's).
+
+Entretanto, este aproveitamento ficou condicionado à capacidade das redes ATM de interoperar com as redes locais de computadores uma vez que nem todas as aplicações para LAN são providas por redes ATM e dificilmente um usuário iria investir no projeto de uma rede que não fosse capaz de se comunicar com toda a base instalada.
+
+Dentro deste contexto e procurando solucionar essa questão de interoperabilidade, foi criado o LAN Emulation (LANE), um conjunto de especificações técnicas desenvolvidas pelo ATM Fórum para redes ATM, que emula os serviços existentes em redes Ethernet (802.3) e Token Ring (802.5), permitindo aos usuários de LAN’s comuns usufruírem as vantagens das redes ATM sem necessitar de modificações na estrutura do hardware ou do software das estações da rede local.

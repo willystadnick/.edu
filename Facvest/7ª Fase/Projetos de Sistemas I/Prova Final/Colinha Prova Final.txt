@@ -1,0 +1,535 @@
+Parte1: Introdução
+Modelo de Objetos:
+paradigma imperativo: OP e OO | genealogia | conceitos | terminologia
+POO: Projeto Orientado a Objetos
+classes | relacionamentos | notação UML
+Linguagens de Programação OO
+
+Modelo de Objetos: projeto e implementação
+Projeto de aplicações AOO: (OO design)
+Projeto de classes (abstrações de conceitos/recursos) | Relacionamento de classes (é-um, possui um..) | Novas notações de projeto: Booch, Rumbaugh,UML...
+Projeto de programas POO (OO programming)
+Modularização: classes são unidades de projeto | Reutilização: pacotes de classes concretas e classes abstratas | Estrutura do programa: objetos e suas interações
+Mecanismos de LOO (OO languages)
+Encapsulamento com proteção de dados e operações | Herança: extensão/especialização de tipos | Polimorfismo estático e dinâmico de métodos
+
+Modelo de Objetos: paradigma
+Paradigma de programação: padrão conceitual que orienta soluções de projeto e implementação
+Modelo OP: foco nos procedimentos (algoritmos) que alteram os dados
+Modelo OO:  foco em conceitos, representados por dados, sobre os quais são definidas as operações
+classe = modelo estático que permite especificar um conjunto de características que o conceito representa
+objeto = entidade dinâmica criada a partir de uma classe e possui os dados sobre os quais são realizadas as operações disponíveis em sua classe
+
+Modelo Imperativo: OP e OO
+Modelo procedimental: projeto modular: decomposição funcional | processos e dados separados | reutilização: bibliotecas compostas de procedimentos e funções parametrizadas, geralmente em código objeto
+Modelo de objetos: projeto de classes, seus relacionamentos, objetos e suas interações | processos e dados encapsulados | reutilização: bibliotecas compostas de classes/interfaces que podem ser adaptadas por extensão de propriedades
+
+LP: Elemento de primeira ordem
+Um elemento de primeira ordem em uma linguagem de programação é aquele que pode ser usado nas principais construções, tais como:
+comando de atribuição | comandos de entrada e saída | argumentos e parâmetros | resultados de funções
+Linguagens orientadas a procedimentos: tipos primitivos
+Linguagens orientadas a objetos: objetos
+
+Linguagens Orientadas a Objetos
+Suporte às idéias de projeto
+classes: representação | objetos: criação de instâncias | métodos: definição de interfaces e implementação | mensagens: invocação de métodos sobre objetos
+Principais mecanismos
+encapsulamento: definição de classes com proteção de propriedades e interfaces públicas | herança: extensão/adaptação de propriedades | polimorfismo: vinculação dinâmica de métodos
+
+Abstrações Computacionais
+Princípio básico do processo de criação de programas
+Determinar dos elementos essenciais à solução do problema | Ignorar os elementos supérfluos em cada etapa do processo de criação
+Separação de aspectos: utilização (o que faz) separada da implementação (como faz)
+O utilizador precisa conhecer apenas “ o que”  faz a abstração | O desenvolvedor precisa saber “como faz” para implementar
+
+Abstrações de Dados
+omitem detalhes de representação de dados | Exemplo: tipo registro com campos nome e RG
+tornam acessíveis um conjunto de operações | Exemplos: imprime registro, atribui registro, seleciona campo
+utilização: criação de variáveis (instanciação)
+
+Abstração Procedimental
+Funções e procedimentos
+função: abstração de um valor (expressão) | Exemplo: x:= y + sqrt(z) / 3;
+procedimento: abstração de um comando | Exemplo: ImprimeCabecalho;
+utilização: invocação parametrizada ou não 
+
+Abstração de Classes
+Combinam as abstrações de dados e a abstração procedimental | Descrevem estruturas de dados: atributos | Descrevem procedimentos que atuam sobre os dados: métodos
+
+Classes e métodos
+Um método é uma abstração procedimental: operações que atuam sobre dados ou parâmetros | Métodos (código) são compartilhados entre todos os objetos de uma classe 
+
+Classes x Tipos de Dados
+Uma classe é um tipo definido pelo usuário que contém uma estrutura de dados e um conjunto de operações que atuam sobre estes dados | Analogamente, é o mesmo que o tipo inteiro significa para as variáveis declaradas como inteiros: acesso a valores através de operações | A classe encapsula dados e operações e controla o acesso a estas propriedades
+
+Objetos de uma classe
+Os objetos são entidades dinâmicas do programa: armazenam os dados (de instância) e podem sofrer operações (métodos)
+Cada objeto pertence a uma classe: cada objeto possui um tipo - o tipo definido pela sua classe
+Cada objeto possui um nome: identificador do objeto em seu escopo
+Criação de objetos: operador new() | new(): operador de construção de um objeto
+
+Construção de objetos
+Objetivo: criar uma representação do objeto (variável objeto) e suas operações
+Declaração de objetos: associação de um identificador a um tipo. Exemplo: Data descobrimento;
+Criação de objetos: tornar a representação disponível para os dados. Exemplo: descobrimento= new Data();
+
+Escopo de Dados: classes e métodos
+Escopo: região de um programa onde os dados podem ser acessados
+Dados declarados na classe podem ser usados por todos os métodos da classe
+Dados declarados dentro de um método (locais) somente podem ser usados naquele método 
+Classes internas podem acessar os membros da classe externa
+
+Classes: interface
+Interface: conjunto de métodos que podem ser acessados
+Métodos de classe: visíveis | invisíveis 
+Interfaces podem ser definidas e compiladas em separado
+
+Encapsulamento
+O encapsulamento é o processo de ocultar os dados de um objeto  
+não permitindo: acesso a esses dados fora da classe
+fornecendo: um conjunto público de operações sobre estes dados (interface)
+métodos de acesso (gettters) | métodos de alteração (setters) | métodos para outras operações, tais como escrita, comparação, cópia, etc.
+
+Proteção de propriedades
+Modificadores de acesso: membros podem ser públicos: interface | privativos: escopo de classe | protegidos: questão de herança....
+
+Classes: resumo
+Classes são modelos para a criação de objetos (instâncias) Descrevem os atributos (campos) e o comportamento (operações implementadas por métodos
+Classes são ´fábricas´ de objetos objetos da classe: mesma estrutura e métodos | Data nascimento; Data hoje; Data vencimento;
+Classes têm sua estrutura relacionada com outras classes | campos de classes | classes internas
+
+Desenvolvimento de Sistemas OO
+Concepção do modelo | classes encapsulam dados e métodos | objetos se comunicam por mensagens
+Definição de classes | objetos com caraterísticas idênticas | classes são tipos de dados definidos pelo usuário
+Construção da hierarquia de classes | generalização ou especialização
+Desenvolvimento de aplicações | programa = uma ou mais classes | instanciação  (alocação de memória para objetos) | mensagens (chamadas a métodos)
+
+Notação UML - Unified Modeling Language
+Linguagem de modelagem | é uma notação e não processo de desenvolvimento
+Definida pela empresa Rational, a partir das notações de Rumbaugh, Booch e Jacobson | ver http://www.rational.com/
+Proposta como padrão ao OMG em conjunto com Oracle, Microsoft e outras
+Modelos para uso em várias perspectivas (estática e dinâmica)
+Modelos para uso em vários níveis de abstração (conceitual, lógico, físico)
+Disponibilidade de ferramentas
+
+Diagramas UML: aspectos estáticos e dinâmicos
+Estruturais: usados para visualizar, especificar, construir, documentar aspectos estáticos do sistema
+diagramas de classes | diagramas de pacotes | diagramas de objetos | diagramas de componentes | diagramas de instalação
+Comportamentais: usados para visualizar, especificar, construir, documentar aspectos dinâmicos do sistema
+diagramas de caso de uso | diagrama de seqüência | diagrama de colaboração | diagrama de atividades
+
+Abstração de Classes
+Cada classe deve representar um conceito ou um artefato de implementação | Exemplos: Pessoa, Veiculo, Tabela, Janela, Data
+Um conceito pode ser descrito por atributos | Pessoa: nome, data nascimento, nacionalidade, sexo... | Veículo: marca, modelo, tipo, ano, chassis ... | Janela: tamanho, posição, cor, ... | Data: dia, mês, ano
+Os atributos podem sofrer operações | Leitura, escrita, atribuição, cópia, comparação, adição 
+
+Notação e Implementação
+UML é considerada uma linguagem de especificação | Pode ser usada para construir modelos precisos, sem ambigüidades e completos | Modelos UML podem ser mapeados para LOO | Linguagens de programação OO devem oferecer mecanismos de suporte às idéias de projetos | Programas escritos em uma LOO podem ser mapeados para modelos UML
+
+POO: diagramas de classes
+Descrevem os tipos de objetos do sistema e os vários tipos de relacionamento estático ou estrutural que existem entre eles
+Mostram atributos e operações de uma classe e suas associações, como:
+Associações simples e múltiplas (composição/agregação) | Exemplos: | simples: uma pessoa possui um nome | múltiplas: um aluno pode cursar diversas disciplinas
+Generalização e especialização (herança) | Exemplo: um aluno é uma pessoa
+
+LOO: classes e métodos
+Relembrando: Métodos não fazem parte de objetos | Métodos podem ser aplicados sobre campos de classe ou campos de instância
+
+Exemplo de mensagens
+Cada mensagem é dirigida a um objeto e provoca a execução de um método sobre os dados particulares do objeto | O método a ser executado é buscado na classe do objeto
+
+LOO: classes e vários objetos
+Relembrando: Vários objetos podem ser criados a partir de uma mesma classe | Todos os objetos que são instâncias de uma mesma classe possuem a mesma estrutura de dados (e diferentes estados)
+
+Variáveis de classe e de instância
+Variáveis de instância: cada objeto contém a representação das variáveis incluídas na definição da sua classe
+Variáveis de classe: apenas uma cópia na classe, acessível a todos os objetos 
+Útil para definir constantes e variáveis de comunicação entre objetos | Exemplo: Math.PI
+
+Relacionamentos: associação
+Uma associação é um relacionamento estrutural que conecta objetos de duas classes
+Existe uma associação se uma instância de uma classe deve conhecer a outra para realizar o seu serviço
+Exemplo: Uma Pessoa se relaciona com uma Empresa | números indicam multiplicidade | palavras indicam o tipo de relacionamento
+
+Relacionamento: composição
+Identificar classes que necessitam objetos de outras classes para ser implementadas
+relacionamento todo(que usa) / parte (o que é usado) ou possui-um | Exemplos: Pessoa possui uma data de nascimento | Janela possui um título e dois botões
+
+Relacionamento: agregação
+O conceito de uma classe contém um outro conceito como uma de suas partes
+forma de agregação, onde a parte é indissociável do todo | Exemplo: Um Controlador de Temperatura contém um Aquecedor
+
+Composição x agregação
+Ambas se referem a relacionamentos de uso: um objeto é parte de outro objeto | Implementação da classe contém atributos que se referem a outra classe
+Agregação | relacionamento “contém-um” | implementação pode usar a definição de uma classe interna
+Composição | relacionamento “possui-um ” | implementação usa a definição de uma classe externa
+
+Generalização/Especialização
+Uma generalização é um relacionamento “um-tipo-de” ou “é-um” entre algo geral e algo mais específico 
+Identificar classes que possuem propriedades e comportamentos similares | Exemplos: Ator é uma Pessoa, Aluno é uma Pessoa
+
+LOO: Mecanismo de herança
+Base da herança: propriedades comuns (gerais) | propriedades comuns são transmitidas a descendentes | descendentes podem adicionar/alterar propriedades 
+Estabelecem hierarquias de classes
+Reduzem a quantidade de código | permitem aproveitar código (dados e operações) | princípio da programação por  diferença
+
+LOO: herança
+Relacionamento de herança: hierarquia | Superclasse / Subclasse) | Supertipo / Subtipos | Classe base/Classe derivada
+Determina: atribuição de objetos | uso de métodos | uso de objetos como parâmetro 
+
+Atribuição x hierarquia
+Seja a hierarquia: Atribuições válidas de objetos: pessoa=ator | pessoa=aluno | pessoa=personagem
+Atribuições inválidas de objetos: aluno=pessoa | ator=aluno | 
+
+Generalização: interpretação LOO
+Podemos dizer que Aluno é um subtipo de Pessoa se todas as instâncias de Aluno são, por definição, instâncias de Pessoa
+Tudo que se refere a Pessoa (associações, atributos, operações) também é verdadeiro para Aluno
+Princípio da substituição: em um código que requer uma Pessoa pode-se substituir por um Aluno | exemplo: parâmetros de métodos
+
+Polimorfismo de métodos
+Em hierarquias de tipos, muitas vezes é desejável que o mesmo comportamento seja implementado para todos os componentes da hierarquia	
+Exemplo: comportamento de exibir os dados do objeto
+Uma mesma mensagem pode ser enviada a objetos distintos e interpretada de acordo com o tipo do objeto destinatário | Exemplo: umapessoa.lista(); umaluno.lista().
+
+Polimorfismo dinâmico
+redefinição de métodos na hierarquia de herança | idênticas assinaturas: mesmo nome, idênticos parâmetros | vinculação chamada x código em tempo de execução
+
+UML: Diagrama comportamentais
+Usados para visualizar, especificar, construir e documentar aspectos dinâmicos de um sistema
+Diagrama de caso de uso | Diagrama de sequência | Diagrama de colaboração | Diagrama de estados | Diagrama de atividades
+
+Interação: diagrama de caso de uso
+Um caso de uso descreve uma sequência de ações que um sistema executa para obter um determinado resultado
+Um caso de uso pode descrever:
+um cenário ideal de execução, e, incluir cenários excepcionais: casos de falhas
+Utilidade: Descobrir interações entre objetos | Detectar situações de falhas | Corrigir projeto de classes
+
+Exemplo de caso de uso
+Um caso de uso possui pelo menos um ator | Um ator representa um usuário (humano ou não) que desempenha um papel na interação
+
+UML: diagrama de seqüência
+Um diagrama de seqüência é um diagrama de interação que enfatiza o ordenamento de mensagens no tempo
+Mostra a atividade de um objeto durante uma interação
+A seqüência de mensagens é representada de cima para baixo | Linha da vida: período de atividade
+
+Diagrama de colaboração
+Um diagrama de colaboração é um diagrama de interação que enfatiza a organização de objetos que participam da interação
+Um caminho define uma ligação entre os objetos participantes
+Números de seqüência indicam a ordenação temporal de mensagens, em um ou mais níveis
+
+-----*-----
+
+Casos de Uso - definições
+Um caso de uso é uma descrição narrativa de uma seqüência de eventos que ocorre quando um ator (agente externo) usa um sistema para realizar uma tarefa [Jacobson 92]
+Um caso de uso é a descrição de um conjunto de ações, incluindo variantes, que o sistema realiza para chegar a um resultado de valor observável para um ator [Booch, Rumbaugh, Jacobson 99]
+Casos de uso descrevem os requisitos externos do sistema. São usados na fase de análise de requisitos. Possibilitam elaboração de casos de teste e manuais de usuário [Schneider 98]
+
+Definindo o sistema com casos de uso
+Identificando a fronteira do sistema – Identificando atores – Identificando casos de uso – Descrevendo casos de uso – Relacionando casos de uso
+Escopo do projeto – Partes do sistema que serão desenvolvidas no projeto
+
+Diagramas de Casos de Uso
+Casos de uso – Serviço utilizado por um ou mais atores
+Atores – Agentes externos ao sistema – Papéis de usuário ou sistema
+Relacionamentos – Relaciona atores com casos de uso – Relaciona casos de uso
+Fronteira do sistema – Limita o que faz parte e o que não faz parte do sistema
+
+Identificando atores
+• Quem usa o sistema? • Quem instala o sistema? • Quem inicia ou finaliza o sistema? • Quem fornece informações ao sistema? • Quem solicita de informações do sistema? • Quais outros sistemas usam o sistema?
+
+Descrevendo atores
+• Atores – Cliente – pessoa que compra produtos – Funcionário – pessoa que realiza operações específicas na loja e atendimento ao cliente – Transportador – empresa que entrega o produto – Sistema de pagamento – sistema que debita o valor da conta de cartão de crédito do usuário – Sistema de estoque – sistema que controla o estoque de produtos na loja
+• Associando Atores a Casos de uso – Cliente – fazer pedido, verificar pedido, cancelar pedido – Funcionário – fazer pedido, verificar pedido, cancelar pedido – Transportador – – Sistema de pagamento – – Sistema de estoque
+
+Identificando Casos de Uso
+• Quais serviços os atores querem do sistema? • O sistema armazena informações? Quais atores criam, lêem, atualizam ou eliminam estas informações?
+• O sistema necessita notificar algum ator sobre mudanças no seu estado interno?
+• Existe algum evento externo que o sistema deva saber? Qual ator informa ao sistema sobre estes eventos.
+
+Descrevendo casos de uso
+• Casos de uso são descrito na forma de cenários narrativos
+• Casos de uso podem ser descritos de maneira informal, semi-formal ou informal
+• A descrição varia entre os autores e pode ser adaptada pela equipe de analistas
+• É importante manter um padrão
+
+Descrição informal – exemplo
+• Fazer Pedido
+• Cenário versão 1 (informal)
+• O caso de uso começa quando o cliente seleciona "fazer pedido". O cliente fornece seu nome e endereço. Se o cliente fornece apenas o CEP, o sistema coloca automaticamente a cidade e o estado. O cliente fornece os códigos do produto. O sistema devolve as descrições e o preço de cada produto. O sistema calculará os valores totais para cada produto fornecido. O cliente fornece as informações sobre cartão de crédito. Em seguida, ele submete os dados ao sistema. O sistema verifica as informações fornecidas, marca o pedido como "pendente" e envia as informações de pagamento para o sistema de contabilidade e pagamento. Quando o pagamento é confirmado, o pedido é marcado como "confirmado" e o número de pedido (NP) é dado ao cliente.
+
+Modelo básico para Casos de Uso
+• “Nome do caso de uso”
+• Atores: – (lista dos atores)
+• Fluxo de eventos: – Fluxo primário ou básico ou principal (descrição das ações que ocorrem normalmente) – Fluxo secundário ou alternativo (ações que ocorrem em situações adversas, erros, etc.)
+• Pré-condições: – (situação necessária para iniciar o caso de uso)
+• Pós-condições: – (situação após o caso de uso terminar)
+
+Modelo básico – exemplo 1
+• Verificar pedido
+• Atores: – Cliente, Funcionário
+• Fluxo de eventos: – Fluxo primário ou básico ou principal
+• 1. O caso de uso começa quando o usuário seleciona “Meu pedido”
+• 2. O sistema procura o pedido
+• 3. O sistema mostra os dados da situação do pedido e o caso de uso termina – Fluxo secundário ou alternativo
+• Se, no passo 2 o pedido não foi encontrado, então o sistema informa que o pedido não esta cadastrado e solicita que o usuário verifique o número-do-pedido
+• Pré-condições: – O usuário ter feito o pedido e saber o número-do-pedido
+• Pós-condições: – O sistema fornecer os dados com a situação do pedido
+
+Modelo básico – exemplo 2
+• Fazer pedido
+• Atores: – Cliente, Funcionário
+• Fluxo de eventos: – Fluxo primário ou básico ou principal
+1. O caso de uso começa quando o cliente seleciona "fazer pedido".
+2. O cliente fornece seu nome e endereço.
+3. Se o cliente fornece apenas o CEP, o sistema coloca automaticamente a cidade e o estado.
+4. O cliente fornece os códigos do produto.
+5. O sistema devolve as descrições e o preço de cada produto.
+6. O sistema calculará os valores totais para cada produto fornecido.
+7. O cliente fornece as informações sobre cartão de crédito.
+8. O cliente submete os dados ao sistema.
+9. O sistema verifica as informações fornecidas, marca o pedido como "pendente" e envia as informações de pagamento para o sistema de contabilidade e pagamento.
+10. Quando o pagamento é confirmado, o pedido é marcado como "confirmado" e o número de pedido (NP) é dado ao cliente
+
+Modelo estendido
+• “Nome do caso de uso”
+• Atores
+• Fluxo de eventos estendido: – Fluxo primário ou básico ou principal
+• Ações do ator Respostas do sistema – Fluxo secundário ou alternativo
+• Ações do ator Respostas do sistema
+• Pré-condições:
+• Pós-condições:
+• Referências cruzadas: (casos de uso relacionados)
+• Modelo de Interação: (interface de usuário)
+• Diagramas de atividades
+
+Generalização/especialização de atores
+• Em algumas situações, os atores podem ser especializados em papeis específicos
+• Isto é necessário quando alguns casos de uso são diferentes para os papéis específicos
+
+Estendendo casos de uso
+•Produto em oferta
+•Estende Fazer Pedido
+•Fluxo de evento
+1.O sistema procura o valor do desconto para o produto
+2.O sistema mostra o desconto do produto ao usuário
+3.O sistema calcula o valor do desconto
+4.O sistema atualiza o total, subtraindo o valor do desconto
+•Cliente Especial
+•Estende Fazer Pedido
+•Fluxo de evento
+1.O sistema procura o valor do desconto para o cliente
+2.O sistema mostra o desconto do usuário
+3.O sistema atualiza o total,subtraindo o valor do desconto do usuário
+•Produto em oferta
+•Estende Fazer Pedido
+•Fluxo de evento
+1.O sistema procura o valor do desconto para o produto
+2.O sistema mostra o desconto do produto ao usuário
+3.O sistema calcula o valor do desconto
+4.O sistema atualiza o total, subtraindo o valor do desconto
+
+(Re)usando casos de uso
+Procurar Pedido
+Fluxo de evento
+1. O cliente pode fornecer o número do pedido (NP), a identificação ou o nome do cliente
+2. O cliente ativa “Busca”
+3. Se o cliente tiver fornecido o NP – O sistema mostra o pedido
+4. Se o cliente tiver fornecido a identificação ou o nome do cliente – O sistema mostra a lista com todos os pedidos do cliente – O cliente seleciona o produto – O sistema mostra o pedido
+Cancelar Pedido
+Fluxo de evento
+1. O cliente solicita o cancelamento do pedido
+2. Usa Procurar Pedido
+3. Se a situação do pedido é “confirmado” – O pedido é marcado cancelado – O sistema de pagamento é notificado para creditar na conta do usuário
+4. Se a situação do pedido é “enviado” – O usuário é instruído para fazer a devolução do produto
+
+-----*-----
+
+Projeto orientado a objetos
+Projetar sistemas usando objetos auto-contidos e classes de objetos.
+
+Objetivos
+Explicar como um projeto de software pode ser representado como um conjunto de objetos que interagem e gerenciam o seu próprio estado e operações.
+Descrever atividades no processo de projeto orientado a objetos.
+Apresentar diversos modelos que descrevem um projeto orientado a objetos.
+Mostrar como a UML pode ser usada para representar estes modelos.
+
+Características do POO
+Objetos são abstrações de entidades do mundo real ou do sistema e são auto-gerenciáveis.
+Objetos são independentes e encapsulam estado e a representação das informações.
+A funcionalidade do sistema é expressa em termos de serviços de objetos.
+Áreas de dados compartilhadas são eliminadas. Os objetos se comunicam por envio de mensagens.
+Os objetos podem ser distribuídos e podem executar sequëncialmente ou em paralelo.
+
+Vantagens do POO
+Manutenção mais fácil. Os objetos podem ser compreendidos como entidades stand-alone.
+Os objetos podem ser vistos como componentes reutilizáveis.
+Em alguns sistemas, existe um mapeamento óbvio das entidades do mundo real para objetos do sistema.
+
+Desenvolvimento OO
+Análise, projeto e programação orientados à objetos são atividades relacionadas, mas distintas.
+A Análise Orientada a Objetos dedica-se a desenvolver um modelo de objetos do domínio da aplicação.
+O Projeto Orientado a Objetos preocupa-se em desenvolver um sistema orientado a objetos para implementar requisitos.
+A Programação Orientada a Objetos preocupa-se em realizar um projeto de software usando uma linguagem de programação 00, como Java ou C++.
+
+Objetos e classes de objetos
+Objetos são entidades em um sistema de software que representam instâncias do mundo real e entidades do sistema.
+Classes de objetos são modelos para objetos. Elas podem ser usadas para criar objetos. Classes de objetos podem herdar atributos e serviços de outras classes de objetos.
+
+Um processo de projeto OO
+Definir o contexto e os modos de uso do sistema
+Projetar a arquitetura do sistema
+Identificar os principais objetos do sistema
+Desenvolver modelos de projeto
+Especificar interfaces de objetos
+
+Descrição de um sistema meteorológico
+Um sistema de mapeamento meteorológico é necessário para gerar mapas meteorológicos regularmente, utilizando dados coletados a partir de estações meteorológicas remotas, sem que funcionários estejam presentes, e de outras fontes de dados, como observadores de tempo, balões e satélites meteorológicos. As estações meteorológicas transmitem seus dados ao computador da área em resposta a uma requisição dessa máquina.
+O sistema de computador da área valida os dados coletados e faz a integração dos dados a partir de diferentes fontes. Os dados integrados são arquivados e, com os dados desse arquivo e um banco de dados de mapas digitalizados, é criado um conjunto de mapas meteorológicos locais. Os mapas podem ser impressos para distribuição em uma impressora especial ou ser exibidos em diferentes formatos.
+
+Descrição da estação meteorológica
+Uma estação meteorológica é um pacote de instrumentos controlados software que coleta dados, executa algum processamento de dados e transmite esses dados para processamento adicional. Os instrumentos incluem termômetros de terra e ar, um anemômetro, uma biruta, um barômetro e um pluviômetro. Os dados são coletados a cada cinco minutos.
+Quando um comando é enviado para transmitir os dados meteorológicos, a estação processa e resume os dados coletados. Os dados resumidos são transmitidos para o computador de mapeamento quando uma requisição é recebida.
+
+Contexto do sistema e modelos de uso
+Desenvolver uma compreensão dos relacionamentos entre o software que está sendo projetado e o seu ambiente externo.
+Contexto do sistema: Um modelo estático que descreve outros sistemas no ambiente. Usar um modelo de subsistema para mostrar outros sistemas.
+Modelo de uso do sistema: Um modelo dinâmico que descreve como o sistema interage com o seu ambiente. Usar casos de uso para mostrar interações.
+
+Descrição de uso
+Sistema: Estação Meteorológica.
+Caso de Uso: Relatar.
+Agentes: Sistema de coleta de dados sobre o clima, Estação Meteorológica.
+Dados: A estação meteorológica envia para o sistema de coleta de dados climáticos um resumo dos dados sobre o clima que foram coletados a partir de instrumentos, no período de coleta. Os dados enviados referem-se às temperaturas máximas, mínimas e médias do solo e do ar; à pressão máxima, mínima e média do vento; à precipitação total das chuvas, e à direção do vento, conforme a amostragem a cada intervalo de 5 minutos.
+Estímulo: O sistema de coleta de dados sobre o clima estabelece um link de modem com a estação meteorológica e requisita a transmissão dos dados.
+Resposta: Os dados resumidos são enviados para o sistema de coleta de dados sobre o clima.
+Comentários: Em geral, as estações meteorológicas recebem um pedido de relatório por hora, mas essa freqüência pode diferir de uma estação para outra e ser modificada no futuro.
+
+Identificação dos objetos
+Identificar objetos (ou classes de objetos) é a parte mais difícil do projeto orientado a objetos.
+Não há uma "fórmula mágica" para identificar objetos. Isso reside na habilidade, experiência e conhecimento de domínio dos engenheiros de sistema.
+Identificação de objetos é um processo iterativo. Dificilmente se consegue acertar da primeira vez.
+
+Abordagens para a identificação
+Usar uma abordagem gramatical, baseada em uma descrição do sistema em linguagem natural (usado no método Hood).
+Basear a identificação em coisas tangíveis do domínio da aplicação.
+Usar uma abordagem comportamental e identificar objetos com base em quais objetos participam de quais comportamentos.
+Usar uma análise baseada em cenários. São identificados os objetos, atributos e métodos em cada cenário.
+
+Classes de objetos da estação meteorológica
+Termômetro de solo, Anemômetro, Barômetro: Objetos do domínio da aplicação que são objetos de "hardware" relacionados aos instrumentos do sistema.
+Estação meteorológica: A interface básica da estação meteorológica para o seu ambiente. Ela, portanto, reflete as interações identificadas no modelo de casos de uso.
+Dados meteorológicos: Encapsula os dados resumidos dos instrumento.
+
+Modelos de projeto
+Modelos de projeto mostram os objetos e classes de objetos e os relacionamentos entre essas entidades.
+Modelos estáticos descrevem a estrutura estática do sistema em termos de classes de objetos e relacionamentos
+Modelos dinâmicos descrevem as interações dinâmicas entre objetos.
+
+Exemplos de modelos de projeto
+Modelos de subsistema, que mostram agrupamentos 1ógicos de objetos em subsistemas coerentes.
+Modelos de seqüência, que mostram a seqüência das interações entre objetos.
+Modelos de máquina de estados, que mostram como objetos individuais trocam seu estado em resposta a eventos.
+Outros modelos incluem modelos de caso de uso, modelos de agregação, modelos de generalização, etc.
+
+Modelos de subsistema
+Mostra como o projeto é organizado em grupos de objetos logicamente relacionados.
+Em UML, isso é mostrado com o uso de pacotes (packages) uma construção de encapsulamento. Isso é um modelo lógico. A organização real dos objetos no sistema pode ser diferente.
+
+Modelos de seqüência
+Modelos de seqüência mostram a seqüência das interações que acontecem entre os objetos.
+Os objetos são organizados horizontalmente no topo do diagrama.
+O tempo é representado verticalmente, de maneira que o diagrama seja lido de cima para baixo.
+As interações são representadas por setas rotuladas. Estilos diferentes de setas representam tipos diferentes de interação.
+Um retângulo fino na linha de vida de um objeto representa o tempo em que o objeto é o objeto controlador no sistema.
+
+Pontos principais
+Projeto OO é uma abordagem na qual cada componente de projeto têm o seu próprio estado e operações privados.
+Os objetos devem ter operações construtoras e de inspeção. Eles fornecem serviços para outros objetos.
+Os objetos podem ser implementados seqüencialmente ou concorrentemente.
+A UML fornece diversas notações para definir diferentes modelos de objetos.
+
+Pontos principais
+Uma série de modelos diferentes pode ser produzida durante um processo de projeto orientado a objetos. Isso inclui modelos do sistema estáticos e dinâmicos.
+As interfaces dos objetos devem ser definida com precisão usando, por ex., uma linguagem de programação como Java.
+O projeto OO simplifica a evolução do sistema.
+
+-----*-----
+
+1) No que está focado o Modelo Orientado a Objetos?
+Está focado na compreensão e facilitar a abstração de um mundo utilizando-se de três métodos de organização: Diferenciação, Distinção entre o todo e parte e Classificação. Em resumo, é uma maneira de organizarmos um software como uma coleção de objetos discretos que incorporam: Estrutura de dados e Comportamento associado.
+
+2) Faca uma definição de Classe e Objeto.
+Classe: As classes são tipos de objetos que descrevem as informações armazenadas e os serviços providos por um objeto. Em outras palavras, são padrões a partir dos quais os objetos as criados.
+Objeto: São instâncias de classes. Quando uma classe e instanciada, é alocado espaço na memória para o armazenamento dos atributos de uma instancia definidos na declaração da classe.
+Penso: [...] Classes dão formato e características (atributos) e habilidades e utilidades (métodos) aos objetos.
+
+3) Faça um comparativo entre o modelo procedimental e o modelo orientado a objeto.
+Tradicional (procedimental): Dados, variáveis. Chamadas a funções, procedimentos. Funções, procedimentos. Estrutura (Ex.: Record), ocorrência de estrutura
+Orientada a Objetos: Atributos; Mensagens; Classe (+); Instância, objeto, herança.
+
+4) Um elemento de primeira ordem em uma linguagem de programação é aquele que pode ser usado nas principais construções, tais como:
+
+5) Defina:
+a) Encapsulamento:: Empacotamento de dados de um objeto, acesso somente por métodos.
+b) Polimorfismo:: Capacidade de objetos diferentes derivados da mesma classe executarem métodos de nomes iguais, mas com comportamento diferentes.
+c) Herança:: possibilidade de compartilhar atributos e métodos em classes e objetos. Atributos e métodos definidos na superclasse são repassados para as subclasses.
+
+6) Defina Projeto Orientado a Objeto e quais suas aplicações exemplifique.
+POO tem como principal objetivo abstrair um mundo com um conjunto de objetos limitados a suas atividades visando apresentar um ou vários modelos da sua interação dentro deste mundo. Com essa maneira de representar um sistema, pode-se obter uma manutenção facilitada e com uma maior reutilização de suas funcionalidades.
+
+7) Como é feita a identificação de classes?
+São normalmente identificadas a partir dos substantivos presentes na especificação do programa.
+
+8) Faça um exemplo de instância de classes.
+Comando: <classe> <objeto> = new <classe> ();
+Ex: Pessoa Funcionário = new Pessoa ();
+
+9) O que são atributos e quais os tipos existentes?
+Atributos têm um nome e um tipo, eles definem o comportamento estático de um objeto. Consideram-se dois tipos: de instâncias ou de classe. Os de classe são estáticos para todos os objetos e os de instancias são pertinentes a cada objeto especifico.
+
+10) Defina:
+a) Método:: Serviços que podem ser solicitados a uma instancia, ou seja, o comportamento dinâmico da instancia.
+b) Visibilidade:: É como é definido a acessibilidade de um atributo ou método de uma classe. Atributos e métodos podem ser: publico, privado ou protegido.
+
+11) O que é um Identificador de objetos?
+Através de um Identificador é possível especificar sobre que objeto se deseja atuar. Pode ser um endereço de memória ou um número que o referencie.
+
+12) Defina caso de uso e exemplifique.
+Caso de uso é uma descrição narrativa de uma seqüência ou conjunto de eventos que ocorre quando um ator (agente externo) usa um sistema para realizar uma tarefa.
+
+13) Quais são os passos para identificar um caso de uso?
+Um conjunto de questões deve ser observado para se identificar um caso de uso: Quais serviços os atores querem do sistema? | O sistema armazena informações? Quais atores criam, lêem, atualizam ou eliminam estas informações. | O sistema necessita notificar algum ator sobre mudanças no seu estado interno? | Existe algum evento externo que o sistema deva saber? Qual ator informa ao sistema sobre estes eventos
+
+14) Defina atores.
+Trata-se de quem usa, opera, interage com sistema. Um ator pode ser uma pessoa comum ou até mesmo outro sistema.
+
+15) Quais são os passos para identificar atores?
+Um conjunto de questões deve ser observado para se identificar um ator: Quem usa o sistema? | Quem instala o sistema? | Quem inicia ou finaliza o sistema? | Quem fornece informações ao sistema? | Quem solicita informações do sistema? | Quais outros sistemas usam o sistema?
+
+16) Faça um exemplo descrevendo os atores e associando os atores a casos de uso.
+Atores: - Cliente: Pessoa que compra produtos - Funcionário: Pessoa que realiza operações especificas na loja e atendimentos ao cliente. - Transportador: empresa que entrega o produto - Sistema de pagamento: sistema que debita valor da conta de cartão de credito do usuário. - Sistema de estoque: sistema que controla o estoque de produtos da loja.
+Associando atores a casos de uso: - Cliente: fazer pedido, verificar pedido, cancelar pedido. - Funcionário: fazer pedido, verificar pedido, cancelar pedido. - Transportador: Calcular postagem, entregar o produto. - Sistema de pagamento: ??? - Sistema de estoque: ???
+
+17) Descreva o caso de uso de um sistema acadêmico "Efetuar Matricula" e apresente seu Curso Normal.
+Curso Normal: O caso de uso começa quando o acadêmico seleciona o item "Fazer matrícula" no menu. O sistema requisita o preenchimento de um formulário com os dados pessoais e que o acadêmico selecione as matérias e/ou cursos que deseja matricular-se. Após o preenchimento e submissão corretos do formulário feito pelo acadêmico, o sistema checa o formulário e, se tudo certo até aqui, o sistema pede a confirmação da matrícula. Feita a confirmação pela escolha do item "Efetuar Matrícula" no menu, o sistema finaliza a operação gravando os dados do acadêmico no BD e mostrando uma mensagem de matrícula efetuada com sucesso.
+
+18) Descreva o modelo básico para representar um caso de uso.
+Efetuar Matricula (on-line)
+Atores: - Acadêmico
+Fluxo de eventos: - O acadêmico seleciona "fazer matricula" no menu. - O sistema fornece um formulário pedindo os dados necessários para efetuar matrícula. - O acadêmico preenche o formulário e seleciona submeter. - O sistema verifica se o formulário foi preenchido adequadamente. - O sistema mostra uma mensagem para o acadêmico mostrando todas as suas escolhas e solicita ao acadêmico uma confirmação. - O acadêmico seleciona efetuar matrícula. - O sistema grava os dados do acadêmico no BD finalizando a matrícula. - O sistema mostra uma mensagem informando que a matrícula foi efetuada com sucesso.
+
+19) Represente uma Generalização/Especialização de atores.
+Acadêmico: Acadêmico pagante: Matrícula c/ opcionais de disciplinas | Acadêmico bolsista: Matrícula obrigatória
+
+20) Apresente a visão geral de um sistema e retire os atores e os casos de uso, descrevendo o seu curso normal e alternativo, obrigatoriamente os atores terão generalização.
+Visão geral: O sistema deverá encontrar um pedido, realizado pelo usuário, mediante o fornecimento do número do pedido pelo usuário. Depois de encontrar o pedido o sistema mostra os dados atuais referentes à situação do pedido.
+Atores: Cliente, Funcionário.
+Caso de uso: Verificar pedido
+Atores: -Cliente, Funcionário.
+Fluxo de eventos: 1) O usuário seleciona "menu pedido". 2) O sistema procura pedido 3) O sistema mostra os dados da situação do pedido e o caso de uso termina.
+Fluxo Alternativo: Se no passo 2 o pedido não for encontrado, então o sistema informa que o pedido não foi cadastrado.
+Pré Condição: o usuário ter feito o pedido e saber o numero do pedido.
+Pos condição: o sistema fornecer os dados com a situação do pedido.
+Generalização: ???
+Funcionário: Vendedor | Gerente
+Cliente: Especial | Comum

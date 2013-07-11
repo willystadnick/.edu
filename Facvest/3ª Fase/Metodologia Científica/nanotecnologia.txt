@@ -1,0 +1,331 @@
+TRABALHO SOBRE NANOTECNOLOGIAUNIVERSIDADE FEDERAL DE SANTA MARIA - Centro de Tecnologia
+TRABALHO SOBRE NOVAS TECNOLOGIAS:
+realizado em 26 de julho de 2002.
+
+Trabalho da disciplina introdução à computação do curso ciência da computação
+
+Assunto da pesquisa:  NANOTECNOLOGIA
+
+Aluno: Diego Ribas Adiers
+
+Professor: Cláudio Rocha Lobato
+
+        
+ÍNDICE
+
+
+Resumo
+
+Abstract
+
+Introdução
+
+1- Nanotecnologia
+(a arte de montar matéria átomo por átomo)
+
+1.1 o que é nanotecnologia?
+
+1.2 em que se baseia a nanotecnologia?
+
+1.3 mas afinal, 
+     o que são nanodispositivos e onde podem ser usados?
+
+1.4 quais são as possíveis aplicações da nanotecnologia?
+
+1.4.1 campo da medicina
+
+1.4.2 campo da engenharia
+
+1.4.3 campo aeroespacial
+
+1.4.4 campo da agricultura
+
+1.4.5 campo da ecologia
+
+1.4.6 campo bélico
+
+1.4.7 campo da informática
+
+Conclusão
+
+Bibliografia
+
+Figuras
+
+
+
+RESUMO
+
+
+	O desenvolvimento de máquinas e estruturas que só podem ser medidas em nanos, ou 
+bilionésimos de metro, será um dos mais importantes avanços científicos para a humanidade 
+após a conclusão do Genoma Humano. A nanotecnologia - esse novo avanço científico - 
+permitirá a miniaturização de máquinas e estruturas. Será possível no futuro, por exemplo,
+criar um nanorobô que percorra o corpo de um paciente atacando tumores cancerígenos, ou 
+mesmo, limpando artérias entupidas. 
+
+
+Palavras chave: nanotecnologia, nanodispositivos, nanomáquinas
+Redação científica
+  
+
+
+
+ABSTRACT
+
+
+The development of machines and structures that only can be measured in nanos, or 
+bilionésimos of meter, will be the one of the most important scientific advances for the 
+humanity after conclusion of the Human Genoma.  The nanotecnology - this new scientific 
+advance - will allow to the miniaturization of machines and structures.  It will be 
+possible in the future, for example, to create one nanorobot that it covers the body of 
+a patient attacking cancerígenos tumors, or same, cleaning obstructed arteries.  
+
+
+Words key:  nanotecnology, nanodispositives, nanomachines 
+Scientific writing
+
+
+
+INTRODUÇÃO
+
+
+	Em 1960, Gordon Moore enunciou uma teoria. Nessa teoria ele dizia que o número de 
+transistores e, conseqüentemente, a velocidade de processamento duplicaria a cada 18 
+meses. Durante anos, o enunciado proferido pelo fundador da Intel refletiu, de fato, na
+evolução dos microprocessadores. Os fabricantes foram encolhendo os chips e construindo
+componentes eletrônicos (circuitos, transistores) cada vez mais pequenos. Como 
+resultado disso, os microprocessadores tornaram-se simultaneamente mais rápidos e mais
+pequenos. Mas em breve (daqui a 10 ou 15 anos, dizem as previsões), as técnicas usadas 
+na construção de chips vão atingir os limites físicos. Produzir circuitos e transistores
+átomo a átomo pode ser uma das soluções. 
+	Aí, entramos em um campo ainda pouco desvendado pelo homem: a nanotecnologia.
+Aqui você vai encontrar uma visão geral do que é a nanotecnologia, em que ela se baseia,
+quais suas possíveis aplicações (atuais e futuras), e algumas visões (que se parecem com 
+ficção científica) sobre o futuro dessa nova tecnologia ou campo de pesquisa.
+
+
+
+
+NANOTECNOLOGIA
+A ARTE DE MONTAR MATÉRIA ÁTOMO POR ÁTOMO
+
+
+1.1	O QUE É NANOTECNOLOGIA?
+
+“Nanotecnologia é a arte de montar a matéria átomo por átomo” segundo Fátima 
+Cardoso, pesquisadora dessa área. Nanotecnologia é uma ciência nova que surgiu nas últimas
+décadas e futuramente impulsionará a economia mundial. Esta ciência envolve todas as outras 
+ciências pois trabalha com átomos, e estes,  estão presentes em todas as ciências.O nome é 
+nanotecnologia porque seus objetos de estudo costumam ser medidos em nanômetros - 1 milhão 
+de vezes menor que 1 milímetro. 1 nanômetro é o tamanho da distância entre os átomos de um 
+sólido ou de uma molécula. Pra se ter uma idéia, um objeto com diâmetro de 10 nm(nanômetro) 
+é mil vezes mais fino que um fio de cabelo.É nessa escala que trabalham os nanocientistas. 
+Lidam com uma tecnologia que pode ser considerada uma decorrência da microeletrônica, já 
+que grande parte das pesquisas surgiu com a constante redução dos equipamentos. Mas em 
+termos de conhecimento, é uma ciência jovem ainda.“O princípio da nanotecnologia foi 
+proposto em 1959 por um dos mais importantes cientistas deste século: o norte-americano 
+Richard Feynman, um dos ganhadores do Prêmio Nobel de Física de 1995 e o principal 
+descobridor da causa da explosão do ônibus espacial Challenger em 1986” segundo o Centro de 
+Pesquisas Renato Archer - uma instituição do Ministério da Ciência e Tecnologia . 
+
+
+
+1.2	EM QUE SE BASEIA A NANOTECNOLOGIA?
+
+A nanotecnologia baseia-se na manipulação de matérias-primas que existem em abundância na 
+natureza: os átomos e moléculas. Ao serem observados em um microscópio de tunelamento ou de 
+força atômica, os átomos podem ter suas ligações analisadas diretamente por um fotodetector, 
+acoplado a um dispositivo laser, que pode atuar para "prender" os átomos e rearranjá-los.
+Portanto, a nanotecnologia baseia-se na utilização dos átomos como componentes básicos. A 
+utilização de átomos como unidade básica permite, em teoria, a construção de nanodispositivos 
+(olhar figura 1.2) capazes de realizar tarefas até agora inimagináveis. Permite ainda, 
+desenvolver novos materiais, novos computadores e novos sistemas.
+
+
+
+1.3	MAS AFINAL, O QUE SÃO NANODISPOSITIVOS E ONDE PODEM SER USADOS?
+
+Bom, em resumo seria o futuro da ciência. São máquinas ínfimas que trabalham em nível 
+atômico.Esses nanodispositivos podem ser usados nas áreas de microeletrônica, mecatrônica, 
+biotecnologia, opticaeletrônica, farmacologia, engenharia espacial, física etc.
+Um exemplo da aplicação desses nanodispositivos seria na área da medicina. A construção de 
+robôs do tamanho de bactérias, permitirá que eles possam ser utilizados como instrumentos 
+médicos capazes de destruir agentes patogênicos ou corrigir as deficiências genéticas das 
+células, ou corrigir o material nucléico.
+
+   
+
+1.4	QUAIS AS POSSÍVEIS APLICAÇÕES DA NANOTECNOLOGIA?
+
+1.4.1	CAMPO DA MEDICINA:
+
+Uma aplicação possível no campo da medicina seria a construção de nanorobôs(um exemplo de 
+nanodispositivo). Os robôs usados em nanomedicina serão provavelmente constituídos por 
+peças nanométricas (medindo entre 1nm e 100 nm - 1nm=0.000 000 001 m) e os robôs deverão 
+medir aproximadamente um mícron (0.000 001 m). Estes robôs poderão atingir qualquer parte 
+do corpo viajando através da corrente sanguínea. Serão introduzidos na corrente sanguínea 
+por injeção e possuirão um sistema de propulsão, sensores, computador interno e um sistema 
+de comunicação com o exterior do corpo. 
+Este sistema permitirá aos médicos controlar os robôs enviando sinais de ultra-sons e 
+permitirão aos robôs enviar dados sobre o que se está a passar no interior do corpo. 
+Algumas das tarefas que estes robôs poderão executar: 
+
+         - Destruir células cancerígenas 
+
+         - Libertar medicamentos onde eles são necessários 
+
+         - Destruir vírus e bactérias 
+
+         - Alterar o código genético para impedir doenças genéticas 
+
+         - Desobstruir artérias
+
+Apesar de ainda não ter sido desenvolvido uma tecnologia para se criar nanorobôs, muitas 
+outros nanodispositivos já foram criados. Um exemplo é uma nano-guitarra 
+(veja na figura 1.4.1), do tamanho de cerca de cem átomos. Criada em 1997 por um grupo da 
+Universidade de Cornell, nos EUA, a nano-guitarra tem seis cordas manipuláveis, que 
+produzem som de verdade. Infelizmente, ele é tão baixo que o ouvido humano não consegue 
+captar. Mas ainda assim, é uma invenção notável.
+Além de tudo isso, existem ainda muitas discussões sobre o uso da nanotecnologia. Porque 
+quem pode impedir que um país ou um terrorista desenvolva nanomáquinas que estejam 
+programadas para destruir células nervosas, ou até mesmo destruir o código genético de uma 
+pessoa ou de uma raça? Estamos criando uma arma para futuras guerras?
+
+
+1.4.2	CAMPO DA ENGENHARIA:
+
+A nanotecnologia permite uma melhora, sem precedentes, na qualidade de 
+fabricação. Sendo os átomos colocados de modo preciso, desaparecem quase que 
+completamente os problemas ligados às impurezas e aos defeitos nos materiais. Assim, é 
+possível fabricar materiais mais compactos, utilizando-se muito menos matéria.
+Seria extraordinariamente reduzido o custo de produção dos objetos, dado que a fabricação 
+consumiria bem menos energia e matéria-prima que no presente. Além do mais, sendo a produção 
+inteiramente automatizada, os custos com mão-de-obra seriam praticamente nulos.
+
+
+1.4.3	CAMPO AEROESPACIAL:
+
+A NASA está bastante ativa no domínio da nanotecnologia. Vê nela o meio mais certo e 
+econômico de explorar e colonizar o espaço.
+A nanotecnologia permitirá não somente a fabricação de foguetes, de estações orbitais, 
+etc., mais sólidas - mais confiáveis e a um custo reduzido -, mas também "terraformar" 
+outros planetas! Há cenários permitindo, a termo, ir viver em Marte, por exemplo. Além disso,
+a NASA poderá criar robôs mas resistentes e a menor custo de acordo com as suas necessidades. 
+Por tudo isso, a NASA hoje é uma das organizações que mais investe na área da nanotecnologia. 
+
+1.4.4	CAMPO  DA AGRICULTURA
+
+Do mesmo modo que será possível fabricar um relógio ou um par de sapatos, será possível 
+recriar os alimentos diretamente a partir do ar e de alguns resíduos. É o que faz a cadeia 
+alimentar. É possível, certamente, chegar-se a um filé com batatas e salada, sem passar pelo 
+cultivo da alface, das batatas, do crescimento do animal...assim somente o prato final 
+chegaria à nossa mesa.
+
+
+1.4.5	CAMPO DA ECOLOGIA
+
+A nanotecnologia permitirá não somente a reciclagem completa dos resíduos (lixo), quando da 
+fabricação, mas ainda a limpeza do lixo até hoje acumulado. Assim, seria possível “limpar" o 
+planeta. Diminuir, se fosse preciso, a quantidade de CO2 na atmosfera, etc.
+
+
+1.4.6	CAMPO BÉLICO
+
+A possibilidade de se fazer uso da nanotecnologia para fins militares, criminosos ou 
+terroristas é um de seus principais perigos.
+Independentemente do melhoramento na fabricação de armas convencionais, será possível fabricar, 
+por exemplo, milhões de minúsculos robôs voadores, dificilmente detectáveis, permitindo invadir 
+a vida privada de todos e fora do controle das nações.Será igualmente possível fabricar 
+nanovírus, determinados a matar muito mais eficazmente que os vírus naturais. Seu alvo poderia 
+ser uma pessoa determinada, um grupo populacional (definido por sua posição geográfica, algumas 
+características genéticas, etc.).Na verdade, são tão grandes esses perigos que muitas pessoas 
+(entre elas, eu!) seriam favoráveis a criação de uma legislação que proibissem o uso dessa 
+tecnologia para esses fins. Isso pode ser comparado com o avanço “descontrolado” da engenharia 
+genética. A qualquer momento podemos ser surpreendidos com o nascimento do primeiro clone, se 
+isso ainda não aconteceu...
+No contexto de competição internacional, isso pareceria totalmente ilusório, restando a escolha 
+de preparar-se para a chegada dessa tecnologia e para os problemas que engendrará.
+
+
+1.4.7	CAMPO DA INFORMÁTICA
+
+Será possível fabricar minúsculos computadores, por exemplo, para controlar os nanorobôs que 
+passeiam pelo corpo humano. Os projetos deixam antever computadores mais potentes que os 
+supercomputadores atuais, porém com as dimensões de um cubo de dez microns de lado.
+Pelas mesmas razões anteriores, o custo de fabricação desses computadores seria 
+extraordinariamente reduzido.Atualmente é difícil imaginar quais as conseqüências da inclusão 
+de computadores e de nanomáquinas nos objetos da vida quotidiana. Imagine uma mesa que pudesse, 
+através de uma ordem, crescer, transformar-se em uma cama, uma cadeira, etc.
+Poder-se-ia ter um óculos que permitisse a visualização de textos, desenhos, vídeos com 
+sonorização. Ele poderia conter mais livros e horas de filmes que a Biblioteca Nacional ( da 
+França), seria um contato inimaginável com o exterior! Esses óculos integrariam um sistema de 
+câmera de vídeo e microcomputadores, permitindo gravar tudo o que se visse. Seria comandado 
+pela voz, ou por detecção dos movimentos oculares, e mesmo manual (por detecção das mãos e 
+visualização de diferentes artefatos visuais de comando). Os óculos poderiam conter sua agenda, 
+reconhecer pessoas cujo nome lhe escapa... Isso para dar apenas uma leve noção das 
+possibilidades que teria essa ferramenta!
+Um site da Internet compara a evolução dos sistemas eletrônicos(computadores por exemplo) e a 
+evolução dos sistemas biológicos(organismos vivos em geral) (Olhar figura 1.4.7). Ao contrário 
+do que acontece nos sistemas vivos, os computadores parecem aumentar a sua inteligência a 
+medida que diminuem seu tamanho. Essa comparação reflete bem no que poderá significar a 
+nanotecnologia no futuro, pois, atingido os limites físicos, poderíamos construir computadores 
+menores e mais rápidos sem o auxílio da nanotecnologia? Dando assim, continuidade à evolução 
+dos sistemas eletrônicos?  
+
+
+CONCLUSÃO
+
+
+Os benefícios potenciais da nanotecnologia são tão extremos - e, ainda assim, tão diáfanos - 
+que algumas pessoas falam sobre eles com um tom quase místico na voz. Mas a diferença entre a 
+promessa e a realidade atual também é extrema. Ironicamente, enquanto os videntes vislumbram 
+fábricas do tamanho de moléculas ou máquinas miniaturas devorando o câncer, o uso dessas 
+técnicas daqui dez, vinte, trinta anos revolucionará os meios de produção, assim como, penso 
+eu, todos os aspectos da existência humana.
+Como essa transição se dará? Saberemos lidar com os perigos? É impossível dizer ao certo. 
+Contudo, acredito ser urgente que nos preparemos.
+
+
+BIBLIOGRAFIA
+
+http://www.nas.nasa.gov/NAS/Projects/nanotechnology
+http://www.zurich.ibm.com/
+http://www.2k.com.br
+http://www.wag.caltech.edu
+http://www.iop.org/
+http://www.geocities.com/capecanaveral/7754/nano.htm
+http://lqes.iqm.unicamp.br/institucional/vivencia_lqes/vivencia_lqes_biblioteca_nanotecnologia_conf_levy.html
+http://www.cenpra.gov.br/noticiaseeventos/coloquio.htm
+http://nanotecnologia.pagina.de/
+http://salud.discoveryespanol.com/verticala/a154/dsea15403.asp
+http://www.guiajundiai.com.br/_materias/cas16/a009.asp
+http://www.uol.com.br
+http://www.villanova.hpg.ig.com.br/nanotec.htm
+http://www.tokamaki.hpg.ig.com.br/nano.htm
+http://www.online.stcecilia.br/2000/10-07/ciencia.htm
+http://www.comciencia.br/noticias/14jun02/nanotecnologia.htm
+http://www.comciencia.br/noticias/14jun02/nanotecnologia.htm
+
+
+
+FIGURAS
+
+
+Figura 1.2
+
+Uma engrenagem, espécie de nanodispositivo. Para se comparar o tamanho dessa engrenagem foram 
+postas bactérias(em vermelho) ao seu redor.
+
+
+Figura 1.4.1
+
+Nano-guitarra: ela tem 6 cordas manipuláveis que produzem som de verdade. O tamanho dela é de 
+cerca de 10 átomos. Incrível não?
+
+
+Figura 1.4.7
+
+Uma comparação entre a evolução dos sistemas biológicos e os sistemas eletrônicos.
+
+

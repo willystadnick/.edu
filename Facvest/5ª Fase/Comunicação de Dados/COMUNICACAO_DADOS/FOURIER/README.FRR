@@ -1,0 +1,69 @@
+                                 FOURIER SERIES
+                                        
+This slide show consists of graphs of various functions together with some of
+their Fourier Series approximations.
+
+When viewing the slides, the following keys are operational:
+
+HOME      takes you to the first slide in the sequence you selected
+END       takes you to the last slide in the sequence you selected
+UP ARROW  takes you to the previous slide in the sequence you selected
+ESC       immediately quits the program
+
+These keys do NOT operate like that while you are reading this document.
+
+A.  Triangular Wave
+     The function here is
+
+                      x     if -ã/2 < x < ã/2
+                    ã - x   if  ã/2 < x < 3ã/2
+                         and has period 2ã.
+
+The first slide shows this function for -2ã < x < 2ã.  The next 6 slides show
+the Fourier series expansion out to terms 1, 2, 3, 4, 5, 6, superimposed on the
+function.
+
+B.  Square Wave
+     The function here is
+
+                         -1   if -2 < x < 0
+                          1   if  0 < x < 2
+                          and has period 4.
+
+The first slide shows this function for -4 < x < 4.  The next 11 slides show the
+Fourier series expansion out to terms 1, 2, 3, ... , 9, 10, 11, superimposed on
+the function.  Notice Gibbs phenomena.
+
+C.  Saw Tooth Wave
+     The function here is
+
+                          x if -1 < x < 1
+                          and has period 2.
+
+The first slide shows this function for -3 < x < 3.  The next 11 slides show the
+Fourier series expansion out to terms 1, 2, 3, ... , 9, 10, 11, superimposed on
+the function.  Again notice Gibbs phenomena.
+
+D.  Cosine Expansion of Sine
+     The function is
+
+                          sin x if  0 < x < ã.
+
+The first slide shows this function.  The next 8 slides show the Fourier cosine
+series expansion out to terms 1, 2, 3, 4, 5, 6, 7, 8 superimposed on the
+function.
+
+E.  Interrupted Square Wave
+     The function here is
+
+                      0    if    -ã < x < -ã/2
+                    -ã/2   if  -ã/2 < x < 0
+                     ã/2   if     0 < x < ã/2
+                      0    if   ã/2 < x < ã
+                        and has period 2ã.
+
+The first slide shows this function for -ã < x < ã.  The next 13 slides show the
+Fourier series expansion out to terms 1, 2, 3, ... 11, 12, 13, superimposed on
+the function.
+
+When you have finished reading this document, press Q to quit.

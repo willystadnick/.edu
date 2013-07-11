@@ -1,0 +1,221 @@
+# The Outpost Attack Detection Plug-in consists of two parts:
+# 	* Outpost Scanning Detection module.
+# 	* Outpost Attack Detection module.
+# 
+# The Outpost Attack Detection module detects and blocks the following 
+# attacks-also called exploits or Denial Of Service (DOS) attacks:
+#	* Teardrop
+#	* Nestea
+#	* Iceping
+#	* Moyari13
+#	* Winnuke
+#	* Nuke
+#	* FRAG_ICMP Class (Jol12, Targa13 and other)
+#	* FRAG_IGMP Class (IGMPSYN and other)
+#	* SHORT_FRAGMENTS Class
+#	* MY_ADDRESS Class (Snork and others)
+#	* Rst
+#	* 1234
+#	* Fawx
+#	* Fawx2
+#	* Kox
+#	* Tidcmp
+#	* Rfposion
+#	* Rfparalyse
+#	* Win95handles
+# The Outpost Attack Detection module can also detect and neutralize 
+# distributed DOS attacks.
+# 
+# The Outpost Scanning Detection module can detect simple TCP and UDP port
+# scanning as well as the following types of stealth scanning: 
+# Syn, Fin, Xmas, Null, Udp.
+# 
+# Usually scan detectors in most Personal Firewalls detect a Port Scan 
+# (also called TCP port scanning or port probe) if someone connects to any 
+# closed port on the local PC. However, this approach results in a great
+# number of false alarms because often-valid software needing to interchange
+# data routinely checks for open or closed ports. 
+# 
+# To decrease the number of false alarms Outpost's Scanning Detection Module 
+# differentiates between single scan of a closed port (a suspicious packet)
+# and several accesses to different ports by the same remote host.
+# 
+# Outpost designates a packet as suspicious if it is a: 
+# 1. TCP Connection request or UDP packet to a non-open port.
+# 2. TCP data packet for a non-existent connection.
+# 3. TCP Connection request or UDP packet to a port closed by Outpost.
+# If Outpost detects a suspicious packet, it displays the "Connection request" 
+# message in its log file.
+# 
+# Port Scanning is another intrusion indicator that is detected if several 
+# suspicious packets are received from one remote host within a specified 
+# time interval.
+# 
+# Using the settings below you can fine-tune the Outpost Attack Detection 
+# Plug-in settings. Do NOT modify a setting without understanding what 
+# that setting is for. If there is any uncertainty, please consult the on-line 
+# documents or Agnitum Support. This is an important point so please take this 
+# warning seriously.  
+# 
+# 
+# All time intervals are in milliseconds.
+# 
+# The number of suspicious packets detected before Outpost reports 
+# "Port Scan Detected":
+
+N(1) = 2	#maximum alert level
+N(2) = 6	#normal alert level
+N(3) = 12	#minimum alert level
+
+# Bit mask of allowed checks for disabling the detection of some attacks:
+T1 = 65535
+
+# Outpost will report Port scanning if N (see above) suspicious packets 
+# are detected from one host within the time T2.
+T2 = 600
+
+# After a Port Scan is detected, the plug-in will ignore the attacking host 
+# for the time T3. This interval is needed to protect from a great number of 
+# "Port Scan detected" messages if someone is scanning all your ports.
+T3 = 6000
+
+# After disconnecting from a valid remote host it might try to send another 
+# packet to the same local port not knowing that the port was closed by 
+# application that had opened this port. To prevent false alarms in this case,
+# the plug-in will forget about these local ports and remote hosts 
+# for the time T4.
+T4 = 3000
+
+# The number of different remote hosts detected in a distributed DOS attack. 
+# This is used for detecting an attack in which different remote hosts 
+# participate or if the attacker employs IP spoofing. In this case,
+# a DOS attack will be detected if the number of remote hosts sending 
+# suspicious packets to one port on your system exceeds T5 during the time 
+# interval T2. 
+T5 = 100
+
+# The maximum number of remote hosts detected in an attack after which the 
+# attack is ignored for the time T3.  This setting is needed to prevent a 
+# great number of "Attack detected" messages if an attacker uses IP spoofing 
+# or different remote hosts.
+T6 = 10
+
+# This is the minimum fragment size for the 
+# PROTECT_ENABLE_SHORT_FRAGMENTS_DETECT. Fragments (excluding the last one in 
+# a packet) smaller than T7 will be considered an attack.
+T7=128
+
+# During the time, T8 the plug-in will try to assemble packets from fragments.
+# After the time T8 has been exceeded the plug-in will abort the task.
+T8=50      
+
+# Maximum number of unassembled packets for an OPENTEAR exploit detection.
+T9=30     
+
+# During the time T10 after an OPENTEAR attack is detected, all fragmented
+# packets will be blocked.
+T10=600     
+
+# During the time T11 after NUKE packets are received, the connection will be 
+# protected from disconnection.
+T11=6000    
+
+# The number of RST packets for an RST attack detection is T12
+T12=5       
+
+
+# Ports That are Typically Vulnerable
+# 
+# Even one suspicious packet sent to a Typical Vulnerable Port (for example 
+# 31337, 111 or 139) is considered an attempt to gain unauthorized access 
+# to your system. That is why some ports are given more weight than others 
+# and can trigger a "Port Scan Detected" message even with only one suspicious 
+# packet received. 
+# 
+# The description of a vulnerable port has the following format:
+# 
+# Protocol PortNumber Weight Bind UseForAllPackets
+# 
+# Protocol and PortNumber are self-explanatory.
+# 
+# Weight is the significance a port has. For example, a weight of 3 for 
+# port 111 means that a single suspicious packet to this port is equal to 3 
+# suspicious packets sent to another port that is weighted at 1.
+# 
+# Bind is the number of the Network Interface. For example, you can specify 
+# that a packet from a Network Card for a LAN is not counted as suspicious 
+# but a packet from a Network Card to the Internet is to be considered 
+# suspicious. This can be used for Routers and Gateways.
+# If Bind is 0 it is used for All Binds.
+# 
+# UseForAllPackets. If set to 1 every connection request to this port will be 
+# counted as suspicious, no matter if it was blocked or allowed by the 
+# Firewall, and whether or not the port is open or closed. 
+
+<VulnerablePorts>
+
+# System Services:
+ 
+TCP 21 2 0 0
+TCP 23 2 0 0
+TCP 25 2 0 0
+TCP 53 6 0 0
+TCP 79 2 0 0
+TCP 80 2 0 0
+TCP 109 2 0 0
+TCP 110 2 0 0
+TCP 135 2 0 0
+TCP 137 2 0 0
+TCP 138 2 0 0
+TCP 139 6 0 0
+TCP 111 6 0 0
+TCP 143 2 0 0
+TCP 445 6 0 0
+TCP 1080 2 0 0
+
+# Trojans:
+ 
+TCP 12345 2 0 0		#NetBus
+TCP 12346 2 0 0		#NetBus
+TCP 20034 2 0 0		#NetBus
+UDP 31337 2 0 0		#Back Orifice
+TCP 1243  2 0 0		#SubSeven
+TCP 27374 2 0 0		#SubSeven
+TCP 10528 2 0 0		#Host Control
+TCP 11051 2 0 0		#Host Control
+TCP 15092 2 0 0		#Host Control
+TCP 5880  2 0 0		#Y3K
+TCP 12348 2 0 0		#BioNet
+TCP 12349 2 0 0		#BioNet
+TCP 17569 2 0 0		#Infector
+TCP 24000 2 0 0		#Infector
+TCP 9400  2 0 0		#InCommand
+
+</VulnerablePorts>
+
+# Outpost will not count any packet from the following hosts as suspicious 
+# (format is IP or IP/subnet mask):
+
+# <IgnoreHosts>
+# 
+# 192.168.3.0/255.255.255.0 #Local Network
+# 
+# </IgnoreHosts>
+ 
+<IgnoreHosts>
+# 
+192.168.3.0/255.255.255.0 #Local Network
+192.168.4.1
+192.168.4.2
+#195.131.4.164
+
+</IgnoreHosts>
+
+# Outpost will not count any packet to the following local ports as suspicious:
+
+<IgnorePorts>
+
+TCP 113  #Ident
+TCP 13223  #PowWow Online Pager
+
+</IgnorePorts>

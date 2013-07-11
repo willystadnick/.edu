@@ -1,0 +1,39 @@
+O Documento que devo receber deverá estar com o seguinte quesito:
+
+
+Arquivo
+Todo o conteúdo deverá estar dentro de um só arquivo.
+O arquivo deverá ter o nome do capitulo dado em sala de aula ao Grupo
+Exemplo:
+Capitulo 1 e Capitulo 2.doc
+ou
+Capitulo 3 e Capitulo 4.doc
+ou
+Capitulo 5 e Capitulo 6.doc
+ou
+Capitulo 7 e Capitulo 8.doc
+ou
+Capitulo 9 e Capitulo 10.doc
+ou
+Capitulo 11.doc
+ou
+Capitulo 12 e Capitulo 13.doc
+ou
+Capitulo 14 e Capitulo 15.doc
+
+
+Extensão
+Devera estar salvo com a extenção.doc.
+
+
+Documentação
+Todo os títulos deverão estar com uma referência:
+Exemplo:
+1.0  Windows
+2.0  Dos
+3.0  Linus
+Mesma coisa para subtítulos:
+1.1  Word
+1.2  Excel
+1.3  Calculadora
+Todas as figuras deverão estar dentro do documento.

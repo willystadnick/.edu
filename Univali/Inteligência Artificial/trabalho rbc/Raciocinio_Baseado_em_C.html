@@ -1,0 +1,174 @@
+  <html lang="pt-BR" xmlns:gdoc="">  <head> <meta content="text/html; charset=utf-8" http-equiv="Content-Type"> <style type="text/css">
+
+
+/* default css */
+
+table {
+  font-size: 1em;
+  line-height: inherit;
+}
+
+
+div, address, ol, ul, li, option, select { 
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+p {
+  margin: 0px;
+}
+
+body {
+  margin: 6px;
+  padding: 0px;
+  font-family: Verdana, sans-serif;
+  font-size: 10pt;
+  background-color: #ffffff;
+}
+
+
+
+h6 { font-size: 10pt }
+h5 { font-size: 11pt }
+h4 { font-size: 12pt }
+h3 { font-size: 13pt }
+h2 { font-size: 14pt }
+h1 { font-size: 16pt }
+
+blockquote {padding: 10px; border: 1px #DDD dashed }
+
+a img {border: 0}
+
+div.google_header, div.google_footer {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+/* end default css */
+
+
+  /* default print css */
+  
+  @media print {
+    body { 
+      padding: 0; 
+      margin: 0; 
+    }
+
+    div.google_header, div.google_footer {
+      display: block;
+      min-height: 0;
+      border: none;
+    }
+
+    div.google_header {
+      flow: static(header);
+    }
+
+    /* used to insert page numbers */
+    div.google_header::before, div.google_footer::before {
+      position: absolute;
+      top: 0;
+    }
+
+    div.google_footer {
+      flow: static(footer);
+    }
+
+    /* always consider this element at the start of the doc */
+    div#google_footer {
+      flow: static(footer, start);
+    }
+
+    span.google_pagenumber {
+      content: counter(page);
+    }
+
+    span.google_pagecount {
+      content: counter(pages);
+    }
+  }
+
+  @page {
+    @top {
+      content: flow(header);
+    }
+    @bottom {
+      content: flow(footer);
+    }
+  }
+  /* end default print css */
+ 
+
+/* custom css */
+
+
+/* end custom css */
+
+
+
+  /* ui edited css */
+  
+  body {
+    font-family: Verdana;
+    
+    font-size: 10.0pt;
+    line-height: normal;
+    background-color: #ffffff;
+  }
+  /* end ui edited css */
+
+
+
+
+</style>   </head>  <body  revision="ddmvzrk3_198wr475djc:30">      <font id=vn_q0 size=3><span id=vn_q1><b> Raciocínio Baseado em
+Casos</b></span></font><br id=bpuh0>
+<br id=bpuh1>
+<span id=vn_q2><b>Banco e linguagem utilizados:</b></span><br id=bpuh2>
+PHP &amp; MySQL.<br id=bpuh3>
+<br id=bpuh4>
+<span id=vn_q3><b>Tema:</b></span><br id=bpuh5>
+Determinação de perfis para escolha de produtos.<br id=bpuh6>
+<br id=bpuh7>
+<span id=vn_q4><b>Descrição do problema:</b></span><br id=bpuh8>
+Definir um ou mais produtos que se enquadrem no perfil da pessoa, baseado nos
+casos existentes (produtos escolhidos previamente por pessoas com perfis
+diferenciados).<br id=bpuh9>
+<br id=bpuh10>
+<span id=vn_q5><b>Variáveis e Métricas de Similaridade:</b></span><br id=bpuh11>
+- Pessoa:<br id=bpuh12>
+* nome (0)<br id=bpuh13>
+* gênero [masculino | feminino] (5)<br id=bpuh14>
+* faixa etária (3)<br id=bpuh15>
+* estado civil [casado(a) | solteiro(a) | separado(a) | viúvo(a) | vive com
+companheiro(a)] (1)<br id=bpuh16>
+* escolaridade [1o. grau | 2o. grau | superior | pós-graduação | curso técnico]
+(1)<br id=bpuh17>
+* ocupação [estudante | profissional liberal/empresário |
+executivo/administrador | educador/acadêmico | atendimento ao cliente | serviços
+administrativos | serviços comerciais | planejamento/execução | dono(a) de casa
+| procuro emprego | aposentado | outra | militar | servidor público |
+desocupado] (1)<br id=bpuh18>
+* atuação [serviços de consultoria e negócios | serviços financeiros | seguros |
+informática | educação/pesquisa | engenharia | indústria | serviços de saúde |
+entretenimento | turismo | comércio/varejo | agropecuária | organização sem fins
+lucrativos | serviços públicos | serviços de advocacia | comunicação | outra |
+arquitetura | artes | esporte | internet | marketing | recursos humanos] (2)<br id=bpuh19>
+* interesses [animais &amp; arte e cultura &amp; automóveis &amp; bebidas e
+vinhos &amp; casa e jardim &amp; cinema e vídeo &amp; dinheiro &amp; esportes
+&amp; games e brinquedos &amp; gastronomia &amp; informática e internet &amp;
+livros &amp; moda &amp; música &amp; política &amp; saúde e beleza &amp;
+tabacaria &amp; viagens] (2)<br id=bpuh20>
+<br id=lsd-0>
+<span id=vn_q6><b>Escala de Pesos (Importâncias):</b></span><br id=lsd-1>
+0 - nulo | 1, 2 - baixo | 3 - médio | 4, 5 - alto<br id=lsd-4>
+<br id=lx:v1>
+<span id=vn_q7><b>Realização do Cálculo:</b></span><br id=lx:v2>
+A partir do preenchimento do perfil da pessoa e através da escolha dos produtos
+relacionados, são então calculados os valores de pertinência a cada variável no
+escopo do produto.<br id=lx:v3>
+<br id=ubo10>
+<span id=vn_q8><b>Justificativa:</b></span><br id=ga0z0>
+Realizado dessa maneira, o cálculo permite uma variação de perfis e de produtos
+em função das escolhas realizadas.<br id=ga0z1></body>
+</html>

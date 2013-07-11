@@ -1,0 +1,20 @@
+Passos para Implementar e Utilizar Aplicações Distribuídas com RMI:
+
+- Implementar a classe que define a Interface (Ex.: RMIServidor)
+- Implementar a classe que implementa os métodos definidos na Interface (Ex.: RMIServidorImpl)
+- Implementar a classe que irá utilizar os métodos remotos (Ex.: RMICliente)
+
+- Abrir 3 Janelas do prompt comando
+
+- janela 1: Compilar a classe RmiServidor (digitar: javac RMIServidor.java). 
+- janela 2: Compilar a classe RmiServidorImpl (digitar: rmic RMIServidorImpl.java). Será gerado o Stub e Skeleton - responsáveis pela comunicação remota entre cliente e servidor.
+- janela 3: Compilar a classe RmiCliente (digitar: javac RMICliente.java)
+
+- janela 1:  registrar o Servidor RMI. Para tornar o objeto servidor remoto disponível para receber as chamadas dos métodos remotos, ele deve ser vinculado ao registro (digitar: rmiregistry). Não será retornada nada ao usuário.
+- janela 2: executar a classe RmiServidorImpl (digitar: java RMIServidorImpl). Aguardar a mensagem: "Servidor Pronto".
+- janela 3: executar a classe RmiCliente (javac RMICliente.java)
+
+Obs.: não esqueçam que para compilar e executar as classes, vcs devem direcionar no prompt do comando, o diretório aonde as classes foram salvas.
+
+Bom Trabalho, Bom Feriado e Boas Festas.
+Madalena

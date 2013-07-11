@@ -1,0 +1,29 @@
+Analize de requisitos Pizzaria Italia.
+
+Apos longa conversa com o seu Joaquim dono da pizzaria Italia,
+concluimos que ele necessita de um sistema que lhe informe os seguintes dados:
+- As pizzas mais Vendidas
+- A quantidade de chop consumida diaria mente
+- O quadro de funcionarios
+- O fechamento diario de Caixa
+
+Apos compreendermos tal necessidade do seu Joaquim, recolhemos dados de como 
+funcionava o seu estabelecimento. Descobrimos que a entrada de dinheiro se deve
+a 2 coisas:
+- Serviço de Entrega	(Tele-entrega)
+- Atendimento local	(Pizzaria)
+
+Depois de todos esse dados recolhidos extruturamos o seguinte banco de dados
+para suportar tal sistema com as seguintes tabelas
+
+Banco Pizzaria
+
+Tabelas
+	Clientes
+	Funcionarios
+	Produtos
+	Pedidos
+	Entrega
+	Interno
+
+Justificações

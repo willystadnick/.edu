@@ -1,0 +1,104 @@
+[tcp]
+7,ECHO,Echo
+9,Discard,Discard
+13,Daytime,Daytime
+17,QOTD,Quote of the Day
+19,Chargen,Character Generator
+20,FTPDATA,File Transfer Protocol
+21,FTP,File Transfer Protocol
+22,SSH,Secure Shell
+23,Telnet,Telnet Protocol
+25,SMTP,Simple Message Transfer Protocol
+37,Time,Timserver
+38,RAP,Route Access Protocol
+39,RLP,Resource Location Protocol
+42,NAMESERVER,Host Name Server
+43,WHOIS,Who Is
+53,DOMAIN,Domain Name Server
+67,BOOTPS,Bootstrap Protocol Server
+68,BOOTPC,Bootstrap Protocol Client
+69,TFTP,Trivial File Transfer Protocol
+70,GOPHER,Gopher
+79,Finger,Finger
+80,HTTP,HyperText Transfer Protocol
+101,HOSTNAMES,NIC Host Name Server
+102,ISO_TSAP,ISO-TSAP Class 0
+107,RTELNET,Remote Telnet Service
+109,POP,Post Office Protocol - Version 2
+110,POP3,Post Office Protocol 3
+111,SUNRPC,SUN Remote Procedure Call
+113,AUTH,Authentication Service
+117,UUCP_PATH,UUCP Path Service
+119,NNTP,Network News Transfer Protocol
+123,NTP,Network Time Protocol
+135,DCOM,Microsoft RPC end point to end point mapping
+137,NETBIOS_NS,NETBIOS Name Service
+138,NETBIOS_DGM,NETBIOS Datagram Service
+139,NETBIOS_SESSION,NETBIOS Session Service
+143,IMAP,Interim Mail Access Protocol v2
+158,PCMAIL_SRV,PCMail Server
+161,SNMP,SNMP (Simple Network Management Protocol)
+162,SNMPTRAP,SNMPTRAP (Simple Network Management Protocol)
+170,PRINT_SRV,Network PostScript
+179,BGP,Border Gateway Protocol
+194,IRC,Internet Relay Chat Protocol
+213,IPX,IPX
+389,LDAP,Lightweight Directory Access Protocol
+443,HTTPS,Secure connection
+445,MICROSOFT_DS,Microsoft-DS
+464,KPASSWD,kpasswd
+500,ISAKMP,sakmp
+512,EXEC,Remote Process Execution
+513,LOGIN,Remote Login via Telnet
+514,SHELL,Automatic Remote Process Execution
+515,PRINTER,Printer Spooler
+517,TALK,talk
+518,NTALK,ntalk
+520,EFS,Extended File Server
+525,TIMED,Time Server
+526,TEMPO,newdate
+530,COURIER,rpc
+531,CONFERENCE,chat
+532,NETNEWS,readnews
+533,NETWALL,Emergency Broadcasts
+540,UUCP,UUCP Daemon
+543,KLOGIN,Kerberos Authenticated Login
+544,KSHELL,krcmd
+550,NEW_RWHO,new-who
+556,REMOTEFS,rfs (Remote File System) server
+560,RMONITOR,rmonitord
+561,MONITOR,monitor
+636,LDAPS,ldap protocol over TLS/SSL
+666,DOOM, Doom (Id Software)
+749,KERBEROS_ADM,kerberos administration
+750,RFILE,RFILE
+995,POP3S,POP3 (Post Office Protocol) over TLS/SSL
+1080,SOCKS,Socks
+1109,KPOP,kpop
+1433,MS_SQL_S,Microsoft SQL Server
+1434,MS_SQL_M,Microsoft SQL Monitor
+1512,WINS,Microsoft's Windows Internet Name Service
+1524,INGRESLOCK - ingres
+1723,PPTP,pptp
+1755,MS_STREAMING,ms-streaming
+1812,RADIUS,RADIUS
+1813,RADIUS_ACCT,RADIUS Accounting
+3128,PROXY:3128,Proxy server
+8008,PROXY:8008,Proxy server
+8080,PROXY:8080,Proxy server
+8088,PROXY:8088,Proxy server
+9535,MAN,man
+11523,AOL_4,AOL-4
+
+[udp]
+7,ECHO,Echo
+9,Discard,Discard
+13,Daytime,Daytime
+17,QOTD,Quote of the Day
+19,Chargen,Character Generator
+37,Time,Timserver
+53,DNS,Domain name service
+137,NETBIOS_NS,NETBIOS Name Service
+138,NETBIOS_DGM,NETBIOS Datagram Service
+4000,ICQ,ICQ chat program
+31337,BackOrifice, Back Orifice trojan program

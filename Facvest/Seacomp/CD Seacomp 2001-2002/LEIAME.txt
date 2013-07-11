@@ -1,0 +1,7 @@
+Para visualização dos resumos é necessário ter instalado o 
+Acrobat Reader no computador. Caso não tenha este software,
+ele poderá ser instalado através do menu (Acrobat Reader)
+ou diretamente do CD executando-se o arquivo ar505enu.exe
+
+Arquivo com os resumos de 2001: seacomp2001.pdf
+Arquivo com os resumos de 2002: seacomp2002.pdf

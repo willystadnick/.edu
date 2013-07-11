@@ -1,0 +1,45 @@
+Descrição Tipo
+
+type
+ elem = char
+ n = record
+  objeto : elem;
+  i : integer
+ end;
+
+Tipo Enumerado
+ (id1, id02, id03, ..., idn)
+
+type
+ dias_semana = (seg, ter, qua, qui, sex, sab, dom)
+ estacao = (primavera, verao, outono, inverno)
+ end;
+var
+ dia_util : dias_semana
+ estacao_das_flores : estacao
+
+Operação com tipo enumerado
+* não pode fazer parte de comandos de entrada e saída
+exemplo : writeln(dia_util);  X errado
+
+* podem haver comparações e atribuições
+ dia_util := ter
+ primavera < inverno
+
+Funções pré-definidas para tipos enumerados
+> succ(parametro)
+  {devolve o sucessor do parametro}
+exemplo: dia_util := ter;
+         succ(dia_util)
+	 dia_util vale qua
+
+> pred(parametro)
+  {devolve o precessor do parametro}
+exemplo dia_descanso := dom
+	pred(dia_descanso)
+	dia_descanso vale sab
+
+> ord(parametro)
+  {devolve o valor ordenado do parametro}
+exemplo ord(sab) = 6
+	

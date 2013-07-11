@@ -1,0 +1,16 @@
+Install.exe 
+Service_Install95
+VFILT_Install95
+InstallPlugin PlugIns\engine=engine.dll
+InstallPlugin KernelPlugIns\00=HTTPFILT.DLL
+InstallPlugin KernelPlugIns\01=HTMLFILT.DLL
+InstallPlugin KernelPlugIns\02=ADBLOCK.DLL
+InstallPlugin KernelPlugIns\03=DNSCACHE.DLL
+InstallPlugin KernelPlugIns\04=POP3FILT.DLL
+InstallPlugin KernelPlugIns\05=MAILFILT.DLL
+InstallPlugin KernelPlugIns\06=CONTENT.DLL
+InstallPlugin KernelPlugIns\07=FTPFILT.DLL
+InstallPlugin KernelPlugIns\08=IMAPFILT.DLL
+InstallPlugin KernelPlugIns\09=NNTPFILT.DLL
+InstallPlugin KernelPlugIns\10=PROTECT.DLL
+install finished

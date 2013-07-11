@@ -1,0 +1,13 @@
+Solução para o Problema do Caixeiro Viajante utilizando Redes Neurais
+
+O Problema do Caixeiro Viajante consiste em determinar o caminho mais curto entre cidades duma determinada lista, de modo que cada cidade seja visitada somente uma vez.
+
+Trata-se de um problema de otimização «NP-completo», isto é, para um problema de dimensão razoável, há tantas hipóteses a considerar que não é normalmente prático procurar uma solução ótima, porque eleva o custo computacional. Considera-se, no entanto, um bom resultado a obtenção de uma "boa" solução num tempo computacional curto.
+
+Uma rede neural permite determinar rapidamente soluções que, quando são válidas, estão todas entre as 30 ou 40 melhores dentre as centenas de milhares de hipóteses possíveis. Se escolhermos entre elas a que corresponde à menor distância total de menor custo, obteremos rapidamente uma solução que, se não é a melhor, estará muito «perto» de ser.
+
+A representação dos circuitos do Problema do Caixeiro Viajante basea-se numa matriz de permutações: há uma linha para cada cidade e cada coluna representa a posição da cidade no percurso a realizar. Por exemplo, se o primeiro neurônio da terceira coluna tem uma saída perto de 1 (representada por um quadrado vermelho que ocupa a célula da matriz correspondente), isso significa que está a ser considerada a hipótese da cidade de Lisboa (X) ser visitada em terceiro lugar.
+
+O programa basea-se na simulação das equações diferenciais não-lineares que descrevem a rede, sendo o valor de saída de cada um dos 100 neurônios representado pelo tamanho do quadrado vermelho/azul respectivo. Se uma solução satisfatória não foi encontrada com o número de iterações selecionado, a cada vez que se pressiona o botão Cont a computação prossegue por mais 700 passos, embora, em certos casos, a rede possa estabilizar definitivamente num estado correspondente a uma solução não satisfatória.
+
+Os quadrados vermelhos representam valores de saída maiores que 0.5 e, se ocuparem totalmente a célula correspondente, o valor de saída será 1. Os quadrados azuis representam valores inferiores a 0.5 e, quando desaparecem totalmente, correspondem a valores de saída inferores a 0.05. A cor de cada trajeto é a mesma do quadrado que representa a cidade em que termina. 

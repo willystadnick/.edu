@@ -1,0 +1,16 @@
+import javax.swing.JOptionPane;
+    public class Exemplo4{
+	    public static void main(String args[]){
+	        //DECLARAÇÃO, LEITURA E CONVERSÃO DOS DADOS...
+            float largura = Float.parseFloat(JOptionPane.showInputDialog("Digite a Largura do Lote: "));
+            float comprimento = Float.parseFloat(JOptionPane.showInputDialog("Digite o Comprimento do Lote: "));		
+		    //CALCULO...
+			float area=(largura*comprimento);
+			//RECONVERSÃO DAS UNIDADES...
+			String sarea = String.valueOf(area);
+			//EXIBIÇÃO DO TOTAL...
+			JOptionPane.showMessageDialog(null,"A Área do Lote é: " + sarea + "m²");
+			//ENCERRA O PROGRAMA...
+			System.exit(0);
+			}
+}

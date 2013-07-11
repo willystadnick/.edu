@@ -1,0 +1,166 @@
+Introdução de Sistemas Operacionais
+
+Para usar os primeiros computadores era preciso conhecer profundamente o seu funcionamento, pois a programação era feita em painéis, através de fios. Com a evolução da informática tornou-se óbvio que o antigo sistema era muito pouco eficiente e causava muitos erros. 
+Os primeiros sistemas operacionais surgiram justamente para tentar automatizar o uso dos computadores. A partir daí, os sistemas operacionais evoluíram rapidamente até chegar ao que são hoje.
+Um sistema operacional é um programa como todos os outros. O sistema operacional toma conta do computador e facilita a vida do usuário, deixando que ele se preocupe com as coisas mais úteis e produtivas que endereço de memória, segmentos e interrupções.
+Neste capítulo será mostrado os conceitos básicos de sistemas operacionais, tais como: as principais funções, conceitos, o histórico dos sistemas operacionais, e outros. 
+
+O que é um Sistema Operacional? 
+Sistema Operacional é um programa que permite ao usuário e ao programador usar o hardware. O sistema operacional não faz parte do computador, ele é um programa que deve ser adquirido separadamente.
+O sistema operacional instrui o hardware a executar tarefas, recebe as instruções dadas pelo usuário e ele serve como interface entre o software aplicativo e o hardware.
+Sistema Operacional isola o usuário dos detalhes das operações, fornece uma interface muito simples e trata de questões incomodas como as interrupções, temporizadores, gerencia a memória, etc.
+
+
+Qual a função do Sistema Operacional 
+
+Permite armazenar e obter informações dos programas;
+Isola os programas dos detalhes específicos;
+Controla o fluxo de dados;
+Permite a execução de programas sem interferências;
+Responde a erros;
+Responde a solicitações do usuário;
+Impõe um escalonamento entre os programas que solicitam recursos;
+
+Primeira geração de computadores (1945-1955): VÁLVULAS E PAINÉIS
+
+Os computadores eram primitivos, baseados em válvulas.
+Os computadores eram enormes e ocupavam salas imensas.
+1940- desenvolvido por John von Neumann;
+Programação em código absoluto;
+Computadores muito lentos;
+Tinha grande consumo de energia e problema com superaquecimento. 
+Programas constituídos por cálculos numéricos repetitivos.
+1950- cartão perfurado. Codificação de programas;
+Leitura na máquina, dispensando a programação através de painéis.
+Havia somente um grupo de pessoas responsável pelo projeto, construção, programação, operação e manutenção dos computadores. 
+
+Segunda geração de computadores (1955-1965): TRANSISTORES E SISTEMAS BATCH
+
+Milhões de dólares (maquinário);
+Houve um aumento da capacidade de memória e aumento de memória.
+Os transistores substituíram as válvulas.
+Os transistores eram menores, duravam muitos anos e consumiam menos energia
+Programador => operadores => processo => operadores => impressora => operador;
+Solução: Sistema Batch (lote) => coletar um conjunto de jobs, fazer uma leitura para a fita magnética, empregando um computador pequeno e relativamente barato (IBM 1401);
+O TRADIC foi o primeiro modelo de computador 100% transistorizado.
+Os cartões de controle primitivos deram início ao desenvolvimento das linguagens de controle e dos interpretadores de comandos atuais;
+Usados na realização de cálculos científicos e de engenharia;
+Linguagem FORTRAN ou linguagem de montagem.
+
+Terceira geração de computadores (1965-1980): CI’S E MULTIPROGRAMAÇÃO
+
+Início dos anos 60;
+CI’s e multiprogramação;
+O CI é um pequeno componente eletrônico que possui em seu interior, centenas de transistores. 
+O custo para produção dos computadores começou a cair.
+SISTEMA/360 => IBM;
+máquinas compatíveis em nível de software;
+máquinas com a mesma arquitetura e instruções básicas, os programas rodavam em qualquer uma delas;
+Tecnologias mais modernas para 370 – 4300 – 3080 – 3090;
+Liam JOBS de cartão direto para disco;
+SPOOL => Assim que um job ativo terminasse, o S.O. carregaria um novo job na partição livre.
+Sistemas em compartilhamento de tempo (timesharing);
+Ken Thompson cria, a partir de um PDP-7, o S.O. Unix.
+   
+Quarta geração de computadores (1980-1990): CIRCUITO DE LARGA ESCALA
+
+Computadores pessoais (PC’s);
+Desenvolvimento da integração de circuitos em grande escala (LSI), com chips de transistores encapsulados em um cm² de silício deu início à idéia de PC.
+Surgiram no mercado as placas VGA e suporte a 256 cores.
+Houve tanta popularização dos 286, 386 e 486 DX que com o uso dessas máquinas surgiu o conceito de PC (Personal Computer).
+Os componentes tinham baixo custo e reduzido tamanho.
+Anos 80 => S.O. para redes e S.O. distribuídos;
+Sistemas Operacionais dominantes no início:
+MS-DOS (Microsoft) e o Unix;
+Sistemas Operacionais dominantes atualmente:
+Windows e Linux;
+
+Quinta geração de computadores (1990-HOJE): ULTRA LARGE SCALE INTEGRATION
+
+Computadores modernos, com alta capacidade de processamento de dados, armazenamento e taxa de transferência.
+Utilização de processadores paralelos, a execução de muitas operações simultaneamente pelas máquinas.
+Em 1993, o primeiro processador Pentiun é dotado de memória de 108 pinos ou DIMM. 
+A evolução dos computadores está longe de terminar, mesmo com o rompimento da barreira dos terabytes.
+
+Conceitos básicos sobre Sistema Operacionais
+
+Processos
+
+Processo é um conceito chave de toda teoria do sistema operacional, ele é um programa em execução.
+O processo é constituído de código executável, dados referentes ao código, pilha de execução, valor do contador, valor do apontador, valores dos demais registradores e outras informações necessárias para execução do programa.
+Uma idéia de processo é imaginar sistemas de compartilhamento de tempo do processador, onde o sistema operacional interrompe ou iniciar a execução de um processo. O processo é interrompido por exceder o tempo de uso do processador e é restaurado mais tarde, no ponto que foi interrompido.
+Quando o processo é interrompido há necessidade de guardar a posição exata onde foi interrompido. Estas informações não pertencem ao sistema de endereçamento e são armazenados em uma tabela de processos. 
+Um processo transmite informações para outro que está sendo processado, está informação é enviada pela rede. Para a mensagem não se perder, o processo transmissor requer do seu sistema operacional que seja notificada em alguns segundos por um sinal sobre o recebimento ou não da mensagem. Se a mensagem não chegar ela é retransmitida.
+Em sistemas multiprogramados, cada usuário tem uma identificação, uid (identificação do usuário), para identificar qual usuário é dono do processo. 
+   
+A cada processo é atribuída a uid de seu usuário. Os usuários de um sistema dividido em grupos de usuários têm sua própria identificação de grupo gid (identificação de grupo). 
+
+Arquivos
+
+O Sistema Operacional implementa o conceito de diretório, para agrupar um conjunto de arquivos.
+Cada arquivo pertencente à hierarquia do diretório pode ser especificado através do NOME DE SEU CAMINHO.
+A única semelhança entre processo e arquivo é sua organização como árvores. O processo não utiliza árvores profundas e tem no máximo três níveis, enquanto que os arquivos possuem mais quatro, cinco ou até mais níveis de profundidade. Somente um processo pai pode controlar e acessar um processo filho, enquanto que nos arquivos, existem mecanismos que permitem ser lidos por outras pessoas e não somente o dono.
+A estrutura de processo tem vida curta, no máximo alguns minutos, enquanto a estrutura de arquivo pode durar anos.
+Existem dois tipos de arquivos especiais:
+Os arquivos de bloco;
+Os arquivos especiais de caracteres;
+Arquivo de bloco – usado para modelar dispositivos constituídos por um conjunto de blocos endereçáveis randomicamente tais como os discos.
+Arquivo especial de caracter – usado para modelar dispositivos de cadeia de caracteres.
+OBS: PIPE => Pseudo-arquivo que pode ser usado para conectar dois processos. 
+
+Chamadas de Sistema
+
+Solicitação, por parte dos programas, de serviços ao Sistema Operacional A quantidade e o tipo de Sistema Operacional variam. 
+Ex1.: Criar processos, gerenciar memória, ler e escrever em arquivos para manipular I/O.
+Ex2.: 
+1. O programa executa um TRAP para o Kernel;
+2. O S.O. determina o tipo de serviço;
+3. O S.O. localiza e chama a rotina de serviço;
+4. O controle retorna ao programa.
+
+O interpretador de comandos (shell)
+
+O Shell é a interface entre o usuário de um terminal e o sistema operacional.
+Quando o usuário tecla algo, o Shell cria um processo-filho e roda o programa utilizando a estrutura de dados do processo-filho. Enquanto o processo roda, o Shell fica na espera até o termino do processo. Quando o Shell envia outro sinal, para ler a próxima entrada.
+
+Estrutura dos Sistemas Operacionais
+
+Sistemas Monolíticos:
+
+Não há estruturação visível;
+É o mais utilizado;
+Para a construção do programa objeto relativo ao sistema operacional, compila-se todos os procedimentos individuais e depois liga todos juntos em um único arquivo objeto.
+A maioria dos processadores trabalha em dois modos de processamento: o modo kernel e o modo usuário.
+Modo Kernel – para o sistema operacional. Onde é permitida a execução de todas instruções básicas da maquina.
+Modo Usuário – para os programas de usuário, onde certas instruções não podem ser executadas (entrada/saída).
+O sistema operacional examina os parâmetros da chamada para determinar qual das chamadas do sistema deve ser executada.
+A organização básica para um sistema operacional:
+Um programa principal que chama o procedimento de serviço;
+Um conjunto de procedimentos de serviço para executar as chamadas;
+Um conjunto de procedimentos utilitários que auxiliam na execução dos procedimentos. 
+
+Sistemas em camadas:
+
+O sistema operacional é organizado com uma hierarquia de níveis.
+Havia a multiprogramação do processo
+O sistema tinha seis níveis:
+1º - tratava a alocação do processador;
+2º - fazia gerencia de memória;
+3º - tratava a comunicação entre processos;
+4º - gerenciava os dispositivos de entrada/saída;
+5º - é onde ficavam os programas de usuário;
+6º - era o operador do sistema.
+
+Máquinas virtuais:
+
+Ambiente para multiprogramação;
+O coração do sistema, chamado monitor da máquina virtual, roda sobre o hardware, e implementa a multiprogramação.
+São copias fieis do hardware. Cada uma delas pode rodar um sistema operacional.
+Máquina estendida, interface com suporte mais abrangente que o hardware;
+Ex.: CP/CMS, atual WN/370, (Seawriting and Mackinnon, 1979).
+
+Modelo Cliente-Servidor
+
+Aproveita a idéia de mover o código para níveis mais altos, reduzindo o S.O. ao Kernel;
+Este sistema é de fácil adaptação aos sistemas distribuídos
+Para solicitar um serviço um serviço, como a leitura de um bloco de determinado arquivo, o processo usuário (cliente) requisita ao processo servidor, realizando o trabalho e respondendo ao processo usuário.

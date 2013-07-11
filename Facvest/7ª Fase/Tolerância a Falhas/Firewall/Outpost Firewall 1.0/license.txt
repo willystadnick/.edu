@@ -1,0 +1,66 @@
+END USER LICENSE AGREEMENT FOR OUTPOST FIREWALL 1.0
+
+IMPORTANT- PLEASE READ CAREFULLY: BY INSTALLING THE SOFTWARE (AS DEFINED BELOW), COPYING THE SOFTWARE AND/OR CLICKING ON THE "ACCEPT" BUTTON BELOW, YOU (EITHER ON BEHALF OF YOURSELF AS AN INDIVIDUAL OR ON BEHALF OF AN ENTITY AS ITS AGENT AND/OR EMPLOYEE) AGREE TO ALL OF THE TERMS OF THIS END USER LICENSE AGREEMENT ("AGREEMENT") REGARDING YOUR USE OF THE SOFTWARE.  
+IF YOU DO NOT AGREE WITH ALL OF THE TERMS OF THIS AGREEMENT, CLICK ON THE "NO" BUTTON AND/OR DO NOT INSTALL, COPY OR OTHERWISE USE THE SOFTWARE.
+
+THIS IS A CONTRACT BETWEEN YOU AND AGNITUM LIMITED ("AGNITUM").
+This License Agreement accompanies Agnitum's Software and related explanatory materials and extends to any upgrades, modified versions, updates, additions, and copies of the Software licensed to You by Agnitum. This copy of the Software is licensed to You as the end user or to your employer and/or principal or another third party authorized to permit your use of the Software.
+
+The Software is protected by applicable national copyright laws and international copyright treaties, as well as other intellectual property laws and treaties. The Software is licensed, not sold. Agnitum retains all the rights, which are not expressly granted to You according to the present License Agreement. 
+
+1. DEFINITIONS 
+"Software" means Outpost Firewall including but not limited to object code, source code, documentation and associated media and printed materials.
+
+"You" means an individual and/or a legal entity exercising rights under, and complying with all of the terms of, this License.
+
+"Agnitum" means Agnitum Limited is a company owning exclusive rights to the Software.
+
+2. ROYALTY - FREE LICENSE 
+Subject to the restrictions contained in this Section 4, Agnitum grants to You a nonexclusive and non-transferable, royalty-free license to use  Software.
+
+3. RIGHTS GRANTED BY THE PRESENT LICENSE
+According to the present License Agreement You are entitled to: 
+i.  install and use unlimited number of copies of the Software at the unlimited number of computers; 
+ii. copy the Software for personal use or for transfer to the third persons provided that no fee is charged. 
+
+4. LIMITATIONS OF USE 
+You do not have the right to:
+i. Reverse engineer, decompile, or disassemble the Software except for the cases and only to the extent when it is directly allowed by the applicable law. At that, You shall first request Agnitum in writing to provide You with the necessary information, which You want to obtain as a result of reverse engineering, decompiling, or disassembling the Software. Agnitum has the right to impose reasonable conditions such as a reasonable fee for doing so. Requests for information should be directed to the Agnitum at the address provided in the Software or such other address as may be made available on agnitum.com from time to time;
+ii. Modify, or create derivative works based upon the Software in whole or in part; 
+iii. Remove any proprietary notices or labels on the Software; or 
+iv. Resell, lease, rent  or otherwise transfer rights to the Software, as provided by this License;
+v. Transfer the Software to any third persons if it is forbidden by laws or international treaties, for example, in countries on which corresponding international sanctions are imposed; 
+vi. Use of the Software does not grant You any other rights to use other products of Agnitum, except for the rights stipulated by the corresponding licenses  to these products;
+vii. While copying the Software and transferring it to the third persons You shall transfer distribution package/installation files in original form without changing them in any ways. 
+
+5. TECHNICAL SUPPORT
+Due to the fact that Software is supplied as Freeware, reaction of the support service and any resolution of the problems, which may arise during its use, installation and removal are not guaranteed. However, technical support of the Software may be provided under a separate contract between You and Agnitum. 
+
+6. AMENDMENT AND TERMINATION OF THE LICENSE AGREEMENT. 
+This License Agreement is effective until terminated. Agnitum has the right to terminate at its sole discretion your License by 30 days notice, without judicial intervention. Notice on termination may be served by electronic means. If You are in breach  of any of its terms and conditions the termination is effective immediately. Upon any such termination You must stop use of Software and return all full and partial hard copies of the items in the Software immediately to Agnitum as well as destroy all electronic copies of the above items. Agnitum is entitled to change conditions of the distribution of the Software at any time, for instance to establish a fee for use and/or copying of the Software.
+You have a right to terminate the present License Agreement in any time other then by terminating any use of the Software and by destroying all copies of it, which are at your disposal. 
+
+7. UPDATES.  
+From time to time, AGNITUM may make available updates to the Software. All updates to the Software are governed by this Agreement, unless other license terms are provided with the update and may be installed automatically, no confirmation by You is required.
+
+8. DISCLAIMER OF WARRANTY: The Software is provided to You at no charge. YOU AGREE THAT AGNITUM HAS MADE NO EXPRESS WARRANTIES, ORAL OR WRITTEN, TO YOU REGARDING THE PRODUCTS AND THAT THE PRODUCTS ARE BEING PROVIDED TO YOU "AS IS" WITHOUT WARRANTY OF ANY KIND. AGNITUM DISCLAIMS ANY AND ALL OTHER WARRANTIES, WHETHER EXPRESSED, IMPLIED, OR STATUTORY, INCLUDING, BUT WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF NONINFRINGEMENT OF THIRD PARTY RIGHTS, MERCHANTABILITY, AND FITNESS FOR A PARTICULAR PURPOSE. AGNITUM SHALL NOT BE LIABLE FOR INDIRECT, INCIDENTAL, SPECIAL, COVER, RELIANCE, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, LOSS OF ANTICIPATED PROFIT) ARISING FROM ANY CAUSE UNDER OR RELATED TO THIS AGREEMENT. 
+
+9. LIMITATION OF LIABILITY: You  assume the entire risk of using the program. IN NO EVENT SHALL AGNITUM BE LIABLE TO YOU FOR ANY DAMAGES, INCLUDING ANY LOST PROFITS, LOST SAVINGS, OR OTHER INCIDENTAL, INDIRECT OR CONSEQUENTIAL DAMAGES OF ANY KIND ARISING OUT OF THE USE OF THE AGNITUM SOFTWARE, EVEN IF AGNITUM HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. YOU AGREE AGNITUM SHALL NOT BE LIABLE TO YOU FOR ANY DAMAGES. THIS LIMITATION SHALL APPLY TO CLAIMS OF PERSONAL INJURY TO THE EXTENT PERMITTED BY LAW. 
+
+10. CHOICE OF LAW. This License Agreement shall be governed by the laws in force in the Cyprus, excluding the application of its conflict of law rules. This License Agreement shall not be governed by the United Nations Convention on Contracts for the International Sale of Goods, the application of which is expressly excluded. All disputes arising from the present license agreement shall be considered by the competent court in Cyprus, provided that the  Agnitum may also initiate proceedings in the courts of the country, where the  You are domiciled and/or residing.
+
+11. MISCELLANEOUS:
+
+Severability.  
+In the event of invalidity of any provision of this Agreement, the parties agree that such invalidity shall not affect the validity of the remaining portions of this Agreement. 
+
+Export.  
+You agree that You will not export or re-export the Software outside of the jurisdiction in which You obtained it without the appropriate government licenses.
+
+Entire Agreement.  
+You agree that this is the entire agreement between You and AGNITUM, which supercedes any prior agreement, whether written or oral, and all other communications between AGNITUM and You relating to the subject matter of this Agreement. 
+
+Reservation of rights.  
+All rights not expressly granted in this Agreement are reserved by AGNITUM. 
+
+(c)Copyright 1999-2002 AGNITUM LIMITED. All rights reserved.  Protected by copyright and licenses restricting use, copying, distribution and decompilation.

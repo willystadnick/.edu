@@ -1,0 +1,263 @@
+SINCRONIZAÇÃO ATRAVÉS DE CLOCK
+
+As soluções "simples" vão de encontro com o conceitos de SD
+Mais difícil - existência de Algoritmos Distribuídos
+Informações espalhadas por várias máquinas
+Processos interagindo com o ambiente onde estão rodando
+Evitar existência de ponto de falha centralizado
+Não existe forma de clock comum
+Definição de Tempo
+Problema da Falta de Tempo/Clock Global
+Exemplo: MAKE do Unix
+
+TIPOS DE CLOCK - CLOCK LÓGICO
+Circuitos que tratam a questão do tempo
+Não são "Relógios" - Temporizadores
+Atrasos e adiantamentos - não afeta S.Centralizados
+Sistemas Distribuídos à Escorregamento (diferença) nos clocks
+"É possível sincronizar clocks em SistDist?"
+Lamport - Solução via EVENTUALIZAÇÃO
+Máquinas estejam em acordo
+Acontecimento - anterioridade à Eventos
+Detalhamento do algoritmo de Lamport 
+Atribuição de Tempo aos Eventos (com correção)
+Correção dos relógios pelo algoritmo de Lamport 
+
+fig 1 - 
+
+CLOCKS FÍSICOS
+
+Clocks lógicos nem sempre são suficientes (Tempo Real)
+Clock ou "Clocks" Externos
+Como sincronizá-los com o clock de Tempo Real
+Como sincronizá-los entre sí
+
+ALGORITMOS PARA SINCRONIZAÇÃO DE CLOCK
+
+Existência de uma máquina com acesso a fonte WWV
+Problema é a sincronização das demais em relação a esta
+
+ALGORITMO DE CRISTIAN (89)
+
+Aplica-se a sistemas nos quais uma máquina (servidor de tempo) possui um receptor WWV, devendo-se manter as demais em sincronismo com esta.
+Uma vez a cada d/2R segundos cada máquina solicita ao servidor de tempo a hora corrente. O servidor responde o mais rápido possível, enviando a informação solicitada (CUTC).
+Problema grave: Se o relógio do requisitante é rápido, CUTC será inferior a C (valor de relógio do requisitante) por CUTC pode causar sérios problemas (Ex.: make do UNIX)
+Solução: As correções de relógio devem ser realizadas de maneira gradativa no sistema.
+Problema menos grave:Retardo entre o envio de CUTC pelo servidor e a recepção do mesmo pelo requisitante
+Solução:Medição do tempo decorrido entre o envio da requisição (T0) e a recepção de CUTC (T1) .
+
+ALGORITMO DE BERKLEY
+
+ALGORITMOS BASEADOS NA MÉDIA
+
+São algoritmos/soluções descentralizadas
+Trabalha dividindo o tempo em intervalos de ressincronização
+Cada estação envia seu tempo em broadcast e coletar os tempos das demais e depois rodar um algoritmo para calcular o novo tempo, que pode ser simples como a média
+
+SISTEMAS COM VÁRIAS FONTES EXTERNAS DE TEMPO
+
+Para sistemas onde a sincronização deve ser super-precisa - vários servidores de tempo
+Espécie de broadcast de mensagens de servidores para tentar chegar a um acordo entre eles
+Existem vários métodos para tratar a solução
+Conclusão: Manter os clocks de sistemas distribuídos sincronizados por 5 ou 10 ms (milesegundos) UTC é caro e não trivial.
+
+EXCLUSÃO MÚTUA
+
+Conceito de Regiões Críticas - O recurso é meu e ninguém tasca
+Em Centralizados surgem os conceitos de Monitores e Semáforos
+Em Distribuídos:
+Soluções Centralizadas
+Soluções Distribuídas
+
+EXCLUSÃO MÚTUA - Algoritmo Centralizado
+
+Melhor maneira: simulação da existência de um processador
+Necessita-se da figura do Coordenador
+Para um processo entrar em região crítica ele precisa enviar mensagem ao Coordenador - ao sair envia outra liberando...
+Falhas:
+Coordenador vira ponto crítico
+Ocorrência de Gargalos
+Diferenciação de "Fora do ar" de "Acesso negado"
+ 
+fig 2 - 
+
+EXCLUSÃO MÚTUA - Algoritmo Distribuído (Lamport 78)
+
+Exige total ordenação dos eventos - saber quem acontece primeiro
+Processo monta msg. com nome-região, seu número e tempo
+Envia a msg. a todos os processos
+Processo que recebe age segundo 3 casos:
+Não intessado na nome-região - OK
+Estiver executando a nome-região - ESPERA
+Deseja entrar - COMPARAR tempo
+Processo deve aguardar OK de TODOS os processos
+Não há perigo de Starvation ou Deadlock
+Falhas:
+Substituímos 1 ponto de falha por n vários
+Mais lento, complicado, mais caro, menos robusto
+Mas pode ser melhorado ...
+IMPORTANTE! - mostra que algoritmos distribuídos podem funcionar 
+
+fig 3 - 
+
+EXCLUSÃO MÚTUA - Algoritmo Token Ring
+Método diferente - sem nenhuma espécie de ordenamento
+Funciona como "Token Ring" de Teleprocessamento
+Quem tem o Token pode entrar na região - só!
+Falhas: Perda do Token e dependência dos demais processos 
+Topologia do Hardware: rede em barra, sem ordenação inerente de processos
+
+fig 4 - 
+
+Software: anel lógico, onde cada processo tem uma posição no anel
+
+fig 5 - 
+
+Quando o anel é inicializado, um token é dado ao processo 0
+O token circula ao redor do anel, do processo k ao k+1
+Se o processo que está com o token deseja entrar na RC, então faz tudo o que precisa e sai. Depois de sair, passa o token adiante
+Se o processo não está interessando em entrar na RC, apenas passa o token a seu vizinho posterior
+
+EXCLUSÃO MÚTUA - Comparação 
+
+Comparação dos três algoritmos
+ 
+fig 6 - 
+
+Centralizado é SEMPRE mais simples e eficiente (sem as falhas)
+Distribuído - usa muitas mensagens
+Token Ring - o número de mensagem é imprevisível
+Todos tem problemas e NÃO PODERIAM SER USADOS em sistemas de missão crítica
+
+ALGORITMOS ELETIVOS
+
+São algoritmos que promovem a ESCOLHA do COORDENADOR.
+Garantir ao término que todos os processos saibam quem é novo coordenador.
+
+ALGORITMOS ELETIVOS - DITADOR (82)
+
+Quando um processo nota que o coordenador não está respondendo as requisições ele inicia um processo de eleição
+O processo de eleição executa até que restem dois "candidatos" - é eleito o processo com número de identificação mais alto
+Sua vitória é anunciada e ele passa a responder como coordenador
+Quando o antigo coordenador voltar a ficar ativo ele assume a coordenação novamente, ditatorialmente.
+
+ALGORITMOS ELETIVOS - ANEL (82)
+
+Não usa tokem - exigem que os processos estejam ordenados (é preciso saber quem é sucessor de quem)
+Escolhe quem tiver o maior número de identificação
+
+TRANSAÇÕES ATÔMICAS
+
+As técnicas estudas até agora eram de baixo nível (semáforos)
+Exigem que o programador esteja ligado com todos os detalhes que envolvem a exclusão mútua, prevenção de deadlocks, etc...
+O IDEAL é que as técnicas estivessem escondidas, permitindo que o programador pense somente no algoritmo.
+Essa ABSTRAÇÃO é chamada de Transações Atômicas
+
+INTRODUÇÃO A TRANSAÇÕES ATÔMICAS
+
+Modelo Copiado do mundo dos negócios (negociação entre partes)
+Conceito antigo - década de 60 (fita)
+Ponto fundamental - errei, posso voltar atrás ...
+
+MODELO TRANSACIONAL
+
+Os sistemas são compostos de processos independentes que podem falhar randomicamente e, para piorar, a comunicação entre eles também não é confiável.
+
+ARMAZENAMENTO ESTÁVEL
+
+tipo RAM -> perde tudo
+tipo HD -> pode perder
+tipo Estável -> deve suportar tudo à RAID
+
+PRIMITIVAS
+
+BEGIN_TRANSACTION - início
+END_TRANSACTION - final
+ABORT_TRANSACTION - mata transação e restaura valores
+READ - WRITE
+
+PROPRIEDADES
+
+Serialização - transações concorrentes não podem interferir uma nas outras
+Atomicidade - Uma transação deve parecer indivisível para o mundo externo
+Permanência - Uma vez que as partes cheguem em acordo, as mudanças passam a ser permanentes.
+
+TRANSIÇÕES ANINHADAS
+
+Transações podem conter subtransações - transações aninhadas
+Falha: como controlar as transações-filhas sem a transação-mãe abortar o processamento - permanência não vale aqui.
+
+TRANSIÇÕES - IMPLEMENTAÇÃO
+
+Usando Área de Trabalho Privada (cópia da área real)
+Quando a transação termina corretamente ela copia de volta para a área real.
+É muito "caro" copiar tudo - precisamos de técnicas
+"Se SÓ LÊ" - não precisa copiar
+Utilização de Blocos Sombra
+Utilizando Lista de Escritas Adiantadas (lista de intenções)
+Permite a utilização de Roll-Back
+Permite a recuperação de falhas
+Protocolo de Aceitação em duas fases
+A aceitação de uma transação, em sistemas distribuídos, pode envolver a participação de vários processos - É preciso a utilização de um protocolo.
+Funciona em esquema Coordenador - Subordinado;
+Extremamente tolerante a falhas.
+
+CONTROLE DE CONCORRÊNCIA
+
+Necessidade de um mecanismo de garantia que nenhum processo interfira no processamento dos demais
+Três algoritmos:
+Bloqueio
+Antes de usar, primeiro bloqueia aos demais
+Melhorado se puder distinguir escrita de leitura
+Pode ser arquivo inteiro, registro, linha, etc ...
+Pode acabar gerando deadlocks e inconsistências
+Controle Otimista
+Faça o que VOCÊ tem que fazer - esqueça os demais
+Se houver problemas, mais tarde você resolve ...
+Imune a deadlock
+Alto grau de paralelismo
+Método do Carimbo
+Consiste em identifica e serializar cada processo
+
+DEADLOCKS EM SISTEMAS DISTRIBUÍDOS
+
+Semelhante a centralizados - evidentemente que com solução mais
+complexa
+Difíceis de:
+Detectar e
+Evitar, pois as informações estão espalhadas!
+Podem ser classificados em:
+Deadlocks ocorridos na comunicação entre processos
+Deadlocks ocorridos na alocação de recursos
+
+Quatro estratégias para o problema:
+Ignorar o problema (algoritmo do avestruz)
+Detecção (permitir, detectar a ocorrência e tentar a recuperação)
+Prevenção (tornar impossível a ocorrência)
+Evitar usando um esquema muito rígido
+Detecção de Deadlock Distribuído
+
+Diferença entre deadlocks entre Centralizados e Distribuídos é a utilização de Transações Atômicas
+Severidade das consequências
+Detecção Centralizada de Deadlock
+Utiliza a figura do coordenador
+Utiliza o esquema de tempo global de Lamport
+
+Detecção do Deadlock Distribuído
+
+Permitido que processos requisitem vários recursos
+Processo pode esperar por 2 ou mais recursos simultaneamente
+Envio de mensagem de sondagem
+Cada processo atualiza esta mensagem em relação aos recursos solicitados
+Se a mensagem voltar para quem a transmitiu fica claro a existência de deadlock
+
+Soluções:
+
+Suicídio do processo que inicio sondagem
+Assassinato do processo com identificação mais alto
+Algoritmos não-condizentes com a realidade
+Algoritmos com alto grau de erros
+Prevenção de Deadlock Distribuído
+Projetar o sistema com o máximo de cuidado
+Técnicas como posse de 1 recurso só, requisição antecipada ou liberação de 1 recurso para obter outro - problema na prática
+2 algoritmos possíveis - baseados em marcas de tempo

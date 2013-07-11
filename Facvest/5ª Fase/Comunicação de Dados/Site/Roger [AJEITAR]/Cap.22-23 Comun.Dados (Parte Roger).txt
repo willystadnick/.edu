@@ -1,0 +1,72 @@
+CAPÍTULO 22 - 23:
+TRATAMENTO DE ERROS. CONTINUAÇÃO...
+
+ALGORITMO CRC
+
+* Ou FCS (Frame Check Sequence) ou códigos de polinomiais;
+* Os dados são interpretados como sendo coeficientes de polinômios;
+* Uma sequência de m bits de dados é associada a um polinômio M(x).
+* O total de verificação é gerado por um polinômio gerador G(x), cujo grau deé "r". O total de verificação é o resto da divisão:
+
+
+
+>>> 01figura2223.jpg <<<
+
+
+
+* Os bits de dados e o total são combinados para formar o polinômio a ser transmitido T(x).
+
+
+
+>>> 02figura2223.jpg <<<  >>> 03figura2223.jpg <<<
+
+
+
+* Todas as operações são feitas em módulo 2.
+* Adição = subtração = XOR
+
+
+
+>>> 04figura2223.jpg <<<
+
+
+
+PRINCÍPIO DO ALGORITMO
+
+* Pela forma que é gerado T(x) é divisível por G(x), isto é resto = 0.
+* O receptor ao receber T(x), divide o polinômio recebido Tr(x) por G(x).
+* Se o resto for NULO, então Tr(x) = T(x) (em mais de 99% dos casos).
+* Se o resto não for NULO: houve corrupção dos dados, deve-se requisitar a retransmissão.
+
+Passos para determinação de T(x)
+
+1. Definir G(x): escolher G(x).
+   Por exemplo: G(x) = 101, corresponde a 1x² + 0x¹ + 1xº
+
+2. Seja r o grau do polinômio G(x). Anexar r zeros à direita dos m bits de dados.
+   Isso equivale a 2r. M(x).
+
+3. Dividir os m+r bits por G(x) operações módulo 2!
+
+
+
+>>> 05figura2223.jpg <<<
+
+
+
+4. Subtrair o resto da divisão acima da sequência inicial de m+r bits.
+   operações módulo 2!
+
+5. O resultante da subtração acima é precisamente o polinômio T(x):
+
+
+
+>>> 06figura2223.jpg <<<
+
+
+
+O algoritmo CRC é capaz de detectar, na prática, mais de 99% dos erros possíveis. Para isso, é necessário escolher um polinômio gerador G(x) adequado. Entre os polinômios padronizados:
+
+
+
+>>> 07figura2223.jpg <<<

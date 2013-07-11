@@ -1,0 +1,15 @@
+PPP / SLIP
+
+Point to Point Protocol / Serial Line Internet Protocol
+
+Protocolos para comunicação sobre interfaces seriais. Interfaces seriais enviam bits de dados sobre um "cabo único", ao contrário de interfaces paralelas, que enviam os bits de dados em paralelo sobre "vários cabos" simultaneamente. O termo interface serial normalmente é utilizado para denominar interfaces que se conectam a um circuito telefônico através de um modem ou dispositivo semelhante; embora também seja usado para denominar comunicações via rádio.
+
+Linhas seriais são utilizadas para criar WANs (Wide Area Networks). Devido ao crescimento das redes TCP/IP foi necessário a criação de protocolos para essas linhas seriais.
+
+SLIP (Serial Line Internet Protocol), definido na RFC 1055, surgiu primeiro. SLIP é um protocolo mínimo, que permite que equipamentos comuniquem-se via TCP/IP sobre a rede telefônica. SLIP não é um protocolo padrão, e possui algumas limitações (por exemplo, não permite a negociação de endereços IP entre os equipamentos envolvidos).
+
+Para algumas aplicações estas limitações não são relevantes, por exemplo, quando só há necessidade de transmissão de datagramas IP e o endereço IP dos dois lados do link é conhecido e pode ser fornecido manualmente.
+
+PPP (Point to Point Protocol), definido inicialmente pelas RFCs 1171 e 1172, atualmente definido no STD0051 e pelas RFCs 1661 e 1662, é um protocolo mais robusto que SLIP, e possui mais funções, como por exemplo, controle de link, negociação de endereços IP, correção de erros, etc.
+
+PPP e SLIP não interagem entre si, pois são protocolos distintos. SLIP normalmente é utilizado em velocidades entre 1.200 e 19.200 bps, e em comunicação assíncrona. Já o PPP não possui essas limitações, podendo ser usado em comunicação assíncrona ou síncrona, a qualquer velocidade.

@@ -1,0 +1,118 @@
+Lista de Exercícios de Fixação: Aula Prática de Laboratório com CL10.
+
+Professora Madalena Pereira da Silva
+
+
+Quais os procedimentos usados para alterar a ordem de seqüência de boot dos sistemas operacionais para máquinas que possuem mais de um sistema operacional instalado.
+
+R: no caso do gerenciador de boot utilizada no linux(grub), encontramos o arquivos menu.lst dentro do diretorio "/boot/grub/menu.lst" onde é feita a ordenação, e bem como a localização dos sistemas operacionais.
+
+
+
+
+Para levantar um serviço de rede usa-se o comando "service nome_do_serviço start". Existe algum procedimento usado para carregar automaticamente todos os serviços de rede? Como este procedimento é realizado?
+
+R: em distribuições do tipo Red Hat, como a Connectiva, é usado no shell do sistema o comando ntsysv. Nele podemos selecionar os serviços a serem inicializados automaticamente durante o boot do sistema.
+
+
+
+
+Os serviços de rede podem ser instalados e atualizados através dos CD's de instalação do CL10 (3 CD's). No caso de uma rede, como por exemplo, o laboratório de redes com 40 computadores, o professor teria que disponiblizar 120 CD's, iou seja 3 CD's para cada aluno. Isto seria tedioso e praticamente inviável. Qual alternativa isentaria o professor de reprozir dúzias de CD's? Observe que esta alternativa deve ser efetiva.
+
+R:no caso das distribuições connectiva, é usado pacotes rpm de instalação de programas e aplicativos, e a lista de localizacão desses pacotes se encontram em " /etc/apt/source.list". E os comandos para a atualização e instalação é apt-get install "Nome do Pacote".
+
+
+
+
+Quais os procedimento usados para incluir uma máquina numa rede pré-existente. Observe que esta máquina não possui nenhum utilitário facilitar para esta tarefa, ou seja, não existe nenhum serviço tal como o linuxconf instalado. Como será feita a atribuição de IP's: estático ou dinâmico?
+
+R:atrevs do arquivo, network, que se encontram no diretorio "/etc/sysconfig/".
+
+
+
+
+Criar pastas e arquvos, copiar, mover, renomear, deletar.
+
+R: 1 – Criar Pastas: mkdir "nome da pasta"
+
+2 – Criar arquivo: comando vi "nome do arquivo" 
+
+3 e 4 - Mover arquivo e renomear arquivo: comando mv, move e renomeia arquivos e diretorios
+
+5 - Deletar arquivo: Comando rm "nome do arquivo"
+
+
+
+
+Criar usuários e privilégios de leitura, escrita e execução. Modificar permissões (chmod) dos usuários de forma que os mesmos não possam alterar arquivos. Testar os procedimentos.
+
+R: Usando o comando adduser -g root, criaremos usuários com provilégios superusuario(root).
+
+Para modificar permissões usaremos o comand chmod 555 "nome do usuario" dentro do diretorio /home.
+
+
+
+
+Sobre o FTP:
+
+a) Para que serve o FTP e em que situações um usuário o utilizaria? 
+
+R:o FTP (File Transfer Protocol) é um protocolo de troca de arquivos pela rede. A transferência de arquivos localizados em computadores remotos é feito através de um software cliente, que se conecta no servidor FTP. Ele é utilizado para transferir documentos como softwares, textos, imagens e sons.
+
+
+
+
+b) Como o FTP é usado no servidor e no cliente?
+
+R: o FTP é utilizado no servidor 
+
+c) Configurar o FTP para usuário aluno. Testar através de máquinas linux (browser e konqueror) e windows (browser). Observe que o FTP funciona através do konqueror com o seguinte comando ftp://usuario@IP. E também através do browser linux/windows com o seguinte comando ftp://usuario@IP.
+
+d) Configure o servidor FTP para permitir 1 e 10 conexões. Testar as funcionalidades.
+
+e) Configurar o FTP para ser acessado via usuário anonymous.
+
+
+
+
+Sobre o SSH:
+
+a) Para que serve o SSH e em que situações um usuário o utilizaria? 
+
+b) Como o SSH é usado no servidor e no cliente?
+
+c) Levante o serviço de SSH e verifique se um cliente CL10 pode acessar o servidor com a senha de root. Sim? Não? Porque? (use o shell, digite ssh usuario@IP).
+
+d) Faça cópia de um arquivo do seu servidor para um o usuário aluno existente no servidor do vizinho e, copie um arquivo do servidor do seu vizinho para o seu diretório no seu servidor. (Use ainterface gráfica do konqueror, digitando fish://usuario@IP/home/).
+
+e) Entre no servidor do vizinho com o login aluno, alterne para o usuário root com o comando su root, crie sua conta pessoal neste servidor. Teste sua conta acessando remotamente. (Faça isto usando o shell).
+
+f) É possível modificar a porta lógica do SSH? Verifique se este serviço irá funcionar numa outra porta lógica (2004, por exemplo) diferente da porta default 22.
+
+g) Acessar máquina do ssh via shell, executar algum aplicativo gráfico (exemplo mozilla). O Que ocorre? Agora edite e faça esta alteração no arquivo: /etc/ssh/sshd_config. Procure pela linha: "#X11Forwarding no' e altere para: X11Forwarding yes. Após esta alteração precisa reiniciar o servidor ssh. Na maquina cliente, que vai receber as telas do programa executado remotamente, execute: ssh -X usuario@IP. Tente navegar remotamente com o ssh.
+
+
+
+
+Sobre o APACHE:
+
+a) Ao executar o comando "service apache start", quais os procedimentos de manutenção adotados para resolver o problema se o mesmo não estiver funcionando? Leve em consideração que todos os pacotes do apache estão instalados.
+
+b) Teste o servidor apache no navegador, ou seja, digite o IP da máquina na barra de endereço do browser. Verifique se é carregada a página de apresentaçao do apache. Caso contrário, configuar o apache novamente.
+
+b) Como root, crie uma página HTML e a visualize através do browser. Divulgue a sua página para os seus colegas de forma que eles possam visualizá-las através da janela do navegador da máquina deles.
+
+c) Crie uma página pessoal para o usuário aluno. Não esqueça de criar o diretório public_html e salvar o arquivo index.html na referida pasta. Verifique se esta página está visivel para os seus vizinhos.
+
+d) Altere o diretório default da página index.html. Verifique se funcionou.
+
+e) Altere a porta lógica do apache que por default é 80 para 3128. Verique o funcionamento local e remoto.
+
+
+
+
+
+
+
+No caso de uma parada programada ou emergencial no sistema operacional de rede CL10, qual a utilidade do comando shutdown para os usuários com conexões remotas no servidor? Edite, envie e verifique se a mensagem é enviada em broadcasting para a rede.
+

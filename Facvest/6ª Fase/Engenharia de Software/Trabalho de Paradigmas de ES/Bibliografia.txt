@@ -1,0 +1,19 @@
+5. Bibliografia:
+5.1 Principal:
+
+SOMMERVILLE, Ian.ENGENHARIA de software. 6. ed. São Paulo: Addison-Wesley, 2003. 592 p. ISBN 8588639076
+
+PRESSMAN, Roger S.ENGENHARIA de software. São Paulo: Makron Books, 1995. 1056 p. ISBN 85-346-0237-9
+ 
+5.2 Complementar:
+MAFFEO, Bruno.ENGENHARIA de software e especificação de sistemas. Rio de Janeiro: Campus, 1992. 484 p. ISBN 85-7001-701-4
+
+REZENDE, Denis Alcides.ENGENHARIA de software e sistemas de informações. Rio de Janeiro: Brasport, 1999. 292 p. ISBN 85-7452-016-0
+
+TEIXEIRA, Sérgio Roberto Pinto. Engenharia de software: experiências e recomendações. São Paulo: E. Blücher, 1979. 48 p.
+
+PETERS, James F.; PEDRYCZ, Witold.ENGENHARIA de software: teoria e prática. Rio de Janeiro: Campus, 2001. 602 p. ISBN 85-352-0746-5
+
+TONSIG, Sérgio Luiz.ENGENHARIA de software: análise e projeto de sistemas . São Paulo: Futura, 2003. 345 p. ISBN 8574131539
+
+PAULA FILHO, Wilson de Pádua.ENGENHARIA de software: fundamentos, métodos e padrões. Rio de Janeiro: LTC, 2001. 584 p. ISBN 85-216-1260-5 

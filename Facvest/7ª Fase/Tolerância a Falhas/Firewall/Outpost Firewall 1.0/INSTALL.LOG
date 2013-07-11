@@ -1,0 +1,270 @@
+***  Installation Started 03/17/2003 10:49  ***
+Title: Agnitum Outpost Firewall 1.0 Installation
+Source: C:\WINDOWS\TEMP\GLB1275.TMP | 03-17-2003 | 10:49:40 | 71680
+Shared DLL counter ignored:
+File Overwrite: C:\WINDOWS\SYSTEM\MSVCRT.DLL | 07-11-1999 | 00:39:16 | 6.1.8293.0 | 278581 | 76db2377
+Shared DLL counter ignored:
+File Overwrite: C:\WINDOWS\SYSTEM\MFC42.DLL | | | | 995383 | 433dbda
+Made Dir: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0
+File Copy: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\UNWISE.EXE | 06-25-1999 | 10:55:30 | | 149504 | 580630c2
+RegDB Key: Software\Microsoft\Windows\CurrentVersion\Uninstall\Agnitum Outpost Firewall 1.0
+RegDB Val: Agnitum Outpost Firewall 1.0
+RegDB Name: DisplayName
+RegDB Root: 2
+RegDB Key: Software\Microsoft\Windows\CurrentVersion\Uninstall\Agnitum Outpost Firewall 1.0
+RegDB Val: C:\WINDOWS\DESKTOP\FRAJOLA\FIREWALL\OUTPOS~1.0\UNWISE.EXE C:\WINDOWS\DESKTOP\FRAJOLA\FIREWALL\OUTPOS~1.0\INSTALL.LOG
+RegDB Name: UninstallString
+RegDB Root: 2
+File Copy: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\checkfw.log
+Made Dir: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\Plugins
+Made Dir: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\Plugins\Ads
+File Copy: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\Plugins\Ads\ad_int.dll | 06-17-2002 | 20:47:08 | 1.0.0.1 | 77881 | 3e71fbca
+Made Dir: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\Plugins\Content
+File Copy: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\Plugins\Content\cnt_int.dll | 06-17-2002 | 20:47:14 | 1.0.0.1 | 57402 | c8b9defe
+Made Dir: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\Plugins\Dns
+File Copy: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\Plugins\Dns\dns_int.dll | 06-17-2002 | 20:47:20 | 1.0.0.1 | 61498 | 5ee54846
+Made Dir: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\Plugins\File
+File Copy: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\Plugins\File\file_int.dll | 06-17-2002 | 20:47:52 | 1.0.0.1 | 98363 | a29e0870
+Made Dir: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\Plugins\Protect
+File Copy: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\Plugins\Protect\prot_int.dll | 06-17-2002 | 20:48:08 | 1.0.0.1 | 65595 | 5adf223a
+Made Dir: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\Plugins\Web
+File Copy: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\Plugins\Web\web_int.dll | 06-17-2002 | 20:48:52 | 1.0.0.1 | 94266 | 24cc79a5
+File Copy: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\install.exe | 05-13-2002 | 13:20:44 | | 20538 | 8b9816c0
+Made Dir: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\Kernel
+Made Dir: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\Kernel\2000
+File Copy: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\Kernel\2000\Filtnt.sys | 06-14-2002 | 16:19:56 | 1.0.242.0 | 90368 | 2302e61f
+File Copy: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\Kernel\Filtnt.sys | 06-14-2002 | 16:19:30 | 1.0.242.0 | 89472 | 705388c0
+File Copy: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\Kernel\Filt95.vxd | 06-14-2002 | 16:19:12 | | 82546 | dbdd1d84
+File Copy: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\Kernel\Protect.dll | 06-14-2002 | 16:20:20 | 1.0.242.0 | 15584 | 58df1b60
+File Copy: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\Kernel\Pop3filt.dll | 06-14-2002 | 16:20:10 | 1.0.242.0 | 7136 | d11ada1b
+File Copy: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\Kernel\Nntpfilt.dll | 06-14-2002 | 16:20:14 | 1.0.242.0 | 6656 | aa3ddac0
+File Copy: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\Kernel\Mailfilt.dll | 06-14-2002 | 16:20:10 | 1.0.242.0 | 9920 | 3d9039f1
+File Copy: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\Kernel\Imapfilt.dll | 06-14-2002 | 16:20:16 | 1.0.242.0 | 7072 | b20f2b38
+File Copy: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\Kernel\Httpfilt.dll | 06-14-2002 | 16:20:02 | 1.0.242.0 | 9152 | 8965394d
+File Copy: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\Kernel\Htmlfilt.dll | 06-14-2002 | 16:20:04 | 1.0.242.0 | 7776 | caae02f7
+File Copy: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\Kernel\Ftpfilt.dll | 06-14-2002 | 16:20:18 | 1.0.242.0 | 6304 | c3cf8d31
+File Copy: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\Kernel\Dnscache.dll | 06-14-2002 | 16:19:58 | 1.0.242.0 | 6144 | 487a922c
+File Copy: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\Kernel\Content.dll | 06-14-2002 | 16:20:12 | 1.0.242.0 | 3904 | c815c0ad
+File Copy: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\Kernel\ADBLOCK.dll | 06-14-2002 | 16:20:06 | 1.0.242.0 | 15552 | f7d4053c
+File Copy: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\outpost.exe | 06-14-2002 | 16:20:36 | 1.0.242.0 | 78848 | 5b162f0a
+File Copy: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\outpost.exe.manifest | 11-11-2001 | 22:15:52 | | 645 | b76e4794
+File Copy: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\configuration.cfg | 05-11-2002 | 19:04:06 | | 20276 | 917d39ce
+File Copy: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\config.src | 05-11-2002 | 19:04:06 | | 20276 | 917d39ce
+File Copy: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\Service.lst | 06-20-2002 | 13:27:34 | | 3083 | bbb58b1a
+File Copy: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\preset.lst | 06-20-2002 | 13:26:20 | | 66891 | 183c7621
+File Copy: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\protocls.lst | 06-20-2002 | 13:26:36 | | 1610 | 1955d4d3
+File Copy: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\protect.lst | 06-20-2002 | 13:26:32 | | 7431 | 4d9197eb
+Shared DLL counter ignored:
+File Overwrite: C:\WINDOWS\SYSTEM\MSVCP60.DLL | | | | 401462 | 667d9a74
+File Copy: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\Psapi.dll | 10-30-1999 | 01:45:00 | 5.0.2134.1 | 28944 | ed759a0f
+File Copy: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\CheckFW.dll | 08-28-2001 | 23:58:08 | | 45056 | 1efb4a6f
+File Copy: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\run_help.exe | 06-17-2002 | 20:48:14 | 1.0.0.1 | 45115 | 7cb7b730
+File Copy: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\trash.exe | 06-05-2002 | 09:01:24 | | 24632 | 9643e5f8
+File Copy: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\logo_rc.dll | 06-05-2002 | 09:00:46 | | 147456 | 9939fc5c
+File Copy: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\oshdlr.dll | 06-17-2002 | 20:48:02 | 1.0.0.1 | 49209 | c51bd139
+File Copy: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\opst_ui.dll | 06-17-2002 | 20:48:22 | 1.0.0.1 | 548922 | 86820765
+File Copy: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\license.txt | 02-26-2002 | 22:55:58 | | 8035 | 86b95151
+File Copy: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\Engine.dll | 06-17-2002 | 20:47:32 | 1.0.0.1 | 143417 | 96519234
+File Copy: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\Outpost Home Page.url | 01-04-2001 | 18:48:44 | | 130 | ad40f857
+File Copy: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\uninst.exe | 05-27-2002 | 21:27:20 | 1.0.0.1 | 40960 | d595c9e6
+File Copy: C:\Arquivos de programas\Arquivos comuns\Agnitum Shared\Aupdate\aupdrun.exe.manifest | 11-11-2001 | 22:14:12 | | 644 | f720ae52
+File Copy: C:\Arquivos de programas\Arquivos comuns\Agnitum Shared\Aupdate\zlib.dll | 01-19-2002 | 02:20:22 | | 94208 | 634e156b
+File Copy: C:\Arquivos de programas\Arquivos comuns\Agnitum Shared\Aupdate\Aupdrun.exe | 02-05-2002 | 19:14:52 | 1.0.0.1 | 28672 | 6fc56a17
+File Copy: C:\Arquivos de programas\Arquivos comuns\Agnitum Shared\Aupdate\aupdate.dll | 02-05-2002 | 19:44:40 | 1.0.0.1 | 167936 | 366a54cd
+File Copy: C:\Arquivos de programas\Arquivos comuns\Agnitum Shared\Aupdate\update.ini | 11-23-2001 | 22:31:18 | | 68 | fd07b3e0
+RegDB Key: SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\AUPDATE.DLL
+RegDB Val: C:\Arquivos de programas\Arquivos comuns\Agnitum Shared\Aupdate
+RegDB Name: Path
+RegDB Root: 2
+RegDB Old: C:\WINDOWS\DESKTOP\FRAJOLA\FIREWALL\AGNITUM SHARED\AUPDATE
+RegDB Key: SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\AUPDATE.DLL
+RegDB Val: C:\Arquivos de programas\Arquivos comuns\Agnitum Shared\Aupdate\aupdate.dll
+RegDB Root: 2
+RegDB Old: C:\WINDOWS\DESKTOP\FRAJOLA\FIREWALL\AGNITUM SHARED\AUPDATE\AUPDATE.DLL
+Made Dir: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\Help
+File Copy: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\Help\outpost.chm | 05-11-2002 | 16:20:02 | | 208131 | 4274be47
+File Copy: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\Help\email.chm | 05-11-2002 | 16:19:50 | | 17898 | ee73ae22
+File Copy: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\Help\dnscache.chm | 05-11-2002 | 16:19:42 | | 19831 | 44178fb5
+File Copy: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\Help\content.chm | 05-11-2002 | 16:19:32 | | 19588 | cc158ce1
+File Copy: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\Help\attack.chm | 05-11-2002 | 16:19:24 | | 20005 | eacab053
+File Copy: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\Help\adblock.chm | 05-11-2002 | 16:19:12 | | 25898 | d32aafcc
+File Copy: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\Help\active.chm | 05-11-2002 | 16:18:58 | | 18773 | 32914a2b
+Made Dir: C:\WINDOWS\Menu Iniciar\Programas\Agnitum
+Made Dir: C:\WINDOWS\Menu Iniciar\Programas\Agnitum\Outpost Firewall 1.0
+Shell Link: C:\WINDOWS\Menu Iniciar\Programas\Agnitum\Outpost Firewall 1.0\Outpost Firewall.lnk
+Link Info: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\outpost.exe |  |  | 0 | 1 | 0 | 
+Shell Link: C:\WINDOWS\Menu Iniciar\Programas\Agnitum\Outpost Firewall 1.0\Agnitum Update.lnk
+Link Info: C:\Arquivos de programas\Arquivos comuns\Agnitum Shared\Aupdate\Aupdrun.exe |  |  | 0 | 1 | 0 | 
+Shell Link: C:\WINDOWS\Menu Iniciar\Programas\Agnitum\Outpost Firewall 1.0\License Agreement.lnk
+Link Info: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\license.txt |  |  | 0 | 1 | 0 | 
+Shell Link: C:\WINDOWS\Menu Iniciar\Programas\Agnitum\Outpost Firewall 1.0\Outpost Home Page.lnk
+Link Info: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\Outpost Home Page.url |  |  | 0 | 1 | 0 | 
+Shell Link: C:\WINDOWS\Menu Iniciar\Programas\Agnitum\Outpost Firewall 1.0\Uninstall Outpost Firewall.lnk
+Link Info: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\uninst.exe | C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\ |  | 0 | 1 | 0 | 
+Shell Link: C:\WINDOWS\Menu Iniciar\Programas\Agnitum\Outpost Firewall 1.0\Outpost Firewall Help.lnk
+Link Info: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\Help\outpost.chm |  |  | 0 | 1 | 0 | 
+RegDB Key: Software\Agnitum\Aupdate\Download
+RegDB Val: C:\Arquivos de programas\Arquivos comuns\Agnitum Shared\Aupdate\Downloaded Files\
+RegDB Name: DownloadDir
+RegDB Root: 1
+RegDB Key: Software\Agnitum\Aupdate\Download
+RegDB Val: 80
+RegDB Name: Port
+RegDB Root: 1
+RegDB Key: Software\Agnitum\Aupdate\Download
+RegDB Val: http
+RegDB Name: Protocol
+RegDB Root: 1
+RegDB Key: Software\Agnitum\Aupdate\Download
+RegDB Val: www.agnitum.com
+RegDB Name: Server
+RegDB Root: 1
+RegDB Key: Software\Agnitum\Aupdate\Download
+RegDB Val: /update_free
+RegDB Name: ServerDir
+RegDB Root: 1
+RegDB Key: .DEFAULT\Software\Agnitum\Aupdate\Download
+RegDB Val: www.agnitum.com
+RegDB Name: Server
+RegDB Root: 3
+RegDB Old: www.agnitum.com
+RegDB Key: .DEFAULT\Software\Agnitum\Aupdate\Download
+RegDB Val: C:\Arquivos de programas\Arquivos comuns\Agnitum Shared\Aupdate\Downloaded Files\
+RegDB Name: DownloadDir
+RegDB Root: 3
+RegDB Old: C:\Arquivos de programas\Arquivos comuns\Agnitum Shared\Aupdate\Downloaded Files\
+RegDB Key: .DEFAULT\Software\Agnitum\Aupdate\Download
+RegDB Val: /update_free
+RegDB Name: ServerDir
+RegDB Root: 3
+RegDB Old: /update_free
+RegDB Key: .DEFAULT\Software\Agnitum\Aupdate\Download
+RegDB Val: 80
+RegDB Name: Port
+RegDB Type: 3
+RegDB Root: 3
+RegDB Old: 80
+RegDB Key: .DEFAULT\Software\Agnitum\Aupdate\Download
+RegDB Val: http
+RegDB Name: Protocol
+RegDB Root: 3
+RegDB Old: http
+RegDB Key: Software\Microsoft\Windows\CurrentVersion\Uninstall\Agnitum Outpost Firewall 1.0
+RegDB Val: 1.0.1817.1645
+RegDB Name: DisplayVersion
+RegDB Root: 2
+RegDB Key: Software\Microsoft\Windows\CurrentVersion\Uninstall\Agnitum Outpost Firewall 1.0
+RegDB Val: http://www.agnitum.com/support/
+RegDB Name: HelpLink
+RegDB Root: 2
+RegDB Key: Software\Microsoft\Windows\CurrentVersion\Uninstall\Agnitum Outpost Firewall 1.0
+RegDB Val: Agnitum Ltd
+RegDB Name: Publisher
+RegDB Root: 2
+RegDB Key: Software\Microsoft\Windows\CurrentVersion\Uninstall\Agnitum Outpost Firewall 1.0
+RegDB Val: http://www.agnitum.com/support/
+RegDB Name: URLInfoAbout
+RegDB Root: 2
+RegDB Key: Software\Agnitum\Outpost Firewall\General
+RegDB Val: 0
+RegDB Name: ICMP
+RegDB Root: 2
+RegDB Key: Software\Agnitum\Outpost Firewall\General
+RegDB Val: 1
+RegDB Name: AutoUpdate
+RegDB Root: 2
+RegDB Key: Software\Agnitum\Outpost Firewall\Language
+RegDB Val: 
+RegDB Name: English
+RegDB Root: 2
+RegDB Key: Software\Microsoft\Windows\CurrentVersion\Run
+RegDB Val: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\outpost.exe /waitservice
+RegDB Name: Outpost Firewall
+RegDB Root: 2
+RegDB Key: Software\Agnitum\Outpost Firewall\Paths
+RegDB Val: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\TRASH.EXE
+RegDB Name: trash.exe
+RegDB Root: 2
+RegDB Key: SOFTWARE\Agnitum\Outpost Firewall
+RegDB Val: 1
+RegDB Name: FixServerErrorsInSend
+RegDB Root: 2
+RegDB Key: SOFTWARE\Agnitum\Outpost Firewall\Help
+RegDB Val: Help\outpost.chm
+RegDB Name: HelpFile
+RegDB Root: 2
+RegDB Key: SOFTWARE\Agnitum\Outpost Firewall\General
+RegDB Val: 0
+RegDB Name: EnableTCPAllowDataRule
+RegDB Root: 2
+RegDB Key: SOFTWARE\Agnitum\Outpost Firewall\General
+RegDB Val: 0
+RegDB Name: HideSystemConnections
+RegDB Root: 2
+RegDB Key: SOFTWARE\Agnitum\Outpost Firewall\General
+RegDB Val: 1
+RegDB Name: EnableTDIUseOnConnect
+RegDB Root: 2
+Self-Register: C:\WINDOWS\SYSTEM\MFC42.DLL
+Self-Register: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\oshdlr.dll
+RegDB Key: Software\Agnitum\Outpost Firewall\EnginePlugins
+RegDB Val: 1
+RegDB Name: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\Plugins\Ads\ad_int.dll
+RegDB Root: 2
+RegDB Key: Software\Agnitum\Outpost Firewall\EnginePlugins
+RegDB Val: 1
+RegDB Name: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\Plugins\Content\cnt_int.dll
+RegDB Root: 2
+RegDB Key: Software\Agnitum\Outpost Firewall\EnginePlugins
+RegDB Val: 1
+RegDB Name: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\Plugins\Dns\dns_int.dll
+RegDB Root: 2
+RegDB Key: Software\Agnitum\Outpost Firewall\EnginePlugins
+RegDB Val: 1
+RegDB Name: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\Plugins\Web\web_int.dll
+RegDB Root: 2
+RegDB Key: Software\Agnitum\Outpost Firewall\EnginePlugins
+RegDB Val: 1
+RegDB Name: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\Plugins\File\file_int.dll
+RegDB Root: 2
+RegDB Key: Software\Agnitum\Outpost Firewall\EnginePlugins
+RegDB Val: 1
+RegDB Name: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\Plugins\Protect\prot_int.dll
+RegDB Root: 2
+RegDB Key: Software\Agnitum\Outpost Firewall\PlugIns
+RegDB Val: engine.dll
+RegDB Name: engine
+RegDB Root: 2
+RegDB Old: engine.dll
+Delete in-use files: On
+Execute Program: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0\install.exe -u
+RegDB Tree: Software\Agnitum\Outpost Firewall
+RegDB Root: 1
+RegDB Tree: Software\Agnitum\Aupdate
+RegDB Root: 1
+RegDB Tree: Software\Agnitum\Outpost Firewall
+RegDB Root: 2
+RegDB Tree: Software\Agnitum\engine
+RegDB Root: 2
+RegDB Tree: Software\Agnitum\ad_int
+RegDB Root: 2
+RegDB Tree: Software\Agnitum\dns_int
+RegDB Root: 2
+RegDB Tree: Software\Agnitum\cnt_int
+RegDB Root: 2
+RegDB Tree: Software\Agnitum\file_int
+RegDB Root: 2
+RegDB Tree: Software\Agnitum\prot_int
+RegDB Root: 2
+RegDB Tree: Software\Agnitum\web_int
+RegDB Root: 2
+RegDB Tree: Software\Agnitum\Paths
+RegDB Root: 2
+RegDB Tree: Software\Agnitum\Update
+RegDB Root: 2
+RegDB Tree: Software\Microsoft\Windows\CurrentVersion\App Paths\OUTPOST.EXE
+RegDB Root: 2
+RegDB Tree: Software\Agnitum\D-Firewall
+RegDB Root: 2
+File Tree: C:\WINDOWS\Desktop\Frajola\Firewall\Outpost Firewall 1.0
+File Tree: C:\Arquivos de programas\Arquivos comuns\Agnitum Shared\Aupdate

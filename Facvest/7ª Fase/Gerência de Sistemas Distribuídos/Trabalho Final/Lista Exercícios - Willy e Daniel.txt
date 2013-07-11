@@ -1,0 +1,84 @@
+Lista de Exercícios de Fixação: Aula Prática de Laboratório com CL10.
+
+Professora Madalena Pereira da Silva
+
+
+Quais os procedimentos usados para alterar a ordem de seqüência de boot dos sistemas operacionais para máquinas que possuem mais de um sistema operacional instalado.
+
+Basta alterar a ordem dos sistemas operacionais listados no arquivo menu.lst dentro do diretório /boot/grub.
+
+Para levantar um serviço de rede usa-se o comando "service nome_do_serviço start". Existe algum procedimento usado para carregar automaticamente todos os serviços de rede? Como este procedimento é realizado?
+
+Basta ativar os serviços de rede desejados criando um link no diretorio que se deseja apontando para o script correspondente em "/etc/rc.d/init.d" usando o comando "ln-s /etc/rc.d/init.d /etc/rc.d/rc3.d/S<script de serviço de rede desejado>".
+
+Os serviços de rede podem ser instalados e atualizados através dos CD's de instalação do CL10 (3 CD's). ou seja 3 CD's para cada aluno. Isto seria tedioso e praticamente inviável. Qual alternativa isentaria o professor de reprozir dúzias de CD's? Observe que esta alternativa deve ser efetiva.
+
+A alternativa efetiva seria configurar (editar) a lista de localização dos repositorios de arquivos disponiveis na Internet e/ou rede. A configuração se daria em comentar as linhas referentes ao CD de instalação e descomentar as linhas referentes as URL's apropriadas.O arquivo referente a esta configuração pode ser editado no /etc/apt/sources.list.
+
+Quais os procedimento usados para incluir uma máquina numa rede pré-existente. Observe que esta máquina não possui nenhum utilitário facilitar para esta tarefa, ou seja, não existe nenhum serviço tal como o linuxconf instalado. Como será feita a atribuição de IP's: estático ou dinâmico?
+
+Uma vez conhecido o endereço IP de um dos elementos da rede pode-se tentar aleatoriamente atribuir um IP contido na mesma faixa do elemento conhecido, utilizando o comando: pico /etc/sysconfig/network-script/ifcfg-eth0. Tambem pode-se editar o arquivo /etc/sysconfig/network, atribuindo o valor aleatorio na linha iniciada por "IPADDR=<IP>" dentro da faixa de IP's. Deve-se tambem editar os demais campos do arquivo afim de deixa-los com a mesma configuração do elemento de rede conhecido.
+
+Caso seja uma rede que possua um servidor DHCP basta setar para "yes" onde está a linha "bootproto=none" no arquivo etc/sysconfig/network-script/ifcfg-eth0 e deixar os demais campos em branco.
+
+Criar pastas e arquvos, copiar, mover, renomear, deletar.
+
+<comandos>
+
+Criar usuários e privilégios de leitura, escrita e execução. Modificar permissões (chmod) dos usuários de forma que os mesmos não possam alterar arquivos. Testar os procedimentos.
+
+<comandos>
+
+Sobre o FTP:
+
+a) Para que serve o FTP e em que situações um usuário o utilizaria? 
+
+File Transfer Protocol – FTP é utilizado para viabilizar o transporte de arquivos de um host para outro. Ele é utilizado em situações em que o usuario necessita compartilhar arquivos que está contido em outro host que esteja conectado a sua rede.
+
+
+b) Como o FTP é usado no servidor e no cliente? 
+
+No servidor, o serviço FTP deve estar instalado e rodando para que o serviço possa ser requisitado pelos clientes que o fazem atraves do comando "ftp <ipservidor>" e realizam as tarefas desejadas.
+
+c) Configurar o FTP para usuário aluno. Testar através de máquinas linux (browser e konqueror) e windows (browser). Observe que o FTP funciona através do konqueror com o seguinte comando ftp://usuario@IP. E também através do browser linux/windows com o seguinte comando ftp://usuario@IP.
+
+Com o serviço FTP devidamente instalado e funcionando no servidor, deve-se então criar o usuário "aluno" e para ele definir uma senha, para que possa ser realizado a autenticação pelo serviço de FTP. O usuário, a partir de uma máquina cliente rodando o Linux, utiliza-se do comando "ftp <ipservidor>" informando login e senha previamente setados e realiza o acesso ao conteúdo disponibilizado no servidor FTP através do console/terminal. Para realizar o acesso através do browser ou gerenciador de arquivos e pastas (konqueror) basta digitar o comando "ftp://aluno@ipservidor" na barra de comandos do aplicativo. É fato que o mesmo procedimento se aplica ao browser do windows (IE).
+
+d) Configure o servidor FTP para permitir entre 1 e 10 conexões. Testar as funcionalidades.
+
+Para permitir tal acesso é necessario editar o arquivo "/etc/proftpd.conf" e definir o parametro de numero máximo de clientes (MaxClients) para 10. Para testar, é necessario que 10 clientes já estejam realizando acesso ao servidor, e nesse momento um 11 cliente tente efetuar conexão e então seja exibida uma mensagem de limite máximo de conexões atingido.
+
+e) Configurar o FTP para ser acessado via usuário anonymous.
+
+Sobre o SSH:
+
+a) Para que serve o SSH e em que situações um usuário o utilizaria? 
+
+b) Como o SSH é usado no servidor e no cliente?
+
+c) Levante o serviço de SSH e verifique se um cliente CL10 pode acessar o servidor com a senha de root. Sim? Não? Porque? (use o shell, digite ssh usuario@IP).
+
+d) Faça cópia de um arquivo do seu servidor para um o usuário aluno existente no servidor do vizinho e, copie um arquivo do servidor do seu vizinho para o seu diretório no seu servidor. (Use ainterface gráfica do konqueror, digitando fish://usuario@IP/home/).
+
+e) Entre no servidor do vizinho com o login aluno, alterne para o usuário root com o comando su root, crie sua conta pessoal neste servidor. Teste sua conta acessando remotamente. (Faça isto usando o shell).
+
+f) É possível modificar a porta lógica do SSH? Verifique se este serviço irá funcionar numa outra porta lógica (2004, por exemplo) diferente da porta default 22.
+
+g) Acessar máquina do ssh via shell, executar algum aplicativo gráfico (exemplo mozilla). O Que ocorre? Agora edite e faça esta alteração no arquivo: /etc/ssh/sshd_config. Procure pela linha: "#X11Forwarding no' e altere para: X11Forwarding yes. Após esta alteração precisa reiniciar o servidor ssh. Na maquina cliente, que vai receber as telas do programa executado remotamente, execute: ssh -X usuario@IP. Tente navegar remotamente com o ssh.
+
+Sobre o APACHE:
+
+a) Ao executar o comando "service apache start", quais os procedimentos de manutenção adotados para resolver o problema se o mesmo não estiver funcionando? Leve em consideração que todos os pacotes do apache estão instalados.
+
+b) Teste o servidor apache no navegador, ou seja, digite o IP da máquina na barra de endereço do browser. Verifique se é carregada a página de apresentaçao do apache. Caso contrário, configuar o apache novamente.
+
+b) Como root, crie uma página HTML e a visualize através do browser. Divulgue a sua página para os seus colegas de forma que eles possam visualizá-las através da janela do navegador da máquina deles.
+
+c) Crie uma página pessoal para o usuário aluno. Não esqueça de criar o diretório public_html e salvar o arquivo index.html na referida pasta. Verifique se esta página está visivel para os seus vizinhos.
+
+d) Altere o diretório default da página index.html. Verifique se funcionou.
+
+e) Altere a porta lógica do apache que por default é 80 para 3128. Verique o funcionamento local e remoto.
+
+No caso de uma parada programada ou emergencial no sistema operacional de rede CL10, qual a utilidade do comando shutdown para os usuários com conexões remotas no servidor? Edite, envie e verifique se a mensagem é enviada em broadcasting para a rede.
+

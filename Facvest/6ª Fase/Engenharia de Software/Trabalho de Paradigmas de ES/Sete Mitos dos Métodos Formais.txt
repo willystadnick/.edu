@@ -1,0 +1,46 @@
+Resumo
+Sete Mitos dos Métodos Formais
+Seven Myths of Formal Methods, Anthony Hall, Praxis Corp.
+Grupo 5
+Christian Reis | Pedro M. S. Eleutério | Ricardo J. M. Ribeiro | Wagner S. Bila | Ramon Chiara
+
+Abstract:
+Neste artigo [HAL90], o autor defende o uso de métodos formais, enumerando e atacando sete mitos básicos relacionados ao uso destes métodos. Métodos formais são uma classe de técnicas de engenharia de software que utilizam notação matemática para descrever os requisitos do sistema, e que detalham formas de validar esta especificação e a subsequente implementação.
+
+Sete mitos dos métodos formais
+
+1. Métodos formais podem garantir um programa perfeito
+
+Não é possível garantir a perfeição de nenhum programa, independentemente do método utilizado. Mesmo usando um método formal, existem várias fases do projeto onde podem surgir imperfeições. O ponto principal é que os benefícios de uma especificação formal independem da garantia de sucesso.
+Dito isso, métodos formais podem realmente eliminar problemas de certas classes - propriedades do programa estabelecíveis por lógica formal - e ajudar a evidenciar problemas na especificação das outras. O documento de especificação formal tem um mecanismo embutido que facilita a descoberta destes erros antes da implementação.
+
+2. Métodos formais só servem para provar que o programa é correto
+
+O uso dos métodos formais vai além da prova: do ponto de vista econômico, a parte mais importante do formalismo é na verdade a elaboração da especificação em uma notação auto-validante. Estabelecer e validar os requisitos é uma das tarefas mais importantes que um projeto de software enfrenta, e um método formal aborda de forma direta esta questão. A prova e verificação do programa associada ao método formal é a parte geralmente mais difícil do método, mas não a única que traz benefícios.
+
+3. Somente sistemas de missão crítica são beneficiados pelo uso de métodos formais
+
+Métodos formais são aplicáveis a qualquer projeto, e a melhora na especificação será refletida em um projeto executado de forma mais eficiente. Sistemas de missão crítica se beneficiam diretamente pela parte de verificação do método, mas todos os projetos se beneficiam de um documento de requisitos melhor elaborado.
+
+4. Métodos formais envolvem matemática complexa
+
+A matemática usada não é muito dificil, e de qualquer forma mais fácil do que a própria linguagem de programação. Usar qualquer ferramenta de computação requer algum aprendizado; a notação formal não deve fugir à regra. Usar treinamento e consultoria em matemática discreta e na notação formal pode suavizar a curva de aprendizado.
+
+5. Métodos formais aumentam o custo do desenvolvimento
+
+Na realidade, o uso de um método formal ajuda a especificar melhor o produto, e por isso, tende a encurtar o tempo total de implementação. Realmente passa-se mais tempo detalhando a especificação e menos programando, mas na fase inicial é geralmente menos custoso consertar problemas, e por isso é importante não ter pressa neste momento.
+Devido ao tempo maior gasto, pode parecer na fase inicial que não se está fazendo progresso - o importante é tentar entender o problema bem e registrar as tentativas que antecedem a especificação propriamente dita para se ter ideia do andamento.
+
+6. Métodos formais são incompreensíveis aos clientes
+
+A especificação formal ajuda a capturar corretamente o verdadeiro desejo do usuário, e por isso beneficia diretamente o cliente. Para que o usuário entenda o progresso que está sendo feito, no entanto, é importante que se escreva paralelamente um documento em linguagem natural.
+
+7. Ninguem usa métodos formais em projetos reais
+
+Métodos formais estão sendo usados em diversos projetos, em várias empresas diferentes. Exemplos citados são a IBM, no sistema CICS, a Tektronix, na especificação da funcionalidade de osciloscópios, e a própria Praxis, onde trabalha o autor do artigo.
+
+Conclusões
+Métodos formais são pouco compreendidos pela maior parte dos desenvolvedores, e existem alguns tabus relacionados a eles que não são exatamente verificáveis. Os mais importantes, que são a dificuldade de aplicação e o custo aumentado de desenvolvimento, estão sendo contraprovados pelo uso prático em projetos importantes de várias empresas da industria de desenvolvimento de software.
+
+Referências
+[HAL90] Hall, A., "Seven Myths of Formal Methods", IEEE Software, setembro de 1990, pp. 11-20.

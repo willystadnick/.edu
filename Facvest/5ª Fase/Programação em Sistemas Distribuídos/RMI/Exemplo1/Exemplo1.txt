@@ -1,0 +1,4 @@
+Este exemplo, utiliza RMI para estabelecer uma conexão de um cliente com um servidor Remoto.
+O cliente utiliza um único método: - public void mensagem.
+
+Assim que o cliente se comunica com o servidor, o método irá retonar uma mensagem.

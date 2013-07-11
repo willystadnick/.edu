@@ -1,0 +1,431 @@
+<html><head>
+
+  <meta name="description" content="Data Structures and Algorithms Course Notes,
+PLDS210 University of Western Australia">
+  <meta name="keywords" content="data structures,algorithms,abstract data types "><title>Caminho de Custo Mínimo - Algoritmo de Dijkstra</title><script charset="utf-8" id="injection_graph_func" src="dijkstra_files/injection_graph_func.js"></script></head><body bgcolor="#ffffef">
+<h2 align="center">
+  Algoritmo de Dijkstra para cálculo do Caminho de Custo Mínimo
+</h2>
+<p>
+</p><p>
+O Algoritmo de Dijkstra
+(<a href="http://net.cs.utexas.edu/users/UTCS/report/1994/profiles/dijkstra.html">E.W.
+Dijkstra</a>) é um dos algoritmos que calcula o caminho de custo
+mínimo entre vértices de um grafo. Escolhido um vértice
+como raiz da busca, este algoritmo calcula o custo mínimo deste
+vértice para todos os demais vértices do grafo. Ele é
+bastante simples e com um bom nível de performance. Ele não
+garante, contudo, a exatidão da solução caso haja a
+presença de arcos com valores negativos.
+</p><p>
+Este algoritmo parte de uma estimativa inicial para o custo mínimo
+e vai sucessivamente ajustando esta estimativa. Ele considera que um
+vértice estará fechado quando já tiver sido obtido um
+caminho de custo mínimo do vértice tomado como raiz da busca
+até ele. Caso contrário ele dito estar aberto.
+</p><p>
+Algoritmo: Seja G(V,A) um grafo orientado e
+<font color="#0000ff"><b>s</b></font> um vértice de G:
+</p><ol>
+  <li>
+    Atribua valor zero à estimativa do custo mínimo do vértice
+    <font color="#0000ff"><b>s</b></font> (a raiz da busca) e infinito às
+    demais estimativas;
+  </li><li>
+    Atribua um valor qualquer aos precedentes (o precedente de um vértice
+    <font color="#ff8040"><b>t</b></font> é o vértice que&nbsp;precede
+    <font color="#ff8040"><b>t</b></font>&nbsp;no caminho de custo mínimo
+    de <font color="#0000ff"><b>s</b></font> para
+    <font color="#ff8040"><b>t</b></font>);
+  </li><li>
+    Enquanto houver vértice aberto:
+    <ul>
+      <li>
+	seja <font color="#ff0000"><b>k</b></font> um vértice ainda aberto
+	cuja estimativa seja a menor dentre todos os vértices abertos;
+      </li><li>
+	feche o vértice <font color="#ff0000"><b>k</b></font>
+      </li><li>
+	Para todo vértice <font color="#008000"><b>j</b></font> ainda aberto
+	que seja sucessor de <font color="#ff0000"><b>k</b></font> faça:
+	<ul>
+	  <li>
+	    some a estimativa do vértice <font color="#ff0000"><b>k</b></font>
+	    com o custo do arco que une <font color="#ff0000"><b>k</b></font>
+	    a&nbsp;<font color="#008000"><b>j</b></font>;
+	  </li><li>
+	    caso esta soma seja melhor que a estimativa anterior para o vértice
+	    <font color="#008000"><b>j</b></font>, substitua-a e anote
+	    <font color="#ff0000"><b>k</b></font> como precedente de
+	    <font color="#008000"><b>j</b></font>.
+	</li></ul>
+    </li></ul>
+</li></ol>
+<p>
+A seqüência de
+diagramas<sup><a href="http://www.ee.uwa.edu.au/%7Eplsd210/ds/dij-op.html">*</a></sup>
+&nbsp;ilustra o funcionamento do Algoritmo de Dijkstra.
+</p><p>
+</p><center>
+  <table border="1">
+    <tbody><tr>
+      <td><ul>
+	  <li>
+	    Inicialmente todos os nodos tem um custo infinito,<br>
+	    exceto <font color="#0000ff"><b>s</b></font> (a raiz da busca) que&nbsp;tem
+	    valor 0:
+	</li></ul>
+	<center>
+	  <table border="1" cellpadding="2">
+	    <tbody><tr>
+	      <td>vértices</td>
+	      <td><font color="#0000ff"><b>s</b></font></td>
+	      <td><font color="#0000ff"><b>u</b></font></td>
+	      <td><font color="#0000ff"><b>v</b></font></td>
+	      <td><font color="#0000ff"><b>x</b></font></td>
+	      <td><font color="#0000ff"><b>y</b></font></td>
+	    </tr>
+	    <tr>
+	      <td>estimativas</td>
+	      <td>0</td>
+	      <td><font face="Symbol">¥</font></td>
+	      <td><font face="Symbol">¥</font></td>
+	      <td><font face="Symbol">¥</font></td>
+	      <td><font face="Symbol">¥</font></td>
+	    </tr>
+	    <tr>
+	      <td>precedentes</td>
+	      <td>-</td>
+	      <td>-</td>
+	      <td>-</td>
+	      <td>-</td>
+	      <td>-</td>
+	    </tr>
+	  </tbody></table>
+	</center>
+      </td>
+      <td><img src="dijkstra_files/dij1.gif"></td>
+    </tr>
+    <tr>
+      <td><ul>
+	  <li>
+	    selecione <font color="#0000ff"><b>s</b></font> (vértice aberto de
+	    estimativa mínima)
+	  </li><li>
+	    feche <font color="#ff0000"><b>s</b></font>
+	  </li><li>
+	    recalcule as estimativas de u e&nbsp;x
+	</li></ul>
+	<center>
+	  <table border="1" cellpadding="2">
+	    <tbody><tr>
+	      <td>vértices</td>
+	      <td><font color="#ff0000"><b>s</b></font></td>
+	      <td><p align="center">
+		<font color="#0000ff"><b>u</b></font></p></td>
+	      <td><font color="#0000ff"><b>v</b></font></td>
+	      <td><font color="#0000ff"><b>x</b></font></td>
+	      <td><p align="center">
+		<font color="#0000ff"><b>y</b></font></p></td>
+	    </tr>
+	    <tr>
+	      <td>estimativas</td>
+	      <td><font color="#ff0000"><b>0</b></font></td>
+	      <td><font face="Symbol">10</font></td>
+	      <td><font face="Symbol">¥</font></td>
+	      <td><font face="Symbol">5</font></td>
+	      <td><font face="Symbol">¥</font></td>
+	    </tr>
+	    <tr>
+	      <td>precedentes</td>
+	      <td><font color="#ff0000"><b>s</b></font></td>
+	      <td><p align="center">
+		s</p></td>
+	      <td><p align="center">
+		-</p></td>
+	      <td><p align="center">
+		s</p></td>
+	      <td><p align="center">
+		-</p></td>
+	    </tr>
+	  </tbody></table>
+	</center>
+      </td>
+      <td><img src="dijkstra_files/dij2.gif"></td>
+    </tr>
+    <tr>
+      <td><ul>
+	  <li>
+	    selecione <font color="#0000ff"><b>x</b></font> (vértice aberto de
+	    estimativa mínima)
+	  </li><li>
+	    feche <font color="#ff0000"><b>x</b></font>
+	  </li><li>
+	    recalcule as estimativas de u,v e y
+	</li></ul>
+	<center>
+	  <table border="1" cellpadding="2">
+	    <tbody><tr>
+	      <td>vértices</td>
+	      <td><font color="#ff0000"><b>s</b></font></td>
+	      <td><font color="#0000ff"><b>u</b></font></td>
+	      <td><p align="center">
+		<font color="#0000ff"><b>v</b></font></p></td>
+	      <td><font color="#ff0000"><b>x</b></font></td>
+	      <td><font color="#0000ff"><b>y</b></font></td>
+	    </tr>
+	    <tr>
+	      <td>estimativas</td>
+	      <td><font color="#ff0000"><b>0</b></font></td>
+	      <td><font face="Symbol">8</font></td>
+	      <td><font face="Symbol">14</font></td>
+	      <td><font color="#ff0000"><font face="Symbol"><b>5</b></font></font></td>
+	      <td><font face="Symbol">7</font></td>
+	    </tr>
+	    <tr>
+	      <td>precedentes</td>
+	      <td><font color="#ff0000"><b>s</b></font></td>
+	      <td><p align="center">
+		x</p></td>
+	      <td><p align="center">
+		x</p></td>
+	      <td><font color="#ff0000"><b>s</b></font></td>
+	      <td><p align="center">
+		x</p></td>
+	    </tr>
+	  </tbody></table>
+	</center>
+      </td>
+      <td><img src="dijkstra_files/dij3.gif"></td>
+    </tr>
+    <tr>
+      <td><ul>
+	  <li>
+	    selecione <font color="#0000ff"><b>y</b></font> (vértice aberto de
+	    estimativa mínima)
+	  </li><li>
+	    feche <font color="#ff0000"><b>y</b></font>
+	  </li><li>
+	    recalcule a estimativa de v
+	</li></ul>
+	<center>
+	  <table border="1" cellpadding="2">
+	    <tbody><tr>
+	      <td>vértices</td>
+	      <td><font color="#ff0000"><b>s</b></font></td>
+	      <td><font color="#0000ff"><b>u</b></font></td>
+	      <td><p align="center">
+		<font color="#0000ff"><b>v</b></font></p></td>
+	      <td><font color="#ff0000"><b>x</b></font></td>
+	      <td><font color="#ff0000"><b>y</b></font></td>
+	    </tr>
+	    <tr>
+	      <td>estimativas</td>
+	      <td><font color="#ff0000"><b>0</b></font></td>
+	      <td><font face="Symbol">8</font></td>
+	      <td><font face="Symbol">13</font></td>
+	      <td><font color="#ff0000"><font face="Symbol"><b>5</b></font></font></td>
+	      <td><font color="#ff0000"><font face="Symbol"><b>7</b></font></font></td>
+	    </tr>
+	    <tr>
+	      <td>precedentes</td>
+	      <td><font color="#ff0000"><b>s</b></font></td>
+	      <td><p align="center">
+		x</p></td>
+	      <td><p align="center">
+		y</p></td>
+	      <td><font color="#ff0000"><b>s</b></font></td>
+	      <td><font color="#ff0000"><b>x</b></font></td>
+	    </tr>
+	  </tbody></table>
+	</center>
+      </td>
+      <td><img src="dijkstra_files/dij4.gif"></td>
+    </tr>
+    <tr>
+      <td><ul>
+	  <li>
+	    selecione <font color="#0000ff"><b>u</b></font> (vértice aberto de
+	    estimativa mínima)
+	  </li><li>
+	    feche <font color="#ff0000"><b>u</b></font>
+	  </li><li>
+	    recalcule a estimativa de v
+	</li></ul>
+	<center>
+	  <table border="1" cellpadding="2">
+	    <tbody><tr>
+	      <td>vértices</td>
+	      <td><font color="#ff0000"><b>s</b></font></td>
+	      <td><font color="#ff0000"><b>u</b></font></td>
+	      <td><font color="#0000ff"><b>v</b></font></td>
+	      <td><font color="#ff0000"><b>x</b></font></td>
+	      <td><font color="#ff0000"><b>y</b></font></td>
+	    </tr>
+	    <tr>
+	      <td>estimativas</td>
+	      <td><font color="#ff0000"><b>0</b></font></td>
+	      <td><font color="#ff0000"><font face="Symbol"><b>8</b></font></font></td>
+	      <td><font face="Symbol">9</font></td>
+	      <td><font color="#ff0000"><font face="Symbol"><b>5</b></font></font></td>
+	      <td><font color="#ff0000"><font face="Symbol"><b>7</b></font></font></td>
+	    </tr>
+	    <tr>
+	      <td>precedentes</td>
+	      <td><font color="#ff0000"><b>s</b></font></td>
+	      <td><font color="#ff0000"><b>x</b></font></td>
+	      <td><p align="center">
+		u</p></td>
+	      <td><font color="#ff0000"><b>s</b></font></td>
+	      <td><font color="#ff0000"><b>x</b></font></td>
+	    </tr>
+	  </tbody></table>
+	</center>
+      </td>
+      <td><img src="dijkstra_files/dij5.gif"></td>
+    </tr>
+    <tr>
+      <td><ul>
+	  <li>
+	    selecione <font color="#0000ff"><b>v</b></font> (vértice aberto de
+	    estimativa mínima)
+	  </li><li>
+	    feche <font color="#ff0000"><b>v</b></font>
+	</li></ul>
+	<center>
+	  <table border="1" cellpadding="2">
+	    <tbody><tr>
+	      <td>vértices</td>
+	      <td><font color="#ff0000"><b>s</b></font></td>
+	      <td><font color="#ff0000"><b>u</b></font></td>
+	      <td><font color="#ff0000"><b>v</b></font></td>
+	      <td><font color="#ff0000"><b>x</b></font></td>
+	      <td><font color="#ff0000"><b>y</b></font></td>
+	    </tr>
+	    <tr>
+	      <td>estimativas</td>
+	      <td><font color="#ff0000"><b>0</b></font></td>
+	      <td><font color="#ff0000"><font face="Symbol"><b>8</b></font></font></td>
+	      <td><font color="#ff0000"><font face="Symbol"><b>9</b></font></font></td>
+	      <td><font color="#ff0000"><font face="Symbol"><b>5</b></font></font></td>
+	      <td><font color="#ff0000"><font face="Symbol"><b>7</b></font></font></td>
+	    </tr>
+	    <tr>
+	      <td>precedentes</td>
+	      <td><font color="#ff0000"><b>s</b></font></td>
+	      <td><font color="#ff0000"><b>x</b></font></td>
+	      <td><font color="#ff0000"><b>u</b></font></td>
+	      <td><font color="#ff0000"><b>s</b></font></td>
+	      <td><font color="#ff0000"><b>x</b></font></td>
+	    </tr>
+	  </tbody></table>
+	</center>
+      </td>
+      <td><img src="dijkstra_files/dij6.gif"></td>
+    </tr>
+  </tbody></table>
+</center>
+<p>
+Quando todos os vértices tiverem sido fechados, os valores obtidos
+serão os custos mínimos dos caminhos que partem do vértice
+tomado como raiz da busca até os demais vértices do grafo.
+O caminho propriamente dito é obtido a partir dos vértices
+chamados acima de precedentes.
+</p><p>
+Para exemplificar, considere o caminho de custo mínimo que vai de
+<b>s</b> até <b>v</b>, cujo custo mínimo é 9. O
+vértice precendente de v na última das tabelas acima é
+u. Sendo assim, o caminho é:
+</p><p align="center">
+s <font face="Symbol">®</font> ... <font face="Symbol">®
+</font>u<font face="Symbol"> ® </font>v
+</p><p align="left">
+Por sua vez, o precedente de u é x. Portanto, o caminho é:
+</p><p align="center">
+s <font face="Symbol">®</font> ... <font face="Symbol">® </font>x
+<font face="Symbol">® </font>u<font face="Symbol"> ® </font>v
+</p><p align="left">
+Por último, o precedente de x é o próprio vértice
+s. Logo, o caminho de custo mínimo é:
+</p><p align="center">
+s <font face="Symbol">® </font>x <font face="Symbol">®
+</font>u<font face="Symbol"> ® </font>v
+</p><p align="left">
+Como apresentado o algoritmo de Dijkstra computa apenas um único caminho
+de custo mínimo entre um dado par de vértices. Para se obter
+todos os caminhos de custo mínimo entre dois vértices é
+necessário modificar a forma de anotação dos precedentes.
+A modificação no passo 3 indicada a seguir é suficiente
+para permitir o cômputo de todos os caminhos por um processo similar
+ao descrito acima.
+</p><blockquote>
+  <p align="left">
+  ...<br>
+  Para todo vértice <font color="#008000"><b>j</b></font> ainda aberto
+  que seja sucessor de <font color="#ff0000"><b>k</b></font> faça:
+  </p><ul>
+    <li>
+      some a estimativa do vértice <font color="#ff0000"><b>k</b></font>
+      com o custo do arco que une <font color="#ff0000"><b>k</b></font>
+      a&nbsp;<font color="#008000"><b>j</b></font>;
+    </li><li>
+      caso esta soma seja melhor que a estimativa anterior para o vértice
+      <font color="#008000"><b>j</b></font>, substitua-a e anote
+      <font color="#ff0000"><b>k</b></font> como precedente
+      <font color="#8000ff">único</font> de
+      <font color="#008000"><b>j</b></font>;
+    </li><li>
+      <font color="#8000ff">caso esta soma seja igual à estimativa anterior
+      para o vértice</font> <font color="#008000"><b>j</b></font>,
+      <font color="#8000ff">adicione</font>
+      <font color="#ff0000"><b>k</b></font> <font color="#8000ff">ao conjunto dos
+      precedentes de</font> <font color="#008000"><b>j</b></font>;
+  </li></ul>
+</blockquote>
+<p>
+Supondo que&nbsp;o peso do arco (y,v) no grafo acima fosse 2, haveriam dois
+caminhos de custo mínimo do vértice s para v. Esta duplicidade
+resulta em dois precedentes para o vértice v:
+</p><center>
+  <table border="1" cellpadding="2">
+    <tbody><tr>
+      <td>vértices</td>
+      <td><font color="#ff0000"><b>s</b></font></td>
+      <td><font color="#ff0000"><b>u</b></font></td>
+      <td><p align="center">
+	<font color="#ff0000"><b>v</b></font></p></td>
+      <td><font color="#ff0000"><b>x</b></font></td>
+      <td><font color="#ff0000"><b>y</b></font></td>
+    </tr>
+    <tr>
+      <td>estimativas</td>
+      <td><font color="#ff0000"><b>0</b></font></td>
+      <td><font color="#ff0000"><font face="Symbol"><b>8</b></font></font></td>
+      <td><p align="center">
+	<font color="#ff0000"><font face="Symbol"><b>9</b></font></font></p></td>
+      <td><font color="#ff0000"><font face="Symbol"><b>5</b></font></font></td>
+      <td><font color="#ff0000"><font face="Symbol"><b>7</b></font></font></td>
+    </tr>
+    <tr>
+      <td>precedentes</td>
+      <td><font color="#ff0000"><b>s</b></font></td>
+      <td><font color="#ff0000"><b>x</b></font></td>
+      <td><font color="#ff0000"><b>u,y</b></font></td>
+      <td><font color="#ff0000"><b>s</b></font></td>
+      <td><font color="#ff0000"><b>x</b></font></td>
+    </tr>
+  </tbody></table>
+</center>
+<p>
+Sendo assim, os dois caminhos são dados por: (s
+<font face="Symbol">®</font> ... <font face="Symbol">®
+</font>u<font face="Symbol"> ® </font>v) e (s
+<font face="Symbol">®</font> ... <font face="Symbol">®
+</font>y<font face="Symbol"> ® </font>v). Seguindo as precedências
+para u e y nestes dois casos obtemos os dois caminhos: (s
+<font face="Symbol">® </font>x <font face="Symbol">®
+</font>u<font face="Symbol"> ® </font>v) e (s <font face="Symbol">®
+</font>x <font face="Symbol">® </font>y<font face="Symbol"> ®
+</font>v).
+
+</p></body></html>

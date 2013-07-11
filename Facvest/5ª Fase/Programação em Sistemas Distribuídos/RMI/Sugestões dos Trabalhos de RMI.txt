@@ -1,0 +1,13 @@
+Trabalho de RMI.
+
+Sugestões de trabalhos:
+
+Este trabalho terá Peso: 8.0
+- Implementar uma aplicação com RMI para efetuar as operações básicas de uma calculadora (adição, subtração, multiplicação e divisão).
+
+
+Este trabalho terá Peso: 9.0
+- Implementar uma aplicação com RMI para validação de um usuário. Caso usuário seja cadastrado o sistema deverá enviar uma mensagem de "boas vindas" e se não for cadastrado, o sistema deverá informar a seguinte mensagem: - "Usuário não cadastrado".
+
+Este trabalho terá Peso: 10.0
+- Implementar uma aplicação com RMI para efetuar o saque e depósito sobre o saldo de uma conta corrente de um cliente.

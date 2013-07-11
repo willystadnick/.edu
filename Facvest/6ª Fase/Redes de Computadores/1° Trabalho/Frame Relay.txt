@@ -1,0 +1,15 @@
+Frame Relay
+
+Protocolo de transmissão para comunicação de dados por pacotes na área WAN (Wide Area Network). O Frame Relay permite capacidades de transmissão mais altas do que X.25.
+
+É uma técnica de comutação de pacotes baseada em um conjunto de protocolos especificados pelo ITU-T, sendo a técnica mais recomendada para implementação de redes WAN para conectividade entre hosts e redes locais. As redes Frame Relay são as sucessoras naturais das redes X.25.
+
+As principais vantagens em relação ao X.25 são: tamanho variável de pacotes; controle de tráfego, evitando situações de congestionamento da rede; apenas um nível de encapsulamento e menor tráfego, pois não existe controle de fluxo entre DTE e DCE.
+
+Assim como no X.25, a tecnologia Frame-Relay permite a multiplexação de várias conexões lógicas (circuitos virtuais entre equipamentos ligados à rede) através de um único meio físico. Essas conexões podem ser do tipo permanentes ou comutadas, embora a maioria das redes Frame Relay existentes opere apenas em modo permanente.
+
+É um protocolo de segurança que opera no nível 3. No entanto, ela é adquirida ao preço de um enorme cabeçalho de protocolo já que estes dados de controle e administração devem ser avaliados em cada nó dentro de uma rede de pacotes.
+
+Como a velocidade de transmissão de X.25 está restrita a 64 Kbit/s, o Frame Relay é um protocolo limitado que funciona sem sistema de identificação e correção de erros (somente para obter velocidades de transmissão mais altas de até 2 Mbit/s). A correção de erros é executada nas camadas superiores em nós dos terminais. Se um erro for detectado, a monitoração de todos os pacotes de dados deve ser repetida.
+
+O uso da tecnologia, contudo, vale a pena porque os erros são raros nas tecnologias de transmissão seguras utilizadas hoje em dia (como via fibra óptica). Os produtos de Frame Relay são comutadores e multiplexadores, assim como vários Dispositivos de Acesso a Frame Relay (FRAD): hubs, PADs e roteadores.
