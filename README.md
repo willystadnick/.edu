@@ -1,3 +1,3 @@
 education
 =========
-backup for education folder
+backup of my education files
